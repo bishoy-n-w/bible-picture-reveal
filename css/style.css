@@ -678,6 +678,31 @@ body.carnival-theme {
   margin-bottom: 20px;
   text-align: center;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s, color 0.3s;
+}
+
+/* Fading In and Out Animation when Question Times Out */
+.altar-question-text.timed-out {
+  animation: questionFadeInOut 1.5s infinite ease-in-out;
+  color: #ff9999;
+}
+
+.altar-parchment.timed-out {
+  border-color: var(--crimson-molten);
+  box-shadow: 0 -15px 45px rgba(0, 0, 0, 0.95), 0 0 35px var(--crimson-glow);
+}
+
+@keyframes questionFadeInOut {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px rgba(231, 76, 60, 0.7));
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(0.98);
+    filter: drop-shadow(0 0 0px transparent);
+  }
 }
 
 .altar-options-grid {

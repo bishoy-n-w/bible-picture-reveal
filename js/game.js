@@ -28,16 +28,25 @@ class PictureRevealGame {
     this.roundCount = 0;
     this.isGameActive = false;
 
-    // Integrated Question Timer (20 Seconds)
-    this.timerDuration = 20;
-    this.timerRemaining = 20;
+    // Integrated Question Timer (60 Seconds)
+    this.timerDuration = 60;
+    this.timerRemaining = 60;
     this.timerInterval = null;
 
-    // 3x3 Difficulty Map (Center is hardest / greatest reveal)
+    // 3x3 Difficulty Map:
+    // 3 Easy on 3 corners (0, 2, 6)
+    // 3 Medium: 1 on an edge (1) and 2 in sides (7, 8)
+    // 3 Hard: 1 in center (4) and 2 in sides (3, 5)
     this.difficultyMap = {
-      0: 1, 1: 2, 2: 1,
-      3: 2, 4: 3, 5: 2,
-      6: 1, 7: 2, 8: 1
+      0: 1, // Corner: Easy
+      1: 2, // Edge: Medium
+      2: 1, // Corner: Easy
+      3: 3, // Side: Hard
+      4: 3, // Center: Hard (Golden Seal)
+      5: 3, // Side: Hard
+      6: 1, // Corner: Easy
+      7: 2, // Side: Medium
+      8: 2  // Side: Medium
     };
 
     this.dom = {};
@@ -72,6 +81,7 @@ class PictureRevealGame {
 
     // Question Altar & Timer
     this.dom.questionAltar = document.getElementById('question-altar');
+    this.dom.altarParchment = this.dom.questionAltar ? this.dom.questionAltar.querySelector('.altar-parchment') : null;
     this.dom.modalDiffTag = document.getElementById('modal-diff-tag');
     this.dom.modalTileIndicator = document.getElementById('modal-tile-indicator');
     this.dom.altarTimerBadge = document.getElementById('altar-timer-badge');
@@ -228,6 +238,12 @@ class PictureRevealGame {
         if (this.dom.altarTimerBadge) {
           this.dom.altarTimerBadge.className = 'altar-timer-badge timed-out';
           this.dom.timerText.textContent = 'انتهى الوقت! ⏰';
+        }
+        if (this.dom.questionText) {
+          this.dom.questionText.classList.add('timed-out');
+        }
+        if (this.dom.altarParchment) {
+          this.dom.altarParchment.classList.add('timed-out');
         }
       }
     }, 1000);
@@ -513,6 +529,10 @@ class PictureRevealGame {
      ========================================================================== */
   showQuestionAltar(question, tileIndex, difficulty) {
     const diffNames = { 1: 'مستوى سهل ✦', 2: 'مستوى متوسط ✦✦', 3: 'الختم الذهبي (الأصعب) ✦✦✦' };
+
+    // Reset any previous timeout animations
+    if (this.dom.questionText) this.dom.questionText.classList.remove('timed-out');
+    if (this.dom.altarParchment) this.dom.altarParchment.classList.remove('timed-out');
 
     this.dom.modalDiffTag.textContent = diffNames[difficulty];
     this.dom.modalDiffTag.className = `altar-diff-tag level-${difficulty}`;

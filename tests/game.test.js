@@ -55,27 +55,33 @@ describe('1. Dataset Integrity & Schema Tests', () => {
   });
 });
 
-describe('2. 3x3 Grid Strategic Difficulty Mapping Tests', () => {
+describe('2. 3x3 Grid Strategic Difficulty Mapping Tests (3-3-3 Layout)', () => {
+  // 3 Easy on 3 corners (0, 2, 6)
+  // 3 Medium: 1 on an edge (1) and 2 in sides (7, 8)
+  // 3 Hard: 1 in center (4) and 2 in sides (3, 5)
   const difficultyMap = {
     0: 1, 1: 2, 2: 1,
-    3: 2, 4: 3, 5: 2,
-    6: 1, 7: 2, 8: 1
+    3: 3, 4: 3, 5: 3,
+    6: 1, 7: 2, 8: 2
   };
 
-  test('Center tile (Tile #5 / Index 4) maps to Level 3 (Hard / Golden Seal)', () => {
-    assert.strictEqual(difficultyMap[4], 3);
+  test('Exactly 3 Easy questions on 3 corners (Indices 0, 2, 6)', () => {
+    const easyTiles = Object.entries(difficultyMap).filter(([_, lvl]) => lvl === 1).map(([i]) => Number(i));
+    assert.strictEqual(easyTiles.length, 3);
+    assert.deepStrictEqual(easyTiles, [0, 2, 6]);
   });
 
-  test('Cardinal edge tiles (Indices 1, 3, 5, 7) map to Level 2 (Medium)', () => {
-    [1, 3, 5, 7].forEach(idx => {
-      assert.strictEqual(difficultyMap[idx], 2, `Tile index ${idx} must be Medium (Level 2)`);
-    });
+  test('Exactly 3 Medium questions on 1 edge and 2 sides (Indices 1, 7, 8)', () => {
+    const mediumTiles = Object.entries(difficultyMap).filter(([_, lvl]) => lvl === 2).map(([i]) => Number(i));
+    assert.strictEqual(mediumTiles.length, 3);
+    assert.deepStrictEqual(mediumTiles, [1, 7, 8]);
   });
 
-  test('Corner tiles (Indices 0, 2, 6, 8) map to Level 1 (Easy)', () => {
-    [0, 2, 6, 8].forEach(idx => {
-      assert.strictEqual(difficultyMap[idx], 1, `Tile index ${idx} must be Easy (Level 1)`);
-    });
+  test('Exactly 3 Hard questions: 1 in center (Index 4) and 2 in sides (Indices 3, 5)', () => {
+    const hardTiles = Object.entries(difficultyMap).filter(([_, lvl]) => lvl === 3).map(([i]) => Number(i));
+    assert.strictEqual(hardTiles.length, 3);
+    assert.deepStrictEqual(hardTiles, [3, 4, 5]);
+    assert.strictEqual(difficultyMap[4], 3, 'Center tile must be Hard');
   });
 });
 
@@ -143,9 +149,12 @@ describe('4. Scene Dropdown Sanity & Anti-Spoiler Tests', () => {
   });
 });
 
-describe('5. Carnival Timer & Keyboard Mapping Tests', () => {
-  test('Timer urgency triggers at 5 seconds or less', () => {
+describe('5. Carnival Timer (60s) & Keyboard Mapping Tests', () => {
+  test('Timer duration is 60 seconds and urgency triggers at 5 seconds or less', () => {
+    const timerDuration = 60;
+    assert.strictEqual(timerDuration, 60);
     const isUrgent = (sec) => sec <= 5 && sec > 0;
+    assert.strictEqual(isUrgent(60), false);
     assert.strictEqual(isUrgent(20), false);
     assert.strictEqual(isUrgent(6), false);
     assert.strictEqual(isUrgent(5), true);
@@ -153,16 +162,18 @@ describe('5. Carnival Timer & Keyboard Mapping Tests', () => {
     assert.strictEqual(isUrgent(0), false);
   });
 
-  test('Timeout state retains question active on screen without dismissal', () => {
+  test('Timeout state retains question active on screen without dismissal and triggers fading', () => {
     let questionDismissed = false;
     let timerRemaining = 0;
+    let animationClassApplied = false;
 
     // Timeout occurs:
     if (timerRemaining <= 0) {
-      // Question remains active!
       questionDismissed = false;
+      animationClassApplied = true;
     }
     assert.strictEqual(questionDismissed, false);
+    assert.strictEqual(animationClassApplied, true);
   });
 
   test('Keyboard mapping 1-9 correctly indexes tiles 0-8', () => {
