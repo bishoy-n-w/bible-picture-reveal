@@ -1,11 +1,12 @@
 /**
- * Core Game Engine for Picture Reveal Bible Trivia
+ * Temple Codex Edition - Picture Reveal Bible Trivia Engine
  * Handles:
- *  - 3x3 Tile-to-Difficulty Grid Mapping (Center=Hard, Edges=Medium, Corners=Easy)
- *  - Non-Repeating Random Cycles for Images & Questions (Fair Pool Cycles)
- *  - Modal Flow, Tile Animations, Sound Effects & Confetti Celebration
- *  - Multi-Extension Image Resolver & Procedural Canvas Fallbacks
- *  - Drag & Drop / File Input for Local Image Banks
+ *  - 3D Basalt Tile-to-Difficulty Grid Mapping (Center=Hard/Seal, Edges=Medium, Corners=Easy)
+ *  - Non-Blocking Bottom Question Altar
+ *  - Fair Cycle Pools for Scenes & Questions (No Repetition)
+ *  - Carnival Team Scoring System (Team 1 vs Team 2)
+ *  - Tension Countdown Timer (with audio ticks and SVG radial progress)
+ *  - Full Theater Keyboard Shortcuts (1-9 for tiles, 1-4 for answers, Space, N, P, T, M, Esc)
  */
 
 class PictureRevealGame {
@@ -13,11 +14,11 @@ class PictureRevealGame {
     this.picsBank = window.PICS_DATA ? [...window.PICS_DATA] : [];
     this.questionsBank = window.QUESTIONS_BANK ? [...window.QUESTIONS_BANK] : [];
 
-    // Cycle Pools (Fair Shuffle: zero repetition until depleted)
+    // Cycle Pools (Fair Shuffle)
     this.imagePool = [];
     this.questionPools = { 1: [], 2: [], 3: [] };
 
-    // Active Game State
+    // Active Round State
     this.currentImage = null;
     this.tileStates = Array(9).fill('covered'); // 'covered' | 'revealed' | 'failed'
     this.activeTileIndex = null;
@@ -25,17 +26,23 @@ class PictureRevealGame {
     this.isFullRevealed = false;
     this.roundCount = 0;
 
-    // Difficulty mapping for 3x3 grid:
-    // [0] [1] [2]   [Easy]   [Medium] [Easy]
-    // [3] [4] [5] = [Medium] [Hard]   [Medium]
-    // [6] [7] [8]   [Easy]   [Medium] [Easy]
+    // Team Scores
+    this.team1Score = 0;
+    this.team2Score = 0;
+
+    // Timer State
+    this.timerDuration = 20; // 20 seconds
+    this.timerRemaining = 20;
+    this.timerInterval = null;
+    this.timerActive = false;
+
+    // 3x3 Difficulty Map (Center is hardest / greatest reward)
     this.difficultyMap = {
       0: 1, 1: 2, 2: 1,
       3: 2, 4: 3, 5: 2,
       6: 1, 7: 2, 8: 1
     };
 
-    // DOM Elements
     this.dom = {};
   }
 
@@ -43,8 +50,7 @@ class PictureRevealGame {
     this.cacheDom();
     this.populateSceneSelector();
     this.bindEvents();
-    
-    // Initialize sound engine & confetti
+
     if (window.confettiEngine && this.dom.confettiCanvas) {
       window.confettiEngine.init(this.dom.confettiCanvas);
     }
@@ -60,22 +66,33 @@ class PictureRevealGame {
     this.dom.roundDisplay = document.getElementById('round-counter');
     this.dom.remainingDisplay = document.getElementById('remaining-counter');
 
-    // Modal
-    this.dom.modalOverlay = document.getElementById('modal-overlay');
+    // Scoreboard
+    this.dom.scoreboard = document.getElementById('scoreboard');
+    this.dom.team1Score = document.getElementById('team1-score');
+    this.dom.team2Score = document.getElementById('team2-score');
+
+    // Timer Elements
+    this.dom.timerBox = document.getElementById('timer-box');
+    this.dom.timerCircle = document.getElementById('timer-circle');
+    this.dom.timerDigits = document.getElementById('timer-digits');
+    this.dom.altarTimerLine = document.getElementById('altar-timer-line');
+
+    // Non-Blocking Question Altar
+    this.dom.questionAltar = document.getElementById('question-altar');
     this.dom.modalDiffTag = document.getElementById('modal-diff-tag');
     this.dom.modalTileIndicator = document.getElementById('modal-tile-indicator');
     this.dom.questionText = document.getElementById('question-text');
     this.dom.optionsGrid = document.getElementById('options-grid');
     this.dom.modalCloseBtn = document.getElementById('btn-modal-close');
 
-    // Win Overlay
+    // Grand Win Overlay
     this.dom.winOverlay = document.getElementById('win-overlay');
     this.dom.winTitle = document.getElementById('win-title');
     this.dom.winRef = document.getElementById('win-ref');
     this.dom.winVerse = document.getElementById('win-verse');
     this.dom.winNextBtn = document.getElementById('win-next-btn');
 
-    // Moderator Toolbar
+    // Moderator Controls
     this.dom.btnReveal = document.getElementById('btn-reveal-full');
     this.dom.btnNext = document.getElementById('btn-next-image');
     this.dom.btnResetGrid = document.getElementById('btn-reset-grid');
@@ -83,6 +100,8 @@ class PictureRevealGame {
     this.dom.inputCustomImages = document.getElementById('input-custom-images');
     this.dom.btnAudio = document.getElementById('btn-toggle-audio');
     this.dom.btnFullscreen = document.getElementById('btn-fullscreen');
+    this.dom.btnToggleTimer = document.getElementById('btn-toggle-timer');
+    this.dom.btnToggleScores = document.getElementById('btn-toggle-scores');
     this.dom.peekWrapper = document.getElementById('mod-peek-wrapper');
     this.dom.peekAnswer = document.getElementById('mod-peek-answer');
     this.dom.peekRef = document.getElementById('mod-peek-ref');
@@ -101,28 +120,67 @@ class PictureRevealGame {
   }
 
   bindEvents() {
-    // Moderator Controls
+    // Reveal Full Image
     if (this.dom.btnReveal) {
       this.dom.btnReveal.addEventListener('click', () => this.revealFullImage());
     }
+    // Next Image
     if (this.dom.btnNext) {
       this.dom.btnNext.addEventListener('click', () => this.loadNextImage());
     }
     if (this.dom.winNextBtn) {
       this.dom.winNextBtn.addEventListener('click', () => this.loadNextImage());
     }
+    // Reset Grid
     if (this.dom.btnResetGrid) {
       this.dom.btnResetGrid.addEventListener('click', () => this.resetCurrentGrid());
     }
+    // Audio Toggle
     if (this.dom.btnAudio) {
       this.dom.btnAudio.addEventListener('click', () => this.toggleAudio());
     }
+    // Fullscreen Toggle
     if (this.dom.btnFullscreen) {
       this.dom.btnFullscreen.addEventListener('click', () => this.toggleFullscreen());
     }
+    // Question Altar Close
     if (this.dom.modalCloseBtn) {
-      this.dom.modalCloseBtn.addEventListener('click', () => this.closeModal());
+      this.dom.modalCloseBtn.addEventListener('click', () => this.closeQuestionAltar());
     }
+
+    // Timer Box Click
+    if (this.dom.timerBox) {
+      this.dom.timerBox.addEventListener('click', () => this.toggleTimer());
+    }
+    if (this.dom.btnToggleTimer) {
+      this.dom.btnToggleTimer.addEventListener('click', () => this.toggleTimer());
+    }
+
+    // Scoreboard Toggle
+    if (this.dom.btnToggleScores) {
+      this.dom.btnToggleScores.addEventListener('click', () => {
+        this.dom.scoreboard.classList.toggle('hidden');
+      });
+    }
+
+    // Team Score Buttons (+10 / -10)
+    document.querySelectorAll('.score-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const team = e.target.dataset.team;
+        const val = parseInt(e.target.dataset.val, 10);
+        this.adjustTeamScore(team, val);
+      });
+    });
+
+    // Win Bonus Buttons (+50 for picture guess)
+    document.querySelectorAll('.bonus-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const team = e.target.dataset.team;
+        this.adjustTeamScore(team, 50);
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+      });
+    });
 
     // Scene Selector Jump
     if (this.dom.selectScene) {
@@ -134,14 +192,14 @@ class PictureRevealGame {
       });
     }
 
-    // Custom Image File Picker
+    // Custom Images File Picker
     if (this.dom.inputCustomImages) {
       this.dom.inputCustomImages.addEventListener('change', (e) => {
         this.handleUploadedImages(e.target.files);
       });
     }
 
-    // Drag and Drop Images onto Page
+    // Drag and Drop Images
     window.addEventListener('dragover', (e) => e.preventDefault());
     window.addEventListener('drop', (e) => {
       e.preventDefault();
@@ -150,14 +208,13 @@ class PictureRevealGame {
       }
     });
 
-    // Secret Peek Click (for touch devices)
+    // Secret Peek Click (touch devices)
     if (this.dom.peekWrapper) {
       this.dom.peekWrapper.addEventListener('click', (e) => {
         if (e.target.closest('#btn-mod-peek')) {
           this.dom.peekWrapper.classList.toggle('active');
         }
       });
-      // Close peek when clicking outside
       document.addEventListener('click', (e) => {
         if (!this.dom.peekWrapper.contains(e.target)) {
           this.dom.peekWrapper.classList.remove('active');
@@ -165,39 +222,91 @@ class PictureRevealGame {
       });
     }
 
-    // Keyboard Shortcuts (1-4 for options, Space/Enter to advance win, Escape for modal)
+    // Global Keyboard Shortcuts
     document.addEventListener('keydown', (e) => this.handleKeyboard(e));
   }
 
-  handleUploadedImages(fileList) {
-    if (!fileList || fileList.length === 0) return;
-
-    let matchedCount = 0;
-    Array.from(fileList).forEach(file => {
-      if (!file.type.startsWith('image/')) return;
-      const url = URL.createObjectURL(file);
-      const name = file.name.toLowerCase();
-
-      // Attempt matching filename: e.g. img5.jpg, 5.png, scene-5.webp
-      const numMatch = name.match(/(\d+)/);
-      if (numMatch) {
-        const id = parseInt(numMatch[1], 10);
-        const target = this.picsBank.find(p => p.id === id);
-        if (target) {
-          target.image_url = url;
-          matchedCount++;
-        }
-      }
-    });
-
-    if (matchedCount > 0) {
-      if (window.soundEngine) window.soundEngine.playReveal();
-      this.displayCurrentImage();
+  /* ==========================================================================
+     TEAM SCORING
+     ========================================================================== */
+  adjustTeamScore(team, delta) {
+    if (window.soundEngine) window.soundEngine.playClick();
+    if (team === '1') {
+      this.team1Score = Math.max(0, this.team1Score + delta);
+      if (this.dom.team1Score) this.dom.team1Score.textContent = this.team1Score;
+    } else if (team === '2') {
+      this.team2Score = Math.max(0, this.team2Score + delta);
+      if (this.dom.team2Score) this.dom.team2Score.textContent = this.team2Score;
     }
   }
 
   /* ==========================================================================
-     POOL MANAGEMENT & RANDOM SHUFFLING (NO REPETITION)
+     TENSION COUNTDOWN TIMER
+     ========================================================================== */
+  startTimer() {
+    this.stopTimer();
+    this.timerRemaining = this.timerDuration;
+    this.timerActive = true;
+    this.updateTimerDisplay();
+
+    this.timerInterval = setInterval(() => {
+      this.timerRemaining--;
+      this.updateTimerDisplay();
+
+      // Play tick sound (urgent in last 5 seconds)
+      const isUrgent = this.timerRemaining <= 5;
+      if (window.soundEngine) window.soundEngine.playTick(isUrgent);
+
+      if (this.timerRemaining <= 0) {
+        this.stopTimer();
+        if (window.soundEngine) window.soundEngine.playTimeout();
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+      this.timerInterval = null;
+    }
+    this.timerActive = false;
+    if (this.dom.timerBox) this.dom.timerBox.classList.remove('urgent');
+  }
+
+  toggleTimer() {
+    if (this.timerActive) {
+      this.stopTimer();
+    } else {
+      this.startTimer();
+    }
+  }
+
+  updateTimerDisplay() {
+    if (this.dom.timerDigits) {
+      this.dom.timerDigits.textContent = this.timerRemaining;
+    }
+    // Radial SVG stroke offset (circumference ~ 100)
+    if (this.dom.timerCircle) {
+      const pct = (this.timerDuration - this.timerRemaining) / this.timerDuration;
+      this.dom.timerCircle.style.strokeDashoffset = pct * 100;
+    }
+    // Altar top line
+    if (this.dom.altarTimerLine) {
+      const scalePct = this.timerRemaining / this.timerDuration;
+      this.dom.altarTimerLine.style.transform = `scaleX(${scalePct})`;
+    }
+    // Urgent indicator
+    if (this.dom.timerBox) {
+      if (this.timerRemaining <= 5 && this.timerRemaining > 0) {
+        this.dom.timerBox.classList.add('urgent');
+      } else {
+        this.dom.timerBox.classList.remove('urgent');
+      }
+    }
+  }
+
+  /* ==========================================================================
+     POOL MANAGEMENT & RANDOM SHUFFLING
      ========================================================================== */
   shuffleArray(arr) {
     const copy = [...arr];
@@ -224,11 +333,12 @@ class PictureRevealGame {
   }
 
   /* ==========================================================================
-     ROUND INITIALIZATION & IMAGE RENDERING
+     ROUND INITIALIZATION & RENDERING
      ========================================================================== */
   loadNextImage() {
     if (window.soundEngine) window.soundEngine.playClick();
     if (window.confettiEngine) window.confettiEngine.clear();
+    this.stopTimer();
 
     this.roundCount++;
     this.isFullRevealed = false;
@@ -244,24 +354,27 @@ class PictureRevealGame {
 
     if (window.soundEngine) window.soundEngine.playClick();
     if (window.confettiEngine) window.confettiEngine.clear();
+    this.stopTimer();
 
     this.roundCount++;
     this.isFullRevealed = false;
     this.tileStates = Array(9).fill('covered');
     this.currentImage = found;
-
-    // Filter out from active pool if present so it won't repeat right after
     this.imagePool = this.imagePool.filter(p => p.id !== sceneId);
 
     this.setupRoundUI();
   }
 
   setupRoundUI() {
-    // Close win overlay & modal
     this.dom.winOverlay.classList.remove('active');
-    this.dom.modalOverlay.classList.remove('active');
+    this.dom.questionAltar.classList.remove('active');
 
-    // Update round status badge
+    // Reset win bonus buttons
+    document.querySelectorAll('.bonus-btn').forEach(btn => {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    });
+
     if (this.dom.roundDisplay) {
       this.dom.roundDisplay.textContent = this.roundCount;
     }
@@ -269,20 +382,16 @@ class PictureRevealGame {
       this.dom.remainingDisplay.textContent = this.imagePool.length;
     }
 
-    // Update Moderator Secret Peek
     if (this.dom.peekAnswer) {
       this.dom.peekAnswer.textContent = this.currentImage.correct_answer;
     }
     if (this.dom.peekRef) {
       this.dom.peekRef.textContent = this.currentImage.reference;
     }
-
-    // Reset scene selector
     if (this.dom.selectScene) {
       this.dom.selectScene.value = this.currentImage.id;
     }
 
-    // Render Grid & Load Image
     this.renderGrid();
     this.displayCurrentImage();
   }
@@ -290,10 +399,12 @@ class PictureRevealGame {
   resetCurrentGrid() {
     if (window.soundEngine) window.soundEngine.playClick();
     if (window.confettiEngine) window.confettiEngine.clear();
+    this.stopTimer();
 
     this.isFullRevealed = false;
     this.tileStates = Array(9).fill('covered');
     this.dom.winOverlay.classList.remove('active');
+    this.dom.questionAltar.classList.remove('active');
     this.renderGrid();
   }
 
@@ -304,12 +415,10 @@ class PictureRevealGame {
     img.style.display = 'block';
     canvas.style.display = 'none';
 
-    // Extension cascade handler: .jpg -> .png -> .webp -> .jpeg -> Fallback Canvas
     const extensions = ['.jpg', '.png', '.webp', '.jpeg'];
     let extIndex = 0;
     const originalUrl = this.currentImage.image_url;
 
-    // If custom blob URL or already has explicit path, handle gracefully
     if (originalUrl.startsWith('blob:') || originalUrl.startsWith('data:')) {
       img.onerror = () => this.renderFallbackScene(this.currentImage);
       img.onload = () => { img.style.display = 'block'; canvas.style.display = 'none'; };
@@ -324,7 +433,6 @@ class PictureRevealGame {
         const nextUrl = basePath + extensions[extIndex++];
         img.src = nextUrl;
       } else {
-        // All file extensions exhausted -> render dynamic biblical canvas
         this.renderFallbackScene(this.currentImage);
       }
     };
@@ -351,58 +459,45 @@ class PictureRevealGame {
     canvas.width = width;
     canvas.height = height;
 
-    // Dramatic biblical canvas artwork (Dark ancient gradient with celestial radiance)
-    const bgGrad = ctx.createRadialGradient(width * 0.5, height * 0.4, 50, width * 0.5, height * 0.5, width * 0.7);
-    bgGrad.addColorStop(0, '#283747');
-    bgGrad.addColorStop(0.4, '#1b2631');
-    bgGrad.addColorStop(0.8, '#17202a');
-    bgGrad.addColorStop(1, '#0b0f14');
+    // Atmospheric Basalt & Celestial Gradient
+    const bgGrad = ctx.createRadialGradient(width * 0.5, height * 0.35, 60, width * 0.5, height * 0.5, width * 0.7);
+    bgGrad.addColorStop(0, '#2c3e50');
+    bgGrad.addColorStop(0.4, '#1a252f');
+    bgGrad.addColorStop(0.8, '#11171d');
+    bgGrad.addColorStop(1, '#06080b');
     ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, width, height);
 
-    // Ancient mountain / terrain silhouettes
-    ctx.fillStyle = '#0f141d';
+    // Mountain silhouettes
+    ctx.fillStyle = '#0b0f14';
     ctx.beginPath();
     ctx.moveTo(0, height);
     ctx.lineTo(0, height * 0.65);
-    ctx.bezierCurveTo(width * 0.2, height * 0.5, width * 0.4, height * 0.7, width * 0.6, height * 0.58);
-    ctx.bezierCurveTo(width * 0.75, height * 0.5, width * 0.85, height * 0.62, width, height * 0.55);
+    ctx.bezierCurveTo(width * 0.2, height * 0.52, width * 0.4, height * 0.72, width * 0.6, height * 0.58);
+    ctx.bezierCurveTo(width * 0.75, height * 0.48, width * 0.85, height * 0.64, width, height * 0.55);
     ctx.lineTo(width, height);
     ctx.closePath();
     ctx.fill();
 
-    // Golden divine rays from heavens
+    // Divine golden beams
     ctx.save();
-    ctx.globalAlpha = 0.15;
-    for (let i = 0; i < 12; i++) {
+    ctx.globalAlpha = 0.16;
+    for (let i = 0; i < 14; i++) {
       ctx.beginPath();
       ctx.moveTo(width * 0.5, 0);
-      const rayX = (width / 11) * i;
-      ctx.lineTo(rayX - 30, height);
-      ctx.lineTo(rayX + 30, height);
+      const rx = (width / 13) * i;
+      ctx.lineTo(rx - 25, height);
+      ctx.lineTo(rx + 25, height);
       ctx.closePath();
       ctx.fillStyle = '#ffd700';
       ctx.fill();
     }
     ctx.restore();
 
-    // Floating golden particles / embers
-    ctx.fillStyle = '#d4af37';
-    for (let i = 0; i < 50; i++) {
-      const px = Math.random() * width;
-      const py = Math.random() * height;
-      const pr = 1 + Math.random() * 3;
-      ctx.globalAlpha = 0.2 + Math.random() * 0.6;
-      ctx.beginPath();
-      ctx.arc(px, py, pr, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    // Historical Parchment Card in Center of fallback
+    // Temple Parchment Slab in Center
     ctx.save();
-    ctx.globalAlpha = 0.88;
-    ctx.fillStyle = 'rgba(12, 16, 25, 0.82)';
-    ctx.strokeStyle = '#d4af37';
+    ctx.fillStyle = 'rgba(12, 16, 26, 0.88)';
+    ctx.strokeStyle = '#ffd700';
     ctx.lineWidth = 3;
     const cardW = 760;
     const cardH = 240;
@@ -411,31 +506,28 @@ class PictureRevealGame {
     ctx.fillRect(cardX, cardY, cardW, cardH);
     ctx.strokeRect(cardX, cardY, cardW, cardH);
 
-    // Card Text
-    ctx.globalAlpha = 1;
     ctx.textAlign = 'center';
     ctx.direction = 'rtl';
 
-    ctx.fillStyle = '#f5e08c';
-    ctx.font = 'bold 34px Cairo, sans-serif';
-    ctx.fillText('مشهد كتابي مخفي #' + sceneData.id, width * 0.5, cardY + 70);
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 36px Cairo, sans-serif';
+    ctx.fillText('لوح المشهد الكتابي #' + sceneData.id, width * 0.5, cardY + 70);
 
     ctx.fillStyle = '#d4af37';
-    ctx.font = '600 24px Cairo, sans-serif';
+    ctx.font = '700 24px Cairo, sans-serif';
     ctx.fillText(sceneData.reference, width * 0.5, cardY + 120);
 
-    ctx.fillStyle = '#9aa3b5';
-    ctx.font = '20px Cairo, sans-serif';
-    ctx.fillText('أجب عن الأسئلة لكشف تفاصيل المشهد', width * 0.5, cardY + 175);
+    ctx.fillStyle = '#9aa6bc';
+    ctx.font = '600 20px Cairo, sans-serif';
+    ctx.fillText('اكشف الألواح للإجابة وتخمين المشهد المقدس', width * 0.5, cardY + 175);
     ctx.restore();
   }
 
   /* ==========================================================================
-     3x3 GRID RENDERING & TILE CLICKS
+     3x3 BASALT TILE GRID
      ========================================================================== */
   renderGrid() {
     this.dom.gridLayer.innerHTML = '';
-
     const diffLabels = { 1: 'سهل', 2: 'متوسط', 3: 'صعب' };
     const diffStars = { 1: '✦', 2: '✦✦', 3: '✦✦✦' };
 
@@ -448,7 +540,6 @@ class PictureRevealGame {
       tile.dataset.index = i;
       tile.dataset.difficulty = diff;
 
-      // Inner normal state
       tile.innerHTML = `
         <div class="tile-inner">
           <span class="tile-number">${i + 1}</span>
@@ -457,6 +548,7 @@ class PictureRevealGame {
         </div>
         <div class="failed-indicator">
           <span class="failed-icon">✕</span>
+          <span class="failed-chains">⛓️ 🔒</span>
           <span class="failed-label">مغلق</span>
         </div>
       `;
@@ -474,53 +566,52 @@ class PictureRevealGame {
     const diff = this.difficultyMap[index];
     this.activeQuestion = this.getNextQuestionFromPool(diff);
 
-    if (window.soundEngine) window.soundEngine.playModalOpen();
-    this.showQuestionModal(this.activeQuestion, index, diff);
+    // Deep Stone Slam Sound
+    if (window.soundEngine) window.soundEngine.playStoneSlam();
+
+    this.showQuestionAltar(this.activeQuestion, index, diff);
   }
 
   /* ==========================================================================
-     QUESTION MODAL CONTROLLER
+     NON-BLOCKING QUESTION ALTAR
      ========================================================================== */
-  showQuestionModal(question, tileIndex, difficulty) {
-    const diffNames = { 1: 'مستوى سهل ✦', 2: 'مستوى متوسط ✦✦', 3: 'مستوى صعب ✦✦✦' };
-    
-    // Header tags
-    this.dom.modalDiffTag.textContent = diffNames[difficulty];
-    this.dom.modalDiffTag.className = `modal-difficulty-tag level-${difficulty}`;
-    this.dom.modalTileIndicator.textContent = `مربع رقم (${tileIndex + 1})`;
+  showQuestionAltar(question, tileIndex, difficulty) {
+    const diffNames = { 1: 'مستوى سهل ✦', 2: 'مستوى متوسط ✦✦', 3: 'الختم الأعظم (صعب) ✦✦✦' };
 
-    // Question
+    this.dom.modalDiffTag.textContent = diffNames[difficulty];
+    this.dom.modalDiffTag.className = `altar-diff-tag level-${difficulty}`;
+    this.dom.modalTileIndicator.textContent = `المربع رقم (${tileIndex + 1})`;
     this.dom.questionText.textContent = question.question;
 
-    // Build shuffled options array with preserved correct reference
     const optionsWithMeta = question.options.map((text, idx) => ({
       text,
       isCorrect: idx === question.correctIndex
     }));
     const shuffledOptions = this.shuffleArray(optionsWithMeta);
 
-    // Arabic Option Badges
     const letters = ['أ', 'ب', 'ج', 'د'];
     this.dom.optionsGrid.innerHTML = '';
 
     shuffledOptions.forEach((opt, idx) => {
       const btn = document.createElement('button');
-      btn.className = 'option-btn';
+      btn.className = 'altar-option-btn';
       btn.innerHTML = `
         <span>${opt.text}</span>
-        <span class="option-badge">${letters[idx] || (idx + 1)}</span>
+        <span class="altar-seal-badge">${letters[idx]}</span>
       `;
 
       btn.addEventListener('click', () => this.handleOptionSelection(btn, opt.isCorrect));
       this.dom.optionsGrid.appendChild(btn);
     });
 
-    this.dom.modalOverlay.classList.add('active');
+    this.dom.questionAltar.classList.add('active');
+    this.startTimer();
   }
 
   handleOptionSelection(selectedBtn, isCorrect) {
-    // Disable all options to prevent spamming
-    const allButtons = this.dom.optionsGrid.querySelectorAll('.option-btn');
+    this.stopTimer();
+
+    const allButtons = this.dom.optionsGrid.querySelectorAll('.altar-option-btn');
     allButtons.forEach(btn => btn.style.pointerEvents = 'none');
 
     const tileElem = this.dom.gridLayer.querySelector(`[data-index="${this.activeTileIndex}"]`);
@@ -530,21 +621,21 @@ class PictureRevealGame {
       if (window.soundEngine) window.soundEngine.playCorrect();
 
       setTimeout(() => {
-        this.dom.modalOverlay.classList.remove('active');
+        this.dom.questionAltar.classList.remove('active');
         this.tileStates[this.activeTileIndex] = 'revealed';
         if (tileElem) {
           tileElem.classList.remove('covered');
           tileElem.classList.add('revealed');
         }
         if (window.soundEngine) window.soundEngine.playReveal();
-      }, 750);
+      }, 700);
 
     } else {
       selectedBtn.classList.add('selected-incorrect');
       if (window.soundEngine) window.soundEngine.playIncorrect();
 
       setTimeout(() => {
-        this.dom.modalOverlay.classList.remove('active');
+        this.dom.questionAltar.classList.remove('active');
         this.tileStates[this.activeTileIndex] = 'failed';
         if (tileElem) {
           tileElem.classList.remove('covered');
@@ -554,8 +645,9 @@ class PictureRevealGame {
     }
   }
 
-  closeModal() {
-    this.dom.modalOverlay.classList.remove('active');
+  closeQuestionAltar() {
+    this.stopTimer();
+    this.dom.questionAltar.classList.remove('active');
   }
 
   /* ==========================================================================
@@ -564,8 +656,9 @@ class PictureRevealGame {
   revealFullImage() {
     if (this.isFullRevealed) return;
     this.isFullRevealed = true;
+    this.stopTimer();
+    this.dom.questionAltar.classList.remove('active');
 
-    // Reveal all tiles cleanly
     const allTiles = this.dom.gridLayer.querySelectorAll('.tile');
     allTiles.forEach((tile, idx) => {
       this.tileStates[idx] = 'revealed';
@@ -573,11 +666,9 @@ class PictureRevealGame {
       tile.classList.add('revealed');
     });
 
-    // Sounds & Confetti
     if (window.soundEngine) window.soundEngine.playWinFanfare();
-    if (window.confettiEngine) window.confettiEngine.burst(180);
+    if (window.confettiEngine) window.confettiEngine.burst(200);
 
-    // Populate Celebration Card
     if (this.dom.winTitle) {
       this.dom.winTitle.textContent = this.currentImage.correct_answer;
     }
@@ -588,53 +679,106 @@ class PictureRevealGame {
       this.dom.winVerse.textContent = `«${this.currentImage.verse_text}»`;
     }
 
-    // Activate Win Overlay after brief delay for dramatic effect
     setTimeout(() => {
       this.dom.winOverlay.classList.add('active');
     }, 450);
   }
 
   /* ==========================================================================
-     KEYBOARD NAVIGATION & SHORTCUTS
+     KEYBOARD NAVIGATION (BOOTH CONTROLLER)
      ========================================================================== */
   handleKeyboard(e) {
-    // If modal is active: 1, 2, 3, 4 map to options
-    if (this.dom.modalOverlay.classList.contains('active')) {
-      const keyMap = { '1': 0, '2': 1, '3': 2, '4': 3, 'KeyA': 0, 'KeyB': 1, 'KeyC': 2, 'KeyD': 3 };
-      const optionIndex = keyMap[e.key] !== undefined ? keyMap[e.key] : keyMap[e.code];
+    // If Question Altar is active:
+    if (this.dom.questionAltar.classList.contains('active')) {
+      const optionKeys = { '1': 0, '2': 1, '3': 2, '4': 3, 'KeyA': 0, 'KeyB': 1, 'KeyC': 2, 'KeyD': 3 };
+      const idx = optionKeys[e.key] !== undefined ? optionKeys[e.key] : optionKeys[e.code];
 
-      if (optionIndex !== undefined) {
-        const btns = this.dom.optionsGrid.querySelectorAll('.option-btn');
-        if (btns[optionIndex] && btns[optionIndex].style.pointerEvents !== 'none') {
-          btns[optionIndex].click();
+      if (idx !== undefined) {
+        const btns = this.dom.optionsGrid.querySelectorAll('.altar-option-btn');
+        if (btns[idx] && btns[idx].style.pointerEvents !== 'none') {
+          btns[idx].click();
         }
       } else if (e.key === 'Escape') {
-        this.closeModal();
+        this.closeQuestionAltar();
       }
       return;
     }
 
-    // If win overlay is active: Enter or Space triggers Next Image
+    // If Win Overlay is active: Space or Enter moves to next image
     if (this.dom.winOverlay.classList.contains('active')) {
-      if (e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'n' || e.key === 'N') {
         e.preventDefault();
         this.loadNextImage();
       }
       return;
     }
 
-    // Global shortcut: 'R' key reveals full image
-    if (e.key === 'r' || e.key === 'R' || e.key === 'ق') {
-      this.revealFullImage();
+    // 1-9: Select Tile 1 to 9 directly
+    if (['1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(e.key)) {
+      const tileIndex = parseInt(e.key, 10) - 1;
+      this.handleTileClick(tileIndex);
+      return;
     }
-    // Global shortcut: 'N' key loads next image
+
+    // Space: Reveal Full Image
+    if (e.key === ' ' || e.code === 'Space') {
+      e.preventDefault();
+      this.revealFullImage();
+      return;
+    }
+
+    // N: Next Scene
     if (e.key === 'n' || e.key === 'N' || e.key === 'ى') {
       this.loadNextImage();
+      return;
+    }
+
+    // P: Toggle Secret Peek
+    if (e.key === 'p' || e.key === 'P' || e.key === 'ح') {
+      if (this.dom.peekWrapper) {
+        this.dom.peekWrapper.classList.toggle('active');
+      }
+      return;
+    }
+
+    // T: Toggle Countdown Timer
+    if (e.key === 't' || e.key === 'T' || e.key === 'ف') {
+      this.toggleTimer();
+      return;
     }
   }
 
   /* ==========================================================================
-     AUDIO & FULLSCREEN HELPERS
+     CUSTOM IMAGES UPLOADER
+     ========================================================================== */
+  handleUploadedImages(fileList) {
+    if (!fileList || fileList.length === 0) return;
+
+    let matched = 0;
+    Array.from(fileList).forEach(file => {
+      if (!file.type.startsWith('image/')) return;
+      const url = URL.createObjectURL(file);
+      const name = file.name.toLowerCase();
+
+      const numMatch = name.match(/(\d+)/);
+      if (numMatch) {
+        const id = parseInt(numMatch[1], 10);
+        const target = this.picsBank.find(p => p.id === id);
+        if (target) {
+          target.image_url = url;
+          matched++;
+        }
+      }
+    });
+
+    if (matched > 0) {
+      if (window.soundEngine) window.soundEngine.playReveal();
+      this.displayCurrentImage();
+    }
+  }
+
+  /* ==========================================================================
+     AUDIO & FULLSCREEN
      ========================================================================== */
   toggleAudio() {
     if (window.soundEngine) {
@@ -663,7 +807,7 @@ class PictureRevealGame {
   }
 }
 
-// Instantiate on DOM ready
+// Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   window.gameApp = new PictureRevealGame();
   window.gameApp.init();

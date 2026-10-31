@@ -1,6 +1,12 @@
 /**
- * Audio Synthesizer for Picture Reveal Game
- * Uses native Web Audio API (Zero external MP3 dependencies, 100% offline).
+ * Temple Codex Cinematic Audio Synthesizer
+ * Uses Web Audio API to create authentic Hollywood-grade sound effects:
+ *  - Stone Slab Slam (Deep bass impact with textural stone grind)
+ *  - Angelic Harp Chime (Triumphant multi-harmonic chord for correct answers)
+ *  - War Drum Thunder Impact (Sub-bass rumble and dissonant crash for wrong answers)
+ *  - Mystical Shimmer (Ascending celestial arpeggio for tile reveal)
+ *  - Royal Trumpet Fanfare (Grand major brass triumph for full image victory)
+ *  - Tension Clock Tick & Timeout Gong (For the carnival countdown timer)
  */
 class SoundEngine {
   constructor() {
@@ -30,6 +36,7 @@ class SoundEngine {
     return this.muted;
   }
 
+  // Quick subtle UI click
   playClick() {
     if (this.muted) return;
     this.init();
@@ -38,143 +45,175 @@ class SoundEngine {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
 
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(800, this.ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(300, this.ctx.currentTime + 0.05);
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(150, this.ctx.currentTime + 0.04);
 
-    gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.05);
+    gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.04);
 
     osc.connect(gain);
     gain.connect(this.ctx.destination);
 
     osc.start();
-    osc.stop(this.ctx.currentTime + 0.05);
+    osc.stop(this.ctx.currentTime + 0.04);
   }
 
-  playModalOpen() {
+  // Heavy stone slab slam when clicking a tile
+  playStoneSlam() {
     if (this.muted) return;
     this.init();
     if (!this.ctx) return;
 
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
+    const t = this.ctx.currentTime;
 
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(180, this.ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(360, this.ctx.currentTime + 0.25);
+    // Sub-bass thump
+    const subOsc = this.ctx.createOscillator();
+    const subGain = this.ctx.createGain();
+    subOsc.type = 'sine';
+    subOsc.frequency.setValueAtTime(130, t);
+    subOsc.frequency.exponentialRampToValueAtTime(35, t + 0.35);
 
-    gain.gain.setValueAtTime(0.01, this.ctx.currentTime);
-    gain.gain.linearRampToValueAtTime(0.18, this.ctx.currentTime + 0.1);
-    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.35);
+    subGain.gain.setValueAtTime(0.4, t);
+    subGain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
 
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
+    subOsc.connect(subGain);
+    subGain.connect(this.ctx.destination);
+    subOsc.start(t);
+    subOsc.stop(t + 0.4);
 
-    osc.start();
-    osc.stop(this.ctx.currentTime + 0.35);
+    // Stone scrape noise burst
+    const bufferSize = this.ctx.sampleRate * 0.15;
+    const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+    const output = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+
+    const whiteNoise = this.ctx.createBufferSource();
+    whiteNoise.buffer = noiseBuffer;
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(380, t);
+    filter.Q.setValueAtTime(3.0, t);
+
+    const noiseGain = this.ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.2, t);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+
+    whiteNoise.connect(filter);
+    filter.connect(noiseGain);
+    noiseGain.connect(this.ctx.destination);
+
+    whiteNoise.start(t);
   }
 
+  // Angelic celestial harp chime (Correct Answer)
   playCorrect() {
     if (this.muted) return;
     this.init();
     if (!this.ctx) return;
 
-    // Harmonic triumphant chord arpeggio (E major: E5, G#5, B5, E6)
-    const notes = [659.25, 830.61, 987.77, 1318.51];
-    notes.forEach((freq, index) => {
+    // Harmonious chord: E5 (659), G#5 (830), B5 (987), E6 (1318), G#6 (1661)
+    const notes = [659.25, 830.61, 987.77, 1318.51, 1661.22];
+    notes.forEach((freq, idx) => {
+      const startTime = this.ctx.currentTime + idx * 0.07;
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
-      const startTime = this.ctx.currentTime + index * 0.08;
 
       osc.type = 'sine';
       osc.frequency.setValueAtTime(freq, startTime);
 
       gain.gain.setValueAtTime(0.001, startTime);
-      gain.gain.linearRampToValueAtTime(0.25, startTime + 0.03);
-      gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.6);
+      gain.gain.linearRampToValueAtTime(0.22, startTime + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + 0.85);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
 
       osc.start(startTime);
-      osc.stop(startTime + 0.65);
+      osc.stop(startTime + 0.9);
     });
   }
 
+  // Deep War Drum / Thunder Impact (Wrong Answer)
   playIncorrect() {
     if (this.muted) return;
     this.init();
     if (!this.ctx) return;
 
-    // Deep dissonant cinematic gong / thud
-    const freqs = [140, 110, 85];
-    freqs.forEach((freq) => {
+    const t = this.ctx.currentTime;
+
+    // Deep dissonant low chords (82Hz, 116Hz, 123Hz)
+    const lowFreqs = [82.4, 116.5, 123.4];
+    lowFreqs.forEach((freq) => {
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
 
       osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(freq * 0.6, this.ctx.currentTime + 0.45);
+      osc.frequency.setValueAtTime(freq, t);
+      osc.frequency.exponentialRampToValueAtTime(freq * 0.45, t + 0.6);
 
-      gain.gain.setValueAtTime(0.25, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.5);
-
-      // Low pass filter to soften sawtooth into a heavy dark impact
       const filter = this.ctx.createBiquadFilter();
       filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(320, this.ctx.currentTime);
+      filter.frequency.setValueAtTime(260, t);
+      filter.frequency.exponentialRampToValueAtTime(70, t + 0.6);
+
+      gain.gain.setValueAtTime(0.35, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.65);
 
       osc.connect(filter);
       filter.connect(gain);
       gain.connect(this.ctx.destination);
 
-      osc.start();
-      osc.stop(this.ctx.currentTime + 0.55);
+      osc.start(t);
+      osc.stop(t + 0.7);
     });
   }
 
+  // Mystical upward shimmer on tile reveal
   playReveal() {
     if (this.muted) return;
     this.init();
     if (!this.ctx) return;
 
-    // Mystical upward shimmer
-    const freqs = [440, 554.37, 659.25, 880, 1108.73];
+    const freqs = [523.25, 659.25, 783.99, 1046.50, 1318.51, 1567.98];
     freqs.forEach((freq, idx) => {
+      const t = this.ctx.currentTime + idx * 0.05;
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
-      const t = this.ctx.currentTime + idx * 0.06;
 
       osc.type = 'triangle';
       osc.frequency.setValueAtTime(freq, t);
 
       gain.gain.setValueAtTime(0.01, t);
       gain.gain.linearRampToValueAtTime(0.18, t + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.45);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
 
       osc.start(t);
-      osc.stop(t + 0.45);
+      osc.stop(t + 0.5);
     });
   }
 
+  // Royal Trumpet Fanfare (Grand Reveal / Victory)
   playWinFanfare() {
     if (this.muted) return;
     this.init();
     if (!this.ctx) return;
 
-    // Royal biblical fanfare
-    const chords = [
-      { notes: [523.25, 659.25, 783.99], time: 0, dur: 0.25 },        // C major
-      { notes: [587.33, 739.99, 880.00], time: 0.28, dur: 0.25 },     // D major
-      { notes: [659.25, 830.61, 987.77], time: 0.56, dur: 0.3 },      // E major
-      { notes: [783.99, 987.77, 1174.66, 1567.98], time: 0.9, dur: 1.4 } // Grand G major chord
+    const fanfareSequence = [
+      { notes: [392.00, 523.25], time: 0, dur: 0.18 },              // G4, C5
+      { notes: [523.25, 659.25], time: 0.2, dur: 0.18 },            // C5, E5
+      { notes: [659.25, 783.99], time: 0.4, dur: 0.22 },            // E5, G5
+      { notes: [783.99, 1046.50], time: 0.65, dur: 0.22 },          // G5, C6
+      { notes: [659.25, 783.99, 1046.50, 1318.51], time: 0.95, dur: 1.8 } // Grand C Major Quad
     ];
 
-    chords.forEach(({ notes, time, dur }) => {
+    fanfareSequence.forEach(({ notes, time, dur }) => {
       const startTime = this.ctx.currentTime + time;
       notes.forEach((freq) => {
         const osc = this.ctx.createOscillator();
@@ -184,8 +223,8 @@ class SoundEngine {
         osc.frequency.setValueAtTime(freq, startTime);
 
         gain.gain.setValueAtTime(0.01, startTime);
-        gain.gain.linearRampToValueAtTime(0.2, startTime + 0.04);
-        gain.gain.exponentialRampToValueAtTime(0.001, startTime + dur);
+        gain.gain.linearRampToValueAtTime(0.24, startTime + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, startTime + dur);
 
         osc.connect(gain);
         gain.connect(this.ctx.destination);
@@ -193,6 +232,57 @@ class SoundEngine {
         osc.start(startTime);
         osc.stop(startTime + dur + 0.1);
       });
+    });
+  }
+
+  // Tension clock tick (Countdown Timer)
+  playTick(isUrgent = false) {
+    if (this.muted) return;
+    this.init();
+    if (!this.ctx) return;
+
+    const t = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(isUrgent ? 1100 : 800, t);
+    osc.frequency.exponentialRampToValueAtTime(isUrgent ? 500 : 350, t + 0.03);
+
+    gain.gain.setValueAtTime(isUrgent ? 0.2 : 0.1, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.035);
+
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+
+    osc.start(t);
+    osc.stop(t + 0.04);
+  }
+
+  // Deep Timeout Gong (Timer ran out)
+  playTimeout() {
+    if (this.muted) return;
+    this.init();
+    if (!this.ctx) return;
+
+    const t = this.ctx.currentTime;
+    const freqs = [180, 220, 290];
+    freqs.forEach((freq) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, t);
+      osc.frequency.exponentialRampToValueAtTime(freq * 0.7, t + 1.2);
+
+      gain.gain.setValueAtTime(0.25, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 1.2);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(t);
+      osc.stop(t + 1.25);
     });
   }
 }
