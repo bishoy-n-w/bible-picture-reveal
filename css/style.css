@@ -448,7 +448,7 @@ body.carnival-theme {
   color: #9aa6bc;
 }
 
-/* Center Tile (Tile #5): Royal Sunburst Seal */
+/* Hard Tiles (Difficulty 3) */
 .tile[data-difficulty="3"] {
   border-color: rgba(255, 215, 0, 0.75);
   background: 
@@ -462,20 +462,6 @@ body.carnival-theme {
 .tile[data-difficulty="3"] .tile-number {
   font-size: 3.5rem;
   filter: drop-shadow(0 0 14px var(--gold-glow));
-}
-
-.tile[data-difficulty="3"]::before {
-  content: 'الختم الذهبي';
-  position: absolute;
-  top: 6px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--gold-bright);
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid var(--gold-bright);
-  padding: 1px 10px;
-  border-radius: 20px;
-  text-shadow: 0 0 8px var(--gold-glow);
 }
 
 /* ==========================================================================

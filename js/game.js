@@ -528,7 +528,7 @@ class PictureRevealGame {
      QUESTION ALTAR & TIMEOUT HANDLING
      ========================================================================== */
   showQuestionAltar(question, tileIndex, difficulty) {
-    const diffNames = { 1: 'مستوى سهل ✦', 2: 'مستوى متوسط ✦✦', 3: 'الختم الذهبي (الأصعب) ✦✦✦' };
+    const diffNames = { 1: 'مستوى سهل ✦', 2: 'مستوى متوسط ✦✦', 3: 'مستوى صعب ✦✦✦' };
 
     // Reset any previous timeout animations
     if (this.dom.questionText) this.dom.questionText.classList.remove('timed-out');
