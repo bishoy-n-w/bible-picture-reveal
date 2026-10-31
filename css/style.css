@@ -1,41 +1,33 @@
 /* ==========================================================================
-   TEMPLE CODEX EDITION - PICTURE REVEAL BIBLE TRIVIA
-   Aesthetics: Ancient Basalt Stone, 3D Chiseled Gold, Molten Embers,
-               Non-Blocking Question Altar, and Stealth Moderator Console.
+   PICTURE REVEAL BIBLE TRIVIA - CARNIVAL EDITION v2.1.0
+   Aesthetics: Sleek Obsidian & Brushed Gold, 3D Mystery Vault Slabs,
+               Welcome Attractor Screen, and Non-Blocking Question Altar.
    ========================================================================== */
 
 :root {
-  --bg-abyss: #05070a;
-  --bg-temple: #0c1017;
-  --bg-frame: #141a24;
+  --bg-deep: #06080d;
+  --bg-surface: #0e131d;
+  --bg-card: #141b29;
   
-  --stone-top: #242c3d;
-  --stone-mid: #161c28;
-  --stone-bottom: #0e121a;
-  --stone-border: #3b465c;
-  --stone-shadow: rgba(0, 0, 0, 0.85);
-
   --gold-primary: #d4af37;
   --gold-bright: #ffd700;
   --gold-burnished: #aa7c11;
   --gold-glow: rgba(255, 215, 0, 0.4);
-  --gold-foil: linear-gradient(135deg, #fff7c2 0%, #ffd700 35%, #d4af37 70%, #8c6511 100%);
+  --gold-foil: linear-gradient(135deg, #ffffff 0%, #ffe066 30%, #d4af37 70%, #8c6511 100%);
   
   --crimson-molten: #e74c3c;
-  --crimson-ember: #c0392b;
   --crimson-glow: rgba(231, 76, 60, 0.65);
+  --crimson-dark: #1f0606;
   
   --emerald-divine: #2ecc71;
   --emerald-glow: rgba(46, 204, 113, 0.65);
   
-  --parchment-bg: rgba(14, 18, 28, 0.94);
-  --parchment-border: #d4af37;
-  
   --font-arabic-display: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
   --font-arabic-calligraphy: 'Amiri', 'Traditional Arabic', serif;
   
-  --radius-slab: 12px;
-  --radius-frame: 16px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -51,38 +43,36 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  background-color: var(--bg-abyss);
+  background-color: var(--bg-deep);
   color: #ffffff;
   font-family: var(--font-arabic-display);
   direction: rtl;
   user-select: none;
 }
 
-body.temple-theme {
+body.carnival-theme {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
-  background: 
-    radial-gradient(circle at 50% 25%, #182030 0%, #0d121c 50%, #05070a 100%);
+  background: radial-gradient(circle at 50% 20%, #151d2d 0%, #0a0d14 60%, #040508 100%);
   position: relative;
 }
 
-/* Ambient Torches on Left and Right */
+/* Ambient Torches */
 .ambient-torch {
   position: fixed;
-  top: 35%;
-  width: 250px;
-  height: 400px;
+  top: 30%;
+  width: 280px;
+  height: 420px;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.18;
-  filter: blur(80px);
+  opacity: 0.2;
+  filter: blur(90px);
 }
-.ambient-torch.torch-left { left: -50px; background: radial-gradient(circle, #e67e22, #d35400, transparent); }
-.ambient-torch.torch-right { right: -50px; background: radial-gradient(circle, #f39c12, #e67e22, transparent); }
+.ambient-torch.torch-left { left: -60px; background: radial-gradient(circle, #e67e22, #d35400, transparent); }
+.ambient-torch.torch-right { right: -60px; background: radial-gradient(circle, #f39c12, #e67e22, transparent); }
 
-/* Confetti Canvas Layer */
+/* Confetti Canvas */
 #confetti-canvas {
   position: fixed;
   inset: 0;
@@ -93,227 +83,226 @@ body.temple-theme {
 }
 
 /* ==========================================================================
-   HEADER & TEAM SCOREBOARD
+   1. WELCOME / ATTRACTOR SCREEN
    ========================================================================== */
-.app-header {
-  position: relative;
-  z-index: 20;
+.welcome-screen {
+  position: fixed;
+  inset: 0;
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 12px 20px 4px;
-  display: flex;
+  height: 100%;
+  z-index: 200;
+  display: none;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #1a2438 0%, #0d121c 55%, #05070a 100%);
+  padding: 24px;
 }
 
-.brand-wrapper {
+.welcome-screen.active {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  animation: fadeIn 0.4s ease;
 }
 
-.brand-crest {
-  width: 44px;
-  height: 44px;
+.welcome-container {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-crest {
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #2a3449, #121824);
-  border: 1.5px solid var(--gold-bright);
-  box-shadow: 0 0 16px var(--gold-glow);
+  background: linear-gradient(145deg, #2a354c, #121824);
+  border: 2px solid var(--gold-bright);
+  box-shadow: 0 0 30px var(--gold-glow);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--gold-bright);
-  flex-shrink: 0;
+  animation: floatPulse 3s infinite ease-in-out;
 }
-.brand-crest svg { width: 24px; height: 24px; }
+.welcome-crest svg { width: 44px; height: 44px; }
 
-.brand-title {
-  font-size: 1.45rem;
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 25px var(--gold-glow); }
+  50% { transform: translateY(-8px); box-shadow: 0 0 45px var(--gold-bright); }
+}
+
+.welcome-title {
+  font-size: 3.2rem;
   font-weight: 900;
   background: var(--gold-foil);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.welcome-subtitle {
+  font-size: 1.25rem;
+  color: #b5c2d8;
+  font-weight: 600;
+  max-width: 600px;
+}
+
+/* 3 Step Cards */
+.welcome-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin: 10px 0 16px;
+}
+
+.step-card {
+  background: linear-gradient(145deg, rgba(28, 36, 54, 0.85), rgba(16, 22, 34, 0.95));
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-bright);
+}
+
+.step-icon { font-size: 2.2rem; }
+.step-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+}
+.step-desc {
+  font-size: 0.9rem;
+  color: #9aa6bc;
+  line-height: 1.5;
+}
+
+/* Start Button */
+.btn-start-challenge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 48px;
+  border-radius: 50px;
+  background: var(--gold-foil);
+  border: 2px solid var(--gold-bright);
+  color: #1a1200;
+  font-family: var(--font-arabic-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5), inset 0 1px 0 #fff;
+  transition: all var(--transition-fast);
+}
+
+.btn-start-challenge:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.75);
+}
+
+.btn-start-challenge:active { transform: translateY(0); }
+
+/* ==========================================================================
+   2. MAIN GAME SCREEN & HEADER
+   ========================================================================== */
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-header {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 14px 20px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-crest {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #192132;
+  border: 1.5px solid var(--gold-bright);
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+.brand-crest svg { width: 22px; height: 22px; }
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  background: var(--gold-foil);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
 }
 
 .brand-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #9aa6bc;
   font-weight: 600;
 }
 
-/* Scoreboard & Center HUD */
-.scoreboard-container {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: opacity var(--transition-normal), transform var(--transition-normal);
-}
-
-.scoreboard-container.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-10px);
-}
-
-/* Team Card */
-.team-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 14px;
-  background: linear-gradient(145deg, rgba(28, 36, 54, 0.9), rgba(16, 22, 34, 0.95));
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 50px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.team-card:hover {
-  border-color: var(--gold-bright);
-  box-shadow: 0 6px 20px var(--gold-glow);
-}
-
-.team-info {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.team-flag { font-size: 1.2rem; }
-.team-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #e5edf8;
-  outline: none;
-  border-bottom: 1px dashed transparent;
-}
-.team-name:focus {
-  border-bottom-color: var(--gold-bright);
-}
-
-.team-score-wrapper {
+/* Scene Badge */
+.scene-badge {
   display: flex;
   align-items: center;
   gap: 8px;
+  background: rgba(18, 24, 38, 0.85);
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
+.scene-label { color: #9aa6bc; }
+.scene-num { color: #ffffff; font-size: 1.15rem; font-weight: 900; }
+.scene-sep { color: var(--gold-primary); }
+.scene-total { color: var(--gold-bright); font-weight: 800; }
 
-.team-score {
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: var(--gold-bright);
-  min-width: 32px;
-  text-align: center;
-  text-shadow: 0 0 10px var(--gold-glow);
-}
-
-.mod-score-adjust {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.score-btn {
-  background: rgba(45, 55, 80, 0.8);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: #fff;
-  border-radius: 4px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  padding: 1px 4px;
-  cursor: pointer;
-  line-height: 1;
-}
-.score-btn:hover {
-  background: var(--gold-bright);
-  color: #000;
-}
-
-/* Center HUD (Scene & Timer) */
-.hud-center {
+.header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.scene-pill {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(14, 18, 28, 0.85);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 50px;
-  padding: 6px 14px;
-  font-size: 0.9rem;
-  color: #9aa6bc;
-}
-.scene-num { color: #fff; font-size: 1.05rem; }
-.scene-sep { color: var(--gold-primary); }
-.scene-total { color: var(--gold-bright); }
-
-/* Tension Countdown Timer */
-.timer-box {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-fast);
-}
-.timer-box:hover { transform: scale(1.08); }
-
-.timer-svg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-}
-.timer-track {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 3.5;
-}
-.timer-bar {
-  fill: none;
-  stroke: var(--gold-bright);
-  stroke-width: 3.5;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 0;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 1s linear, stroke 0.3s;
-}
-
-.timer-box.urgent .timer-bar {
-  stroke: var(--crimson-molten);
-}
-.timer-box.urgent {
-  animation: timerPulse 0.5s infinite alternate;
-}
-
-@keyframes timerPulse {
-  from { filter: drop-shadow(0 0 4px var(--crimson-glow)); }
-  to { filter: drop-shadow(0 0 14px var(--crimson-molten)); }
-}
-
-.timer-digits {
-  position: absolute;
-  font-size: 0.95rem;
-  font-weight: 900;
-  color: #ffffff;
-}
-
 /* ==========================================================================
-   GAME STAGE & BASALT TEMPLE FRAME
+   3. 3D LUXURY MYSTERY TILES (RADICALLY REDESIGNED)
    ========================================================================== */
 .stage-wrapper {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 6px 16px;
   display: flex;
@@ -323,48 +312,47 @@ body.temple-theme {
   flex: 1;
 }
 
-/* 3D Basalt Frame */
 .cinematic-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   max-height: 64vh;
   background: #000;
-  border-radius: var(--radius-frame);
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 
-    0 0 0 2px #3b465c,
-    0 0 0 5px rgba(212, 175, 55, 0.45),
-    0 25px 60px rgba(0, 0, 0, 0.9),
-    0 0 80px rgba(212, 175, 55, 0.12);
+    0 0 0 2px #263147,
+    0 0 0 4px rgba(212, 175, 55, 0.45),
+    0 25px 60px rgba(0, 0, 0, 0.95),
+    0 0 60px rgba(212, 175, 55, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Carved Corner Filigrees */
+/* Golden Corner Accents */
 .frame-corner {
   position: absolute;
-  width: 28px;
-  height: 28px;
-  border: 3.5px solid var(--gold-bright);
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--gold-bright);
   pointer-events: none;
   z-index: 25;
-  filter: drop-shadow(0 0 6px var(--gold-glow));
+  filter: drop-shadow(0 0 5px var(--gold-glow));
 }
 .frame-corner.top-right { top: 8px; right: 8px; border-bottom: none; border-left: none; }
 .frame-corner.top-left { top: 8px; left: 8px; border-bottom: none; border-right: none; }
 .frame-corner.bottom-right { bottom: 8px; right: 8px; border-top: none; border-left: none; }
 .frame-corner.bottom-left { bottom: 8px; left: 8px; border-top: none; border-right: none; }
 
-/* Underlying Target Image Layer */
+/* Image Layer */
 .image-layer {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
-  background-color: #07090d;
+  background-color: #07090e;
 }
 
 .image-layer img {
@@ -382,9 +370,7 @@ body.temple-theme {
   display: none;
 }
 
-/* ==========================================================================
-   3x3 BASALT STONE SLAB GRID
-   ========================================================================== */
+/* 3x3 Grid Container */
 .grid-layer {
   position: absolute;
   inset: 0;
@@ -393,20 +379,20 @@ body.temple-theme {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 6px;
-  padding: 6px;
+  gap: 7px;
+  padding: 7px;
   z-index: 5;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.45);
 }
 
-/* 3D Basalt Stone Slab */
+/* Base Tile Styling - Sleek 3D Vault Stone with Gold Inset */
 .tile {
   position: relative;
   background: 
-    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
-    linear-gradient(145deg, #2a3449 0%, #1a2233 45%, #101624 100%);
-  border: 2px solid #3d4a63;
-  border-radius: var(--radius-slab);
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+    linear-gradient(145deg, #222b3d 0%, #151b27 50%, #0c1018 100%);
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -414,36 +400,24 @@ body.temple-theme {
   cursor: pointer;
   overflow: hidden;
   box-shadow: 
-    inset 0 1px 2px rgba(255, 255, 255, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
     inset 0 -2px 6px rgba(0, 0, 0, 0.8),
-    0 4px 10px rgba(0, 0, 0, 0.7);
+    0 4px 12px rgba(0, 0, 0, 0.7);
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-normal);
 }
 
-/* Stone Carved Texture Lines */
-.tile::after {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  border-radius: 8px;
-  pointer-events: none;
-}
-
-/* Hover State (Interactive Slabs) */
+/* Interactive Hover State */
 .tile.covered:hover {
-  transform: translateY(-2px) scale(0.985);
+  transform: translateY(-3px) scale(0.985);
   border-color: var(--gold-bright);
   box-shadow: 
-    inset 0 0 25px var(--gold-glow),
-    0 0 22px rgba(212, 175, 55, 0.45);
+    inset 0 0 20px var(--gold-glow),
+    0 0 25px rgba(212, 175, 55, 0.45);
 }
 .tile.covered:active { transform: scale(0.96); }
 
-/* Tile Number (Carved Gold Inlay) */
+/* Tile Inner Info */
 .tile-inner {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -452,17 +426,17 @@ body.temple-theme {
 }
 
 .tile-number {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: 900;
   background: var(--gold-foil);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.9));
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.9));
 }
 
 .tile-difficulty {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--gold-bright);
   letter-spacing: 2px;
   text-shadow: 0 0 8px var(--gold-glow);
@@ -471,36 +445,33 @@ body.temple-theme {
 .tile-diff-label {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #a4b2c9;
+  color: #9aa6bc;
 }
 
-/* ==========================================================================
-   CENTER TILE: THE GRAND GOLDEN SEAL (Tile #5 - Hardest & Most Rewarding)
-   ========================================================================== */
+/* Center Tile (Tile #5): Royal Sunburst Seal */
 .tile[data-difficulty="3"] {
-  border-color: rgba(255, 215, 0, 0.6);
+  border-color: rgba(255, 215, 0, 0.75);
   background: 
-    radial-gradient(circle at center, rgba(255, 215, 0, 0.18) 0%, transparent 70%),
-    linear-gradient(145deg, #323d54 0%, #1f273a 50%, #121826 100%);
+    radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, transparent 70%),
+    linear-gradient(145deg, #2a354c 0%, #1a2233 50%, #0f1522 100%);
   box-shadow: 
-    inset 0 0 25px rgba(255, 215, 0, 0.25),
-    0 0 15px rgba(212, 175, 55, 0.2);
+    inset 0 0 25px rgba(255, 215, 0, 0.3),
+    0 0 16px rgba(212, 175, 55, 0.3);
 }
 
 .tile[data-difficulty="3"] .tile-number {
-  font-size: 3.2rem;
-  filter: drop-shadow(0 0 12px var(--gold-glow));
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 14px var(--gold-glow));
 }
 
 .tile[data-difficulty="3"]::before {
-  content: 'الختم الأعظم';
+  content: 'الختم الذهبي';
   position: absolute;
   top: 6px;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 1px;
   color: var(--gold-bright);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border: 1px solid var(--gold-bright);
   padding: 1px 10px;
   border-radius: 20px;
@@ -508,76 +479,66 @@ body.temple-theme {
 }
 
 /* ==========================================================================
-   TILE STATE: REVEALED (Correct Answer)
+   CRUCIAL FIX: FAILED INDICATOR IS HIDDEN BY DEFAULT!
+   Only appears when .tile.failed!
    ========================================================================== */
+.failed-indicator {
+  display: none !important;
+}
+
+/* Revealed Tile (Transparent) */
 .tile.revealed {
   opacity: 0;
   pointer-events: none;
   border-color: transparent;
-  transform: scale(0.92);
+  transform: scale(0.9);
 }
 
-/* ==========================================================================
-   TILE STATE: FAILED / LOCKED (Volcanic Scorched Basalt)
-   ========================================================================== */
+/* Failed Tile (Clean, Scorched Steel with Glowing Crimson X) */
 .tile.failed {
-  background: 
-    radial-gradient(circle at 50% 50%, #300808 0%, #170303 60%, #080000 100%);
+  background: radial-gradient(circle at center, #280606 0%, #150202 60%, #060000 100%);
   border: 2px solid var(--crimson-molten);
   cursor: not-allowed;
   pointer-events: none;
   box-shadow: 
-    inset 0 0 35px var(--crimson-glow),
-    0 0 16px rgba(231, 76, 60, 0.4);
-  animation: moltenEmberPulse 2.5s infinite alternate ease-in-out;
+    inset 0 0 30px var(--crimson-glow),
+    0 0 18px rgba(231, 76, 60, 0.4);
 }
 
-.tile.failed .tile-inner { display: none; }
-.tile.failed::before { display: none; }
-.tile.failed::after {
-  border-color: rgba(231, 76, 60, 0.35);
+.tile.failed .tile-inner {
+  display: none !important;
+}
+
+.tile.failed::before {
+  display: none !important;
 }
 
 .tile.failed .failed-indicator {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .failed-icon {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 900;
   color: var(--crimson-molten);
   line-height: 1;
-  text-shadow: 0 0 18px var(--crimson-glow);
-}
-
-.failed-chains {
-  font-size: 1.1rem;
-  filter: drop-shadow(0 0 5px rgba(0,0,0,0.8));
+  text-shadow: 0 0 20px var(--crimson-glow);
 }
 
 .failed-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #ff9e9e;
-  text-shadow: 0 0 8px rgba(231, 76, 60, 0.7);
-}
-
-@keyframes moltenEmberPulse {
-  from {
-    box-shadow: inset 0 0 25px rgba(231, 76, 60, 0.5), 0 0 10px rgba(231, 76, 60, 0.2);
-  }
-  to {
-    box-shadow: inset 0 0 45px rgba(231, 76, 60, 0.85), 0 0 25px var(--crimson-molten);
-  }
+  color: #ff9d9d;
+  text-shadow: 0 0 8px rgba(231, 76, 60, 0.8);
 }
 
 /* ==========================================================================
-   NON-BLOCKING QUESTION ALTAR (Parchment Sits at Bottom, Revealing Image)
+   4. NON-BLOCKING QUESTION ALTAR & INTEGRATED AUTO-START TIMER
    ========================================================================== */
 .question-altar {
   position: fixed;
@@ -587,11 +548,11 @@ body.temple-theme {
   z-index: 100;
   display: flex;
   justify-content: center;
-  padding: 0 20px 16px;
+  padding: 0 20px 14px;
   pointer-events: none;
   opacity: 0;
   transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 .question-altar.active {
@@ -603,29 +564,16 @@ body.temple-theme {
 .altar-parchment {
   position: relative;
   width: 100%;
-  max-width: 960px;
-  background: var(--parchment-bg);
+  max-width: 940px;
+  background: rgba(14, 18, 28, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 2px solid var(--gold-bright);
-  border-radius: 20px 20px 12px 12px;
-  padding: 24px 30px 20px;
+  border-radius: 18px 18px 10px 10px;
+  padding: 22px 28px 18px;
   box-shadow: 
-    0 -15px 50px rgba(0, 0, 0, 0.9),
-    0 0 40px rgba(212, 175, 55, 0.25);
-  overflow: hidden;
-}
-
-/* Timer progress bar across the top of altar */
-.altar-timer-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  background: linear-gradient(90deg, var(--gold-bright), #e67e22, var(--crimson-molten));
-  transform-origin: left;
-  transition: transform 0.1s linear;
+    0 -15px 45px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(212, 175, 55, 0.25);
 }
 
 /* Altar Header */
@@ -633,13 +581,13 @@ body.temple-theme {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .altar-meta {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .altar-diff-tag {
@@ -648,22 +596,59 @@ body.temple-theme {
   gap: 6px;
   padding: 4px 16px;
   border-radius: 50px;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   border: 1.5px solid var(--gold-bright);
   color: var(--gold-bright);
   background: rgba(212, 175, 55, 0.15);
-  box-shadow: 0 0 12px var(--gold-glow);
 }
 
-.altar-diff-tag.level-1 { border-color: #3498db; color: #5dade2; background: rgba(52, 152, 219, 0.15); box-shadow: 0 0 12px rgba(52, 152, 219, 0.4); }
-.altar-diff-tag.level-2 { border-color: #e67e22; color: #f39c12; background: rgba(230, 126, 34, 0.15); box-shadow: 0 0 12px rgba(230, 126, 34, 0.4); }
-.altar-diff-tag.level-3 { border-color: #e74c3c; color: #ff7675; background: rgba(231, 76, 60, 0.15); box-shadow: 0 0 12px rgba(231, 76, 60, 0.4); }
+.altar-diff-tag.level-1 { border-color: #3498db; color: #5dade2; background: rgba(52, 152, 219, 0.15); }
+.altar-diff-tag.level-2 { border-color: #e67e22; color: #f39c12; background: rgba(230, 126, 34, 0.15); }
+.altar-diff-tag.level-3 { border-color: #e74c3c; color: #ff7675; background: rgba(231, 76, 60, 0.15); }
 
 .altar-tile-tag {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: #9aa6bc;
+}
+
+/* Integrated Countdown Timer Badge */
+.altar-timer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  background: rgba(25, 33, 48, 0.9);
+  border: 1.5px solid var(--gold-bright);
+  color: var(--gold-bright);
+  font-weight: 800;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+}
+
+.altar-timer-badge.urgent {
+  border-color: #f39c12;
+  color: #f39c12;
+  animation: timerWarning 0.6s infinite alternate;
+}
+
+.altar-timer-badge.timed-out {
+  background: rgba(231, 76, 60, 0.25);
+  border-color: var(--crimson-molten);
+  color: #ff8888;
+  animation: timeoutFlash 1s infinite alternate;
+}
+
+@keyframes timerWarning {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+@keyframes timeoutFlash {
+  from { box-shadow: 0 0 10px var(--crimson-glow); }
+  to { box-shadow: 0 0 20px var(--crimson-molten); }
 }
 
 .altar-close-btn {
@@ -671,7 +656,7 @@ body.temple-theme {
   height: 36px;
   border-radius: 50%;
   border: 1px solid rgba(212, 175, 55, 0.4);
-  background: rgba(30, 38, 56, 0.8);
+  background: rgba(25, 33, 48, 0.8);
   color: var(--gold-bright);
   display: flex;
   align-items: center;
@@ -682,36 +667,33 @@ body.temple-theme {
 .altar-close-btn:hover {
   background: var(--crimson-molten);
   color: #fff;
-  border-color: var(--crimson-molten);
   transform: rotate(90deg);
 }
 
-/* Altar Question Text (Large for Long-Distance Carnival Viewing) */
 .altar-question-text {
-  font-size: 1.7rem;
+  font-size: 1.65rem;
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 1.4;
   color: #ffffff;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   text-align: center;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* 4 Grand Royal Seal Choice Buttons */
 .altar-options-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 12px;
 }
 
 .altar-option-btn {
   position: relative;
-  background: linear-gradient(145deg, #1f273a, #131926);
-  border: 2px solid rgba(212, 175, 55, 0.4);
+  background: linear-gradient(145deg, #1d2538, #111724);
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 15px 18px;
   font-family: var(--font-arabic-display);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #ffffff;
   cursor: pointer;
@@ -719,41 +701,39 @@ body.temple-theme {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: all var(--transition-fast);
 }
 
 .altar-option-btn:hover {
   border-color: var(--gold-bright);
-  background: linear-gradient(145deg, #2a354e, #1c2438);
+  background: linear-gradient(145deg, #26324a, #182030);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--gold-glow);
+  box-shadow: 0 6px 20px var(--gold-glow);
 }
 .altar-option-btn:active { transform: translateY(0); }
 
 .altar-seal-badge {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #2b354c, #141b2a);
+  background: #1b2334;
   border: 1.5px solid var(--gold-bright);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 900;
   color: var(--gold-bright);
   flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-/* Option States: Correct (Emerald Divine) / Incorrect (Crimson Molten) */
+/* Option Selected States */
 .altar-option-btn.selected-correct {
-  background: linear-gradient(145deg, #1e4620, #0f2e15) !important;
+  background: linear-gradient(145deg, #1b4520, #0d2b14) !important;
   border-color: var(--emerald-divine) !important;
-  box-shadow: 0 0 35px var(--emerald-glow) !important;
-  transform: scale(1.02);
+  box-shadow: 0 0 30px var(--emerald-glow) !important;
 }
 .altar-option-btn.selected-correct .altar-seal-badge {
   background: var(--emerald-divine);
@@ -761,24 +741,24 @@ body.temple-theme {
 }
 
 .altar-option-btn.selected-incorrect {
-  background: linear-gradient(145deg, #461414, #280a0a) !important;
+  background: linear-gradient(145deg, #441414, #260a0a) !important;
   border-color: var(--crimson-molten) !important;
-  box-shadow: 0 0 35px var(--crimson-glow) !important;
-  animation: optionShake 0.4s ease;
+  box-shadow: 0 0 30px var(--crimson-glow) !important;
+  animation: shakeBtn 0.35s ease;
 }
 .altar-option-btn.selected-incorrect .altar-seal-badge {
   background: var(--crimson-molten);
   color: #fff;
 }
 
-@keyframes optionShake {
+@keyframes shakeBtn {
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
 }
 
 /* ==========================================================================
-   GRAND VICTORY / FULL REVELATION OVERLAY
+   5. GRAND WIN OVERLAY
    ========================================================================== */
 .win-overlay {
   position: absolute;
@@ -806,107 +786,71 @@ body.temple-theme {
 .win-card {
   position: relative;
   width: 100%;
-  max-width: 720px;
-  background: linear-gradient(145deg, rgba(26, 34, 52, 0.98), rgba(12, 16, 26, 0.98));
-  border: 2.5px solid var(--gold-bright);
-  border-radius: 20px;
-  padding: 32px 30px;
+  max-width: 680px;
+  background: linear-gradient(145deg, rgba(24, 32, 48, 0.98), rgba(10, 14, 22, 0.98));
+  border: 2px solid var(--gold-bright);
+  border-radius: var(--radius-lg);
+  padding: 30px 28px;
   text-align: center;
-  box-shadow: 
-    0 25px 70px rgba(0, 0, 0, 0.95),
-    0 0 60px var(--gold-glow);
-  animation: winCardPop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 50px var(--gold-glow);
+  animation: popIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes winCardPop {
-  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92) translateY(15px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .win-emblem {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--gold-bright);
-  text-shadow: 0 0 12px var(--gold-glow);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .win-event-title {
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 8px;
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+  margin-bottom: 6px;
 }
 
 .win-reference-badge {
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--gold-bright);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .win-verse-quote {
   font-family: var(--font-arabic-calligraphy);
-  font-size: 1.5rem;
-  line-height: 1.8;
+  font-size: 1.45rem;
+  line-height: 1.75;
   color: #f1f5f9;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.4);
   border-right: 4px solid var(--gold-bright);
-  padding: 16px 22px;
+  padding: 14px 20px;
   border-radius: 8px;
-  margin-bottom: 24px;
-  text-align: justify;
-}
-
-.win-bonus-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
   margin-bottom: 22px;
-}
-
-.bonus-label {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #9aa6bc;
-}
-
-.bonus-btn {
-  background: rgba(45, 55, 80, 0.85);
-  border: 1.5px solid var(--gold-bright);
-  color: var(--gold-bright);
-  border-radius: 50px;
-  padding: 6px 16px;
-  font-family: var(--font-arabic-display);
-  font-size: 0.9rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-.bonus-btn:hover {
-  background: var(--gold-bright);
-  color: #000;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px var(--gold-glow);
+  text-align: justify;
 }
 
 .win-action-row {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 14px;
 }
 
 /* ==========================================================================
-   STEALTH MODERATOR CONTROL DECK
+   6. CLEAN MODERATOR TOOLBAR (NUMBER ONLY DROPDOWN, NO UPLOAD)
    ========================================================================== */
 .moderator-toolbar {
   position: relative;
   z-index: 30;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 8px 16px 14px;
 }
@@ -916,11 +860,11 @@ body.temple-theme {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  background: rgba(14, 18, 28, 0.8);
-  border: 1px solid rgba(59, 70, 92, 0.6);
+  background: rgba(14, 18, 28, 0.85);
+  border: 1px solid rgba(59, 70, 92, 0.5);
   border-radius: 50px;
-  padding: 8px 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  padding: 7px 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .mod-left-group,
@@ -930,7 +874,6 @@ body.temple-theme {
   gap: 8px;
 }
 
-/* Mod Buttons */
 .mod-btn {
   display: inline-flex;
   align-items: center;
@@ -938,16 +881,16 @@ body.temple-theme {
   padding: 8px 16px;
   border-radius: 50px;
   font-family: var(--font-arabic-display);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
-  background: #1a2233;
+  background: #182030;
   border: 1px solid rgba(212, 175, 55, 0.35);
   color: #ffffff;
   transition: all var(--transition-fast);
 }
 .mod-btn:hover {
-  background: #25314a;
+  background: #232f46;
   border-color: var(--gold-bright);
   transform: translateY(-2px);
 }
@@ -959,9 +902,6 @@ body.temple-theme {
   border-color: var(--gold-bright);
   font-weight: 900;
   box-shadow: 0 0 16px var(--gold-glow);
-}
-.mod-btn.btn-reveal:hover {
-  box-shadow: 0 0 25px var(--gold-bright);
 }
 
 .mod-btn.btn-next {
@@ -979,34 +919,33 @@ body.temple-theme {
   border-color: #fff;
 }
 
-/* Icon Buttons */
 .mod-btn-icon {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #161c28;
+  background: #151b27;
   border: 1px solid rgba(212, 175, 55, 0.3);
   color: var(--gold-bright);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 .mod-btn-icon:hover {
-  background: #25314a;
+  background: #232f46;
   border-color: var(--gold-bright);
   transform: translateY(-2px);
   color: #fff;
 }
 
-/* Scene Jumper Dropdown */
+/* Dropdown (Number Only - No Spoilers) */
 .mod-select-wrapper { position: relative; }
 .mod-select {
-  padding: 8px 12px;
+  padding: 7px 12px;
   border-radius: 50px;
-  background: #161c28;
+  background: #151b27;
   border: 1px solid rgba(212, 175, 55, 0.35);
   color: var(--gold-bright);
   font-family: var(--font-arabic-display);
@@ -1017,10 +956,7 @@ body.temple-theme {
   transition: border-color var(--transition-fast);
 }
 .mod-select:hover { border-color: var(--gold-bright); }
-.mod-select option {
-  background: #0f1420;
-  color: #fff;
-}
+.mod-select option { background: #0e131d; color: #fff; }
 
 /* Secret Peek Popover */
 .mod-peek-wrapper { position: relative; }
@@ -1028,11 +964,11 @@ body.temple-theme {
   position: absolute;
   bottom: calc(100% + 14px);
   right: 0;
-  width: 360px;
+  width: 340px;
   background: rgba(10, 14, 22, 0.98);
   border: 1.5px solid var(--gold-bright);
   border-radius: 12px;
-  padding: 14px 18px;
+  padding: 14px 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95), 0 0 20px var(--gold-glow);
   display: none;
   z-index: 150;
@@ -1051,46 +987,28 @@ body.temple-theme {
   margin-bottom: 4px;
 }
 .mod-peek-answer {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 6px;
-  line-height: 1.35;
 }
 .mod-peek-ref {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--gold-burnished);
   font-weight: 700;
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (PC, Tablets, Mobile)
+   RESPONSIVE DESIGN
    ========================================================================== */
-@media (max-width: 960px) {
-  .app-header {
-    flex-direction: column;
-    gap: 10px;
-    padding: 8px 12px;
-  }
-  .brand-title { font-size: 1.2rem; }
-  .team-name { font-size: 0.85rem; }
-  .team-score { font-size: 1.15rem; }
-  .tile-number { font-size: 2.2rem; }
-  .tile[data-difficulty="3"] .tile-number { font-size: 2.4rem; }
-  .altar-question-text { font-size: 1.35rem; }
+@media (max-width: 860px) {
+  .welcome-title { font-size: 2.2rem; }
+  .welcome-steps { grid-template-columns: 1fr; }
   .altar-options-grid { grid-template-columns: 1fr; gap: 8px; }
-  .altar-option-btn { padding: 12px 14px; font-size: 1.1rem; }
+  .tile-number { font-size: 2.2rem; }
+  .tile[data-difficulty="3"] .tile-number { font-size: 2.5rem; }
   .moderator-toolbar .mod-inner {
     flex-wrap: wrap;
     justify-content: center;
   }
-}
-
-@media (max-width: 480px) {
-  .scoreboard-container { gap: 6px; }
-  .team-card { padding: 4px 10px; }
-  .team-flag { display: none; }
-  .tile-diff-label { display: none; }
-  .tile-number { font-size: 1.6rem; }
-  .mod-select-wrapper { display: none; }
 }

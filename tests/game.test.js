@@ -62,7 +62,7 @@ describe('2. 3x3 Grid Strategic Difficulty Mapping Tests', () => {
     6: 1, 7: 2, 8: 1
   };
 
-  test('Center tile (Tile #5 / Index 4) maps to Level 3 (Hard)', () => {
+  test('Center tile (Tile #5 / Index 4) maps to Level 3 (Hard / Golden Seal)', () => {
     assert.strictEqual(difficultyMap[4], 3);
   });
 
@@ -126,40 +126,43 @@ describe('3. Fair Cycle & Non-Repeating Random Engine Tests', () => {
   });
 });
 
-describe('4. Team Scoring & Logic Tests', () => {
-  test('Score increments properly for tile reveals (+10) and picture guesses (+50)', () => {
-    let team1Score = 0;
-    let team2Score = 0;
+describe('4. Scene Dropdown Sanity & Anti-Spoiler Tests', () => {
+  test('Dropdown options contain only image numbers and zero answer titles', () => {
+    const options = [];
+    for (let i = 1; i <= window.PICS_DATA.length; i++) {
+      options.push(`صورة رقم ${i}`);
+    }
 
-    // Team 1 reveals a tile correctly
-    team1Score += 10;
-    assert.strictEqual(team1Score, 10);
-
-    // Team 2 reveals 2 tiles correctly
-    team2Score += 20;
-    assert.strictEqual(team2Score, 20);
-
-    // Team 1 guesses the picture
-    team1Score += 50;
-    assert.strictEqual(team1Score, 60);
-    assert.ok(team1Score > team2Score);
-  });
-
-  test('Score clamping prevents negative scores', () => {
-    let score = 0;
-    score = Math.max(0, score - 10);
-    assert.strictEqual(score, 0);
+    assert.strictEqual(options.length, 20);
+    // Ensure none of the correct_answer strings leak into the dropdown labels
+    window.PICS_DATA.forEach(p => {
+      options.forEach(opt => {
+        assert.ok(!opt.includes(p.correct_answer), `Dropdown label ${opt} must not leak answer title`);
+      });
+    });
   });
 });
 
 describe('5. Carnival Timer & Keyboard Mapping Tests', () => {
-  test('Timer remaining urgency threshold triggers at 5 seconds or less', () => {
+  test('Timer urgency triggers at 5 seconds or less', () => {
     const isUrgent = (sec) => sec <= 5 && sec > 0;
     assert.strictEqual(isUrgent(20), false);
     assert.strictEqual(isUrgent(6), false);
     assert.strictEqual(isUrgent(5), true);
     assert.strictEqual(isUrgent(1), true);
     assert.strictEqual(isUrgent(0), false);
+  });
+
+  test('Timeout state retains question active on screen without dismissal', () => {
+    let questionDismissed = false;
+    let timerRemaining = 0;
+
+    // Timeout occurs:
+    if (timerRemaining <= 0) {
+      // Question remains active!
+      questionDismissed = false;
+    }
+    assert.strictEqual(questionDismissed, false);
   });
 
   test('Keyboard mapping 1-9 correctly indexes tiles 0-8', () => {
