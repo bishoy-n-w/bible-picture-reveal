@@ -151,20 +151,20 @@
       </div>
     </main>
 
-    <!-- Non-Blocking Bottom Question Altar with Integrated Timer -->
-    <div id="question-altar" class="question-altar">
-      <div class="altar-parchment">
-        <!-- Altar Header & Countdown Timer -->
-        <div class="altar-header">
-          <div class="altar-meta">
+    <!-- Fullscreen Servant Question Screen (No Auto-Dismiss, Full Verse Display) -->
+    <div id="question-screen" class="question-screen">
+      <div class="qscreen-container">
+        <!-- Question Screen Header -->
+        <div class="qscreen-header">
+          <div class="qscreen-meta">
             <span id="modal-diff-tag" class="altar-diff-tag">مستوى سهل ✦</span>
             <span id="modal-tile-indicator" class="altar-tile-tag">المربع (1)</span>
           </div>
 
-          <!-- Countdown Timer Badge (Starts Automatically on Question Open) -->
+          <!-- Countdown Timer Badge (60 Seconds) -->
           <div id="altar-timer-badge" class="altar-timer-badge">
             <svg class="timer-mini-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span id="timer-text" class="timer-text">20 ثانية</span>
+            <span id="timer-text" class="timer-text">60 ثانية</span>
           </div>
 
           <button id="btn-modal-close" class="altar-close-btn" title="إلغاء وإغلاق بدون إجابة (Esc)">
@@ -173,11 +173,36 @@
         </div>
 
         <!-- Question Text -->
-        <h3 id="question-text" class="altar-question-text">نص السؤال هنا؟</h3>
+        <h2 id="question-text" class="qscreen-question-text">نص السؤال هنا؟</h2>
 
         <!-- 4 Multiple Choice Option Buttons -->
         <div id="options-grid" class="altar-options-grid">
           <!-- Rendered dynamically by game.js -->
+        </div>
+
+        <!-- Answer Revelation & Scripture Card (Shows upon answer, no auto-dismiss) -->
+        <div id="answer-revelation-card" class="answer-revelation-card">
+          <div class="revelation-header">
+            <span id="revelation-status" class="revelation-status-badge">✦ إجابة صحيحة! أحسنت ✦</span>
+          </div>
+
+          <div class="revelation-body">
+            <div class="revelation-answer-row">
+              <span class="revelation-answer-label">الإجابة الصحيحة:</span>
+              <strong id="revelation-correct-answer" class="revelation-answer-text">--</strong>
+            </div>
+
+            <blockquote id="revelation-verse" class="revelation-verse-text">«نص الآية المباركة كاملاً...»</blockquote>
+            <div id="revelation-reference" class="revelation-reference-text">(الشاهد: ...)</div>
+          </div>
+
+          <!-- Manual Return Button to Image Screen -->
+          <div class="revelation-actions">
+            <button id="btn-return-board" class="btn-return-board">
+              <span>متابعة إلى لوحة الصورة</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -27,6 +27,8 @@ yarn-error.log*
 .tmp/
 tmp/
 *.tmp
+__pycache__/
+*.pyc
 
 # Dependency directories (if npm/node is introduced later)
 node_modules/

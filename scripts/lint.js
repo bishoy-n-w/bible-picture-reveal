@@ -75,11 +75,18 @@ try {
     console.log(`  ✓ PICS_DATA verified (${window.PICS_DATA.length} scenes)`);
   }
 
-  if (!Array.isArray(window.QUESTIONS_BANK) || window.QUESTIONS_BANK.length < 60) {
-    console.error('  ✗ QUESTIONS_BANK must contain at least 60 items');
+  if (!Array.isArray(window.QUESTIONS_BANK) || window.QUESTIONS_BANK.length !== 300) {
+    console.error(`  ✗ QUESTIONS_BANK must contain exactly 300 items (found ${window.QUESTIONS_BANK ? window.QUESTIONS_BANK.length : 0})`);
     hasError = true;
   } else {
-    console.log(`  ✓ QUESTIONS_BANK verified (${window.QUESTIONS_BANK.length} questions)`);
+    // Check verse presence
+    const missingVerse = window.QUESTIONS_BANK.filter(q => !q.verse || q.verse.trim().length === 0);
+    if (missingVerse.length > 0) {
+      console.error(`  ✗ Found ${missingVerse.length} questions missing complete verse text`);
+      hasError = true;
+    } else {
+      console.log(`  ✓ QUESTIONS_BANK verified (exactly ${window.QUESTIONS_BANK.length} servant questions with full verses)`);
+    }
   }
 } catch (e) {
   console.error('  ✗ Data evaluation error:', e.message);

@@ -27,6 +27,7 @@ class PictureRevealGame {
     this.isFullRevealed = false;
     this.roundCount = 0;
     this.isGameActive = false;
+    this.pendingOutcome = null; // { isCorrect: boolean, tileIndex: number }
 
     // Integrated Question Timer (60 Seconds)
     this.timerDuration = 60;
@@ -79,9 +80,9 @@ class PictureRevealGame {
     this.dom.roundDisplay = document.getElementById('round-counter');
     this.dom.remainingDisplay = document.getElementById('remaining-counter');
 
-    // Question Altar & Timer
-    this.dom.questionAltar = document.getElementById('question-altar');
-    this.dom.altarParchment = this.dom.questionAltar ? this.dom.questionAltar.querySelector('.altar-parchment') : null;
+    // Fullscreen Question Screen & Timer
+    this.dom.questionScreen = document.getElementById('question-screen');
+    this.dom.questionAltar = this.dom.questionScreen; // for backward compatibility
     this.dom.modalDiffTag = document.getElementById('modal-diff-tag');
     this.dom.modalTileIndicator = document.getElementById('modal-tile-indicator');
     this.dom.altarTimerBadge = document.getElementById('altar-timer-badge');
@@ -89,6 +90,14 @@ class PictureRevealGame {
     this.dom.questionText = document.getElementById('question-text');
     this.dom.optionsGrid = document.getElementById('options-grid');
     this.dom.modalCloseBtn = document.getElementById('btn-modal-close');
+
+    // Answer Revelation Card Elements
+    this.dom.answerRevelationCard = document.getElementById('answer-revelation-card');
+    this.dom.revelationStatus = document.getElementById('revelation-status');
+    this.dom.revelationCorrectAnswer = document.getElementById('revelation-correct-answer');
+    this.dom.revelationVerse = document.getElementById('revelation-verse');
+    this.dom.revelationReference = document.getElementById('revelation-reference');
+    this.dom.btnReturnBoard = document.getElementById('btn-return-board');
 
     // Win Overlay
     this.dom.winOverlay = document.getElementById('win-overlay');
@@ -161,6 +170,11 @@ class PictureRevealGame {
     // Question Altar Cancel/Close
     if (this.dom.modalCloseBtn) {
       this.dom.modalCloseBtn.addEventListener('click', () => this.closeQuestionAltar());
+    }
+
+    // Return to board button on Revelation Card (Manual Continue)
+    if (this.dom.btnReturnBoard) {
+      this.dom.btnReturnBoard.addEventListener('click', () => this.applyOutcomeAndReturnToBoard());
     }
 
     // Scene Selector Jump (Number Only)
@@ -525,14 +539,15 @@ class PictureRevealGame {
   }
 
   /* ==========================================================================
-     QUESTION ALTAR & TIMEOUT HANDLING
+     FULLSCREEN QUESTION SCREEN & ANSWER REVELATION
      ========================================================================== */
   showQuestionAltar(question, tileIndex, difficulty) {
-    const diffNames = { 1: 'مستوى سهل ✦', 2: 'مستوى متوسط ✦✦', 3: 'مستوى صعب ✦✦✦' };
+    const diffNames = { 1: 'مستوى متقدم ✦', 2: 'مستوى عميق ✦✦', 3: 'مستوى فائق الصعوبة ✦✦✦' };
 
-    // Reset any previous timeout animations
+    // Reset any previous timeout animations and hide revelation card
     if (this.dom.questionText) this.dom.questionText.classList.remove('timed-out');
-    if (this.dom.altarParchment) this.dom.altarParchment.classList.remove('timed-out');
+    if (this.dom.answerRevelationCard) this.dom.answerRevelationCard.classList.remove('active');
+    this.pendingOutcome = null;
 
     this.dom.modalDiffTag.textContent = diffNames[difficulty];
     this.dom.modalDiffTag.className = `altar-diff-tag level-${difficulty}`;
@@ -551,6 +566,7 @@ class PictureRevealGame {
     shuffledOptions.forEach((opt, idx) => {
       const btn = document.createElement('button');
       btn.className = 'altar-option-btn';
+      btn.dataset.isCorrect = String(opt.isCorrect);
       btn.innerHTML = `
         <span>${opt.text}</span>
         <span class="altar-seal-badge">${letters[idx]}</span>
@@ -560,9 +576,11 @@ class PictureRevealGame {
       this.dom.optionsGrid.appendChild(btn);
     });
 
-    this.dom.questionAltar.classList.add('active');
+    if (this.dom.questionScreen) {
+      this.dom.questionScreen.classList.add('active');
+    }
 
-    // Auto-start countdown timer
+    // Auto-start 60s countdown timer
     this.startQuestionTimer();
   }
 
@@ -572,40 +590,85 @@ class PictureRevealGame {
     const allButtons = this.dom.optionsGrid.querySelectorAll('.altar-option-btn');
     allButtons.forEach(btn => btn.style.pointerEvents = 'none');
 
-    const tileElem = this.dom.gridLayer.querySelector(`[data-index="${this.activeTileIndex}"]`);
+    // Save outcome for manual return
+    this.pendingOutcome = { isCorrect, tileIndex: this.activeTileIndex };
 
     if (isCorrect) {
       selectedBtn.classList.add('selected-correct');
       if (window.soundEngine) window.soundEngine.playCorrect();
 
-      setTimeout(() => {
-        this.dom.questionAltar.classList.remove('active');
-        this.tileStates[this.activeTileIndex] = 'revealed';
-        if (tileElem) {
-          tileElem.classList.remove('covered');
-          tileElem.classList.add('revealed');
-        }
-        if (window.soundEngine) window.soundEngine.playReveal();
-      }, 700);
-
+      if (this.dom.revelationStatus) {
+        this.dom.revelationStatus.className = 'revelation-status-badge correct';
+        this.dom.revelationStatus.textContent = '✦ إجابة صحيحة! أحسنت ✦';
+      }
     } else {
       selectedBtn.classList.add('selected-incorrect');
       if (window.soundEngine) window.soundEngine.playIncorrect();
 
-      setTimeout(() => {
-        this.dom.questionAltar.classList.remove('active');
-        this.tileStates[this.activeTileIndex] = 'failed';
-        if (tileElem) {
-          tileElem.classList.remove('covered');
-          tileElem.classList.add('failed');
+      // Highlight the correct option
+      allButtons.forEach(btn => {
+        if (btn.dataset.isCorrect === 'true') {
+          btn.classList.add('show-correct');
         }
-      }, 850);
+      });
+
+      if (this.dom.revelationStatus) {
+        this.dom.revelationStatus.className = 'revelation-status-badge incorrect';
+        this.dom.revelationStatus.textContent = '✕ إجابة غير صحيحة! ✕';
+      }
     }
+
+    // Populate Revelation Card with full verse and reference
+    const correctText = this.activeQuestion.options[this.activeQuestion.correctIndex];
+    if (this.dom.revelationCorrectAnswer) {
+      this.dom.revelationCorrectAnswer.textContent = correctText;
+    }
+    if (this.dom.revelationVerse) {
+      this.dom.revelationVerse.textContent = `«${this.activeQuestion.verse || ''}»`;
+    }
+    if (this.dom.revelationReference) {
+      this.dom.revelationReference.textContent = `(الشاهد: ${this.activeQuestion.reference || ''})`;
+    }
+
+    // Display Revelation Card (NO AUTOMATIC DISMISSAL!)
+    if (this.dom.answerRevelationCard) {
+      this.dom.answerRevelationCard.classList.add('active');
+    }
+  }
+
+  // Manual return to picture board when user clicks "متابعة إلى لوحة الصورة"
+  applyOutcomeAndReturnToBoard() {
+    if (!this.pendingOutcome) return;
+    const { isCorrect, tileIndex } = this.pendingOutcome;
+
+    // Close fullscreen question screen
+    if (this.dom.questionScreen) this.dom.questionScreen.classList.remove('active');
+    if (this.dom.answerRevelationCard) this.dom.answerRevelationCard.classList.remove('active');
+
+    const tileElem = this.dom.gridLayer.querySelector(`[data-index="${tileIndex}"]`);
+    if (isCorrect) {
+      this.tileStates[tileIndex] = 'revealed';
+      if (tileElem) {
+        tileElem.classList.remove('covered');
+        tileElem.classList.add('revealed');
+      }
+      if (window.soundEngine) window.soundEngine.playReveal();
+    } else {
+      this.tileStates[tileIndex] = 'failed';
+      if (tileElem) {
+        tileElem.classList.remove('covered');
+        tileElem.classList.add('failed');
+      }
+    }
+
+    this.pendingOutcome = null;
   }
 
   closeQuestionAltar() {
     this.stopTimer();
-    this.dom.questionAltar.classList.remove('active');
+    this.pendingOutcome = null;
+    if (this.dom.questionScreen) this.dom.questionScreen.classList.remove('active');
+    if (this.dom.answerRevelationCard) this.dom.answerRevelationCard.classList.remove('active');
   }
 
   /* ==========================================================================
@@ -615,7 +678,8 @@ class PictureRevealGame {
     if (this.isFullRevealed) return;
     this.isFullRevealed = true;
     this.stopTimer();
-    this.dom.questionAltar.classList.remove('active');
+    if (this.dom.questionScreen) this.dom.questionScreen.classList.remove('active');
+    if (this.dom.answerRevelationCard) this.dom.answerRevelationCard.classList.remove('active');
 
     const allTiles = this.dom.gridLayer.querySelectorAll('.tile');
     allTiles.forEach((tile, idx) => {
@@ -655,12 +719,21 @@ class PictureRevealGame {
       return;
     }
 
-    // If Question Altar is active:
-    if (this.dom.questionAltar.classList.contains('active')) {
+    // If Question Screen is active:
+    if (this.dom.questionScreen && this.dom.questionScreen.classList.contains('active')) {
+      // If Revelation Card is showing, Enter or Space proceeds back to board
+      if (this.dom.answerRevelationCard && this.dom.answerRevelationCard.classList.contains('active')) {
+        if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space') {
+          e.preventDefault();
+          this.applyOutcomeAndReturnToBoard();
+          return;
+        }
+      }
+
       const optionKeys = { '1': 0, '2': 1, '3': 2, '4': 3, 'KeyA': 0, 'KeyB': 1, 'KeyC': 2, 'KeyD': 3 };
       const idx = optionKeys[e.key] !== undefined ? optionKeys[e.key] : optionKeys[e.code];
 
-      if (idx !== undefined) {
+      if (idx !== undefined && (!this.dom.answerRevelationCard || !this.dom.answerRevelationCard.classList.contains('active'))) {
         const btns = this.dom.optionsGrid.querySelectorAll('.altar-option-btn');
         if (btns[idx] && btns[idx].style.pointerEvents !== 'none') {
           btns[idx].click();

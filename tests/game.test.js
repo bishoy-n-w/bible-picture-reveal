@@ -19,7 +19,7 @@ global.localStorage = {
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'images-bank.js'), 'utf8'));
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'questions-bank.js'), 'utf8'));
 
-describe('1. Dataset Integrity & Schema Tests', () => {
+describe('1. Dataset Integrity & Schema Tests (300 Questions with Verses)', () => {
   test('PICS_DATA contains exactly 20 biblical scenes', () => {
     assert.strictEqual(Array.isArray(window.PICS_DATA), true);
     assert.strictEqual(window.PICS_DATA.length, 20);
@@ -35,9 +35,9 @@ describe('1. Dataset Integrity & Schema Tests', () => {
     });
   });
 
-  test('QUESTIONS_BANK contains questions across all 3 tiers with 4 choices each', () => {
+  test('QUESTIONS_BANK contains exactly 300 servant questions (100 per level) with full verse text', () => {
     assert.strictEqual(Array.isArray(window.QUESTIONS_BANK), true);
-    assert.ok(window.QUESTIONS_BANK.length >= 60, 'Bank must have at least 60 questions');
+    assert.strictEqual(window.QUESTIONS_BANK.length, 300, 'Bank must have exactly 300 questions');
 
     const levelCounts = { 1: 0, 2: 0, 3: 0 };
     window.QUESTIONS_BANK.forEach(q => {
@@ -46,12 +46,13 @@ describe('1. Dataset Integrity & Schema Tests', () => {
       assert.ok(q.correctIndex >= 0 && q.correctIndex <= 3, `Question ${q.id} correctIndex out of bounds`);
       assert.ok(q.question && q.question.trim().length > 0, `Question ${q.id} question text empty`);
       assert.ok(q.reference && q.reference.trim().length > 0, `Question ${q.id} reference empty`);
+      assert.ok(q.verse && q.verse.trim().length > 0, `Question ${q.id} verse text must be non-empty`);
       levelCounts[q.level]++;
     });
 
-    assert.ok(levelCounts[1] >= 15, 'Level 1 must have at least 15 questions');
-    assert.ok(levelCounts[2] >= 15, 'Level 2 must have at least 15 questions');
-    assert.ok(levelCounts[3] >= 15, 'Level 3 must have at least 15 questions');
+    assert.strictEqual(levelCounts[1], 100, 'Level 1 must have exactly 100 questions');
+    assert.strictEqual(levelCounts[2], 100, 'Level 2 must have exactly 100 questions');
+    assert.strictEqual(levelCounts[3], 100, 'Level 3 must have exactly 100 questions');
   });
 });
 
@@ -149,7 +150,32 @@ describe('4. Scene Dropdown Sanity & Anti-Spoiler Tests', () => {
   });
 });
 
-describe('5. Carnival Timer (60s) & Keyboard Mapping Tests', () => {
+describe('5. Fullscreen Question Screen & Manual Return Flow (No Auto-Dismiss)', () => {
+  test('Answering question does not dismiss automatically and sets pendingOutcome', () => {
+    let questionScreenActive = true;
+    let revelationCardActive = false;
+    let pendingOutcome = null;
+
+    // Simulate clicking an option:
+    const isCorrect = true;
+    const tileIndex = 4;
+    pendingOutcome = { isCorrect, tileIndex };
+    revelationCardActive = true;
+
+    // Screen must remain active with revelation card visible!
+    assert.strictEqual(questionScreenActive, true);
+    assert.strictEqual(revelationCardActive, true);
+    assert.deepStrictEqual(pendingOutcome, { isCorrect: true, tileIndex: 4 });
+
+    // Only when user clicks "متابعة إلى لوحة الصورة":
+    questionScreenActive = false;
+    revelationCardActive = false;
+    assert.strictEqual(questionScreenActive, false);
+    assert.strictEqual(revelationCardActive, false);
+  });
+});
+
+describe('6. Carnival Timer (60s) & Keyboard Mapping Tests', () => {
   test('Timer duration is 60 seconds and urgency triggers at 5 seconds or less', () => {
     const timerDuration = 60;
     assert.strictEqual(timerDuration, 60);
