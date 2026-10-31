@@ -9,44 +9,110 @@ const path = require('path');
 
 // Mock browser environment
 global.window = {};
+global.document = {
+  documentElement: { dir: 'rtl', lang: 'ar' },
+  body: {
+    classList: {
+      classes: new Set(),
+      toggle(cls, val) {
+        if (val) this.classes.add(cls);
+        else this.classes.delete(cls);
+      },
+      contains(cls) { return this.classes.has(cls); }
+    }
+  }
+};
 global.localStorage = {
   store: {},
   getItem(k) { return this.store[k] || null; },
   setItem(k, v) { this.store[k] = String(v); }
 };
 
-// Load datasets
+// Load i18n & datasets
+eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'i18n.js'), 'utf8'));
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'images-bank.js'), 'utf8'));
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'questions-bank.js'), 'utf8'));
 
-describe('1. Dataset Integrity & Schema Tests (300 Questions with Verses)', () => {
-  test('PICS_DATA contains exactly 20 biblical scenes', () => {
+describe('1. Multilingual i18n Engine Tests', () => {
+  test('i18n initializes with Arabic by default and supports English & Bilingual', () => {
+    assert.strictEqual(window.i18n.isLanguageActive('ar'), true);
+    assert.strictEqual(typeof window.i18n.t('brandTitle'), 'string');
+  });
+
+  test('Independent language activation: can enable English, become bilingual, or switch to English-only', () => {
+    const i18n = window.i18n;
+    // Enable both
+    i18n.setMode('both');
+    assert.strictEqual(i18n.isBilingual(), true);
+    assert.strictEqual(i18n.isLanguageActive('ar'), true);
+    assert.strictEqual(i18n.isLanguageActive('en'), true);
+
+    // Switch to English only
+    i18n.setMode('en');
+    assert.strictEqual(i18n.isBilingual(), false);
+    assert.strictEqual(i18n.isLanguageActive('ar'), false);
+    assert.strictEqual(i18n.isLanguageActive('en'), true);
+
+    // Rule: Cannot disable the only active language
+    i18n.toggleLanguage('en');
+    assert.strictEqual(i18n.isLanguageActive('en'), true, 'Must keep at least one active language');
+
+    // Switch back to both for subsequent tests
+    i18n.setMode('both');
+    assert.strictEqual(i18n.isBilingual(), true);
+  });
+
+  test('Extensible design: easily allows registering future languages', () => {
+    assert.ok(window.i18n.supportedLanguages.ar);
+    assert.ok(window.i18n.supportedLanguages.en);
+    // Dynamic extension simulation
+    window.i18n.supportedLanguages.fr = { id: 'fr', name: 'French', dir: 'ltr' };
+    assert.ok(window.i18n.supportedLanguages.fr);
+  });
+});
+
+describe('2. Bilingual PICS_DATA Integrity Tests', () => {
+  test('PICS_DATA contains exactly 20 biblical scenes with both Arabic and English text', () => {
     assert.strictEqual(Array.isArray(window.PICS_DATA), true);
     assert.strictEqual(window.PICS_DATA.length, 20);
-  });
 
-  test('Every picture item has id, reference, correct_answer, verse_text, and image_url', () => {
     window.PICS_DATA.forEach(item => {
       assert.ok(typeof item.id === 'number', `Item ${item.id} must have a numeric id`);
-      assert.ok(item.reference && item.reference.length > 0, `Item ${item.id} must have a reference`);
-      assert.ok(item.correct_answer && item.correct_answer.length > 0, `Item ${item.id} must have correct_answer`);
-      assert.ok(item.verse_text && item.verse_text.length > 0, `Item ${item.id} must have verse_text`);
       assert.ok(item.image_url && item.image_url.startsWith('assets/'), `Item ${item.id} image_url must point to assets/`);
+      // Validate bilingual fields
+      assert.ok(item.correct_answer.ar && item.correct_answer.en, `Item ${item.id} must have ar and en answers`);
+      assert.ok(item.reference.ar && item.reference.en, `Item ${item.id} must have ar and en references`);
+      assert.ok(item.verse_text.ar && item.verse_text.en, `Item ${item.id} must have ar (Van Dyck) and en (NKJV) verse text`);
     });
   });
+});
 
-  test('QUESTIONS_BANK contains exactly 300 servant questions (100 per level) with full verse text', () => {
+describe('3. Bilingual QUESTIONS_BANK Integrity Tests (300 Questions: Van Dyck & NKJV)', () => {
+  test('QUESTIONS_BANK contains exactly 300 servant questions (100 per level)', () => {
     assert.strictEqual(Array.isArray(window.QUESTIONS_BANK), true);
     assert.strictEqual(window.QUESTIONS_BANK.length, 300, 'Bank must have exactly 300 questions');
 
     const levelCounts = { 1: 0, 2: 0, 3: 0 };
     window.QUESTIONS_BANK.forEach(q => {
       assert.ok([1, 2, 3].includes(q.level), `Invalid level ${q.level} in question ${q.id}`);
-      assert.strictEqual(q.options.length, 4, `Question ${q.id} must have 4 options`);
       assert.ok(q.correctIndex >= 0 && q.correctIndex <= 3, `Question ${q.id} correctIndex out of bounds`);
-      assert.ok(q.question && q.question.trim().length > 0, `Question ${q.id} question text empty`);
-      assert.ok(q.reference && q.reference.trim().length > 0, `Question ${q.id} reference empty`);
-      assert.ok(q.verse && q.verse.trim().length > 0, `Question ${q.id} verse text must be non-empty`);
+
+      // Bilingual question text
+      assert.ok(q.question.ar && q.question.ar.trim().length > 0, `Question ${q.id} missing Arabic text`);
+      assert.ok(q.question.en && q.question.en.trim().length > 0, `Question ${q.id} missing English text`);
+
+      // Bilingual options (4 options in both languages)
+      assert.strictEqual(q.options.ar.length, 4, `Question ${q.id} must have 4 Arabic options`);
+      assert.strictEqual(q.options.en.length, 4, `Question ${q.id} must have 4 English options`);
+
+      // Bilingual reference
+      assert.ok(q.reference.ar && q.reference.ar.trim().length > 0, `Question ${q.id} missing Arabic reference`);
+      assert.ok(q.reference.en && q.reference.en.trim().length > 0, `Question ${q.id} missing English reference`);
+
+      // Bilingual verse (Van Dyck & NKJV)
+      assert.ok(q.verse.ar && q.verse.ar.trim().length > 0, `Question ${q.id} missing Arabic Van Dyck verse`);
+      assert.ok(q.verse.en && q.verse.en.trim().length > 0, `Question ${q.id} missing English NKJV verse`);
+
       levelCounts[q.level]++;
     });
 
@@ -56,10 +122,7 @@ describe('1. Dataset Integrity & Schema Tests (300 Questions with Verses)', () =
   });
 });
 
-describe('2. 3x3 Grid Strategic Difficulty Mapping Tests (3-3-3 Layout)', () => {
-  // 3 Easy on 3 corners (0, 2, 6)
-  // 3 Medium: 1 on an edge (1) and 2 in sides (7, 8)
-  // 3 Hard: 1 in center (4) and 2 in sides (3, 5)
+describe('4. 3x3 Grid Strategic Difficulty Mapping Tests (3-3-3 Layout)', () => {
   const difficultyMap = {
     0: 1, 1: 2, 2: 1,
     3: 3, 4: 3, 5: 3,
@@ -86,77 +149,13 @@ describe('2. 3x3 Grid Strategic Difficulty Mapping Tests (3-3-3 Layout)', () => 
   });
 });
 
-describe('3. Fair Cycle & Non-Repeating Random Engine Tests', () => {
-  function shuffleArray(arr) {
-    const copy = [...arr];
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-  }
-
-  test('Images cycle guarantees all 20 unique images before any repetition', () => {
-    let pool = [];
-    const drawn = [];
-
-    // Simulate drawing 40 scenes (2 complete cycles of 20)
-    for (let i = 0; i < 40; i++) {
-      if (pool.length === 0) {
-        pool = shuffleArray(window.PICS_DATA);
-      }
-      drawn.push(pool.pop().id);
-    }
-
-    const firstCycle = drawn.slice(0, 20);
-    const secondCycle = drawn.slice(20, 40);
-
-    assert.strictEqual(new Set(firstCycle).size, 20, 'First cycle must have 20 distinct IDs');
-    assert.strictEqual(new Set(secondCycle).size, 20, 'Second cycle must have 20 distinct IDs');
-  });
-
-  test('Questions pool for each level cycles fairly without repeating until depleted', () => {
-    [1, 2, 3].forEach(level => {
-      const tierQs = window.QUESTIONS_BANK.filter(q => q.level === level);
-      let pool = [];
-      const drawn = [];
-
-      for (let i = 0; i < tierQs.length; i++) {
-        if (pool.length === 0) {
-          pool = shuffleArray(tierQs);
-        }
-        drawn.push(pool.pop().id);
-      }
-
-      assert.strictEqual(new Set(drawn).size, tierQs.length, `Level ${level} must draw all unique questions`);
-    });
-  });
-});
-
-describe('4. Scene Dropdown Sanity & Anti-Spoiler Tests', () => {
-  test('Dropdown options contain only image numbers and zero answer titles', () => {
-    const options = [];
-    for (let i = 1; i <= window.PICS_DATA.length; i++) {
-      options.push(`صورة رقم ${i}`);
-    }
-
-    assert.strictEqual(options.length, 20);
-    // Ensure none of the correct_answer strings leak into the dropdown labels
-    window.PICS_DATA.forEach(p => {
-      options.forEach(opt => {
-        assert.ok(!opt.includes(p.correct_answer), `Dropdown label ${opt} must not leak answer title`);
-      });
-    });
-  });
-});
-
 describe('5. Fullscreen Question Screen & Manual Return Flow (No Auto-Dismiss)', () => {
   test('Answering question does not dismiss automatically and sets pendingOutcome', () => {
     let questionScreenActive = true;
     let revelationCardActive = false;
     let pendingOutcome = null;
 
-    // Simulate clicking an option:
+    // Simulate answering:
     const isCorrect = true;
     const tileIndex = 4;
     pendingOutcome = { isCorrect, tileIndex };

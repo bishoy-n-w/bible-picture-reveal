@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>كشف الصورة الكتابية | مسابقة الكرنفال التفاعلية</title>
-  <meta name="description" content="مسابقة كشف الصورة الكتابية - إصدار الكرنفال التفاعلي مع شاشة ترحيب جذابة، شبكة كشف ذكية، ومؤقت زمني.">
+  <title>كشف الصورة الكتابية | Bible Picture Reveal</title>
+  <meta name="description" content="مسابقة كشف الصورة الكتابية - إصدار الخدام مع بنك 300 سؤال عربي وإنجليزي بنصوص الآيات الكاملة من فاندايك و NKJV.">
 
-  <!-- Google Fonts: Cairo & Amiri -->
+  <!-- Google Fonts: Cairo & Amiri & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -28,38 +28,47 @@
        ========================================================================== -->
   <section id="welcome-screen" class="welcome-screen active">
     <div class="welcome-container">
+      <!-- Language Control Bar -->
+      <div class="lang-control-panel">
+        <span class="lang-control-label" data-i18n="langSelectorTitle">اللغة / Language:</span>
+        <div class="lang-buttons-group">
+          <button class="lang-toggle-btn" data-lang="ar">العربية</button>
+          <button class="lang-toggle-btn" data-lang="en">English</button>
+        </div>
+      </div>
+
       <div class="welcome-crest">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L1 21h22L12 2zm0 3.84L19.5 19H4.5L12 5.84zM11 10h2v4h-2zm0 6h2v2h-2z"/>
         </svg>
       </div>
 
-      <h1 class="welcome-title">كشف الصورة الكتابية</h1>
-      <p class="welcome-subtitle">تحدي الذكاء والمعرفة الكتابية • هل يمكنك تخمين المشهد المخفي؟</p>
+      <h1 class="welcome-title" data-i18n="welcomeTitle">كشف الصورة الكتابية</h1>
+      <p class="welcome-subtitle" data-i18n="welcomeSubtitle">تحدي المعرفة الكتابية للخدام • هل يمكنك تخمين المشهد المخفي؟</p>
 
       <!-- 3 Illustrated Steps -->
       <div class="welcome-steps">
         <div class="step-card">
           <div class="step-icon">🎯</div>
-          <h3 class="step-title">1. اختر مربعاً</h3>
-          <p class="step-desc">9 مربعات متفاوتة الصعوبة، المربع الأوسط يكشف قلب الصورة وهو الأصعب!</p>
+          <h3 class="step-title" data-i18n="step1Title">1. اختر مربعاً</h3>
+          <p class="step-desc" data-i18n="step1Desc">9 مربعات صعبة موزعة بعناية، شريط المنتصف يحوي أصعب الأسئلة ويكشف قلب الصورة!</p>
         </div>
         <div class="step-card">
           <div class="step-icon">❓</div>
-          <h3 class="step-title">2. أجب عن السؤال</h3>
-          <p class="step-desc">أجب بشكل صحيح لكشف اللوح، الإجابة الخاطئة تغلق اللوح وتفقده للأبد!</p>
+          <h3 class="step-title" data-i18n="step2Title">2. أجب عن السؤال</h3>
+          <p class="step-desc" data-i18n="step2Desc">أجب بدقة لكشف اللوح، الإجابة الخاطئة تغلق اللوح للأبد مع إبراز الشاهد والآية الكاملة!</p>
         </div>
         <div class="step-card">
           <div class="step-icon">🏆</div>
-          <h3 class="step-title">3. خمّن الصورة</h3>
-          <p class="step-desc">خمّن الحدث الكتابي والشخصيات من الأجزاء المكشوفة واحتفل بالنصر!</p>
+          <h3 class="step-title" data-i18n="step3Title">3. خمّن الصورة</h3>
+          <p class="step-desc" data-i18n="step3Desc">استنتج الحدث الكتابي من الأجزاء المكشوفة واحتفل بالنصر بالآية المرجعية الكاملة!</p>
         </div>
       </div>
 
       <!-- Start Button -->
       <div class="welcome-action">
         <button id="btn-start-game" class="btn-start-challenge">
-          <span>ابدأ التحدي الآن</span>
+          <span data-i18n="startChallenge">ابدأ التحدي الآن</span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       </div>
@@ -79,24 +88,30 @@
           </svg>
         </div>
         <div>
-          <h2 class="brand-title">كشف الصورة الكتابية</h2>
-          <span class="brand-subtitle">مسابقة الكرنفال</span>
+          <h2 class="brand-title" data-i18n="brandTitle">كشف الصورة الكتابية</h2>
+          <span class="brand-subtitle" data-i18n="brandSubtitle">مسابقة الخدام الكنسية</span>
         </div>
       </div>
 
       <!-- Scene Progress Badge -->
       <div class="scene-badge">
-        <span class="scene-label">المشهد الحالي:</span>
+        <span class="scene-label" data-i18n="sceneLabel">المشهد الحالي:</span>
         <strong id="round-counter" class="scene-num">1</strong>
-        <span class="scene-sep">من</span>
+        <span class="scene-sep" data-i18n="ofLabel">من</span>
         <span id="remaining-counter" class="scene-total">20</span>
       </div>
 
-      <!-- Header Navigation Controls -->
+      <!-- Header Navigation & Language Switcher Controls -->
       <div class="header-actions">
+        <!-- In-Game Language Selector -->
+        <div class="header-lang-group">
+          <button class="lang-toggle-btn" data-lang="ar" title="تفعيل/تعطيل العربية">عربي</button>
+          <button class="lang-toggle-btn" data-lang="en" title="Enable/Disable English">EN</button>
+        </div>
+
         <button id="btn-go-home" class="mod-btn btn-subtle" title="العودة للشاشة الرئيسية">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-          <span>الرئيسية</span>
+          <span data-i18n="home">الرئيسية</span>
         </button>
 
         <button id="btn-toggle-audio" class="mod-btn-icon" title="كتم / تشغيل الصوت">
@@ -132,18 +147,18 @@
         <!-- Grand Win Overlay -->
         <div id="win-overlay" class="win-overlay">
           <div class="win-card">
-            <div class="win-emblem">✦ تم كشف المشهد بنجاح ✦</div>
+            <div class="win-emblem" data-i18n="winEmblem">✦ تم كشف المشهد بنجاح ✦</div>
             <h2 id="win-title" class="win-event-title">عنوان المشهد</h2>
             <span id="win-ref" class="win-reference-badge">(الشاهد الكتابي)</span>
-            <p id="win-verse" class="win-verse-quote">«نص الآية المباركة»</p>
+            <div id="win-verse" class="win-verse-quote">«نص الآية المباركة»</div>
 
             <div class="win-action-row">
               <button id="win-next-btn" class="mod-btn btn-reveal">
-                <span>المشهد التالي (مفتاح N)</span>
+                <span data-i18n="nextScene">المشهد التالي (مفتاح N)</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
               <button id="win-home-btn" class="mod-btn btn-subtle">
-                <span>العودة للرئيسية 🏠</span>
+                <span data-i18n="returnHome">العودة للرئيسية 🏠</span>
               </button>
             </div>
           </div>
@@ -157,7 +172,7 @@
         <!-- Question Screen Header -->
         <div class="qscreen-header">
           <div class="qscreen-meta">
-            <span id="modal-diff-tag" class="altar-diff-tag">مستوى سهل ✦</span>
+            <span id="modal-diff-tag" class="altar-diff-tag">مستوى متقدم ✦</span>
             <span id="modal-tile-indicator" class="altar-tile-tag">المربع (1)</span>
           </div>
 
@@ -172,8 +187,8 @@
           </button>
         </div>
 
-        <!-- Question Text -->
-        <h2 id="question-text" class="qscreen-question-text">نص السؤال هنا؟</h2>
+        <!-- Question Text (Supports Arabic, English, or Bilingual) -->
+        <div id="question-text" class="qscreen-question-text">نص السؤال هنا؟</div>
 
         <!-- 4 Multiple Choice Option Buttons -->
         <div id="options-grid" class="altar-options-grid">
@@ -188,18 +203,18 @@
 
           <div class="revelation-body">
             <div class="revelation-answer-row">
-              <span class="revelation-answer-label">الإجابة الصحيحة:</span>
-              <strong id="revelation-correct-answer" class="revelation-answer-text">--</strong>
+              <span class="revelation-answer-label" data-i18n="correctAnswerLabel">الإجابة الصحيحة:</span>
+              <div id="revelation-correct-answer" class="revelation-answer-text">--</div>
             </div>
 
-            <blockquote id="revelation-verse" class="revelation-verse-text">«نص الآية المباركة كاملاً...»</blockquote>
+            <div id="revelation-verse" class="revelation-verse-text">«نص الآية المباركة كاملاً...»</div>
             <div id="revelation-reference" class="revelation-reference-text">(الشاهد: ...)</div>
           </div>
 
           <!-- Manual Return Button to Image Screen -->
           <div class="revelation-actions">
             <button id="btn-return-board" class="btn-return-board">
-              <span>متابعة إلى لوحة الصورة</span>
+              <span data-i18n="continueToBoard">متابعة إلى لوحة الصورة</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
           </div>
@@ -214,25 +229,25 @@
           <!-- Full Reveal Button -->
           <button id="btn-reveal-full" class="mod-btn btn-reveal" title="كشف الصورة كاملة (مفتاح المسافة Space)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            <span>كشف الصورة</span>
+            <span data-i18n="revealFull">كشف الصورة</span>
           </button>
 
           <!-- Next Scene Button -->
           <button id="btn-next-image" class="mod-btn btn-next" title="صورة جديدة من البنك (مفتاح N)">
-            <span>صورة جديدة</span>
+            <span data-i18n="nextScene">صورة جديدة</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
 
           <!-- Reset Grid Button -->
           <button id="btn-reset-grid" class="mod-btn btn-subtle" title="إعادة تغطية المربعات لنفس المشهد">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-            <span>إعادة المربعات</span>
+            <span data-i18n="resetGrid">إعادة المربعات</span>
           </button>
 
           <!-- Number-Only Scene Selector (No Spoilers / No Titles) -->
           <div class="mod-select-wrapper">
             <select id="select-scene" class="mod-select" title="القفز لرقم صورة محدد">
-              <option value="">-- اختر صورة (1-20) --</option>
+              <option value="" data-i18n="chooseScene">-- اختر صورة (1-20) --</option>
             </select>
           </div>
         </div>
@@ -244,7 +259,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
             </button>
             <div class="mod-peek-popover" id="mod-peek-popover">
-              <div class="mod-peek-title">✦ إجابة المشهد (سري للمشرف):</div>
+              <div class="mod-peek-title" data-i18n="secretPeekTitle">✦ إجابة المشهد (سري للمشرف):</div>
               <div id="mod-peek-answer" class="mod-peek-answer">--</div>
               <div id="mod-peek-ref" class="mod-peek-ref">--</div>
             </div>
@@ -255,6 +270,7 @@
   </section>
 
   <!-- Script Modules in Order -->
+  <script src="js/i18n.js"></script>
   <script src="js/images-bank.js"></script>
   <script src="js/questions-bank.js"></script>
   <script src="js/audio.js"></script>

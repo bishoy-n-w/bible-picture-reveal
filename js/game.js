@@ -1,13 +1,13 @@
 /**
- * Picture Reveal Bible Trivia - Carnival Edition v2.1.0
+ * Picture Reveal Bible Trivia - Bilingual Servants Edition v4.0.0
  * Handles:
+ *  - Multilingual Engine (Arabic Smith & Van Dyck & English NKJV)
+ *  - Independent Language Activation (Arabic-only, English-only, Bilingual)
  *  - Welcome Attractor Screen & Return-to-Home Flow
- *  - 3D Luxury Mystery Vault Grid (Center=Hard/Seal, Edges=Medium, Corners=Easy)
- *  - Non-Blocking Bottom Question Altar with Integrated Auto-Start Timer
- *  - Timeout Notification (Preserves Question without Auto-Dismissal)
- *  - Fair Cycle Pools for Scenes & Questions (No Repetition)
- *  - Number-Only Scene Selector (Zero Spoilers)
- *  - Full Theater Keyboard Navigation (1-9 tiles, 1-4 answers, Space, N, P, Esc)
+ *  - 3D Luxury Mystery Vault Grid (3-3-3 Difficulty Distribution)
+ *  - Fullscreen Servant Question Screen with Full Biblical Verses (No Auto-Dismiss)
+ *  - 60-Second Countdown Timer with Fading Timeout State
+ *  - Number-Only Anti-Spoiler Dropdown & Full Keyboard Controller
  */
 
 class PictureRevealGame {
@@ -24,6 +24,7 @@ class PictureRevealGame {
     this.tileStates = Array(9).fill('covered'); // 'covered' | 'revealed' | 'failed'
     this.activeTileIndex = null;
     this.activeQuestion = null;
+    this.activeShuffledOptions = null;
     this.isFullRevealed = false;
     this.roundCount = 0;
     this.isGameActive = false;
@@ -34,20 +35,20 @@ class PictureRevealGame {
     this.timerRemaining = 60;
     this.timerInterval = null;
 
-    // 3x3 Difficulty Map:
+    // 3x3 Difficulty Map (3-3-3 Layout):
     // 3 Easy on 3 corners (0, 2, 6)
     // 3 Medium: 1 on an edge (1) and 2 in sides (7, 8)
     // 3 Hard: 1 in center (4) and 2 in sides (3, 5)
     this.difficultyMap = {
-      0: 1, // Corner: Easy
-      1: 2, // Edge: Medium
-      2: 1, // Corner: Easy
-      3: 3, // Side: Hard
-      4: 3, // Center: Hard (Golden Seal)
-      5: 3, // Side: Hard
-      6: 1, // Corner: Easy
-      7: 2, // Side: Medium
-      8: 2  // Side: Medium
+      0: 1, // Corner: Advanced (Hard)
+      1: 2, // Edge: Deep (Very Hard)
+      2: 1, // Corner: Advanced (Hard)
+      3: 3, // Side: Mastery (Extremely Hard)
+      4: 3, // Center: Mastery (Extremely Hard)
+      5: 3, // Side: Mastery (Extremely Hard)
+      6: 1, // Corner: Advanced (Hard)
+      7: 2, // Side: Deep (Very Hard)
+      8: 2  // Side: Deep (Very Hard)
     };
 
     this.dom = {};
@@ -55,6 +56,9 @@ class PictureRevealGame {
 
   init() {
     this.cacheDom();
+    if (window.i18n) {
+      window.i18n.applyDocumentDirection();
+    }
     this.populateSceneSelector();
     this.bindEvents();
 
@@ -63,6 +67,7 @@ class PictureRevealGame {
     }
 
     this.updateAudioButtonState();
+    this.updateAllLocalizedUI();
   }
 
   cacheDom() {
@@ -119,16 +124,21 @@ class PictureRevealGame {
     this.dom.confettiCanvas = document.getElementById('confetti-canvas');
   }
 
-  // Populate Dropdown with Numbers Only (No Titles to Avoid Spoilers)
+  // Populate Dropdown with Numbers Only (Anti-Spoiler)
   populateSceneSelector() {
     if (!this.dom.selectScene) return;
-    this.dom.selectScene.innerHTML = '<option value="">-- اختر صورة (1-20) --</option>';
+    const prefix = window.i18n ? window.i18n.t('sceneItemPrefix') : 'صورة رقم';
+    const chooseTxt = window.i18n ? window.i18n.t('chooseScene') : '-- اختر صورة (1-20) --';
+    const currentVal = this.dom.selectScene.value;
+
+    this.dom.selectScene.innerHTML = `<option value="">${chooseTxt}</option>`;
     for (let i = 1; i <= this.picsBank.length; i++) {
       const opt = document.createElement('option');
       opt.value = i;
-      opt.textContent = `صورة رقم ${i}`;
+      opt.textContent = `${prefix} ${i}`;
       this.dom.selectScene.appendChild(opt);
     }
+    if (currentVal) this.dom.selectScene.value = currentVal;
   }
 
   bindEvents() {
@@ -142,6 +152,18 @@ class PictureRevealGame {
     if (this.dom.winHomeBtn) {
       this.dom.winHomeBtn.addEventListener('click', () => this.showWelcomeScreen());
     }
+
+    // Language Toggle Buttons (Independent activation: AR / EN / Both)
+    document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const lang = btn.dataset.lang;
+        if (window.i18n) {
+          window.i18n.toggleLanguage(lang);
+          if (window.soundEngine) window.soundEngine.playClick();
+          this.updateAllLocalizedUI();
+        }
+      });
+    });
 
     // Full Reveal & Next Scene
     if (this.dom.btnReveal) {
@@ -167,7 +189,7 @@ class PictureRevealGame {
       this.dom.btnFullscreen.addEventListener('click', () => this.toggleFullscreen());
     }
 
-    // Question Altar Cancel/Close
+    // Question Screen Cancel/Close
     if (this.dom.modalCloseBtn) {
       this.dom.modalCloseBtn.addEventListener('click', () => this.closeQuestionAltar());
     }
@@ -206,6 +228,54 @@ class PictureRevealGame {
   }
 
   /* ==========================================================================
+     LOCALIZATION RE-RENDER CONTROLLER
+     ========================================================================== */
+  updateAllLocalizedUI() {
+    if (!window.i18n) return;
+    window.i18n.applyDocumentDirection();
+
+    // 1. Update all static [data-i18n] elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      el.textContent = window.i18n.t(key);
+    });
+
+    // 2. Update active states on language buttons
+    document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+      const lang = btn.dataset.lang;
+      btn.classList.toggle('active', window.i18n.isLanguageActive(lang));
+    });
+
+    // 3. Update scene dropdown
+    this.populateSceneSelector();
+
+    // 4. Update grid tiles difficulty labels
+    if (this.currentImage) {
+      this.renderGrid();
+    }
+
+    // 5. Update Secret Peek text
+    if (this.currentImage) {
+      if (this.dom.peekAnswer) {
+        this.dom.peekAnswer.innerHTML = window.i18n.formatField(this.currentImage.correct_answer);
+      }
+      if (this.dom.peekRef) {
+        this.dom.peekRef.innerHTML = window.i18n.formatField(this.currentImage.reference);
+      }
+    }
+
+    // 6. If Question Screen is currently open, re-render its text and options
+    if (this.dom.questionScreen && this.dom.questionScreen.classList.contains('active') && this.activeQuestion) {
+      this.reRenderActiveQuestionScreen();
+    }
+
+    // 7. If Win Overlay is active, re-render
+    if (this.dom.winOverlay && this.dom.winOverlay.classList.contains('active') && this.currentImage) {
+      this.renderWinContent();
+    }
+  }
+
+  /* ==========================================================================
      WELCOME SCREEN & GAME ROUTING
      ========================================================================== */
   startGame() {
@@ -225,12 +295,12 @@ class PictureRevealGame {
 
     this.isGameActive = false;
     this.dom.winOverlay.classList.remove('active');
-    this.dom.questionAltar.classList.remove('active');
+    this.dom.questionScreen.classList.remove('active');
     this.dom.welcomeScreen.classList.add('active');
   }
 
   /* ==========================================================================
-     INTEGRATED QUESTION COUNTDOWN TIMER (AUTO-STARTS ON QUESTION OPEN)
+     INTEGRATED QUESTION COUNTDOWN TIMER (60 SECONDS)
      ========================================================================== */
   startQuestionTimer() {
     this.stopTimer();
@@ -251,13 +321,10 @@ class PictureRevealGame {
         if (window.soundEngine) window.soundEngine.playTimeout();
         if (this.dom.altarTimerBadge) {
           this.dom.altarTimerBadge.className = 'altar-timer-badge timed-out';
-          this.dom.timerText.textContent = 'انتهى الوقت! ⏰';
+          this.dom.timerText.textContent = window.i18n ? window.i18n.t('timeUp') : 'انتهى الوقت! ⏰';
         }
         if (this.dom.questionText) {
           this.dom.questionText.classList.add('timed-out');
-        }
-        if (this.dom.altarParchment) {
-          this.dom.altarParchment.classList.add('timed-out');
         }
       }
     }, 1000);
@@ -274,7 +341,8 @@ class PictureRevealGame {
     if (!this.dom.timerText || !this.dom.altarTimerBadge) return;
 
     if (this.timerRemaining > 0) {
-      this.dom.timerText.textContent = `${this.timerRemaining} ثانية`;
+      const suffix = window.i18n ? window.i18n.t('secondsSuffix') : 'ثانية';
+      this.dom.timerText.textContent = `${this.timerRemaining} ${suffix}`;
       if (this.timerRemaining <= 5) {
         this.dom.altarTimerBadge.className = 'altar-timer-badge urgent';
       } else {
@@ -345,7 +413,7 @@ class PictureRevealGame {
 
   setupRoundUI() {
     this.dom.winOverlay.classList.remove('active');
-    this.dom.questionAltar.classList.remove('active');
+    this.dom.questionScreen.classList.remove('active');
 
     if (this.dom.roundDisplay) {
       this.dom.roundDisplay.textContent = this.currentImage.id;
@@ -355,10 +423,10 @@ class PictureRevealGame {
     }
 
     if (this.dom.peekAnswer) {
-      this.dom.peekAnswer.textContent = this.currentImage.correct_answer;
+      this.dom.peekAnswer.innerHTML = window.i18n ? window.i18n.formatField(this.currentImage.correct_answer) : this.currentImage.correct_answer.ar;
     }
     if (this.dom.peekRef) {
-      this.dom.peekRef.textContent = this.currentImage.reference;
+      this.dom.peekRef.innerHTML = window.i18n ? window.i18n.formatField(this.currentImage.reference) : this.currentImage.reference.ar;
     }
     if (this.dom.selectScene) {
       this.dom.selectScene.value = this.currentImage.id;
@@ -376,7 +444,7 @@ class PictureRevealGame {
     this.isFullRevealed = false;
     this.tileStates = Array(9).fill('covered');
     this.dom.winOverlay.classList.remove('active');
-    this.dom.questionAltar.classList.remove('active');
+    this.dom.questionScreen.classList.remove('active');
     this.renderGrid();
   }
 
@@ -483,7 +551,8 @@ class PictureRevealGame {
 
     ctx.fillStyle = '#d4af37';
     ctx.font = '700 24px Cairo, sans-serif';
-    ctx.fillText(sceneData.reference, width * 0.5, cardY + 120);
+    const refText = window.i18n ? window.i18n.getPlainText(sceneData.reference) : sceneData.reference.ar;
+    ctx.fillText(refText, width * 0.5, cardY + 120);
 
     ctx.fillStyle = '#9aa6bc';
     ctx.font = '600 20px Cairo, sans-serif';
@@ -492,12 +561,17 @@ class PictureRevealGame {
   }
 
   /* ==========================================================================
-     3x3 LUXURY MYSTERY GRID
+     3x3 LUXURY MYSTERY GRID (3-3-3 DISTRIBUTION)
      ========================================================================== */
   renderGrid() {
     this.dom.gridLayer.innerHTML = '';
-    const diffLabels = { 1: 'سهل', 2: 'متوسط', 3: 'صعب' };
+    const diffLabels = {
+      1: window.i18n ? window.i18n.t('diffEasy') : 'متقدم',
+      2: window.i18n ? window.i18n.t('diffMedium') : 'عميق',
+      3: window.i18n ? window.i18n.t('diffHard') : 'فائق'
+    };
     const diffStars = { 1: '✦', 2: '✦✦', 3: '✦✦✦' };
+    const lockedTxt = window.i18n ? window.i18n.t('lockedLabel') : 'مغلق';
 
     for (let i = 0; i < 9; i++) {
       const tile = document.createElement('div');
@@ -508,7 +582,6 @@ class PictureRevealGame {
       tile.dataset.index = i;
       tile.dataset.difficulty = diff;
 
-      // Note: failed-indicator is hidden by default in CSS!
       tile.innerHTML = `
         <div class="tile-inner">
           <span class="tile-number">${i + 1}</span>
@@ -517,7 +590,7 @@ class PictureRevealGame {
         </div>
         <div class="failed-indicator">
           <span class="failed-icon">✕</span>
-          <span class="failed-label">مغلق</span>
+          <span class="failed-label">${lockedTxt}</span>
         </div>
       `;
 
@@ -542,39 +615,20 @@ class PictureRevealGame {
      FULLSCREEN QUESTION SCREEN & ANSWER REVELATION
      ========================================================================== */
   showQuestionAltar(question, tileIndex, difficulty) {
-    const diffNames = { 1: 'مستوى متقدم ✦', 2: 'مستوى عميق ✦✦', 3: 'مستوى فائق الصعوبة ✦✦✦' };
-
-    // Reset any previous timeout animations and hide revelation card
-    if (this.dom.questionText) this.dom.questionText.classList.remove('timed-out');
-    if (this.dom.answerRevelationCard) this.dom.answerRevelationCard.classList.remove('active');
+    this.activeTileIndex = tileIndex;
+    this.activeDifficulty = difficulty;
+    this.activeQuestion = question;
     this.pendingOutcome = null;
 
-    this.dom.modalDiffTag.textContent = diffNames[difficulty];
-    this.dom.modalDiffTag.className = `altar-diff-tag level-${difficulty}`;
-    this.dom.modalTileIndicator.textContent = `المربع رقم (${tileIndex + 1})`;
-    this.dom.questionText.textContent = question.question;
-
-    const optionsWithMeta = question.options.map((text, idx) => ({
-      text,
+    // Build shuffled options array preserving bilingual references
+    const optionsWithMeta = question.options.ar.map((textAr, idx) => ({
+      ar: textAr,
+      en: (question.options.en && question.options.en[idx]) || textAr,
       isCorrect: idx === question.correctIndex
     }));
-    const shuffledOptions = this.shuffleArray(optionsWithMeta);
+    this.activeShuffledOptions = this.shuffleArray(optionsWithMeta);
 
-    const letters = ['أ', 'ب', 'ج', 'د'];
-    this.dom.optionsGrid.innerHTML = '';
-
-    shuffledOptions.forEach((opt, idx) => {
-      const btn = document.createElement('button');
-      btn.className = 'altar-option-btn';
-      btn.dataset.isCorrect = String(opt.isCorrect);
-      btn.innerHTML = `
-        <span>${opt.text}</span>
-        <span class="altar-seal-badge">${letters[idx]}</span>
-      `;
-
-      btn.addEventListener('click', () => this.handleOptionSelection(btn, opt.isCorrect));
-      this.dom.optionsGrid.appendChild(btn);
-    });
+    this.reRenderActiveQuestionScreen();
 
     if (this.dom.questionScreen) {
       this.dom.questionScreen.classList.add('active');
@@ -582,6 +636,65 @@ class PictureRevealGame {
 
     // Auto-start 60s countdown timer
     this.startQuestionTimer();
+  }
+
+  reRenderActiveQuestionScreen() {
+    if (!this.activeQuestion) return;
+
+    const diffNames = {
+      1: window.i18n ? window.i18n.t('level1Name') : 'مستوى متقدم ✦',
+      2: window.i18n ? window.i18n.t('level2Name') : 'مستوى عميق ✦✦',
+      3: window.i18n ? window.i18n.t('level3Name') : 'مستوى فائق الصعوبة ✦✦✦'
+    };
+
+    if (this.dom.questionText) this.dom.questionText.classList.remove('timed-out');
+    if (this.dom.answerRevelationCard && !this.pendingOutcome) {
+      this.dom.answerRevelationCard.classList.remove('active');
+    }
+
+    const tileTxt = window.i18n ? window.i18n.t('tileLabel') : 'المربع رقم';
+    this.dom.modalDiffTag.textContent = diffNames[this.activeDifficulty || 1];
+    this.dom.modalDiffTag.className = `altar-diff-tag level-${this.activeDifficulty || 1}`;
+    this.dom.modalTileIndicator.textContent = `${tileTxt} (${(this.activeTileIndex || 0) + 1})`;
+
+    this.dom.questionText.innerHTML = window.i18n
+      ? window.i18n.formatField(this.activeQuestion.question)
+      : this.activeQuestion.question.ar;
+
+    const letters = ['A', 'B', 'C', 'D'];
+    const lettersAr = ['أ', 'ب', 'ج', 'د'];
+    const isEn = window.i18n && window.i18n.activeLanguages.length === 1 && window.i18n.activeLanguages[0] === 'en';
+    const letterLabels = isEn ? letters : lettersAr;
+
+    this.dom.optionsGrid.innerHTML = '';
+
+    if (this.activeShuffledOptions) {
+      this.activeShuffledOptions.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'altar-option-btn';
+        btn.dataset.isCorrect = String(opt.isCorrect);
+
+        const localizedOption = window.i18n ? window.i18n.formatField({ ar: opt.ar, en: opt.en }) : opt.ar;
+        btn.innerHTML = `
+          <div class="option-text-wrapper">${localizedOption}</div>
+          <span class="altar-seal-badge">${letterLabels[idx]}</span>
+        `;
+
+        if (this.pendingOutcome) {
+          btn.style.pointerEvents = 'none';
+          if (opt.isCorrect) btn.classList.add(this.pendingOutcome.isCorrect ? 'selected-correct' : 'show-correct');
+        } else {
+          btn.addEventListener('click', () => this.handleOptionSelection(btn, opt.isCorrect));
+        }
+
+        this.dom.optionsGrid.appendChild(btn);
+      });
+    }
+
+    // If revelation card is active, re-render its content
+    if (this.pendingOutcome && this.dom.answerRevelationCard) {
+      this.renderRevelationContent(this.pendingOutcome.isCorrect);
+    }
   }
 
   handleOptionSelection(selectedBtn, isCorrect) {
@@ -596,11 +709,6 @@ class PictureRevealGame {
     if (isCorrect) {
       selectedBtn.classList.add('selected-correct');
       if (window.soundEngine) window.soundEngine.playCorrect();
-
-      if (this.dom.revelationStatus) {
-        this.dom.revelationStatus.className = 'revelation-status-badge correct';
-        this.dom.revelationStatus.textContent = '✦ إجابة صحيحة! أحسنت ✦';
-      }
     } else {
       selectedBtn.classList.add('selected-incorrect');
       if (window.soundEngine) window.soundEngine.playIncorrect();
@@ -611,28 +719,43 @@ class PictureRevealGame {
           btn.classList.add('show-correct');
         }
       });
-
-      if (this.dom.revelationStatus) {
-        this.dom.revelationStatus.className = 'revelation-status-badge incorrect';
-        this.dom.revelationStatus.textContent = '✕ إجابة غير صحيحة! ✕';
-      }
     }
 
-    // Populate Revelation Card with full verse and reference
-    const correctText = this.activeQuestion.options[this.activeQuestion.correctIndex];
-    if (this.dom.revelationCorrectAnswer) {
-      this.dom.revelationCorrectAnswer.textContent = correctText;
-    }
-    if (this.dom.revelationVerse) {
-      this.dom.revelationVerse.textContent = `«${this.activeQuestion.verse || ''}»`;
-    }
-    if (this.dom.revelationReference) {
-      this.dom.revelationReference.textContent = `(الشاهد: ${this.activeQuestion.reference || ''})`;
-    }
+    this.renderRevelationContent(isCorrect);
 
     // Display Revelation Card (NO AUTOMATIC DISMISSAL!)
     if (this.dom.answerRevelationCard) {
       this.dom.answerRevelationCard.classList.add('active');
+    }
+  }
+
+  renderRevelationContent(isCorrect) {
+    if (this.dom.revelationStatus) {
+      this.dom.revelationStatus.className = `revelation-status-badge ${isCorrect ? 'correct' : 'incorrect'}`;
+      this.dom.revelationStatus.textContent = isCorrect
+        ? (window.i18n ? window.i18n.t('correctStatus') : '✦ إجابة صحيحة! أحسنت ✦')
+        : (window.i18n ? window.i18n.t('incorrectStatus') : '✕ إجابة غير صحيحة! ✕');
+    }
+
+    const cIdx = this.activeQuestion.correctIndex;
+    const correctOpt = {
+      ar: this.activeQuestion.options.ar[cIdx],
+      en: this.activeQuestion.options.en[cIdx]
+    };
+
+    if (this.dom.revelationCorrectAnswer) {
+      this.dom.revelationCorrectAnswer.innerHTML = window.i18n
+        ? window.i18n.formatField(correctOpt)
+        : correctOpt.ar;
+    }
+    if (this.dom.revelationVerse) {
+      const verseHtml = window.i18n ? window.i18n.formatField(this.activeQuestion.verse) : this.activeQuestion.verse.ar;
+      this.dom.revelationVerse.innerHTML = `«${verseHtml}»`;
+    }
+    if (this.dom.revelationReference) {
+      const refLabel = window.i18n ? window.i18n.t('referenceLabel') : 'الشاهد:';
+      const refHtml = window.i18n ? window.i18n.formatField(this.activeQuestion.reference) : this.activeQuestion.reference.ar;
+      this.dom.revelationReference.innerHTML = `(${refLabel} ${refHtml})`;
     }
   }
 
@@ -691,19 +814,26 @@ class PictureRevealGame {
     if (window.soundEngine) window.soundEngine.playWinFanfare();
     if (window.confettiEngine) window.confettiEngine.burst(200);
 
-    if (this.dom.winTitle) {
-      this.dom.winTitle.textContent = this.currentImage.correct_answer;
-    }
-    if (this.dom.winRef) {
-      this.dom.winRef.textContent = `(المرجع: ${this.currentImage.reference})`;
-    }
-    if (this.dom.winVerse) {
-      this.dom.winVerse.textContent = `«${this.currentImage.verse_text}»`;
-    }
+    this.renderWinContent();
 
     setTimeout(() => {
       this.dom.winOverlay.classList.add('active');
     }, 450);
+  }
+
+  renderWinContent() {
+    if (this.dom.winTitle) {
+      this.dom.winTitle.innerHTML = window.i18n ? window.i18n.formatField(this.currentImage.correct_answer) : this.currentImage.correct_answer.ar;
+    }
+    if (this.dom.winRef) {
+      const refLabel = window.i18n ? window.i18n.t('referenceLabel') : 'المرجع:';
+      const refHtml = window.i18n ? window.i18n.formatField(this.currentImage.reference) : this.currentImage.reference.ar;
+      this.dom.winRef.innerHTML = `(${refLabel} ${refHtml})`;
+    }
+    if (this.dom.winVerse) {
+      const verseHtml = window.i18n ? window.i18n.formatField(this.currentImage.verse_text) : this.currentImage.verse_text.ar;
+      this.dom.winVerse.innerHTML = `«${verseHtml}»`;
+    }
   }
 
   /* ==========================================================================
@@ -798,7 +928,7 @@ class PictureRevealGame {
     this.dom.btnAudio.innerHTML = isMuted
       ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`
       : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
-    this.dom.btnAudio.title = isMuted ? "تشغيل الصوت" : "كتم الصوت";
+    this.dom.btnAudio.title = isMuted ? (window.i18n ? window.i18n.t('unmute') : "تشغيل الصوت") : (window.i18n ? window.i18n.t('mute') : "كتم الصوت");
   }
 
   toggleFullscreen() {

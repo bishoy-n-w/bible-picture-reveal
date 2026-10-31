@@ -10,6 +10,7 @@ console.log('🔍 Running project linter and sanity check...');
 
 // 1. Validate JS syntax with node -c
 const jsFiles = [
+  'js/i18n.js',
   'js/images-bank.js',
   'js/questions-bank.js',
   'js/audio.js',
@@ -79,13 +80,19 @@ try {
     console.error(`  ✗ QUESTIONS_BANK must contain exactly 300 items (found ${window.QUESTIONS_BANK ? window.QUESTIONS_BANK.length : 0})`);
     hasError = true;
   } else {
-    // Check verse presence
-    const missingVerse = window.QUESTIONS_BANK.filter(q => !q.verse || q.verse.trim().length === 0);
+    // Check verse presence (supports both string and bilingual object)
+    const missingVerse = window.QUESTIONS_BANK.filter(q => {
+      if (!q.verse) return true;
+      if (typeof q.verse === 'object') {
+        return !q.verse.ar || !q.verse.en || q.verse.ar.trim().length === 0 || q.verse.en.trim().length === 0;
+      }
+      return q.verse.trim().length === 0;
+    });
     if (missingVerse.length > 0) {
       console.error(`  ✗ Found ${missingVerse.length} questions missing complete verse text`);
       hasError = true;
     } else {
-      console.log(`  ✓ QUESTIONS_BANK verified (exactly ${window.QUESTIONS_BANK.length} servant questions with full verses)`);
+      console.log(`  ✓ QUESTIONS_BANK verified (exactly ${window.QUESTIONS_BANK.length} bilingual servant questions with Van Dyck & NKJV verses)`);
     }
   }
 } catch (e) {
