@@ -51,45 +51,60 @@ class SoundEngine {
     try {
       const t = this.ctx.currentTime;
       this.ambientGain = this.ctx.createGain();
-      this.ambientGain.gain.setValueAtTime(0.001, t);
-      this.ambientGain.gain.linearRampToValueAtTime(this.muted ? 0 : 0.08, t + 1.2);
+      this.ambientGain.gain.setValueAtTime(0.0001, t);
+      // Soft, whisper-level master volume (no loud buzzing)
+      this.ambientGain.gain.linearRampToValueAtTime(this.muted ? 0 : 0.024, t + 2.5);
       this.ambientGain.connect(this.ctx.destination);
 
-      // Low-pass filter for warm atmospheric sound
-      const filter = this.ctx.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(500, t);
-      filter.Q.setValueAtTime(1.5, t);
-      filter.connect(this.ambientGain);
+      // Highpass filter to eliminate any rumbling bass or humming below 280Hz
+      const highpass = this.ctx.createBiquadFilter();
+      highpass.type = 'highpass';
+      highpass.frequency.setValueAtTime(280, t);
+      highpass.Q.setValueAtTime(0.7, t);
 
-      // LFO for breathing filter modulation
+      // Smooth lowpass filter to remove any harshness above 1000Hz
+      const lowpass = this.ctx.createBiquadFilter();
+      lowpass.type = 'lowpass';
+      lowpass.frequency.setValueAtTime(1000, t);
+      lowpass.Q.setValueAtTime(0.8, t);
+
+      highpass.connect(lowpass);
+      lowpass.connect(this.ambientGain);
+
+      // Slow, relaxing breathing LFO (12.5-second peaceful swell)
       const lfo = this.ctx.createOscillator();
       const lfoGain = this.ctx.createGain();
-      lfo.frequency.setValueAtTime(0.12, t); // Slow 8-second cycle
-      lfoGain.gain.setValueAtTime(180, t);
+      lfo.frequency.setValueAtTime(0.08, t);
+      lfoGain.gain.setValueAtTime(0.008, t);
       lfo.connect(lfoGain);
-      lfoGain.connect(filter.frequency);
-      lfo.start(t);
 
-      // Ambient Chord: C3, G3, C4, E4
-      const freqs = [130.81, 196.00, 261.63, 329.63];
+      // Angelic Voicing: F4 (349.23Hz), A4 (440.00Hz), C5 (523.25Hz), E5 (659.25Hz)
+      // 100% Pure Sine Waves only - zero buzz, zero harsh harmonics
+      const freqs = [349.23, 440.00, 523.25, 659.25];
       const oscs = freqs.map((f, i) => {
         const osc = this.ctx.createOscillator();
-        osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+        osc.type = 'sine';
         osc.frequency.setValueAtTime(f, t);
-        osc.detune.setValueAtTime((i - 1.5) * 4, t);
-        osc.connect(filter);
+        // Micro-detune for lush, silky celestial shimmer
+        osc.detune.setValueAtTime((i - 1.5) * 3, t);
+
+        const oscGain = this.ctx.createGain();
+        oscGain.gain.setValueAtTime(0.25, t);
+        lfoGain.connect(oscGain.gain);
+
+        osc.connect(oscGain);
+        oscGain.connect(highpass);
         osc.start(t);
         return osc;
       });
 
-      // Periodic gentle celestial harp chime interval
+      // Periodic gentle crystalline glass harp chimes every 5.5 seconds
       this.chimeInterval = setInterval(() => {
         if (!this.ambientNodes || this.muted) return;
         this.playCelestialChimeRipples();
-      }, 7000);
+      }, 5500);
 
-      this.ambientNodes = { oscs, lfo, lfoGain, filter, gain: this.ambientGain };
+      this.ambientNodes = { oscs, lfo, lfoGain, highpass, lowpass, gain: this.ambientGain };
     } catch (e) {
       console.warn('Welcome ambience init error:', e);
     }
@@ -98,24 +113,31 @@ class SoundEngine {
   playCelestialChimeRipples() {
     if (!this.ctx || this.muted) return;
     const t = this.ctx.currentTime;
-    const chimeNotes = [659.25, 783.99, 987.77, 1174.66, 1318.51];
-    const note = chimeNotes[Math.floor(Math.random() * chimeNotes.length)];
+    // Pentatonic heavenly chime scale: G5, A5, C6, D6, E6, G6
+    const pentatonicNotes = [783.99, 880.00, 1046.50, 1174.66, 1318.51, 1567.98];
+    const count = Math.random() > 0.5 ? 2 : 1;
 
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
+    for (let i = 0; i < count; i++) {
+      const note = pentatonicNotes[Math.floor(Math.random() * pentatonicNotes.length)];
+      const delay = i * 0.22;
+      const noteTime = t + delay;
 
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(note, t);
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
 
-    gain.gain.setValueAtTime(0.001, t);
-    gain.gain.linearRampToValueAtTime(0.035, t + 0.1);
-    gain.gain.exponentialRampToValueAtTime(0.0001, t + 3.0);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(note, noteTime);
 
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
+      gain.gain.setValueAtTime(0.0001, noteTime);
+      gain.gain.linearRampToValueAtTime(0.016, noteTime + 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 3.2);
 
-    osc.start(t);
-    osc.stop(t + 3.0);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(noteTime);
+      osc.stop(noteTime + 3.3);
+    }
   }
 
   stopWelcomeAmbience() {
