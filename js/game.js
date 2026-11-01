@@ -722,8 +722,10 @@ class PictureRevealGame {
     }
 
     const tileTxt = window.i18n ? window.i18n.t('tileLabel') : 'المربع رقم';
-    this.dom.modalDiffTag.textContent = diffNames[this.activeDifficulty || 1];
-    this.dom.modalDiffTag.className = `altar-diff-tag level-${this.activeDifficulty || 1}`;
+    if (this.dom.modalDiffTag) {
+      this.dom.modalDiffTag.textContent = diffNames[this.activeDifficulty || 1];
+      this.dom.modalDiffTag.className = `altar-diff-tag level-${this.activeDifficulty || 1}`;
+    }
     this.dom.modalTileIndicator.textContent = `${tileTxt} (${(this.activeTileIndex || 0) + 1})`;
 
     this.dom.questionText.innerHTML = window.i18n

@@ -1098,9 +1098,17 @@ body.english-only-mode {
 .altar-diff-tag.level-3 { border-color: #e74c3c; color: #ff7675; background: rgba(231, 76, 60, 0.15); }
 
 .altar-tile-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 50px;
   font-size: 0.92rem;
-  font-weight: 700;
-  color: #9aa6bc;
+  font-weight: 800;
+  border: 1.5px solid var(--gold-bright);
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
 }
 
 /* Integrated Countdown Timer Badge */
