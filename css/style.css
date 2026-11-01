@@ -86,10 +86,10 @@ body.carnival-theme {
    1. WELCOME / ATTRACTOR SCREEN
    ========================================================================== */
 .attractor-canvas {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: 1;
 }
@@ -97,49 +97,54 @@ body.carnival-theme {
 .welcome-screen {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 200;
   display: none;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 50% 30%, #1a2438 0%, #0d121c 55%, #05070a 100%);
-  padding: 24px;
-  overflow: hidden;
+  background: radial-gradient(circle at 50% 25%, #182236 0%, #0b0f17 65%, #030507 100%);
+  padding: 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 .welcome-screen.active {
   display: flex;
-  animation: fadeIn 0.4s ease;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.35s ease;
 }
 
 .welcome-container {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   width: 100%;
-  max-width: 900px;
+  max-width: 840px;
+  margin: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
+  padding: 12px 10px;
 }
 
-/* Language Control Panel in Welcome Screen */
+/* Language & Audio Control Panel in Welcome Screen */
 .lang-control-panel {
   display: flex;
   align-items: center;
-  gap: 12px;
-  background: rgba(18, 24, 38, 0.85);
+  gap: 10px;
+  background: rgba(18, 24, 38, 0.88);
   border: 1px solid rgba(212, 175, 55, 0.4);
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
 }
 
 .lang-control-label {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: #9aa6bc;
+  color: #cbd5e1;
 }
 
 .lang-buttons-group,
@@ -150,13 +155,13 @@ body.carnival-theme {
 }
 
 .lang-toggle-btn {
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: 50px;
   border: 1.5px solid rgba(212, 175, 55, 0.35);
   background: #141b29;
-  color: #b5c2d8;
+  color: #e2e8f0;
   font-family: var(--font-arabic-display);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 800;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -172,6 +177,25 @@ body.carnival-theme {
   color: #1a1200;
   border-color: var(--gold-bright);
   box-shadow: 0 0 14px var(--gold-glow);
+}
+
+.welcome-audio-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #141b29;
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.welcome-audio-toggle:hover {
+  background: var(--gold-bright);
+  color: #1a1200;
+  transform: scale(1.08);
 }
 
 /* Bilingual Typography Layout */
@@ -200,8 +224,8 @@ body.english-only-mode {
 }
 
 .welcome-crest {
-  width: 76px;
-  height: 76px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: linear-gradient(145deg, #2a354c, #121824);
   border: 2px solid var(--gold-bright);
@@ -212,7 +236,7 @@ body.english-only-mode {
   color: var(--gold-bright);
   animation: floatPulse 3.5s infinite ease-in-out;
 }
-.welcome-crest svg { width: 44px; height: 44px; }
+.welcome-crest svg { width: 36px; height: 36px; }
 
 @keyframes floatPulse {
   0%, 100% {
@@ -220,65 +244,68 @@ body.english-only-mode {
     box-shadow: 0 0 25px var(--gold-glow), 0 0 50px rgba(212, 175, 55, 0.2);
   }
   50% {
-    transform: translateY(-8px) scale(1.05);
+    transform: translateY(-6px) scale(1.05);
     box-shadow: 0 0 45px var(--gold-bright), 0 0 80px rgba(255, 215, 0, 0.4);
   }
 }
 
 .welcome-title {
-  font-size: 3.2rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.9rem);
   font-weight: 900;
-  background: var(--gold-foil);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.2;
-  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  color: #ffd700;
+  line-height: 1.25;
+  margin: 0;
+  text-shadow: 0 2px 14px rgba(212, 175, 55, 0.6), 0 0 25px rgba(255, 215, 0, 0.35);
 }
 
 .welcome-subtitle {
-  font-size: 1.25rem;
-  color: #b5c2d8;
-  font-weight: 600;
-  max-width: 600px;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: #f1f5f9;
+  font-weight: 700;
+  max-width: 650px;
+  margin: 0 0 4px 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* 3 Step Cards */
 .welcome-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 12px;
   width: 100%;
-  margin: 10px 0 16px;
+  margin: 4px 0 10px;
 }
 
 .step-card {
-  background: linear-gradient(145deg, rgba(28, 36, 54, 0.85), rgba(16, 22, 34, 0.95));
+  background: linear-gradient(145deg, rgba(28, 36, 54, 0.9), rgba(16, 22, 34, 0.95));
   border: 1.5px solid rgba(212, 175, 55, 0.35);
   border-radius: var(--radius-md);
-  padding: 20px 16px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  gap: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
 .step-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: var(--gold-bright);
 }
 
-.step-icon { font-size: 2.2rem; }
+.step-icon { font-size: 1.8rem; }
 .step-title {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--gold-bright);
+  margin: 0;
 }
 .step-desc {
-  font-size: 0.9rem;
-  color: #9aa6bc;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
 }
 
 /* Magnetically Attractive Start Button with Ripple Pulse */
@@ -287,13 +314,13 @@ body.english-only-mode {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 52px;
+  padding: 14px 48px;
   border-radius: 50px;
   background: var(--gold-foil);
   border: 2px solid var(--gold-bright);
   color: #1a1200;
   font-family: var(--font-arabic-display);
-  font-size: 1.55rem;
+  font-size: 1.4rem;
   font-weight: 900;
   cursor: pointer;
   box-shadow: 0 8px 35px rgba(212, 175, 55, 0.6), inset 0 1px 0 #fff;

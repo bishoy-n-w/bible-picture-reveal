@@ -31,14 +31,17 @@
     <canvas id="attractor-canvas" class="attractor-canvas"></canvas>
 
     <div class="welcome-container">
-      <!-- Language Control Bar -->
+      <!-- Language & Audio Control Bar -->
       <div class="lang-control-panel">
         <span class="lang-control-label" data-i18n="langSelectorTitle">اللغة / Language:</span>
         <div class="lang-buttons-group">
           <button class="lang-toggle-btn" data-lang="ar">العربية</button>
           <button class="lang-toggle-btn" data-lang="en">English</button>
         </div>
-        <span class="welcome-version-pill" id="welcome-version-badge">v4.8.0</span>
+        <button id="welcome-audio-toggle" class="welcome-audio-toggle" title="كتم / تشغيل صوت الترحيب">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+        <span class="welcome-version-pill" id="welcome-version-badge">v4.9.2</span>
       </div>
 
       <div class="welcome-crest">

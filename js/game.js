@@ -137,6 +137,7 @@ class PictureRevealGame {
     this.dom.winViewBoardBtn = document.getElementById('win-view-board-btn');
     this.dom.btnRestoreWinCard = document.getElementById('btn-restore-win-card');
     this.dom.appVersionBadge = document.getElementById('app-version-badge');
+    this.dom.welcomeAudioToggle = document.getElementById('welcome-audio-toggle');
 
     // Moderator Controls
     this.dom.btnReveal = document.getElementById('btn-reveal-full');
@@ -211,6 +212,9 @@ class PictureRevealGame {
     // Audio & Fullscreen
     if (this.dom.btnAudio) {
       this.dom.btnAudio.addEventListener('click', () => this.toggleAudio());
+    }
+    if (this.dom.welcomeAudioToggle) {
+      this.dom.welcomeAudioToggle.addEventListener('click', () => this.toggleAudio());
     }
     if (this.dom.btnFullscreen) {
       this.dom.btnFullscreen.addEventListener('click', () => this.toggleFullscreen());
@@ -1029,12 +1033,20 @@ class PictureRevealGame {
   }
 
   updateAudioButtonState() {
-    if (!this.dom.btnAudio || !window.soundEngine) return;
+    if (!window.soundEngine) return;
     const isMuted = window.soundEngine.isMuted();
-    this.dom.btnAudio.innerHTML = isMuted
-      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`
-      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
-    this.dom.btnAudio.title = isMuted ? (window.i18n ? window.i18n.t('unmute') : "تشغيل الصوت") : (window.i18n ? window.i18n.t('mute') : "كتم الصوت");
+    const mutedIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`;
+    const soundIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
+    const titleText = isMuted ? (window.i18n ? window.i18n.t('unmute') : "تشغيل الصوت") : (window.i18n ? window.i18n.t('mute') : "كتم الصوت");
+
+    if (this.dom.btnAudio) {
+      this.dom.btnAudio.innerHTML = isMuted ? mutedIcon : soundIcon;
+      this.dom.btnAudio.title = titleText;
+    }
+    if (this.dom.welcomeAudioToggle) {
+      this.dom.welcomeAudioToggle.innerHTML = isMuted ? mutedIcon : soundIcon;
+      this.dom.welcomeAudioToggle.title = titleText;
+    }
   }
 
   toggleFullscreen() {

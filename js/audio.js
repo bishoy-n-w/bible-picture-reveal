@@ -1,6 +1,7 @@
 /**
  * Temple Codex Cinematic Audio Synthesizer
- * Uses Web Audio API to create authentic Hollywood-grade sound effects:
+ * Uses Web Audio API and Audio Element to create authentic Hollywood-grade sound effects:
+ *  - Background Soundtrack Support (assets/Jumanji - The Video Game.mp3) with pure chime fallback
  *  - Stone Slab Slam (Deep bass impact with textural stone grind)
  *  - Angelic Harp Chime (Triumphant multi-harmonic chord for correct answers)
  *  - War Drum Thunder Impact (Sub-bass rumble and dissonant crash for wrong answers)
@@ -12,9 +13,9 @@ class SoundEngine {
   constructor() {
     this.ctx = null;
     this.muted = localStorage.getItem('picture_reveal_muted') === 'true';
-    this.ambientNodes = null;
-    this.ambientGain = null;
-    this.chimeInterval = null;
+    this.chimeTimer = null;
+    this.isAmbienceActive = false;
+    this.bgAudio = null;
   }
 
   init() {
@@ -32,8 +33,18 @@ class SoundEngine {
   toggleMute() {
     this.muted = !this.muted;
     localStorage.setItem('picture_reveal_muted', this.muted);
-    if (this.ambientNodes && this.ambientGain && this.ctx) {
-      this.ambientGain.gain.setValueAtTime(this.muted ? 0 : 0.08, this.ctx.currentTime);
+
+    if (this.bgAudio) {
+      this.bgAudio.muted = this.muted;
+      this.bgAudio.volume = this.muted ? 0 : 0.25;
+    }
+
+    if (this.muted) {
+      this.stopWelcomeAmbience();
+    } else {
+      if (window.gameApp && !window.gameApp.isGameActive) {
+        this.startWelcomeAmbience();
+      }
     }
     return this.muted;
   }
@@ -42,123 +53,101 @@ class SoundEngine {
     return this.muted;
   }
 
-  // Ethereal Cathedral Ambient Pad & Chimes for Welcome / Attractor Mode
+  // Welcome Screen Soundtrack & Pure Chimes
+  // Plays MP3 soundtrack from assets if present, with zero-buzz fallback
   startWelcomeAmbience() {
     this.init();
-    if (!this.ctx) return;
-    if (this.ambientNodes) return; // Already active
+    if (this.muted) return;
+    if (this.isAmbienceActive) return;
 
-    try {
-      const t = this.ctx.currentTime;
-      this.ambientGain = this.ctx.createGain();
-      this.ambientGain.gain.setValueAtTime(0.0001, t);
-      // Soft, whisper-level master volume (no loud buzzing)
-      this.ambientGain.gain.linearRampToValueAtTime(this.muted ? 0 : 0.024, t + 2.5);
-      this.ambientGain.connect(this.ctx.destination);
+    this.isAmbienceActive = true;
 
-      // Highpass filter to eliminate any rumbling bass or humming below 280Hz
-      const highpass = this.ctx.createBiquadFilter();
-      highpass.type = 'highpass';
-      highpass.frequency.setValueAtTime(280, t);
-      highpass.Q.setValueAtTime(0.7, t);
-
-      // Smooth lowpass filter to remove any harshness above 1000Hz
-      const lowpass = this.ctx.createBiquadFilter();
-      lowpass.type = 'lowpass';
-      lowpass.frequency.setValueAtTime(1000, t);
-      lowpass.Q.setValueAtTime(0.8, t);
-
-      highpass.connect(lowpass);
-      lowpass.connect(this.ambientGain);
-
-      // Slow, relaxing breathing LFO (12.5-second peaceful swell)
-      const lfo = this.ctx.createOscillator();
-      const lfoGain = this.ctx.createGain();
-      lfo.frequency.setValueAtTime(0.08, t);
-      lfoGain.gain.setValueAtTime(0.008, t);
-      lfo.connect(lfoGain);
-
-      // Angelic Voicing: F4 (349.23Hz), A4 (440.00Hz), C5 (523.25Hz), E5 (659.25Hz)
-      // 100% Pure Sine Waves only - zero buzz, zero harsh harmonics
-      const freqs = [349.23, 440.00, 523.25, 659.25];
-      const oscs = freqs.map((f, i) => {
-        const osc = this.ctx.createOscillator();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(f, t);
-        // Micro-detune for lush, silky celestial shimmer
-        osc.detune.setValueAtTime((i - 1.5) * 3, t);
-
-        const oscGain = this.ctx.createGain();
-        oscGain.gain.setValueAtTime(0.25, t);
-        lfoGain.connect(oscGain.gain);
-
-        osc.connect(oscGain);
-        oscGain.connect(highpass);
-        osc.start(t);
-        return osc;
-      });
-
-      // Periodic gentle crystalline glass harp chimes every 5.5 seconds
-      this.chimeInterval = setInterval(() => {
-        if (!this.ambientNodes || this.muted) return;
-        this.playCelestialChimeRipples();
-      }, 5500);
-
-      this.ambientNodes = { oscs, lfo, lfoGain, highpass, lowpass, gain: this.ambientGain };
-    } catch (e) {
-      console.warn('Welcome ambience init error:', e);
+    // Try playing MP3 soundtrack from assets if available
+    if (!this.bgAudio) {
+      try {
+        this.bgAudio = new Audio('assets/Jumanji - The Video Game.mp3');
+        this.bgAudio.loop = true;
+        this.bgAudio.volume = this.muted ? 0 : 0.25;
+      } catch (e) {
+        this.bgAudio = null;
+      }
     }
+
+    if (this.bgAudio) {
+      this.bgAudio.muted = this.muted;
+      this.bgAudio.volume = this.muted ? 0 : 0.25;
+      const playPromise = this.bgAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If browser policy blocks HTMLAudio until gesture or file missing, use pure chimes
+          this.playCelestialChimeRipples();
+        });
+      }
+    } else {
+      this.playCelestialChimeRipples();
+    }
+
+    // Gentle backup periodic chime scheduler if no MP3 playing
+    const scheduleNext = () => {
+      if (!this.isAmbienceActive || this.muted) return;
+      this.chimeTimer = setTimeout(() => {
+        if (!this.isAmbienceActive || this.muted) return;
+        if (!this.bgAudio || this.bgAudio.paused) {
+          this.playCelestialChimeRipples();
+        }
+        scheduleNext();
+      }, 5000);
+    };
+
+    scheduleNext();
   }
 
   playCelestialChimeRipples() {
     if (!this.ctx || this.muted) return;
+    if (this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+
     const t = this.ctx.currentTime;
-    // Pentatonic heavenly chime scale: G5, A5, C6, D6, E6, G6
-    const pentatonicNotes = [783.99, 880.00, 1046.50, 1174.66, 1318.51, 1567.98];
-    const count = Math.random() > 0.5 ? 2 : 1;
+    const chords = [
+      [659.25, 830.61, 987.77, 1318.51], // E Major
+      [587.33, 739.99, 880.00, 1174.66], // D Major
+      [659.25, 783.99, 1046.50, 1318.51] // C Major 7
+    ];
 
-    for (let i = 0; i < count; i++) {
-      const note = pentatonicNotes[Math.floor(Math.random() * pentatonicNotes.length)];
-      const delay = i * 0.22;
-      const noteTime = t + delay;
+    const chord = chords[Math.floor(Math.random() * chords.length)];
 
+    chord.forEach((freq, idx) => {
+      const noteTime = t + idx * 0.12;
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
 
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(note, noteTime);
+      osc.frequency.setValueAtTime(freq, noteTime);
 
       gain.gain.setValueAtTime(0.0001, noteTime);
-      gain.gain.linearRampToValueAtTime(0.016, noteTime + 0.08);
-      gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 3.2);
+      gain.gain.linearRampToValueAtTime(0.035, noteTime + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 2.8);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
 
       osc.start(noteTime);
-      osc.stop(noteTime + 3.3);
-    }
+      osc.stop(noteTime + 2.85);
+    });
   }
 
   stopWelcomeAmbience() {
-    if (this.chimeInterval) {
-      clearInterval(this.chimeInterval);
-      this.chimeInterval = null;
+    this.isAmbienceActive = false;
+    if (this.chimeTimer) {
+      clearTimeout(this.chimeTimer);
+      this.chimeTimer = null;
     }
-    if (this.ambientNodes && this.ctx) {
+    if (this.bgAudio) {
       try {
-        const t = this.ctx.currentTime;
-        this.ambientNodes.gain.gain.linearRampToValueAtTime(0.0001, t + 0.8);
-        setTimeout(() => {
-          if (this.ambientNodes) {
-            this.ambientNodes.oscs.forEach(o => { try { o.stop(); o.disconnect(); } catch (e) {} });
-            try { this.ambientNodes.lfo.stop(); this.ambientNodes.lfo.disconnect(); } catch (e) {}
-            this.ambientNodes = null;
-          }
-        }, 850);
-      } catch (e) {
-        this.ambientNodes = null;
-      }
+        this.bgAudio.pause();
+        this.bgAudio.currentTime = 0;
+      } catch (e) {}
     }
   }
 
@@ -241,7 +230,6 @@ class SoundEngine {
     this.init();
     if (!this.ctx) return;
 
-    // Harmonious chord: E5 (659), G#5 (830), B5 (987), E6 (1318), G#6 (1661)
     const notes = [659.25, 830.61, 987.77, 1318.51, 1661.22];
     notes.forEach((freq, idx) => {
       const startTime = this.ctx.currentTime + idx * 0.07;
@@ -271,7 +259,6 @@ class SoundEngine {
 
     const t = this.ctx.currentTime;
 
-    // Deep dissonant low chords (82Hz, 116Hz, 123Hz)
     const lowFreqs = [82.4, 116.5, 123.4];
     lowFreqs.forEach((freq) => {
       const osc = this.ctx.createOscillator();
@@ -332,11 +319,11 @@ class SoundEngine {
     if (!this.ctx) return;
 
     const fanfareSequence = [
-      { notes: [392.00, 523.25], time: 0, dur: 0.18 },              // G4, C5
-      { notes: [523.25, 659.25], time: 0.2, dur: 0.18 },            // C5, E5
-      { notes: [659.25, 783.99], time: 0.4, dur: 0.22 },            // E5, G5
-      { notes: [783.99, 1046.50], time: 0.65, dur: 0.22 },          // G5, C6
-      { notes: [659.25, 783.99, 1046.50, 1318.51], time: 0.95, dur: 1.8 } // Grand C Major Quad
+      { notes: [392.00, 523.25], time: 0, dur: 0.18 },
+      { notes: [523.25, 659.25], time: 0.2, dur: 0.18 },
+      { notes: [659.25, 783.99], time: 0.4, dur: 0.22 },
+      { notes: [783.99, 1046.50], time: 0.65, dur: 0.22 },
+      { notes: [659.25, 783.99, 1046.50, 1318.51], time: 0.95, dur: 1.8 }
     ];
 
     fanfareSequence.forEach(({ notes, time, dur }) => {
