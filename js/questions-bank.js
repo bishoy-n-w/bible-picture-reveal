@@ -454,13 +454,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "أندراوس",
         "توما",
-        "نثنائيل (برثولماوس)",
+        "نثنائيل",
         "متى"
       ],
       "en": [
         "Andrew",
         "Thomas",
-        "Nathanael (Bartholomew)",
+        "Nathanael",
         "Matthew"
       ]
     },
@@ -609,13 +609,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "شكيم",
         "بئر سبع",
-        "حبرون (قريات أربع)",
+        "حبرون",
         "بيت إيل"
       ],
       "en": [
         "Shechem",
         "Beersheba",
-        "Hebron (Kirjath Arba)",
+        "Hebron",
         "Bethel"
       ]
     },
@@ -733,13 +733,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "شكيم",
         "مجدل عدر",
-        "بيت إيل (لوز سابقاً)",
+        "بيت إيل",
         "سوخوت"
       ],
       "en": [
         "Shechem",
         "Migdal Eder",
-        "Bethel (formerly Luz)",
+        "Bethel",
         "Succoth"
       ]
     },
@@ -979,15 +979,15 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "يعقوب بن زبدي",
+        "يعقوب",
         "أندراوس",
-        "التلميذ الذي كان يسوع يحبه (يوحنا)",
+        "يوحنا",
         "توما"
       ],
       "en": [
-        "James son of Zebedee",
+        "James",
         "Andrew",
-        "The disciple whom Jesus loved (John)",
+        "John",
         "Thomas"
       ]
     },
@@ -1167,13 +1167,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "ليديا",
         "سوسنة",
-        "طابيثا (غزالة)",
+        "طابيثا",
         "يوأنا"
       ],
       "en": [
         "Lydia",
         "Susanna",
-        "Tabitha (Dorcas)",
+        "Tabitha",
         "Joanna"
       ]
     },
@@ -1321,13 +1321,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "سيمون الساحر",
-        "باريشوع (عليم)",
+        "باريشوع",
         "ديمتريوس",
         "ألكسندر"
       ],
       "en": [
         "Simon the sorcerer",
-        "Bar-Jesus (Elymas)",
+        "Bar-Jesus",
         "Demetrius",
         "Alexander"
       ]
@@ -1476,13 +1476,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "قبرص",
-        "مالطة (مليطة)",
+        "مالطة",
         "كريت",
         "رودس"
       ],
       "en": [
         "Cyprus",
-        "Malta (Melita)",
+        "Malta",
         "Crete",
         "Rhodes"
       ]
@@ -1818,13 +1818,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "بيت إيل",
         "شكيم",
-        "أرض مصر (جاسان)",
+        "أرض مصر",
         "مغارة المكفيلة"
       ],
       "en": [
         "Bethel",
         "Shechem",
-        "Land of Egypt (Goshen)",
+        "Land of Egypt",
         "Cave of Machpelah"
       ]
     },
@@ -2036,13 +2036,13 @@ window.QUESTIONS_BANK = [
         "بئر سبع",
         "بئر إيليم",
         "بئر رحوبوت",
-        "بئر يعقوب في سوخار"
+        "بئر يعقوب"
       ],
       "en": [
         "Beersheba",
         "Well of Elim",
         "Well of Rehoboth",
-        "Jacob's well at Sychar"
+        "Jacob's well"
       ]
     },
     "correctIndex": 3,
@@ -2127,13 +2127,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "برثولماوس",
-        "أندراوس أخو بطرس",
+        "أندراوس",
         "توما",
         "فيلبس"
       ],
       "en": [
         "Bartholomew",
-        "Andrew, Peter's brother",
+        "Andrew",
         "Thomas",
         "Philip"
       ]
@@ -2157,16 +2157,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "سمعان الشيخ",
+        "سمعان",
         "بلعام",
-        "زكريا الكاهن من فرقة أبيا",
-        "عالي الكاهن"
+        "زكريا",
+        "عالي"
       ],
       "en": [
-        "Simeon the Devout",
+        "Simeon",
         "Balaam",
-        "Zacharias the priest of the division of Abijah",
-        "Eli the priest"
+        "Zacharias",
+        "Eli"
       ]
     },
     "correctIndex": 2,
@@ -2250,13 +2250,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "اليقطينة (الخروع)",
+        "اليقطينة",
         "الحنظل",
         "التينة",
         "الكرمة"
       ],
       "en": [
-        "The plant (gourd)",
+        "The gourd",
         "The wild gourd",
         "The fig tree",
         "The vine"
@@ -2438,13 +2438,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "حزقيا",
         "منسى",
-        "يهوآش (يوآش)",
+        "يهوآش",
         "يوشيا"
       ],
       "en": [
         "Hezekiah",
         "Manasseh",
-        "Jehoash (Joash)",
+        "Jehoash",
         "Josiah"
       ]
     },
@@ -2501,7 +2501,7 @@ window.QUESTIONS_BANK = [
         "في بئر سبع",
         "في مغارة حوريب",
         "في جبل الكرمل",
-        "عند نهر كريث مقابل الأردن"
+        "عند نهر كريث"
       ],
       "en": [
         "In Beersheba",
@@ -2560,14 +2560,14 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "هبطت نار الرب ولحست الماء والتراب والحجارة والذبيحة",
-        "هبت عاصفة رعدية أطفأت النار",
-        "تكلم صوت من السماء فقط",
-        "انشق الجبل وخرج نبع ماء"
+        "سقوط نار الرب ولحس المياه",
+        "هبوب عاصفة أطفأت النيران",
+        "سماع صوت من السماء فقط",
+        "انشقاق الجبل وخروج نبع ماء"
       ],
       "en": [
-        "The fire of the LORD fell and consumed the sacrifice, wood, stones, and water",
-        "A thunderstorm arose and extinguished the fire",
+        "Fire of the LORD fell and licked the water",
+        "A storm arose and put out the fire",
         "Only a voice spoke from heaven",
         "The mountain split and water gushed out"
       ]
@@ -2591,10 +2591,10 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "بوق عظيم",
+        "صوت بوق عظيم",
         "صوت مياه كثيرة",
         "رعد قاصف شديد",
-        "صوت منخفض خفيف (نسيم هادئ)"
+        "صوت منخفض خفيف"
       ],
       "en": [
         "A great trumpet",
@@ -2715,16 +2715,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "ماء مريبة في قادش",
+        "مريبة",
         "مارة",
         "إيليم",
-        "حوريب"
+        "مسّة"
       ],
       "en": [
-        "Water of Meribah in Kadesh",
+        "Meribah",
         "Marah",
         "Elim",
-        "Horeb"
+        "Massah"
       ]
     },
     "correctIndex": 0,
@@ -2748,13 +2748,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "نهر الأرنون",
         "نهر كيشون",
-        "مخاضة يبوق",
+        "نهر يبوق",
         "نهر الأردن"
       ],
       "en": [
         "Arnon River",
         "Kishon River",
-        "Ford of Jabbok",
+        "Jabbok River",
         "Jordan River"
       ]
     },
@@ -2780,13 +2780,13 @@ window.QUESTIONS_BANK = [
         "سكوت",
         "محنايم",
         "بيت إيل",
-        "فنيئيل (فنوئيل)"
+        "فنيئيل"
       ],
       "en": [
         "Succoth",
         "Mahanaim",
         "Bethel",
-        "Peniel (Penuel)"
+        "Peniel"
       ]
     },
     "correctIndex": 3,
@@ -3026,13 +3026,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "عشرون ذراعاً",
-        "عشر أذرع من حافته إلى حافته",
+        "عشر أذرع",
         "ثلاثون ذراعاً",
         "خمس أذرع"
       ],
       "en": [
         "Twenty cubits",
-        "Ten cubits from brim to brim",
+        "Ten cubits",
         "Thirty cubits",
         "Five cubits"
       ]
@@ -3087,13 +3087,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "عيد الأسابيع (الخمسين)",
+        "عيد الأسابيع",
         "عيد الفصح",
         "عيد المظال",
         "عيد الكفارة"
       ],
       "en": [
-        "Feast of Weeks (Pentecost)",
+        "Feast of Weeks",
         "Passover",
         "Feast of Tabernacles",
         "Day of Atonement"
@@ -3273,16 +3273,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "نابال الكرملي",
-        "أورنان (أرونة) اليبوسي",
-        "عفرون الحثي",
-        "ملكي صادق"
+        "نابال",
+        "أورنان",
+        "عفرون",
+        "شمعي"
       ],
       "en": [
-        "Nabal the Carmelite",
-        "Ornan (Araunah) the Jebusite",
-        "Ephron the Hittite",
-        "Melchizedek"
+        "Nabal",
+        "Ornan",
+        "Ephron",
+        "Shimei"
       ]
     },
     "correctIndex": 1,
@@ -3524,7 +3524,7 @@ window.QUESTIONS_BANK = [
         "7 أيام",
         "30 يوماً",
         "40 يوماً",
-        "180 يوماً (نصف سنة)"
+        "180 يوماً"
       ],
       "en": [
         "7 days",
@@ -3648,13 +3648,13 @@ window.QUESTIONS_BANK = [
         "عيد المظال",
         "عيد الفوريم",
         "عيد الحصاد",
-        "عيد الأنوار (الحنوكا)"
+        "عيد الأنوار"
       ],
       "en": [
         "Feast of Tabernacles",
         "Feast of Purim",
         "Feast of Harvest",
-        "Feast of Dedication (Hanukkah)"
+        "Feast of Dedication"
       ]
     },
     "correctIndex": 1,
@@ -3713,7 +3713,7 @@ window.QUESTIONS_BANK = [
         "شجرة السنديان"
       ],
       "en": [
-        "A broom tree (juniper)",
+        "A broom tree",
         "A juniper tree",
         "A tamarisk tree",
         "An oak tree"
@@ -3741,13 +3741,13 @@ window.QUESTIONS_BANK = [
         "عشرين يوماً",
         "سبعة أيام",
         "ثلاثين يوماً",
-        "أربعين نهاراً وأربعين ليلة"
+        "أربعين يوماً"
       ],
       "en": [
         "Twenty days",
         "Seven days",
         "Thirty days",
-        "40 days and 40 nights"
+        "Forty days"
       ]
     },
     "correctIndex": 3,
@@ -3801,13 +3801,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "كيلآب",
-        "مفيبوشث بن يوناثان",
+        "مفيبوشث",
         "أدونيا",
         "أمنون"
       ],
       "en": [
         "Chileab",
-        "Mephibosheth son of Jonathan",
+        "Mephibosheth",
         "Adonijah",
         "Amnon"
       ]
@@ -3832,15 +3832,15 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "يوآب",
-        "أخيماص بن صادوق / كوشي",
+        "أخيماص",
         "بنايا",
-        "أتاي"
+        "إيتاي"
       ],
       "en": [
         "Joab",
-        "Ahimaaz son of Zadok / Cushite",
+        "Ahimaaz",
         "Benaiah",
-        "Attai"
+        "Ittai"
       ]
     },
     "correctIndex": 1,
@@ -4110,16 +4110,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "بقرتان مرضعتان لم يعلهما نير",
-        "حماران",
-        "ثوران قويان",
-        "حصانان"
+        "بقرتان مُرضعتان",
+        "حماران قويان",
+        "ثوران فتيّان",
+        "فرسان أبيضان"
       ],
       "en": [
-        "Two milk cows on which there had been no yoke",
-        "Two donkeys",
-        "Two strong oxen",
-        "Two horses"
+        "Two milk cows",
+        "Two strong donkeys",
+        "Two young oxen",
+        "Two white horses"
       ]
     },
     "correctIndex": 0,
@@ -4141,13 +4141,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "حجر المعونة (أبن عازر)",
+        "حجر المعونة",
         "صخرة سالع المحاليق",
         "صخرة ريمون",
         "صخرة حوريب"
       ],
       "en": [
-        "Ebenezer (Stone of Help)",
+        "Ebenezer",
         "Rock of Escape",
         "Rock of Rimmon",
         "Rock of Horeb"
@@ -4205,13 +4205,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "50 سنة",
         "20 سنة",
-        "40 سنة (7 في حبرون و33 في أورشليم)",
+        "40 سنة",
         "30 سنة"
       ],
       "en": [
         "50 years",
         "20 years",
-        "40 years (7 in Hebron and 33 in Jerusalem)",
+        "40 years",
         "30 years"
       ]
     },
@@ -4513,16 +4513,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "«الموت لبولس!»",
-        "«عَظِيمَةٌ هِيَ أَرْطَامِيسُ الأَفَسُسِيِّينَ!»",
-        "«عظيم هو زفس!»",
-        "«مبارك إله أفسس!»"
+        "«عظيم هو زفس الإله!»",
+        "«عظيمة هي أرطاميس!»",
+        "«عظيم هو هرمس الحكيم!»",
+        "«عظيم هو أبولون الشافي!»"
       ],
       "en": [
-        "'Death to Paul!'",
-        "'Great is Diana (Artemis) of the Ephesians!'",
-        "'Great is Zeus!'",
-        "'Blessed is the god of Ephesus!'"
+        "'Great is Zeus the god!'",
+        "'Great is Artemis!'",
+        "'Great is Hermes the wise!'",
+        "'Great is Apollo the healer!'"
       ]
     },
     "correctIndex": 1,
@@ -4663,1550 +4663,1550 @@ window.QUESTIONS_BANK = [
     "id": 151,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 51: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "How many years did the children of Israel wander in the wilderness until all the men of war had died?"
+      "ar": "ما اسم الوادي الذي أمر فيه يشوع القمر أن يدوم بينما وقفت الشمس على جبعون؟",
+      "en": "What was the name of the valley where Joshua commanded the moon to stand still while the sun stood still over Gibeon?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "عشرين سنة",
-        "ثلاثين سنة",
-        "سبعين سنة"
+        "وادي أيلون",
+        "وادي إيلا",
+        "وادي قيدرون",
+        "وادي الرفائيين"
       ],
       "en": [
-        "Forty years",
-        "Twenty years",
-        "Thirty years",
-        "Seventy years"
+        "Valley of Aijalon",
+        "Valley of Elah",
+        "Kidron Valley",
+        "Valley of Rephaim"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "يشوع 10: 12",
+      "en": "Joshua 10:12"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And the space in which we came from Kadesh Barnea until we crossed over the Valley of the Zered was thirty-eight years, until all the generation of the men of war was consumed from the midst of the camp, just as the LORD had sworn to them."
+      "ar": "حِينَئِذٍ كَلَّمَ يَشُوعُ الرَّبَّ... وَقَالَ أَمَامَ عُيُونِ إِسْرَائِيلَ: «يَا شَمْسُ ادُومِي عَلَى جِبْعُونَ، وَيَا قَمَرُ عَلَى وَادِي أَيَّلُونَ».",
+      "en": "Then Joshua spoke to the LORD in the day when the LORD delivered up the Amorites before the children of Israel, and he said in the sight of Israel: 'Sun, stand still over Gibeon; And Moon, in the Valley of Aijalon.'"
     }
   },
   {
     "id": 152,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 52: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the name of the valley where Joshua commanded the moon to stand still while the sun stood still over Gibeon?"
+      "ar": "من هو أول قاضٍ لإسرائيل وهو الأخ الأصغر لكالب بن يفنة الذي خلّص إسرائيل من ملك آرام النهرين؟",
+      "en": "Who was the first judge of Israel, the younger brother of Caleb, who delivered Israel from the king of Mesopotamia?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "عشرين سنة",
-        "ثلاثين سنة",
-        "أربعين سنة"
+        "عثنيئيل بن قناز",
+        "إهود بن جيرا",
+        "شمجر بن عناة",
+        "باراق بن أبينوعم"
       ],
       "en": [
-        "Seventy years",
-        "Twenty years",
-        "Thirty years",
-        "Forty years"
+        "Othniel son of Kenaz",
+        "Ehud son of Gera",
+        "Shamgar son of Anath",
+        "Barak son of Abinoam"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 3: 9",
+      "en": "Judges 3:9"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Joshua spoke to the LORD in the day when the LORD delivered up the Amorites before the children of Israel, and he said in the sight of Israel: 'Sun, stand still over Gibeon; And Moon, in the Valley of Aijalon.'"
+      "ar": "وَصَرَخَ بَنُو إِسْرَائِيلَ إِلَى الرَّبِّ، فَأَقَامَ الرَّبُّ مُخَلِّصًا لِبَنِي إِسْرَائِيلَ فَخَلَّصَهُمْ: عُثْنِيئِيلَ بْنَ قَنَازَ أَخَا كَالِبَ الأَصْغَرَ.",
+      "en": "When the children of Israel cried out to the LORD, the LORD raised up a deliverer for the children of Israel, who delivered them: Othniel the son of Kenaz, Caleb’s younger brother."
     }
   },
   {
     "id": 153,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 53: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who was the first judge of Israel, the younger brother of Caleb, who delivered Israel from the king of Mesopotamia?"
+      "ar": "كم رجلاً أخذ جدعون معه في محلة مديان بأبواق وجرار ومصابيح لهزيمة المديانيين؟",
+      "en": "How many men did Gideon take with him into the camp of Midian carrying trumpets, pitchers, and torches?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
-        "عشرين سنة",
-        "ثلاثين سنة"
+        "ثلاثمئة رجل",
+        "عشرة آلاف رجل",
+        "اثنان وثلاثون ألفاً",
+        "ألف رجل"
       ],
       "en": [
-        "Forty years",
-        "Seventy years",
-        "Twenty years",
-        "Thirty years"
+        "Three hundred men",
+        "Ten thousand men",
+        "Thirty-two thousand",
+        "One thousand men"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 7: 16",
+      "en": "Judges 7:16"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "When the children of Israel cried out to the LORD, the LORD raised up a deliverer for the children of Israel, who delivered them: Othniel the son of Kenaz, Caleb’s younger brother."
+      "ar": "وَقَسَمَ الثَّلاَثَ مِئَةِ الرَّجُلِ إِلَى ثَلاَثِ فِرَق، وَجَعَلَ أَبْوَاقًا فِي أَيْدِيهِمْ كُلِّهِمْ، وَجِرَارًا فَارِغَةً وَمَصَابِيحَ فِي وَسَطِ الْجِرَارِ.",
+      "en": "Then he divided the three hundred men into three companies, and he put a trumpet into every man’s hand, with empty pitchers, and torches inside the pitchers."
     }
   },
   {
     "id": 154,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 54: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "How many men did Gideon take with him into the camp of Midian carrying trumpets, pitchers, and torches?"
+      "ar": "ما اسم ابن جدعون غير الشرعي الذي قتل إخوته السبعين على حجر واحد في عفرة وملك في شكيم؟",
+      "en": "What was the name of Gideon's illegitimate son who murdered his seventy brothers upon one stone in Ophrah?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "أربعين سنة"
+        "أبيمالك",
+        "يوآش",
+        "جعال",
+        "يوثام"
       ],
       "en": [
-        "Seventy years",
-        "Thirty years",
-        "Twenty years",
-        "Forty years"
+        "Abimelech",
+        "Joash",
+        "Gaal",
+        "Jotham"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 9: 5",
+      "en": "Judges 9:5"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then he divided the three hundred men into three companies, and he put a trumpet into every man’s hand, with empty pitchers, and torches inside the pitchers."
+      "ar": "ثُمَّ جَاءَ إِلَى بَيْتِ أَبِيهِ فِي عَفْرَةَ وَقَتَلَ إِخْوَتَهُ بَنِي يَرُبَّعْلَ، سَبْعِينَ رَجُلاً، عَلَى حَجَرٍ وَاحِدٍ. وَبَقِيَ يُوثَامُ بْنُ يَرُبَّعْلَ الأَصْغَرُ لأَنَّهُ اخْتَبَأَ.",
+      "en": "Then he went to his father’s house at Ophrah and killed his brothers, the seventy sons of Jerubbaal, on one stone. But Jotham the youngest son of Jerubbaal was left, for he hid himself."
     }
   },
   {
     "id": 155,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 55: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the name of Gideon's illegitimate son who murdered his seventy brothers upon one stone in Ophrah?"
+      "ar": "ما اسم أصغر أبناء جدعون الذي نجا من المذبحة ووقف على رأس جبل جرزيم ونطق بمثل الأشجار والعتوس؟",
+      "en": "Which youngest son of Gideon escaped the massacre and spoke the Parable of the Trees from the top of Mount Gerizim?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "عشرين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة"
+        "يوثام",
+        "أبيمالك",
+        "فورة",
+        "بلعة"
       ],
       "en": [
-        "Seventy years",
-        "Twenty years",
-        "Forty years",
-        "Thirty years"
+        "Jotham",
+        "Abimelech",
+        "Purah",
+        "Balaam"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 9: 7",
+      "en": "Judges 9:7"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then he went to his father’s house at Ophrah and killed his brothers, the seventy sons of Jerubbaal, on one stone. But Jotham the youngest son of Jerubbaal was left, for he hid himself."
+      "ar": "وَأَخْبَرُوا يُوثَامَ فَذَهَبَ وَوَقَفَ عَلَى رَأْسِ جَبَلِ جِرِزِّيمَ، وَرَفَعَ صَوْتَهُ وَنَادَى وَقَالَ لَهُمْ: «اِسْمَعُوا لِي يَا أَهْلَ شَكِيمَ، يَسْمَعْ لَكُمُ اللهُ».",
+      "en": "Now when they told Jotham, he went and stood on top of Mount Gerizim, and lifted his voice and cried out. And he said to them: 'Listen to me, you men of Shechem, That God may listen to you!'"
     }
   },
   {
     "id": 156,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 56: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Which youngest son of Gideon escaped the massacre and spoke the Parable of the Trees from the top of Mount Gerizim?"
+      "ar": "ما هو النذر المأساوي الذي نذره يفتاح الجلعادي للرب قبل أن ينتصر على بني عمون؟",
+      "en": "What was the tragic vow made by Jephthah the Gileadite before defeating the children of Ammon?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "تقديم أول خارج من بيته محرقة",
+        "صوم أربعين نهاراً وليلة",
+        "تحريم غنائم أرض عمون",
+        "بناء هيكل من فضة في مصفاة"
       ],
       "en": [
-        "Seventy years",
-        "Forty years",
-        "Thirty years",
-        "Twenty years"
+        "To offer whatever first came from his doors as a burnt offering",
+        "To fast forty days and forty nights",
+        "To consecrate all spoils of Ammon",
+        "To build a silver temple in Mizpah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 11: 30-31",
+      "en": "Judges 11:30-31"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now when they told Jotham, he went and stood on top of Mount Gerizim, and lifted his voice and cried out. And he said to them: 'Listen to me, you men of Shechem, That God may listen to you!'"
+      "ar": "وَنَذَرَ يَفْتَاحُ نَذْرًا لِلرَّبِّ قَائِلاً: «إِنْ دَفَعْتَ بَنِي عَمُّونَ لِيَدِي، فَكُلُّ خَارِجٍ يَخْرُجُ مِنْ أَبْوَابِ بَيْتِي لِلِقَائِي... يَكُونُ لِلرَّبِّ، وَأُصْعِدُهُ مُحْرَقَةً».",
+      "en": "And Jephthah made a vow to the LORD, and said, 'If You will indeed deliver the people of Ammon into my hands, then it will be that whatever comes out of the doors of my house to meet me... shall surely be the LORD’s, and I will offer it up as a burnt offering.'"
     }
   },
   {
     "id": 157,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 57: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the tragic vow made by Jephthah the Gileadite before defeating the children of Ammon?"
+      "ar": "ما هي الأحجية التي طرحها شمشون على أصحابه الفلسطينيين الثلاثين في وليمة عرسه بتمنة؟",
+      "en": "What riddle did Samson put forth to the thirty Philistine companions at his wedding feast in Timnah?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة"
+        "من الآكل خرج أكل ومن الجافي خرجت حلاوة",
+        "من القوي خرج ضعف ومن المر خرج عسل",
+        "طعام في الصخر وحلاوة في الشجر",
+        "من الأسد خرج نور ومن الجثة خرج دهن"
       ],
       "en": [
-        "Twenty years",
-        "Seventy years",
-        "Forty years",
-        "Thirty years"
+        "Out of the eater came food, out of the strong came sweetness",
+        "Out of the strong came weakness, out of bitter came honey",
+        "Food in the rock and sweetness in the tree",
+        "Out of the lion came light, out of carcass came oil"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 14: 14",
+      "en": "Judges 14:14"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And Jephthah made a vow to the LORD, and said, 'If You will indeed deliver the people of Ammon into my hands, then it will be that whatever comes out of the doors of my house to meet me... shall surely be the LORD’s, and I will offer it up as a burnt offering.'"
+      "ar": "فَقَالَ لَهُمْ: «مِنَ الآكِلِ خَرَجَ أُكْلٌ، وَمِنَ الْجَافِي خَرَجَتْ حَلاَوَةٌ». فَلَمْ يَسْتَطِيعُوا أَنْ يَحُلُّوا الأُحْجِيَّةَ فِي ثَلاَثَةِ أَيَّامٍ.",
+      "en": "So he said to them: 'Out of the eater came something to eat, And out of the strong came something sweet.' Now for three days they could not explain the riddle."
     }
   },
   {
     "id": 158,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 58: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What riddle did Samson put forth to the thirty Philistine companions at his wedding feast in Timnah?"
+      "ar": "بأي سلاح ضرب شمشون ألف رجل من الفلسطينيين في لحي وسمى الموضع رمت لحي؟",
+      "en": "With what weapon did Samson strike down one thousand Philistines at Lehi?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "عشرين سنة"
+        "بفك حمار طري",
+        "بمنساس البقر",
+        "بمقلاع وحجر",
+        "برمح نحاسي طويل"
       ],
       "en": [
-        "Thirty years",
-        "Seventy years",
-        "Forty years",
-        "Twenty years"
+        "With the jawbone of a donkey",
+        "With an oxgoad",
+        "With a sling and stone",
+        "With a bronze spear"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 15: 15-16",
+      "en": "Judges 15:15-16"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "So he said to them: 'Out of the eater came something to eat, And out of the strong came something sweet.' Now for three days they could not explain the riddle."
+      "ar": "وَوَجَدَ فَكَّ حِمَارٍ طَرِيًّا، فَمَدَّ يَدَهُ وَأَخَذَهُ وَضَرَبَ بِهِ أَلْفَ رَجُل. وَقَالَ شَمْشُونُ: «بِفَكِّ حِمَارٍ كُومَةً عَلَى كَوْمَتَيْنِ. بِفَكِّ حِمَارٍ قَتَلْتُ أَلْفَ رَجُل».",
+      "en": "Then Samson said: 'With the jawbone of a donkey, Heaps upon heaps, With the jawbone of a donkey I have slain a thousand men!'"
     }
   },
   {
     "id": 159,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 59: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "With what weapon did Samson strike down one thousand Philistines at Lehi?"
+      "ar": "ما اسم والد شمشون الذي كان من عشيرة الدانيين من صرعة؟",
+      "en": "What was the name of Samson's father from the family of the Danites from Zorah?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "أربعين سنة"
+        "منوح",
+        "يثرون",
+        "قيس",
+        "ألقانة"
       ],
       "en": [
-        "Seventy years",
-        "Thirty years",
-        "Twenty years",
-        "Forty years"
+        "Manoah",
+        "Jethro",
+        "Kish",
+        "Elkanah"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "قضاة 13: 2",
+      "en": "Judges 13:2"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Samson said: 'With the jawbone of a donkey, Heaps upon heaps, With the jawbone of a donkey I have slain a thousand men!'"
+      "ar": "وَكَانَ رَجُلٌ مِنْ صَرْعَةَ مِنْ عَشِيرَةِ الدَّانِيِّينَ اسْمُهُ مَنُوحُ، وَامْرَأَتُهُ عَاقِرٌ لَمْ تَلِدْ.",
+      "en": "Now there was a certain man from Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren and had no children."
     }
   },
   {
     "id": 160,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 60: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the name of Samson's father from the family of the Danites from Zorah?"
+      "ar": "ما اسم والدة بوعز التي كانت من أريحا وذكرت في سلسلة أنساب السيد المسيح في إنجيل متى؟",
+      "en": "What was the name of Boaz's mother, formerly of Jericho, recorded in the genealogy of Jesus Christ?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "عشرين سنة"
+        "راحاب",
+        "بثشبع",
+        "راعوث",
+        "ثامار"
       ],
       "en": [
-        "Forty years",
-        "Thirty years",
-        "Seventy years",
-        "Twenty years"
+        "Rahab",
+        "Bathsheba",
+        "Ruth",
+        "Tamar"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "متى 1: 5",
+      "en": "Matthew 1:5"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now there was a certain man from Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren and had no children."
+      "ar": "وَسَلْمُونُ وَلَدَ بُوعَزَ مِنْ رَاحَابَ. وَبُوعَزُ وَلَدَ عُوبِيدَ مِنْ رَاعُوثَ. وَعُوبِيدُ وَلَدَ يَسَّى.",
+      "en": "Salmon begot Boaz by Rahab, Boaz begot Obed by Ruth, Obed begot Jesse,"
     }
   },
   {
     "id": 161,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 61: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the name of Boaz's mother, formerly of Jericho, recorded in the genealogy of Jesus Christ?"
+      "ar": "من هو الشخص الذي كان له حق الفكاك الأول لأرض أليمالك قبل أن يفتكها بوعز في بيت لحم؟",
+      "en": "What close relative of Naomi had the first right of redemption for Elimelech's land before Boaz redeemed it?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "عشرين سنة",
-        "سبعين سنة"
+        "الولي الأقرب",
+        "محلون",
+        "أليمالك",
+        "كليون"
       ],
       "en": [
-        "Thirty years",
-        "Forty years",
-        "Twenty years",
-        "Seventy years"
+        "The closer redeemer",
+        "Mahlon",
+        "Elimelech",
+        "Chilion"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "راعوث 3: 12",
+      "en": "Ruth 3:12"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Salmon begot Boaz by Rahab, Boaz begot Obed by Ruth, Obed begot Jesse,"
+      "ar": "«وَالآنَ صَحِيحٌ أَنِّي وَلِيٌّ، وَلكِنْ يُوجَدُ وَلِيٌّ أَقْرَبُ مِنِّي».",
+      "en": "'Now it is true that I am a close relative; however, there is a relative closer than I.'"
     }
   },
   {
     "id": 162,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 62: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What close relative of Naomi had the first right of redemption for Elimelech's land before Boaz redeemed it?"
+      "ar": "ما هي المدينة التي كانت مسقط رأس صموئيل النبي وبيت والديه ألقانة وحنة؟",
+      "en": "What town was the birthplace of Samuel the prophet and the home of his parents Elkanah and Hannah?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "سبعين سنة"
+        "الرامة",
+        "المصفاة",
+        "شيلوه",
+        "بيت لحم"
       ],
       "en": [
-        "Forty years",
-        "Thirty years",
-        "Twenty years",
-        "Seventy years"
+        "Ramah",
+        "Mizpah",
+        "Shiloh",
+        "Bethlehem"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 1: 19",
+      "en": "1 Samuel 1:19"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Boaz said to the close relative, 'Naomi, who has come back from the country of Moab, sold the piece of land which belonged to our brother Elimelech.'"
+      "ar": "وَبَكَّرُوا فِي الصَّبَاحِ وَسَجَدُوا أَمَامَ الرَّبِّ، وَرَجَعُوا وَجَاءُوا إِلَى بَيْتِهِمْ فِي الرَّامَةِ.",
+      "en": "Then they rose early in the morning and worshiped before the LORD, and returned and came to their house at Ramah."
     }
   },
   {
     "id": 163,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 63: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What town was the birthplace of Samuel the prophet and the home of his parents Elkanah and Hannah?"
+      "ar": "ما اسم والد شاول الملك الذي كان من سبط بنيامين ورجلاً جبار بأس؟",
+      "en": "What was the name of King Saul's father from the tribe of Benjamin?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "عشرين سنة"
+        "قيس",
+        "نير",
+        "أبيئيل",
+        "صرور"
       ],
       "en": [
-        "Thirty years",
-        "Seventy years",
-        "Forty years",
-        "Twenty years"
+        "Kish",
+        "Ner",
+        "Abiel",
+        "Zeror"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 9: 1",
+      "en": "1 Samuel 9:1"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now there was a certain man of Ramathaim Zophim, of the mountains of Ephraim, and his name was Elkanah"
+      "ar": "وَكَانَ رَجُلٌ مِنْ بَنْيَامِينَ اسْمُهُ قَيْسُ بْنُ أَبِيئِيلَ بْنِ صَرُورَ بْنِ بَكُورَاثَ بْنِ أَفِيحَ... رَجُلٌ جَبَّارُ بَأْسٍ.",
+      "en": "There was a man of Benjamin whose name was Kish the son of Abiel, the son of Zeror, the son of Bechorath, the son of Aphiah, a Benjamite, a mighty man of power."
     }
   },
   {
     "id": 164,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 64: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the name of King Saul's father from the tribe of Benjamin?"
+      "ar": "من هو الملك العماليقي الذي عفا عنه شاول الملك مع خيار الغنم والبقر مخالفاً أمر الرب؟",
+      "en": "From which Amalekite king did Saul spare life along with the best sheep and oxen, directly disobeying the LORD?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "سبعين سنة"
+        "أجاج",
+        "بالاق",
+        "سيحون",
+        "عوج"
       ],
       "en": [
-        "Twenty years",
-        "Forty years",
-        "Thirty years",
-        "Seventy years"
+        "Agag",
+        "Balak",
+        "Sihon",
+        "Og"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 15: 8-9",
+      "en": "1 Samuel 15:8-9"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "There was a man of Benjamin whose name was Kish the son of Abiel, the son of Zeror, the son of Bechorath, the son of Aphiah, a Benjamite, a mighty man of power."
+      "ar": "وَأَمْسَكَ أَجَاجَ مَلِكَ عَمَالِيقَ حَيًّا... وَعَفَا شَاوُلُ وَالشَّعْبُ عَنْ أَجَاجَ وَعَنْ خِيَارِ الْغَنَمِ وَالْبَقَرِ...",
+      "en": "He also took Agag king of the Amalekites alive, and utterly destroyed all the people with the edge of the sword. But Saul and the people spared Agag and the best of the sheep, the oxen,"
     }
   },
   {
     "id": 165,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 65: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "From which Amalekite king did Saul spare life along with the best sheep and oxen, directly disobeying the LORD?"
+      "ar": "من هو الذي قطع أجاج ملك عماليق بالسيف إرباً أمام الرب في الجلجال؟",
+      "en": "Who killed Agag the king of the Amalekites in Gilgal before the LORD after Saul failed to do so?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "عشرين سنة"
+        "صموئيل النبي",
+        "أبنير",
+        "داود",
+        "يوآب"
       ],
       "en": [
-        "Seventy years",
-        "Thirty years",
-        "Forty years",
-        "Twenty years"
+        "Samuel the prophet",
+        "Abner",
+        "David",
+        "Joab"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 15: 33",
+      "en": "1 Samuel 15:33"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "He also took Agag king of the Amalekites alive, and utterly destroyed all the people with the edge of the sword."
+      "ar": "فَقَالَ صَمُوئِيلُ: «كَمَا أَثْكَلَ سَيْفُكَ النِّسَاءَ، كَذلِكَ تُثْكَلُ أُمُّكَ بَيْنَ النِّسَاءِ». وَقَطَّعَ صَمُوئِيلُ أَجَاجَ أَمَامَ الرَّبِّ فِي الْجِلْجَالِ.",
+      "en": "So Samuel said, 'As your sword has made women childless, so shall your mother be childless among women.' And Samuel hacked Agag in pieces before the LORD in Gilgal."
     }
   },
   {
     "id": 166,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 66: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who killed Agag the king of the Amalekites in Gilgal before the LORD after Saul failed to do so?"
+      "ar": "في أي مغارة عفا داود عن شاول وقطع طرف جبته فقط بينما كان شاول نائماً؟",
+      "en": "In which cave did David spare Saul's life by cutting off only the corner of Saul's robe while Saul slept?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "عشرين سنة",
-        "سبعين سنة"
+        "مغارة عين جدي",
+        "مغارة مقيدة",
+        "مغارة عدلام",
+        "مغارة المكفيلة"
       ],
       "en": [
-        "Thirty years",
-        "Forty years",
-        "Twenty years",
-        "Seventy years"
+        "Cave of En Gedi",
+        "Cave of Makkedah",
+        "Cave of Adullam",
+        "Cave of Machpelah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 24: 3-4",
+      "en": "1 Samuel 24:3-4"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "So Samuel said, 'As your sword has made women childless, so shall your mother be childless among women.' And Samuel hacked Agag in pieces before the LORD in Gilgal."
+      "ar": "وَجَاءَ إِلَى صِيَرِ الْغَنَمِ الَّتِي فِي الطَّرِيقِ وَكَانَ هُنَاكَ كَهْفٌ فَدَخَلَ شَاوُلُ... فَقَامَ دَاوُدُ وَقَطَعَ طَرَفَ جُبَّةِ شَاوُلَ سِرًّا.",
+      "en": "And he came to the sheepfolds by the road, where there was a cave; and Saul went in to attend to his needs. (David and his men were staying in the recesses of the cave.) Then David arose and secretly cut off a corner of Saul’s robe."
     }
   },
   {
     "id": 167,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 67: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "In which cave did David spare Saul's life by cutting off only the corner of Saul's robe while Saul slept?"
+      "ar": "في أي برية تسلل داود وأبيشاي ليلاً إلى معسكر شاول وأخذا رمحه وكوز الماء من عند رأسه؟",
+      "en": "In which desert wilderness did David again spare Saul's life, taking only Saul's spear and jug of water from beside his head?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة"
+        "برية زيف",
+        "برية سيناء",
+        "برية معون",
+        "برية عين جدي"
       ],
       "en": [
-        "Twenty years",
-        "Seventy years",
-        "Forty years",
-        "Thirty years"
+        "Wilderness of Ziph",
+        "Wilderness of Sinai",
+        "Wilderness of Maon",
+        "Wilderness of En Gedi"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 26: 2-12",
+      "en": "1 Samuel 26:2-12"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And he came to the sheepfolds by the road, where there was a cave; and Saul went in to attend to his needs. (David and his men were staying in the recesses of the cave.)"
+      "ar": "فَقَامَ شَاوُلُ وَنَزَلَ إِلَى بَرِّيَّةِ زِيفٍ... فَأَخَذَ دَاوُدُ الرُّمْحَ وَكُوزَ الْمَاءِ مِنْ عِنْدِ رَأْسِ شَاوُلَ وَذَهَبَا،",
+      "en": "So David and Abishai came to the people by night; and there Saul lay sleeping within the camp, with his spear stuck in the ground by his head... So David took the spear and the jug of water by Saul’s head, and they got away;"
     }
   },
   {
     "id": 168,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 68: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "In which desert wilderness did David again spare Saul's life, taking only Saul's spear and jug of water from beside his head?"
+      "ar": "ما اسم ملك جت الفلسطيني الذي أعطى مدينة صقلغ لداود ليقيم فيها هارباً من شاول؟",
+      "en": "What Philistine king of Gath gave the city of Ziklag to David while David was fleeing from Saul?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "عشرين سنة",
-        "سبعين سنة"
+        "أخيش",
+        "حانون",
+        "أبيمالك",
+        "جليات"
       ],
       "en": [
-        "Thirty years",
-        "Forty years",
-        "Twenty years",
-        "Seventy years"
+        "Achish",
+        "Hanun",
+        "Abimelech",
+        "Goliath"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 27: 5-6",
+      "en": "1 Samuel 27:5-6"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "So David and Abishai came to the people by night; and there Saul lay sleeping within the camp, with his spear stuck in the ground by his head. And Abner and the people lay all around him."
+      "ar": "فَأَعْطَاهُ أَخِيشُ فِي ذلِكَ الْيَوْمِ صِقْلَغَ. لِذلِكَ صَارَتْ صِقْلَغُ لِمُلُوكِ يَهُوذَا إِلَى هذَا الْيَوْمِ.",
+      "en": "Then Achish gave him Ziklag that day. Therefore Ziklag has belonged to the kings of Judah to this day."
     }
   },
   {
     "id": 169,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 69: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What Philistine king of Gath gave the city of Ziklag to David while David was fleeing from Saul?"
+      "ar": "على أي جبل قُتل شاول الملك وأبناؤه يوناثان وأبيناداب وملكيشوع في الحرب ضد الفلسطينيين؟",
+      "en": "On which mountain did King Saul and his sons Jonathan, Abinadab, and Malchishua die in battle against the Philistines?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "أربعين سنة",
-        "سبعين سنة",
-        "ثلاثين سنة"
+        "جبل جلبوع",
+        "جبل جرزيم",
+        "جبل الكرمل",
+        "جبل تابور"
       ],
       "en": [
-        "Twenty years",
-        "Forty years",
-        "Seventy years",
-        "Thirty years"
+        "Mount Gilboa",
+        "Mount Gerizim",
+        "Mount Carmel",
+        "Mount Tabor"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 31: 1",
+      "en": "1 Samuel 31:1"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Achish gave him Ziklag that day. Therefore Ziklag has belonged to the kings of Judah to this day."
+      "ar": "وَحَارَبَ الْفِلِسْطِينِيُّونَ إِسْرَائِيلَ، فَهَرَبَ رِجَالُ إِسْرَائِيلَ مِنْ أَمَامِ الْفِلِسْطِينِيِّينَ وَسَقَطُوا قَتْلَى فِي جَبَلِ جِلْبُوعَ.",
+      "en": "Now the Philistines fought against Israel; and the men of Israel fled from before the Philistines, and fell slain on Mount Gilboa."
     }
   },
   {
     "id": 170,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 70: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "On which mountain did King Saul and his sons Jonathan, Abinadab, and Malchishua die in battle against the Philistines?"
+      "ar": "من هم الرجال الأبطال الذين ساروا الليل كله وأنزلوا جثث شاول وبنيه عن سور بيت شان ودفنوها بإكرام؟",
+      "en": "Who were the courageous men who journeyed all night to rescue the bodies of Saul and his sons from the wall of Beth Shan?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "عشرين سنة",
-        "أربعين سنة"
+        "رجال حبرون",
+        "رجال يابيش جلعاد",
+        "رجال شكيم",
+        "رجال بيت لحم"
       ],
       "en": [
-        "Thirty years",
-        "Seventy years",
-        "Twenty years",
-        "Forty years"
+        "Men of Hebron",
+        "Men of Jabesh Gilead",
+        "Men of Shechem",
+        "Men of Bethlehem"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 صموئيل 31: 11-12",
+      "en": "1 Samuel 31:11-12"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now the Philistines fought against Israel; and the men of Israel fled from before the Philistines, and fell slain on Mount Gilboa."
+      "ar": "وَلَمَّا سَمِعَ أَهْلُ يَابِيشِ جِلْعَادَ بِمَا فَعَلَ الْفِلِسْطِينِيُّونَ بِشَاوُلَ، قَامَ كُلُّ ذِي بَأْسٍ وَسَارُوا اللَّيْلَ كُلَّهُ وَأَخَذُوا جَسَدَ شَاوُلَ وَأَجْسَادَ بَنِيهِ عَنْ سُورِ بَيْتِ شَانَ...",
+      "en": "all the valiant men arose and traveled all night, and took the body of Saul and the bodies of his sons from the wall of Beth Shan; and they came to Jabesh and burned them there."
     }
   },
   {
     "id": 171,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 71: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who were the courageous men who journeyed all night to rescue the bodies of Saul and his sons from the wall of Beth Shan?"
+      "ar": "من هو قائد جيش شاول الذي ملّك إيشبوشث بن شاول على إسرائيل في محنايم؟",
+      "en": "Who was the commander of Saul's army who made Saul's son Ishbosheth king over Israel in Mahanaim?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "عماسا",
+        "أبنير بن نير",
+        "بنايا بن يهوياداع",
+        "يوآب بن صروية"
       ],
       "en": [
-        "Seventy years",
-        "Forty years",
-        "Thirty years",
-        "Twenty years"
+        "Amasa",
+        "Abner son of Ner",
+        "Benaiah son of Jehoiada",
+        "Joab son of Zeruiah"
       ]
     },
     "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 2: 8-9",
+      "en": "2 Samuel 2:8-9"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "all the valiant men arose and traveled all night, and took the body of Saul and the bodies of his sons from the wall of Beth Shan; and they came to Jabesh and burned them there."
+      "ar": "وَأَمَّا أَبْنِيرُ بْنُ نَيْرٍ، رَئِيسُ جَيْشِ شَاوُلَ، فَأَخَذَ إِيشْبُوشَثَ بْنَ شَاوُلَ وَعَبَرَ بِهِ إِلَى مَحَنَايِمَ، وَمَلَّكَهُ عَلَى جِلْعَادَ...",
+      "en": "But Abner the son of Ner, commander of Saul’s army, took Ishbosheth the son of Saul and brought him over to Mahanaim; and he made him king over Gilead,"
     }
   },
   {
     "id": 172,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 72: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who was the commander of Saul's army who made Saul's son Ishbosheth king over Israel in Mahanaim?"
+      "ar": "من هو الأخ السريع الركض ليوآب الذي قتله أبنير بن نير بزج رمحه لما طارده؟",
+      "en": "Who was the swift-footed brother of Joab who was killed by Abner son of Ner with the blunt end of his spear?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "عشرين سنة",
-        "سبعين سنة",
-        "ثلاثين سنة"
+        "عماسا",
+        "عسائيل",
+        "إيتاي",
+        "أبيشاي"
       ],
       "en": [
-        "Forty years",
-        "Twenty years",
-        "Seventy years",
-        "Thirty years"
+        "Amasa",
+        "Asahel",
+        "Ittai",
+        "Abishai"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 2: 18-23",
+      "en": "2 Samuel 2:18-23"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "But Abner the son of Ner, commander of Saul’s army, took Ishbosheth the son of Saul and brought him over to Mahanaim;"
+      "ar": "وَكَانَ هُنَاكَ بَنُو صَرُويَةَ الثَّلاَثَةُ: يُوآبُ وَأَبِيشَايُ وَعَسَاهِيلُ. وَكَانَ عَسَاهِيلُ خَفِيفَ الرِّجْلَيْنِ كَظَبْيِ الْبَرِّ... فَطَعَنَهُ أَبْنِيرُ بِزُجِّ الرُّمْحِ فِي بَطْنِهِ فَخَرَجَ الرُّمْحُ مِنْ خَلْفِهِ، فَسَقَطَ هُنَاكَ وَمَاتَ.",
+      "en": "Now Asahel was as fleet of foot as a wild gazelle. So Asahel pursued Abner, and in contemplating his pursuit he did not turn to the right hand or to the left from following Abner... So Abner struck him in the stomach with the blunt end of the spear... and he fell down there and died."
     }
   },
   {
     "id": 173,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 73: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who was the swift-footed brother of Joab who was killed by Abner son of Ner with the blunt end of his spear?"
+      "ar": "من هو القائد الذي اغتال أبنير بن نير غدراً في باب حبرون ثأراً لدم أخيه عسائيل؟",
+      "en": "Who murdered Abner son of Ner deceitfully at the gate of Hebron to avenge the blood of his brother Asahel?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "عشرين سنة",
-        "أربعين سنة"
+        "بنايا",
+        "يوآب بن صروية",
+        "شمعي بن جيرا",
+        "داود الملك"
       ],
       "en": [
-        "Thirty years",
-        "Seventy years",
-        "Twenty years",
-        "Forty years"
+        "Benaiah",
+        "Joab son of Zeruiah",
+        "Shimei son of Gera",
+        "King David"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 3: 27",
+      "en": "2 Samuel 3:27"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now Asahel was as fleet of foot as a wild gazelle. So Asahel pursued Abner, and in contemplating his pursuit he did not turn to the right hand or to the left from following Abner."
+      "ar": "وَلَمَّا رَجَعَ أَبْنِيرُ إِلَى حَبْرُونَ، مَالَ بِهِ يُوآبُ إِلَى وَسَطِ الْبَابِ لِيُكَلِّمَهُ سِرًّا، وَضَرَبَهُ هُنَاكَ فِي بَطْنِهِ فَمَاتَ بِدَمِ عَسَاهِيلَ أَخِيهِ.",
+      "en": "Now when Abner had returned to Hebron, Joab took him aside in the gate to speak with him privately, and there stabbed him in the stomach, so that he died for the blood of Asahel his brother."
     }
   },
   {
     "id": 174,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 74: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who murdered Abner son of Ner deceitfully at the gate of Hebron to avenge the blood of his brother Asahel?"
+      "ar": "من هما الرجلان اللذان دخلا مخدع إيشبوشث في وقت الظهيرة وقتلاه وقطعا رأسه وحملاه لداود في حبرون؟",
+      "en": "Who assassinated Ishbosheth in his bed at noon in his house and brought his head to David in Hebron?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "عشرين سنة"
+        "أبنير وشمعي",
+        "ركاب وبعنة",
+        "دواغ وحربونا",
+        "يوآب وأبيشاي"
       ],
       "en": [
-        "Forty years",
-        "Thirty years",
-        "Seventy years",
-        "Twenty years"
+        "Abner and Shimei",
+        "Rechab and Baanah",
+        "Doeg and Harbonah",
+        "Joab and Abishai"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 4: 5-7",
+      "en": "2 Samuel 4:5-7"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now when Abner had returned to Hebron, Joab took him aside in the gate to speak with him privately, and there stabbed him in the stomach, so that he died for the blood of Asahel his brother."
+      "ar": "فَانْطَلَقَ ابْنَا رِمُّونَ الْبَئِيرُوتِيِّ، رَكَابُ وَبَعْنَةُ... وَهُوَ مُضْطَجِعٌ نَوْمَةَ الظَّهِيرَةِ عَلَى سَرِيرِهِ... فَضَرَبَاهُ وَقَتَلاَهُ وَقَطَعَا رَأْسَهُ، وَأَخَذَا رَأْسَهُ وَسَارَا فِي طَرِيقِ الْعَرَبَةِ اللَّيْلَ كُلَّهُ.",
+      "en": "And they came there into the middle of the house, like men getting wheat, and they stabbed him in the stomach. Then Rechab and Baanah his brother escaped."
     }
   },
   {
     "id": 175,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 75: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who assassinated Ishbosheth in his bed at noon in his house and brought his head to David in Hebron?"
+      "ar": "من أي شعب كنعاني استولى داود على حصن صهيون وبناه وسماه مدينة داود؟",
+      "en": "From which ancient people did David capture the stronghold of Zion, renaming it the City of David?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "سبعين سنة",
-        "عشرين سنة"
+        "الأموريون",
+        "اليبوسيون",
+        "الفرزيون",
+        "الحثيون"
       ],
       "en": [
-        "Thirty years",
-        "Forty years",
-        "Seventy years",
-        "Twenty years"
+        "The Amorites",
+        "The Jebusites",
+        "The Perizzites",
+        "The Hittites"
       ]
     },
     "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 5: 6-7",
+      "en": "2 Samuel 5:6-7"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And they came there into the middle of the house, like men getting wheat, and they stabbed him in the stomach. Then Rechab and Baanah his brother escaped."
+      "ar": "وَذَهَبَ الْمَلِكُ وَرِجَالُهُ إِلَى أُورُشَلِيمَ إِلَى الْيَبُوسِيِّينَ سُكَّانِ الأَرْضِ... وَأَخَذَ دَاوُدُ حِصْنَ صِهْيَوْنَ: هِيَ مَدِينَةُ دَاوُدَ.",
+      "en": "Nevertheless David took the stronghold of Zion (that is, the City of David)."
     }
   },
   {
     "id": 176,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 76: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "From which ancient people did David capture the stronghold of Zion, renaming it the City of David?"
+      "ar": "من هي زوجة داود ابنة شاول التي احتقرته في قلبها لما رأته يرقص ويطفر بفرح أمام تابوت الرب؟",
+      "en": "Who was David's wife, Saul's daughter, who despised David in her heart when she saw him leaping and whirling before the LORD?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "أبيجايل",
+        "ميكال",
+        "بثشبع",
+        "ميرب"
       ],
       "en": [
-        "Seventy years",
-        "Forty years",
-        "Thirty years",
-        "Twenty years"
+        "Abigail",
+        "Michal",
+        "Bathsheba",
+        "Merab"
       ]
     },
     "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 6: 16",
+      "en": "2 Samuel 6:16"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Nevertheless David took the stronghold of Zion (that is, the City of David)."
+      "ar": "وَأَشْرَفَتْ مِيكَالُ بِنْتُ شَاوُلَ مِنَ الْكُوَّةِ وَرَأَتِ الْمَلِكَ دَاوُدَ يَطْفُرُ وَيَرْقُصُ أَمَامَ الرَّبِّ، فَاحْتَقَرَتْهُ فِي قَلْبِهَا.",
+      "en": "Now as the ark of the LORD came into the City of David, Michal, Saul’s daughter, looked through a window and saw King David leaping and whirling before the LORD; and she despised him in her heart."
     }
   },
   {
     "id": 177,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 77: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who was David's wife, Saul's daughter, who despised David in her heart when she saw him leaping and whirling before the LORD?"
+      "ar": "ما هو الوعد العهدي العظيم الذي قطعه الله لداود على فم ناثان النبي بشأن مملكته وعرشه؟",
+      "en": "What was the covenant promise made by God to David through Nathan regarding his kingdom and throne?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "عشرين سنة"
+        "لا يُهزم جيشك في أي حرب للأبد",
+        "يثبت بيتك ومملكتك إلى الأبد قدامك",
+        "تبني هيكلاً أعظم من كل قصور الأرض",
+        "تمتلك كل ممالك الأمم من النيل للفرات"
       ],
       "en": [
-        "Thirty years",
-        "Seventy years",
-        "Forty years",
-        "Twenty years"
+        "Your army shall never be defeated in battle",
+        "Your house and your kingdom shall be established forever",
+        "You shall build a temple greater than all palaces",
+        "You shall conquer all nations from Nile to Euphrates"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 7: 16",
+      "en": "2 Samuel 7:16"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now as the ark of the LORD came into the City of David, Michal, Saul’s daughter, looked through a window and saw King David leaping and whirling before the LORD; and she despised him in her heart."
+      "ar": "«وَيَأْمَنُ بَيْتُكَ وَمَمْلَكَتُكَ إِلَى الأَبَدِ أَمَامَكَ. كُرْسِيُّكَ يَكُونُ ثَابِتًا إِلَى الأَبَدِ».",
+      "en": "'And your house and your kingdom shall be established forever before you. Your throne shall be established forever.'"
     }
   },
   {
     "id": 178,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 78: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the covenant promise made by God to David through Nathan regarding his kingdom and throne?"
+      "ar": "من هو الجندي الحثي البطل زوج بثشبع الذي أمر داود بوضعه في أشد المعارك غدراً ليموت؟",
+      "en": "Who was the Hittite warrior, husband of Bathsheba, whom David treacherously ordered to be placed in the forefront of the hottest battle?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "أربعين سنة",
-        "سبعين سنة",
-        "ثلاثين سنة"
+        "أخيتوفل",
+        "أوريا الحثي",
+        "شمعي",
+        "إيتام"
       ],
       "en": [
-        "Twenty years",
-        "Forty years",
-        "Seventy years",
-        "Thirty years"
+        "Ahithophel",
+        "Uriah the Hittite",
+        "Shimei",
+        "Ittai"
       ]
     },
     "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 11: 15",
+      "en": "2 Samuel 11:15"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "'And your house and your kingdom shall be established forever before you. Your throne shall be established forever.'"
+      "ar": "وَكَتَبَ فِي الرِّسَالَةِ يَقُولُ: «اجْعَلُوا أُورِيَّا فِي وَجْهِ الْحَرْبِ الشَّدِيدَةِ، وَارْجِعُوا مِنْ وَرَائِهِ فَيُضْرَبَ وَيَمُوتَ».",
+      "en": "And he wrote in the letter, saying, 'Set Uriah in the forefront of the hottest battle, and retire from him, that he may be struck down and die.'"
     }
   },
   {
     "id": 179,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 79: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who was the Hittite warrior, husband of Bathsheba, whom David treacherously ordered to be placed in the forefront of the hottest battle?"
+      "ar": "من هو ابن داود البكر الذي أذل أخته ثامار واغتاله عبيد أبشالوم في بعل حاصور؟",
+      "en": "Which son of David violated his half-sister Tamar and was later assassinated by Absalom's servants at Baal Hazor?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "أربعين سنة",
-        "سبعين سنة",
-        "ثلاثين سنة"
+        "كيلآب",
+        "أمنون",
+        "شفطيا",
+        "أدونيا"
       ],
       "en": [
-        "Twenty years",
-        "Forty years",
-        "Seventy years",
-        "Thirty years"
+        "Chileab",
+        "Amnon",
+        "Shephatiah",
+        "Adonijah"
       ]
     },
     "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 13: 28-29",
+      "en": "2 Samuel 13:28-29"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And he wrote in the letter, saying, 'Set Uriah in the forefront of the hottest battle, and retire from him, that he may be struck down and die.'"
+      "ar": "فَأَوْصَى أَبْشَالُومُ غِلْمَانَهُ قَائِلاً: «انْظُرُوا. إِذَا طَابَ قَلْبُ أَمْنُونَ بِالْخَمْرِ... فَاضْرِبُوا أَمْنُونَ وَاقْتُلُوهُ». فَفَعَلَ غِلْمَانُ أَبْشَالُومَ بِأَمْنُونَ كَمَا أَمَرَهُمْ.",
+      "en": "Now Absalom had commanded his servants, saying, 'Watch now, when Amnon’s heart is merry with wine... strike Amnon and kill him.' So the servants of Absalom did to Amnon as Absalom had commanded."
     }
   },
   {
     "id": 180,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 80: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Which son of David violated his half-sister Tamar and was later assassinated by Absalom's servants at Baal Hazor?"
+      "ar": "في أي مدينة أعلن أبشالوم نفسه ملكاً وأشعل فتنة التمرد ضد أبيه داود الملك؟",
+      "en": "In which city did Absalom first proclaim himself king and launch his rebellion against his father David?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "عشرين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة"
+        "شكيم",
+        "حبرون",
+        "محنايم",
+        "أورشليم"
       ],
       "en": [
-        "Seventy years",
-        "Twenty years",
-        "Forty years",
-        "Thirty years"
+        "Shechem",
+        "Hebron",
+        "Mahanaim",
+        "Jerusalem"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 15: 10",
+      "en": "2 Samuel 15:10"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now it came to pass after two full years that Absalom had sheepshearers in Baal Hazor, which is near Ephraim; and Absalom invited all the king’s sons... Now Absalom had commanded his servants, saying, 'Watch now, when Amnon’s heart is merry with wine... strike Amnon and kill him.'"
+      "ar": "وَأَرْسَلَ أَبْشَالُومُ جَوَاسِيسَ فِي جَمِيعِ أَسْبَاطِ إِسْرَائِيلَ قَائِلاً: «إِذَا سَمِعْتُمْ صَوْتَ الْبُوقِ فَقُولُوا: قَدْ مَلَكَ أَبْشَالُومُ فِي حَبْرُونَ!».",
+      "en": "Then Absalom sent spies throughout all the tribes of Israel, saying, 'As soon as you hear the sound of the trumpet, then you shall say, \"Absalom reigns in Hebron!\"'"
     }
   },
   {
     "id": 181,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 81: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "In which city did Absalom first proclaim himself king and launch his rebellion against his father David?"
+      "ar": "في أي وعر وغابة دارت المعركة الحاسمة بين جيش داود ورجال أبشالوم؟",
+      "en": "In which forest did the battle take place between the armies of David and the forces of Absalom?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "سبعين سنة"
+        "وعر حارث",
+        "وعر جلعاد",
+        "وعر إفرايم",
+        "وعر لبنان"
       ],
       "en": [
-        "Forty years",
-        "Thirty years",
-        "Twenty years",
-        "Seventy years"
+        "Forest of Hereth",
+        "Forest of Gilead",
+        "Woods of Ephraim",
+        "Forest of Lebanon"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 18: 6",
+      "en": "2 Samuel 18:6"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Absalom sent spies throughout all the tribes of Israel, saying, 'As soon as you hear the sound of the trumpet, then you shall say, \"Absalom reigns in Hebron!\"'"
+      "ar": "وَخَرَجَ الشَّعْبُ إِلَى الْحَقْلِ لِلِقَاءِ إِسْرَائِيلَ، وَكَانَتِ الْحَرْبُ فِي وَعْرِ أَفْرَايِمَ.",
+      "en": "So the people went out into the field against Israel. And the battle was in the woods of Ephraim."
     }
   },
   {
     "id": 182,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 82: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "In which forest did the battle take place between the armies of David and the forces of Absalom?"
+      "ar": "كيف عُلق أبشالوم في الوعر بين السماء والأرض قبل أن يقتله يوآب بسهامه؟",
+      "en": "How was Absalom caught and suspended in the forest before Joab struck him with three darts through his heart?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "عشرين سنة"
+        "علق رمحه في شجرة سنديان",
+        "حاصرته الصخور بين جبلين",
+        "اشتبك رأسه وشعره بأغصان بطمة كبيرة",
+        "سقطت بغلته في حفرة عميقة"
       ],
       "en": [
-        "Forty years",
-        "Thirty years",
-        "Seventy years",
-        "Twenty years"
+        "His spear caught in an oak tree",
+        "Rocks trapped him between two cliffs",
+        "His head was caught in the thick boughs of a great terebinth tree",
+        "His mule fell into a deep pit"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 18: 9",
+      "en": "2 Samuel 18:9"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "So the people went out into the field against Israel. And the battle was in the woods of Ephraim."
+      "ar": "وَصَادَفَ أَبْشَالُومُ عَبِيدَ دَاوُدَ، وَكَانَ أَبْشَالُومُ رَاكِبًا عَلَى بَغْلٍ، فَدَخَلَ الْبَغْلُ تَحْتَ أَغْصَانِ الْبُطْمَةِ الْعَظِيمَةِ الْمُلْتَفَّةِ، فَنَشِبَ رَأْسُهُ فِي الْبُطْمَةِ وَعُلِّقَ بَيْنَ السَّمَاءِ وَالأَرْضِ.",
+      "en": "Then Absalom met the servants of David. Absalom rode on a mule. The mule went under the thick boughs of a great terebinth tree, and his head got caught in the terebinth; so he was left hanging between heaven and earth."
     }
   },
   {
     "id": 183,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 83: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "How was Absalom caught and suspended in the forest before Joab struck him with three darts through his heart?"
+      "ar": "من هو المتمرد البنياميني الذي ضرب بالبوق قائلاً: «لَيْسَ لَنَا قِسْمٌ فِي دَاوُدَ... كُلُّ رَجُل إِلَى خِيَامِهِ يَا إِسْرَائِيلُ»؟",
+      "en": "Who was the Benjamite rebel who blew a trumpet saying: 'We have no share in David... Every man to his tents, O Israel!'?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
-        "عشرين سنة",
-        "ثلاثين سنة"
+        "أخيتوفل الجيلوني",
+        "دواغ الأدومي",
+        "شبعا بن بكرى",
+        "شمعي بن جيرا"
       ],
       "en": [
-        "Forty years",
-        "Seventy years",
-        "Twenty years",
-        "Thirty years"
+        "Ahithophel the Gilonite",
+        "Doeg the Edomite",
+        "Sheba son of Bichri",
+        "Shimei son of Gera"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 20: 1",
+      "en": "2 Samuel 20:1"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Absalom met the servants of David. Absalom rode on a mule. The mule went under the thick boughs of a great terebinth tree, and his head got caught in the terebinth; so he was left hanging between heaven and earth."
+      "ar": "وَاتَّفَقَ هُنَاكَ رَجُلٌ لَئِيمٌ اسْمُهُ شَبَعُ بْنُ بِكْرِي، رَجُلٌ بِنْيَامِينِيٌّ، فَضَرَبَ بِالْبُوقِ وَقَالَ: «لَيْسَ لَنَا قِسْمٌ فِي دَاوُدَ، وَلاَ لَنَا نَصِيبٌ فِي ابْنِ يَسَّى. كُلُّ رَجُل إِلَى خِيَامِهِ يَا إِسْرَائِيلُ».",
+      "en": "And there happened to be there a rebel, whose name was Sheba the son of Bichri, a Benjamite. And he blew a trumpet, and said: 'We have no share in David, Nor do we have inheritance in the son of Jesse. Every man to his tents, O Israel!'"
     }
   },
   {
     "id": 184,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 84: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who was the Benjamite rebel who blew a trumpet saying: 'We have no share in David... Every man to his tents, O Israel!'?"
+      "ar": "في أي مدينة حُوصر شبعا بن بكرى حتى قامت امرأة حكيمة وأقنعت أهل المدينة بإلقاء رأسه ليوآب فوق السور؟",
+      "en": "In which city was Sheba son of Bichri besieged until a wise woman persuaded the citizens to throw his severed head over the wall?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة"
+        "سوخوت",
+        "راموت جلعاد",
+        "آبيل بيت معكة",
+        "محنايم"
       ],
       "en": [
-        "Twenty years",
-        "Seventy years",
-        "Forty years",
-        "Thirty years"
+        "Succoth",
+        "Ramoth Gilead",
+        "Abel of Beth Maachah",
+        "Mahanaim"
       ]
     },
     "correctIndex": 2,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "2 صموئيل 20: 15-22",
+      "en": "2 Samuel 20:15-22"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And there happened to be there a rebel, whose name was Sheba the son of Bichri, a Benjamite. And he blew a trumpet, and said: 'We have no share in David, Nor do we have inheritance in the son of Jesse. Every man to his tents, O Israel!'"
+      "ar": "فَجَاءُوا وَحَاصَرُوهُ فِي آبِيلَ بَيْتِ مَعْكَةَ... فَدَخَلَتِ الْمَرْأَةُ إِلَى جَمِيعِ الشَّعْبِ بِحِكْمَتِهَا فَقَطَعُوا رَأْسَ شَبَعَ بْنِ بِكْرِي وَطَرَحُوهُ إِلَى يُوآبَ.",
+      "en": "And they came and besieged him in Abel of Beth Maachah; and they cast up a siege mound against the city, and it stood by the rampart... Then the woman in her wisdom went to all the people. And they cut off the head of Sheba the son of Bichri, and threw it out to Joab."
     }
   },
   {
     "id": 185,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 85: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "In which city was Sheba son of Bichri besieged until a wise woman persuaded the citizens to throw his severed head over the wall?"
+      "ar": "من هو ابن داود الذي تعظم وقال: «أَنَا أَمْلِكُ» وذبح غنماً عند حجر زاحلة في شيخوخة أبيه؟",
+      "en": "Which brother of Solomon attempted to usurp the throne when David was old, anointing himself king at the Stone of Zoheleth?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "أربعين سنة"
+        "كيلآب",
+        "أبشالوم",
+        "أدونيا بن حجيث",
+        "أمنون"
       ],
       "en": [
-        "Seventy years",
-        "Thirty years",
-        "Twenty years",
-        "Forty years"
+        "Chileab",
+        "Absalom",
+        "Adonijah son of Haggith",
+        "Amnon"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 2,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 1: 5",
+      "en": "1 Kings 1:5"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And they came and besieged him in Abel of Beth Maachah; and they cast up a siege mound against the city, and it stood by the rampart."
+      "ar": "ثُمَّ إِنَّ أَدُونِيَّا ابْنَ حَجِّيثَ تَرَفَّعَ قَائِلاً: «أَنَا أَمْلِكُ». وَعَمِلَ لِنَفْسِهِ عَجَلاَتٍ وَفُرْسَانًا وَخَمْسِينَ رَجُلاً يَرْكُضُونَ أَمَامَهُ.",
+      "en": "Then Adonijah the son of Haggith exalted himself, saying, 'I will be king'; and he prepared for himself chariots and horsemen, and fifty men to run before him."
     }
   },
   {
     "id": 186,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 86: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Which brother of Solomon attempted to usurp the throne when David was old, anointing himself king at the Stone of Zoheleth?"
+      "ar": "من هي التي دخلت إلى مخدع داود مع ناثان النبي لتذكره بقسمه أن سليمان يملك بعده؟",
+      "en": "Who went to King David along with Nathan the prophet to remind David of his oath that Solomon would reign?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "عشرين سنة"
+        "أبيجايل",
+        "أخينوعم",
+        "معكة",
+        "بثشبع"
       ],
       "en": [
-        "Seventy years",
-        "Thirty years",
-        "Forty years",
-        "Twenty years"
+        "Abigail",
+        "Ahinoam",
+        "Maachah",
+        "Bathsheba"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 1: 15-17",
+      "en": "1 Kings 1:15-17"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Adonijah the son of Haggith exalted himself, saying, 'I will be king'; and he prepared for himself chariots and horsemen, and fifty men to run before him."
+      "ar": "فَدَخَلَتْ بَثْشَبَعُ إِلَى الْمَلِكِ إِلَى الْمَخْدَعِ... فَقَالَتْ لَهُ: «أَنْتَ يَا سَيِّدِي حَلَفْتَ بِالرَّبِّ إِلهِكَ لأَمَتِكَ قَائِلاً: إِنَّ سُلَيْمَانَ ابْنَكِ يَمْلِكُ بَعْدِي».",
+      "en": "So Bathsheba went into the chamber to the king... Then she said to him, 'My lord, you swore by the LORD your God to your maidservant, saying, \"Assuredly Solomon your son shall reign after me, and he shall sit on my throne.\"' "
     }
   },
   {
     "id": 187,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 87: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who went to King David along with Nathan the prophet to remind David of his oath that Solomon would reign?"
+      "ar": "عند أي نبع ماء بالقرب من أورشليم مُسح سليمان ملكاً على إسرائيل بأمر داود؟",
+      "en": "At which spring near Jerusalem was Solomon anointed king of Israel by Zadok the priest and Nathan the prophet?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "عشرين سنة"
+        "عين روجل",
+        "بركة سلوان",
+        "عين جدي",
+        "عين جيحون"
       ],
       "en": [
-        "Forty years",
-        "Thirty years",
-        "Seventy years",
-        "Twenty years"
+        "En Rogel",
+        "Pool of Siloam",
+        "En Gedi",
+        "Spring of Gihon"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 1: 38",
+      "en": "1 Kings 1:38"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "So Bathsheba went into the chamber to the king. (Now the king was very old, and Abishag the Shunammite was serving the king.)"
+      "ar": "فَنَزَلَ صَادُوقُ الْكَاهِنُ وَنَاثَانُ النَّبِيُّ وَبَنَايَاهُو بْنُ يَهُويَادَاعَ... وَأَرْكَبُوا سُلَيْمَانَ عَلَى بَغْلَةِ الْمَلِكِ دَاوُدَ، وَذَهَبُوا بِهِ إِلَى جِيحُونَ.",
+      "en": "So Zadok the priest, Nathan the prophet, Benaiah the son of Jehoiada, the Cherethites, and the Pelethites went down and had Solomon ride on King David’s mule, and brought him to Gihon."
     }
   },
   {
     "id": 188,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 88: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "At which spring near Jerusalem was Solomon anointed king of Israel by Zadok the priest and Nathan the prophet?"
+      "ar": "ماذا طلب سليمان الملك من الرب في حلم جبعون لما خيّره الله قائلاً: «اسْأَلْ مَاذَا أُعْطِيكَ»؟",
+      "en": "What request did King Solomon make of the LORD in his dream at Gibeon when God offered him whatever he asked?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "أربعين سنة"
+        "عمراً طويلاً وانتصاراً على كل الأعداء",
+        "غنى وكرامة أعظم من ملوك الأرض",
+        "قصوراً منيعة وهيكلاً مذهباً",
+        "قلباً فاهماً لأحكم على شعبك وأميز بين الخير والشر"
       ],
       "en": [
-        "Seventy years",
-        "Thirty years",
-        "Twenty years",
-        "Forty years"
+        "Long life and victory over all enemies",
+        "Riches and honor greater than all kings",
+        "Fortified palaces and a golden temple",
+        "An understanding heart to judge Your people and discern good and evil"
       ]
     },
     "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 3: 9",
+      "en": "1 Kings 3:9"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "So Zadok the priest, Nathan the prophet, Benaiah the son of Jehoiada, the Cherethites, and the Pelethites went down and had Solomon ride on King David’s mule, and brought him to Gihon."
+      "ar": "«فَأَعْطِ عَبْدَكَ قَلْبًا فَهِمًا لأَحْكُمَ عَلَى شَعْبِكَ وَأُمَيِّزَ بَيْنَ الْخَيْرِ وَالشَّرِّ، لأَنَّهُ مَنْ يَقْدِرُ أَنْ يَحْكُمَ عَلَى شَعْبِكَ الْعَظِيمِ هذَا؟».",
+      "en": "'Therefore give to Your servant an understanding heart to judge Your people, that I may discern between good and evil. For who is able to judge this great people of Yours?'"
     }
   },
   {
     "id": 189,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 89: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What request did King Solomon make of the LORD in his dream at Gibeon when God offered him whatever he asked?"
+      "ar": "ما هو الحكم الحكيم الذي أصدره سليمان لكشف الأم الحقيقية للطفل الحي بين المرأتين الزانيتين؟",
+      "en": "What wise judgment did Solomon make to discover the true mother of the living infant brought before him?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "سبعين سنة",
-        "أربعين سنة"
+        "اطرحوا القرعة بينهما أمام المذبح",
+        "دعوا الطفل يزحف نحو أمه الحقيقية",
+        "أعطوا الولد لكهنة الهيكل حتى يكبر",
+        "اقسموا الولد الحي نصفين وأعطوا كلاً منهما نصفاً"
       ],
       "en": [
-        "Thirty years",
-        "Twenty years",
-        "Seventy years",
-        "Forty years"
+        "Cast lots between them before the altar",
+        "Let the child crawl toward the true mother",
+        "Give the child to the temple priests until grown",
+        "Divide the living child in two and give half to one and half to the other"
       ]
     },
     "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 3: 25",
+      "en": "1 Kings 3:25"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "'Therefore give to Your servant an understanding heart to judge Your people, that I may discern between good and evil. For who is able to judge this great people of Yours?'"
+      "ar": "فَقَالَ الْمَلِكُ: «اشْطُرُوا الْوَلَدَ الْحَيَّ اثْنَيْنِ، وَأَعْطُوا نِصْفًا لِلْوَاحِدَةِ وَنِصْفًا لِلأُخْرَى».",
+      "en": "And the king said, 'Divide the living child in two, and give half to one, and half to the other.'"
     }
   },
   {
     "id": 190,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 90: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What wise judgment did Solomon make to discover the true mother of the living infant brought before him?"
+      "ar": "ما اسم ملك صور الفينيقي الذي أرسل أخشاب الأرز والسرو والذهب لسليمان لبناء الهيكل؟",
+      "en": "What Phoenician king of Tyre supplied cedar and cypress timbers and gold to Solomon for the building of the temple?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "عشرين سنة"
+        "أخيش",
+        "تلماي",
+        "حانون",
+        "حيرام ملك صور"
       ],
       "en": [
-        "Seventy years",
-        "Thirty years",
-        "Forty years",
-        "Twenty years"
+        "Achish",
+        "Talmai",
+        "Hanun",
+        "Hiram king of Tyre"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 5: 1",
+      "en": "1 Kings 5:1"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And the king said, 'Divide the living child in two, and give half to one, and half to the other.'"
+      "ar": "وَأَرْسَلَ حِيرَامُ مَلِكُ صُورَ عَبِيدَهُ إِلَى سُلَيْمَانَ، لأَنَّهُ سَمِعَ أَنَّهُمْ مَسَحُوهُ مَلِكًا مَكَانَ أَبِيهِ، لأَنَّ حِيرَامَ كَانَ مُحِبًّا لِدَاوُدَ كُلَّ الأَيَّامِ.",
+      "en": "Now Hiram king of Tyre sent his servants to Solomon, because he heard that they had anointed him king in place of his father, for Hiram had always loved David."
     }
   },
   {
     "id": 191,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 91: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What Phoenician king of Tyre supplied cedar and cypress timbers and gold to Solomon for the building of the temple?"
+      "ar": "في أي سنة من ملك سليمان وفي أي شهر بدأ بناء بيت الرب في أورشليم؟",
+      "en": "In what year of Solomon's reign, and in which month, did construction begin on the house of the LORD in Jerusalem?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "سبعين سنة",
-        "عشرين سنة"
+        "في السنة السابعة في شهر بول",
+        "في السنة الأولى في شهر نيسان",
+        "في السنة العاشرة في شهر إيثانيم",
+        "في السنة الرابعة في شهر زيو"
       ],
       "en": [
-        "Thirty years",
-        "Forty years",
-        "Seventy years",
-        "Twenty years"
+        "In the seventh year in the month of Bul",
+        "In the first year in the month of Nisan",
+        "In the tenth year in the month of Ethanim",
+        "In the fourth year in the month of Ziv"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 6: 1",
+      "en": "1 Kings 6:1"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now Hiram king of Tyre sent his servants to Solomon, because he heard that they had anointed him king in place of his father, for Hiram had always loved David."
+      "ar": "وَكَانَ فِي سَنَةِ الأَرْبَعِ مِئَةِ وَالثَّمَانِينَ لِخُرُوجِ بَنِي إِسْرَائِيلَ مِنْ أَرْضِ مِصْرَ، فِي السَّنَةِ الرَّابِعَةِ لِمُلْكِ سُلَيْمَانَ عَلَى إِسْرَائِيلَ، فِي شَهْرِ زِيُو وَهُوَ الشَّهْرُ الثَّانِي، أَنَّهُ بَنَى الْبَيْتَ لِلرَّبِّ.",
+      "en": "And it came to pass in the four hundred and eightieth year after the children of Israel had come out of the land of Egypt, in the fourth year of Solomon’s reign over Israel, in the month of Ziv, which is the second month, that he began to build the house of the LORD."
     }
   },
   {
     "id": 192,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 92: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "In what year of Solomon's reign, and in which month, did construction begin on the house of the LORD in Jerusalem?"
+      "ar": "كم سنة استمر الملك سليمان في بناء هيكل الرب في أورشليم حتى أكمله بجميع أجهزته؟",
+      "en": "How many years was King Solomon engaged in building the temple of the LORD in Jerusalem until its completion?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة"
+        "اثنتا عشرة سنة",
+        "عشر سنين",
+        "أربعون سنة",
+        "سبع سنين"
       ],
       "en": [
-        "Twenty years",
-        "Seventy years",
+        "Twelve years",
+        "Ten years",
         "Forty years",
-        "Thirty years"
+        "Seven years"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 6: 38",
+      "en": "1 Kings 6:38"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And it came to pass in the four hundred and eightieth year after the children of Israel had come out of the land of Egypt, in the fourth year of Solomon’s reign over Israel, in the month of Ziv, which is the second month, that he began to build the house of the LORD."
+      "ar": "وَفِي السَّنَةِ الْحَادِيَةَ عَشْرَةَ فِي شَهْرِ بُولَ، وَهُوَ الشَّهْرُ الثَّامِنُ، أُكْمِلَ الْبَيْتُ فِي جَمِيعِ أُمُورِهِ وَكُلِّ أَحْكَامِهِ. فَبَنَاهُ فِي سَبْعِ سِنِينَ.",
+      "en": "In the fourth year the foundation of the house of the LORD was laid, in the month of Ziv. And in the eleventh year, in the month of Bul, which is the eighth month, the house was finished in all its details and according to all its plans. So he was seven years in building it."
     }
   },
   {
     "id": 193,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 93: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "How many years was King Solomon engaged in building the temple of the LORD in Jerusalem until its completion?"
+      "ar": "أين وضع يربعام بن نباط عجلي الذهب قائلاً لإسرائيل: «هُوَذَا آلِهَتُكَ يَا إِسْرَائِيلُ»؟",
+      "en": "Where did Jeroboam son of Nebat set up two golden calves so that northern Israel would not go up to Jerusalem to sacrifice?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "سبعين سنة",
-        "عشرين سنة"
+        "في شكيم والسامرة",
+        "في ترصة ويزرعيل",
+        "في الجلجال وشيلوه",
+        "في بيت إيل ودان"
       ],
       "en": [
-        "Thirty years",
-        "Forty years",
-        "Seventy years",
-        "Twenty years"
+        "In Shechem and Samaria",
+        "In Tirzah and Jezreel",
+        "In Gilgal and Shiloh",
+        "In Bethel and Dan"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 12: 28-29",
+      "en": "1 Kings 12:28-29"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "In the fourth year the foundation of the house of the LORD was laid, in the month of Ziv. And in the eleventh year, in the month of Bul, which is the eighth month, the house was finished in all its details and according to all its plans. So he was seven years in building it."
+      "ar": "فَاسْتَشَارَ الْمَلِكُ وَعَمِلَ عِجْلَيْ ذَهَبٍ، وَقَالَ لَهُمْ: «كَثِيرٌ عَلَيْكُمْ أَنْ تَصْعَدُوا إِلَى أُورُشَلِيمَ. هُوَذَا آلِهَتُكَ يَا إِسْرَائِيلُ الَّذِينَ أَصْعَدُوكَ مِنْ أَرْضِ مِصْرَ!». وَوَضَعَ وَاحِدًا فِي بَيْتِ إِيلَ وَجَعَلَ الآخَرَ فِي دَانَ.",
+      "en": "Therefore the king asked advice, made two calves of gold, and said to the people, 'It is too much for you to go up to Jerusalem. Here are your gods, O Israel, which brought you up from the land of Egypt!' And he set up one in Bethel, and the other he put in Dan."
     }
   },
   {
     "id": 194,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 94: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Where did Jeroboam son of Nebat set up two golden calves so that northern Israel would not go up to Jerusalem to sacrifice?"
+      "ar": "ما اسم النبي الشيلوني الذي مزق رداءه الجديد إلى اثنتي عشرة قطعة وأعطى عشر قطع ليربعام؟",
+      "en": "Which prophet from Shiloh tore his new garment into twelve pieces and gave ten to Jeroboam?"
     },
     "options": {
       "ar": [
-        "سبعين سنة",
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "شمعيا رجل الله",
+        "إيدو الرائي",
+        "حنانيا",
+        "أخيا الشيلوني"
       ],
       "en": [
-        "Seventy years",
-        "Forty years",
-        "Thirty years",
-        "Twenty years"
+        "Shemaiah man of God",
+        "Iddo the seer",
+        "Hananiah",
+        "Ahijah the Shilonite"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 11: 29-31",
+      "en": "1 Kings 11:29-31"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Therefore the king asked advice, made two calves of gold, and said to the people, 'It is too much for you to go up to Jerusalem. Here are your gods, O Israel, which brought you up from the land of Egypt!' And he set up one in Bethel, and the other he put in Dan."
+      "ar": "وَكَانَ فِي ذلِكَ الزَّمَانِ... أَنَّ نَبِيَّ شِيلُوهَ أَخِيَّا وَجَدَهُ فِي الطَّرِيقِ وَهُوَ لاَبِسٌ رِدَاءً جَدِيدًا... فَأَمْسَكَ أَخِيَّا الرِّدَاءَ الْجَدِيدَ الَّذِي عَلَيْهِ وَمَزَّقَهُ اثْنَتَيْ عَشْرَةَ قِطْعَةً، وَقَالَ لِيَرُبْعَامَ: «خُذْ لِنَفْسِكَ عَشَرَ قِطَعٍ...».",
+      "en": "Now it happened at that time, when Jeroboam went out of Jerusalem, that the prophet Ahijah the Shilonite met him on the way; and he had clothed himself with a new garment, and the two were alone in the field. Then Ahijah took hold of the new garment that was on him, and tore it into twelve pieces. And he said to Jeroboam, 'Take for yourself ten pieces'"
     }
   },
   {
     "id": 195,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 95: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Which prophet from Shiloh tore his new garment into twelve pieces and gave ten to Jeroboam?"
+      "ar": "ما اسم رجل الله الذي نهى رحبعام ملك يهوذا عن محاربة إخوته بني إسرائيل وقال: «لاَ تَصْعَدُوا وَلاَ تُحَارِبُوا إِخْوَتَكُمْ»؟",
+      "en": "Which prophet told King Rehoboam and Judah not to fight against their brethren of the northern tribes of Israel?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "سبعين سنة",
-        "أربعين سنة",
-        "عشرين سنة"
+        "أخيا الشيلوني",
+        "ميخا بن يملة",
+        "عازور",
+        "شمعيا رجل الله"
       ],
       "en": [
-        "Thirty years",
-        "Seventy years",
-        "Forty years",
-        "Twenty years"
+        "Ahijah the Shilonite",
+        "Micaiah son of Imlah",
+        "Azzur",
+        "Shemaiah man of God"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 12: 22-24",
+      "en": "1 Kings 12:22-24"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Now it happened at that time, when Jeroboam went out of Jerusalem, that the prophet Ahijah the Shilonite met him on the way; and he had clothed himself with a new garment, and the two were alone in the field. Then Ahijah took hold of the new garment that was on him, and tore it into twelve pieces."
+      "ar": "وَكَانَ كَلاَمُ اللهِ إِلَى شَمَعْيَا رَجُلِ اللهِ قَائِلاً: «كَلِّمْ رَحَبْعَامَ بْنَ سُلَيْمَانَ مَلِكَ يَهُوذَا... هكَذَا قَالَ الرَّبُّ: لاَ تَصْعَدُوا وَلاَ تُحَارِبُوا إِخْوَتَكُمْ بَنِي إِسْرَائِيلَ. ارْجِعُوا كُلُّ وَاحِدٍ إِلَى بَيْتِهِ...».",
+      "en": "Then Shemaiah the prophet came to Rehoboam and the leaders of Judah, who were gathered in Jerusalem because of Shishak, and said to them, 'Thus says the LORD: \"You have forsaken Me, and therefore I also have left you in the hand of Shishak.\"' "
     }
   },
   {
     "id": 196,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 96: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Which prophet told King Rehoboam and Judah not to fight against their brethren of the northern tribes of Israel?"
+      "ar": "ما اسم الفرعون المصري الذي غزا أورشليم في عهد رحبعام وأخذ كل خزائن بيت الرب وخزائن بيت الملك وأتراس الذهب؟",
+      "en": "What Egyptian Pharaoh invaded Jerusalem during the reign of Rehoboam and carried away the treasures of the temple and royal palace?"
     },
     "options": {
       "ar": [
-        "ثلاثين سنة",
-        "أربعين سنة",
-        "عشرين سنة",
-        "سبعين سنة"
+        "نخو",
+        "تيرهاقة",
+        "سهاق",
+        "شيشق"
       ],
       "en": [
-        "Thirty years",
-        "Forty years",
-        "Twenty years",
-        "Seventy years"
+        "Necho",
+        "Tirhakah",
+        "So",
+        "Shishak"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 14: 25-26",
+      "en": "1 Kings 14:25-26"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Then Shemaiah the prophet came to Rehoboam and the leaders of Judah, who were gathered in Jerusalem because of Shishak, and said to them, 'Thus says the LORD: \"You have forsaken Me, and therefore I also have left you in the hand of Shishak.\"'"
+      "ar": "وَفِي السَّنَةِ الْخَامِسَةِ لِلْمَلِكِ رَحَبْعَامَ، صَعِدَ شِيشَقُ مَلِكُ مِصْرَ إِلَى أُورُشَلِيمَ، وَأَخَذَ خَزَائِنَ بَيْتِ الرَّبِّ وَخَزَائِنَ بَيْتِ الْمَلِكِ، وَأَخَذَ كُلَّ شَيْءٍ، وَأَخَذَ جَمِيعَ أَتْرَاسِ الذَّهَبِ الَّتِي عَمِلَهَا سُلَيْمَانُ.",
+      "en": "And it happened in the fifth year of King Rehoboam that Shishak king of Egypt came up against Jerusalem. And he took away the treasures of the house of the LORD and the treasures of the king’s house; he took away everything. He also took away all the gold shields which Solomon had made."
     }
   },
   {
     "id": 197,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 97: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What Egyptian Pharaoh invaded Jerusalem during the reign of Rehoboam and carried away the treasures of the temple and royal palace?"
+      "ar": "من هو ملك إسرائيل الذي اشترى جبل السامرة من شامر بوزنتين من فضة وبنى عليه مدينة السامرة لتكون عاصمة؟",
+      "en": "Which king of Israel built the new capital city of Samaria on a hill purchased from Shemer for two talents of silver?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "عشرين سنة",
-        "سبعين سنة",
-        "ثلاثين سنة"
+        "يربعام",
+        "بعشا",
+        "زمري",
+        "عمري"
       ],
       "en": [
-        "Forty years",
-        "Twenty years",
-        "Seventy years",
-        "Thirty years"
+        "Jeroboam",
+        "Baasha",
+        "Zimri",
+        "Omri"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 16: 24",
+      "en": "1 Kings 16:24"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And it happened in the fifth year of King Rehoboam that Shishak king of Egypt came up against Jerusalem. And he took away the treasures of the house of the LORD and the treasures of the king’s house;"
+      "ar": "وَاشْتَرَى جَبَلَ السَّامِرَةِ مِنْ شَامِرَ بِوَزْنَتَيْنِ مِنَ الْفِضَّةِ، وَبَنَى عَلَى الْجَبَلِ. وَدَعَا اسْمَ الْمَدِينَةِ الَّتِي بَنَاهَا بِاسْمِ شَامِرَ صَاحِبِ الْجَبَلِ «السَّامِرَةَ».",
+      "en": "And he bought the hill of Samaria from Shemer for two talents of silver; and he built on the hill, and called the name of the city which he built, Samaria, after the name of Shemer, owner of the hill."
     }
   },
   {
     "id": 198,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 98: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Which king of Israel built the new capital city of Samaria on a hill purchased from Shemer for two talents of silver?"
+      "ar": "من هي الأميرة الصيدونية ابنة أثبعل ملك الصيدونيين التي تزوجها آخاب وأدخلت عبادة البعل بقوة إلى إسرائيل؟",
+      "en": "Who was the Sidonian princess, daughter of Ethbaal king of the Sidonians, who married King Ahab and introduced Baal worship to Israel?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة",
-        "سبعين سنة"
+        "عثليا",
+        "معكة",
+        "وشتي",
+        "إيزابل"
       ],
       "en": [
-        "Forty years",
-        "Thirty years",
-        "Twenty years",
-        "Seventy years"
+        "Athaliah",
+        "Maachah",
+        "Vashti",
+        "Jezebel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 16: 31",
+      "en": "1 Kings 16:31"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And he bought the hill of Samaria from Shemer for two talents of silver; and he built on the hill, and called the name of the city which he built, Samaria, after the name of Shemer, owner of the hill."
+      "ar": "وَأَخَذَ إِيزَابَلَ ابْنَةَ أَثْبَعَلَ مَلِكِ الصَّيْدُونِيِّينَ امْرَأَةً، وَعَبَدَ الْبَعْلَ وَسَجَدَ لَهُ.",
+      "en": "And it came to pass, as though it had been a trivial thing for him to walk in the sins of Jeroboam the son of Nebat, that he took as wife Jezebel the daughter of Ethbaal, king of the Sidonians; and he went and served Baal and worshiped him."
     }
   },
   {
     "id": 199,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 99: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Who was the Sidonian princess, daughter of Ethbaal king of the Sidonians, who married King Ahab and introduced Baal worship to Israel?"
+      "ar": "في أي موضع كان كرم نابوت بجوار قصر الملك آخاب الذي رفض بيعه لميراث آبائه؟",
+      "en": "What was the name of the town where Naboth owned a vineyard adjacent to the royal palace of King Ahab?"
     },
     "options": {
       "ar": [
-        "عشرين سنة",
-        "سبعين سنة",
-        "ثلاثين سنة",
-        "أربعين سنة"
+        "السامرة",
+        "ترصة",
+        "شكيم",
+        "يزرعيل"
       ],
       "en": [
-        "Twenty years",
-        "Seventy years",
-        "Thirty years",
-        "Forty years"
+        "Samaria",
+        "Tirzah",
+        "Shechem",
+        "Jezreel"
       ]
     },
     "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 21: 1",
+      "en": "1 Kings 21:1"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And it came to pass, as though it had been a trivial thing for him to walk in the sins of Jeroboam the son of Nebat, that he took as wife Jezebel the daughter of Ethbaal, king of the Sidonians; and he went and served Baal and worshiped him."
+      "ar": "وَحَدَثَ بَعْدَ هذِهِ الأُمُورِ أَنَّهُ كَانَ لِنَابُوتَ الْيَزْرَعِيلِيِّ كَرْمٌ فِي يَزْرَعِيلَ بِجَانِبِ قَصْرِ أَخْآبَ مَلِكِ السَّامِرَةِ.",
+      "en": "And it came to pass after these things that Naboth the Jezreelite had a vineyard which was in Jezreel, next to the palace of Ahab king of Samaria."
     }
   },
   {
     "id": 200,
     "level": 2,
     "question": {
-      "ar": "سؤال العهد والخدمة رقم 100: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "What was the name of the town where Naboth owned a vineyard adjacent to the royal palace of King Ahab?"
+      "ar": "على أي جبل اجتمع إيليا النبي مع كل إسرائيل وأنبياء البعل الـ 450 لإثبات من هو الإله الحقيقي؟",
+      "en": "On which mountain did Elijah challenge the four hundred and fifty prophets of Baal before all Israel?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
-        "عشرين سنة",
-        "ثلاثين سنة"
+        "جبل حوريب",
+        "جبل تابور",
+        "جبل جلبوع",
+        "جبل الكرمل"
       ],
       "en": [
-        "Forty years",
-        "Seventy years",
-        "Twenty years",
-        "Thirty years"
+        "Mount Horeb",
+        "Mount Tabor",
+        "Mount Gilboa",
+        "Mount Carmel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "عدد 14: 33",
-      "en": "Numbers 14: 33"
+      "ar": "1 ملوك 18: 19-20",
+      "en": "1 Kings 18:19-20"
     },
     "verse": {
-      "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "And it came to pass after these things that Naboth the Jezreelite had a vineyard which was in Jezreel, next to the palace of Ahab king of Samaria."
+      "ar": "«فَالآنَ أَرْسِلْ وَاجْمَعْ إِلَيَّ كُلَّ إِسْرَائِيلَ إِلَى جَبَلِ الْكَرْمَلِ، وَأَنْبِيَاءَ الْبَعْلِ أَرْبَعَ الْمِئَةِ وَالْخَمْسِينَ...». فَأَرْسَلَ أَخْآبُ إِلَى جَمِيعِ بَنِي إِسْرَائِيلَ، وَجَمَعَ الأَنْبِيَاءَ إِلَى جَبَلِ الْكَرْمَلِ.",
+      "en": "'Now therefore, send and gather all Israel to me on Mount Carmel, the four hundred and fifty prophets of Baal, and the four hundred prophets of Asherah, who eat at Jezebel’s table.' So Ahab sent for all the children of Israel, and gathered the prophets on Mount Carmel."
     }
   },
   {
@@ -6250,13 +6250,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "فوطيفار",
-        "فوطيفارع كاهن أون",
+        "فوطيفارع",
         "فرعون",
         "يامبريس"
       ],
       "en": [
         "Potiphar",
-        "Potiphera priest of On",
+        "Potiphera",
         "Pharaoh",
         "Jambres"
       ]
@@ -6342,16 +6342,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "عوبديا وكيل بيت آخاب",
+        "عوبديا",
         "يهوشافاط",
         "حزائيل",
-        "ميخا بن يملة"
+        "ميخا"
       ],
       "en": [
-        "Obadiah steward of Ahab's house",
+        "Obadiah",
         "Jehoshaphat",
         "Hazael",
-        "Micaiah son of Imlah"
+        "Micaiah"
       ]
     },
     "correctIndex": 0,
@@ -6438,13 +6438,13 @@ window.QUESTIONS_BANK = [
         "جبل جرزيم",
         "جبل عيبال",
         "جبل هور",
-        "جبل نيبو (رأس الفسجة)"
+        "جبل نيبو"
       ],
       "en": [
         "Mount Gerizim",
         "Mount Ebal",
         "Mount Hor",
-        "Mount Nebo (Pisgah)"
+        "Mount Nebo"
       ]
     },
     "correctIndex": 3,
@@ -6683,16 +6683,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "يهوه نسّي (الرب رايتي)",
+        "يهوه نِسّي",
         "يهوه يِرأه",
         "إيل إلوهي إسرائيل",
         "يهوه شالوم"
       ],
       "en": [
-        "The-LORD-Is-My-Banner (Yahweh Nissi)",
-        "The-LORD-Will-Provide (Yahweh Jireh)",
+        "Yahweh Nissi",
+        "Yahweh Jireh",
         "El Elohe Israel",
-        "The-LORD-Is-Peace (Yahweh Shalom)"
+        "Yahweh Shalom"
       ]
     },
     "correctIndex": 0,
@@ -6717,7 +6717,7 @@ window.QUESTIONS_BANK = [
         "أليحورف وأخيا",
         "صادوق وناثان",
         "حيرام وأدونيرام",
-        "بصلئيل بن أوري وأهوآلياب بن أخيساماك"
+        "بصلئيل وأهوآلياب"
       ],
       "en": [
         "Elihoreph and Ahijah",
@@ -6776,16 +6776,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "تبعيرا",
-        "محلَّة قورح في البرية",
-        "حضيروت",
-        "قادش"
+        "محلة تبعيرا",
+        "محلة قورح",
+        "محلة حضيروت",
+        "محلة قادش"
       ],
       "en": [
-        "Taberah",
-        "Camp of Korah in the wilderness",
-        "Hazeroth",
-        "Kadesh"
+        "Camp of Taberah",
+        "Camp of Korah",
+        "Camp of Hazeroth",
+        "Camp of Kadesh"
       ]
     },
     "correctIndex": 1,
@@ -6807,16 +6807,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أورقت عنباً",
-        "تحولت إلى حية خضراء",
-        "أثمرت زيتوناً",
-        "أفرخت فروخاً وأزهرت زهراً وأنضجت لوزاً"
+        "أنبتت عناقيد عنب ناضجة",
+        "تحولت إلى حية نحاسية",
+        "أخرجت أغصان زيتون خضراء",
+        "أفرخت وأزهرت وأنضجت لوزاً"
       ],
       "en": [
-        "Sprouted grapes",
-        "Turned into a green serpent",
-        "Produced olives",
-        "Sprouted buds, blossoms, and ripe almonds"
+        "Produced clusters of ripe grapes",
+        "Turned into a bronze serpent",
+        "Put forth green olive branches",
+        "Sprouted buds, blossoms, and almonds"
       ]
     },
     "correctIndex": 3,
@@ -6838,16 +6838,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "آحاز الملك",
+        "آحاز",
         "آمون",
-        "عزيا (عزريا) ملك يهوذا",
-        "منسى الملك"
+        "عزيا",
+        "منسى"
       ],
       "en": [
-        "King Ahaz",
+        "Ahaz",
         "Amon",
-        "King Uzziah",
-        "King Manasseh"
+        "Uzziah",
+        "Manasseh"
       ]
     },
     "correctIndex": 2,
@@ -6903,13 +6903,13 @@ window.QUESTIONS_BANK = [
         "عالي",
         "أبياثار",
         "صادوق",
-        "أخيمالك بن أخيطوب"
+        "أخيمالك"
       ],
       "en": [
         "Eli",
         "Abiathar",
         "Zadok",
-        "Ahimelech son of Ahitub"
+        "Ahimelech"
       ]
     },
     "correctIndex": 3,
@@ -6931,13 +6931,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أبياثار بن أخيمالك",
+        "أبياثار",
         "صادوق",
         "يهوناتان",
         "أخيماص"
       ],
       "en": [
-        "Abiathar son of Ahimelech",
+        "Abiathar",
         "Zadok",
         "Jehonathan",
         "Ahimaaz"
@@ -7954,14 +7954,14 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "شهر تشرين (إيثانيم)",
-        "شهر أبيب (نيسان)",
+        "شهر تشرين",
+        "شهر أبيب",
         "شهر سيفان",
         "شهر كيسلو"
       ],
       "en": [
-        "The month of Ethanim (Tishri)",
-        "The month of Abib (Nisan)",
+        "The month of Ethanim",
+        "The month of Abib",
         "The month of Sivan",
         "The month of Chislev"
       ]
@@ -8140,13 +8140,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "يثرون (رعوئيل)",
+        "يثرون",
         "بلعام بن بعور",
         "أبيمالك",
         "حوباب"
       ],
       "en": [
-        "Jethro (Reuel)",
+        "Jethro",
         "Balaam son of Beor",
         "Abimelech",
         "Hobab"
@@ -8483,13 +8483,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "ألعازار وفينحاس",
         "شموع وشافاط",
-        "يشوع بن نون وكالب بن يفنة",
+        "يشوع وكالب",
         "جرشوم وأليعازر"
       ],
       "en": [
         "Eleazar and Phinehas",
         "Shammua and Shaphat",
-        "Joshua son of Nun and Caleb son of Jephunneh",
+        "Joshua and Caleb",
         "Gershom and Eliezer"
       ]
     },
@@ -8605,16 +8605,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "مذبحاً حجرياً",
-        "حية من نحاس ووضعها على راية",
-        "صفيحة ذهبية نقية",
-        "عصا خشبية مورقة"
+        "مذبحاً من حجر",
+        "حية من نحاس",
+        "صفيحة من ذهب",
+        "عصا من خشب"
       ],
       "en": [
         "A stone altar",
-        "A bronze serpent set on a pole",
-        "A pure gold plate",
-        "A leafy wooden staff"
+        "A bronze serpent",
+        "A golden plate",
+        "A wooden rod"
       ]
     },
     "correctIndex": 1,
@@ -8700,13 +8700,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "نداب",
         "إيثامار",
-        "فينحاس بن أليعازار",
+        "فينحاس",
         "أبيهو"
       ],
       "en": [
         "Nadab",
         "Ithamar",
-        "Phinehas son of Eleazar",
+        "Phinehas",
         "Abihu"
       ]
     },
@@ -8884,15 +8884,15 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "جنود في مقدمة الجيش",
-        "محتطبي حطب ومستقي ماء للجماعة ولمذبح الرب",
-        "بناء أسوار المدن",
+        "بناة أسوار وحصون",
+        "محتطبي حطب ومستقي ماء",
+        "حراس أبواب المحلة",
         "رعاة مواشي الكهنة"
       ],
       "en": [
-        "Frontline soldiers in battle",
-        "Woodcutters and water carriers for the congregation and the altar of the LORD",
         "Builders of city walls",
+        "Woodcutters and water carriers",
+        "Guards of the camp gates",
         "Shepherds of the priests' livestock"
       ]
     },
@@ -9104,13 +9104,13 @@ window.QUESTIONS_BANK = [
         "إيثامار",
         "فينحاس",
         "ألعازار",
-        "يهوناثان بن جرشوم بن منسى (موسى)"
+        "يهوناثان"
       ],
       "en": [
         "Ithamar",
         "Phinehas",
         "Eleazar",
-        "Jonathan son of Gershom son of Moses"
+        "Jonathan"
       ]
     },
     "correctIndex": 3,
@@ -9256,16 +9256,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "«وَصَرَخَ بَنُو إِسْرَائِيلَ إِلَى الرَّبِّ»",
-        "«وَاسْتَرَاحَتِ الأَرْضُ أَرْبَعِينَ سَنَةً»",
+        "«فَصَرَخَ بَنُو إِسْرَائِيلَ إِلَى الرَّبِّ قَائِلِينَ: أَخْطَأْنَا إِلَيْكَ»",
+        "«وَاسْتَرَاحَتِ الأَرْضُ أَرْبَعِينَ سَنَةً بَعْدَ خَلاَصِ الرَّبِّ لَهُمْ»",
         "«فِي تِلْكَ الأَيَّامِ لَمْ يَكُنْ مَلِكٌ فِي إِسْرَائِيلَ. كُلُّ وَاحِدٍ عَمِلَ مَا حَسُنَ فِي عَيْنَيْهِ»",
-        "«وَسَمِعَ الرَّبُّ صَوْتَ صَلاَتِهِمْ»"
+        "«فَسَلَّمَهُمُ الرَّبُّ إِلَى يَدِ الأَعْدَاءِ حَتَّى تَابُوا وَرَجَعُوا»"
       ],
       "en": [
-        "'And the children of Israel cried out to the LORD.'",
-        "'And the land had rest for forty years.'",
+        "'And the children of Israel cried out to the LORD, saying: We have sinned!'",
+        "'And the land had rest for forty years after the LORD delivered them.'",
         "'In those days there was no king in Israel; everyone did what was right in his own eyes.'",
-        "'And the LORD heard the voice of their prayer.'"
+        "'And the LORD delivered them into the hands of enemies until they repented.'"
       ]
     },
     "correctIndex": 2,
