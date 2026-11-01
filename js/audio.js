@@ -1,7 +1,9 @@
 /**
  * Temple Codex Cinematic Audio Engine
  * Uses Web Audio API for tactical game sound effects and dedicated HTML5 Audio for the background track:
- *  - Exclusive Background Soundtrack: 'assets/Jumanji - The Video Game.mp3'
+ *  - Continuous Background Soundtrack: 'assets/Jumanji - The Video Game.mp3'
+ *  - Audio Ducking: High-energy on Welcome Screen (45%), soft background during Game & Questions (20% default)
+ *  - Live Volume Control via mini range slider
  *  - Stone Slab Slam (Deep bass impact with textural stone grind)
  *  - Angelic Harp Chime (Triumphant multi-harmonic chord for correct answers)
  *  - War Drum Thunder Impact (Sub-bass rumble and dissonant crash for wrong answers)
@@ -16,6 +18,10 @@ class SoundEngine {
     this.isAmbienceActive = false;
     this.bgAudio = null;
     this.trackUrl = 'assets/Jumanji - The Video Game.mp3';
+    this.currentMode = 'welcome'; // 'welcome' | 'game'
+    this.welcomeVolume = 0.45;
+    this.gameVolume = parseFloat(localStorage.getItem('picture_reveal_game_volume')) || 0.20;
+    this.fadeInterval = null;
   }
 
   init() {
@@ -30,37 +36,7 @@ class SoundEngine {
     }
   }
 
-  toggleMute() {
-    this.muted = !this.muted;
-    localStorage.setItem('picture_reveal_muted', this.muted);
-
-    if (this.bgAudio) {
-      this.bgAudio.muted = this.muted;
-      this.bgAudio.volume = this.muted ? 0 : 0.25;
-    }
-
-    if (this.muted) {
-      this.stopWelcomeAmbience();
-    } else {
-      if (window.gameApp && !window.gameApp.isGameActive) {
-        this.startWelcomeAmbience();
-      }
-    }
-    return this.muted;
-  }
-
-  isMuted() {
-    return this.muted;
-  }
-
-  // Exclusive Background Soundtrack for Welcome Screen (assets/Jumanji - The Video Game.mp3)
-  startWelcomeAmbience() {
-    this.init();
-    if (this.muted) return;
-    if (this.isAmbienceActive) return;
-
-    this.isAmbienceActive = true;
-
+  ensureBgAudioLoaded() {
     if (!this.bgAudio) {
       try {
         this.bgAudio = new Audio(encodeURI(this.trackUrl));
@@ -69,17 +45,126 @@ class SoundEngine {
         this.bgAudio = null;
       }
     }
+  }
+
+  toggleMute() {
+    this.muted = !this.muted;
+    localStorage.setItem('picture_reveal_muted', this.muted);
 
     if (this.bgAudio) {
       this.bgAudio.muted = this.muted;
-      this.bgAudio.volume = this.muted ? 0 : 0.25;
+      if (this.muted) {
+        this.bgAudio.volume = 0;
+      } else {
+        const target = this.currentMode === 'welcome' ? this.welcomeVolume : this.gameVolume;
+        this.bgAudio.volume = target;
+        if (this.bgAudio.paused) {
+          this.bgAudio.play().catch(() => {});
+        }
+      }
+    }
+
+    return this.muted;
+  }
+
+  isMuted() {
+    return this.muted;
+  }
+
+  setGameVolume(vol) {
+    this.gameVolume = Math.max(0, Math.min(1, vol));
+    localStorage.setItem('picture_reveal_game_volume', this.gameVolume);
+
+    if (this.bgAudio && !this.muted && this.currentMode === 'game') {
+      this.bgAudio.volume = this.gameVolume;
+    }
+  }
+
+  getGameVolume() {
+    return this.gameVolume;
+  }
+
+  fadeAudioTo(targetVol, durationMs = 500) {
+    if (!this.bgAudio || this.muted) return;
+    if (this.fadeInterval) {
+      clearInterval(this.fadeInterval);
+      this.fadeInterval = null;
+    }
+
+    const startVol = this.bgAudio.volume;
+    const diff = targetVol - startVol;
+    const steps = 15;
+    const stepTime = durationMs / steps;
+    let stepCount = 0;
+
+    this.fadeInterval = setInterval(() => {
+      stepCount++;
+      const progress = stepCount / steps;
+      this.bgAudio.volume = Math.max(0, Math.min(1, startVol + diff * progress));
+      if (stepCount >= steps) {
+        clearInterval(this.fadeInterval);
+        this.fadeInterval = null;
+        this.bgAudio.volume = targetVol;
+      }
+    }, stepTime);
+  }
+
+  // Welcome Screen: Higher energy (45% volume)
+  startWelcomeAmbience() {
+    this.init();
+    this.currentMode = 'welcome';
+    this.ensureBgAudioLoaded();
+
+    if (!this.bgAudio) return;
+    this.isAmbienceActive = true;
+
+    this.bgAudio.muted = this.muted;
+    this.bgAudio.volume = this.muted ? 0 : this.welcomeVolume;
+
+    if (this.bgAudio.paused) {
       const playPromise = this.bgAudio.play();
       if (playPromise !== undefined) {
         playPromise.catch((e) => {
-          // Autoplay policy waiting for user interaction
           console.warn('Soundtrack waiting for user gesture:', e.message);
         });
       }
+    } else {
+      this.fadeAudioTo(this.welcomeVolume, 400);
+    }
+  }
+
+  // Duck soundtrack when playing the game (drops down to 20% by default)
+  duckToGameVolume() {
+    this.init();
+    this.currentMode = 'game';
+    this.ensureBgAudioLoaded();
+
+    if (!this.bgAudio) return;
+    this.isAmbienceActive = true;
+
+    this.bgAudio.muted = this.muted;
+
+    if (this.bgAudio.paused) {
+      this.bgAudio.volume = this.muted ? 0 : this.gameVolume;
+      this.bgAudio.play().catch(() => {});
+    } else {
+      this.fadeAudioTo(this.muted ? 0 : this.gameVolume, 600);
+    }
+  }
+
+  // Unduck soundtrack when returning to welcome screen (swells to 45%)
+  unduckToWelcomeVolume() {
+    this.init();
+    this.currentMode = 'welcome';
+    this.ensureBgAudioLoaded();
+
+    if (!this.bgAudio) return;
+
+    if (this.bgAudio.paused) {
+      this.bgAudio.volume = this.muted ? 0 : this.welcomeVolume;
+      this.bgAudio.play().catch(() => {});
+    } else {
+      this.fadeAudioTo(this.muted ? 0 : this.welcomeVolume, 600);
     }
   }
 
@@ -88,7 +173,6 @@ class SoundEngine {
     if (this.bgAudio) {
       try {
         const audio = this.bgAudio;
-        // Smooth quick fade out over 300ms before pausing
         const fadeStep = 0.05;
         const fadeInterval = setInterval(() => {
           if (audio.volume > fadeStep) {
@@ -97,7 +181,7 @@ class SoundEngine {
             clearInterval(fadeInterval);
             audio.pause();
             audio.currentTime = 0;
-            audio.volume = this.muted ? 0 : 0.25;
+            audio.volume = this.muted ? 0 : this.welcomeVolume;
           }
         }, 50);
       } catch (e) {

@@ -858,6 +858,133 @@ body.english-only-mode {
   color: #ff9999;
 }
 
+/* Box Timeout Dramatic Shake Animation (Options remain stationary & clickable) */
+@keyframes boxTimeoutShake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  12% { transform: translate(-10px, -4px) rotate(-1deg); }
+  25% { transform: translate(10px, 4px) rotate(1deg); }
+  38% { transform: translate(-8px, 3px) rotate(-0.5deg); }
+  50% { transform: translate(8px, -3px) rotate(0.5deg); }
+  65% { transform: translate(-5px, 2px) rotate(0deg); }
+  80% { transform: translate(4px, -1px) rotate(0deg); }
+  92% { transform: translate(-2px, 1px) rotate(0deg); }
+}
+
+.qscreen-container.timed-out-shake {
+  animation: boxTimeoutShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  border-color: var(--crimson-molten) !important;
+  box-shadow: 0 0 35px var(--crimson-glow), 0 20px 60px rgba(0, 0, 0, 0.95) !important;
+}
+
+/* Quick Settings Popover Wrappers (Header) */
+.header-popover-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-mini-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(14, 20, 32, 0.98);
+  border: 1.5px solid var(--gold-bright);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--gold-glow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 175px;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-popover-wrapper:hover .header-mini-popover,
+.header-popover-wrapper.active .header-mini-popover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.popover-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.popover-label-text {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #cbd5e1;
+  white-space: nowrap;
+}
+
+.popover-val-badge {
+  font-family: 'Inter', monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.15);
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  white-space: nowrap;
+}
+
+/* Custom Mini Range Slider */
+.custom-mini-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #222d42;
+  outline: none;
+  cursor: pointer;
+  margin: 4px 0;
+}
+
+.custom-mini-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  border: 2px solid #1a1200;
+  box-shadow: 0 0 8px var(--gold-bright);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.custom-mini-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.custom-mini-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  border: 2px solid #1a1200;
+  box-shadow: 0 0 8px var(--gold-bright);
+  cursor: pointer;
+}
+
+.slider-marks-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Inter', monospace;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
 /* ==========================================================================
    ANSWER REVELATION & SCRIPTURE VERSE CARD (NO AUTO-DISMISS)
    ========================================================================== */

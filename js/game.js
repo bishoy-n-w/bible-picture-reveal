@@ -30,9 +30,9 @@ class PictureRevealGame {
     this.isGameActive = false;
     this.pendingOutcome = null; // { isCorrect: boolean, tileIndex: number }
 
-    // Integrated Question Timer (60 Seconds)
-    this.timerDuration = 60;
-    this.timerRemaining = 60;
+    // Integrated Question Timer (Adjustable via slider)
+    this.timerDuration = parseInt(localStorage.getItem('picture_reveal_timer_duration'), 10) || 60;
+    this.timerRemaining = this.timerDuration;
     this.timerInterval = null;
 
     // 3x3 Difficulty Map (3-3-3 Layout):
@@ -138,6 +138,12 @@ class PictureRevealGame {
     this.dom.btnRestoreWinCard = document.getElementById('btn-restore-win-card');
     this.dom.appVersionBadge = document.getElementById('app-version-badge');
     this.dom.welcomeAudioToggle = document.getElementById('welcome-audio-toggle');
+    this.dom.qscreenContainer = this.dom.questionScreen ? this.dom.questionScreen.querySelector('.qscreen-container') : null;
+    this.dom.inputTimerSlider = document.getElementById('input-timer-slider');
+    this.dom.timerSliderVal = document.getElementById('timer-slider-val');
+    this.dom.inputVolumeSlider = document.getElementById('input-volume-slider');
+    this.dom.volumeSliderVal = document.getElementById('volume-slider-val');
+    this.dom.btnTimerSettings = document.getElementById('btn-timer-settings');
 
     // Moderator Controls
     this.dom.btnReveal = document.getElementById('btn-reveal-full');
@@ -219,6 +225,60 @@ class PictureRevealGame {
     if (this.dom.btnFullscreen) {
       this.dom.btnFullscreen.addEventListener('click', () => this.toggleFullscreen());
     }
+
+    // Question Timer Duration Slider
+    if (this.dom.inputTimerSlider) {
+      this.dom.inputTimerSlider.value = this.timerDuration;
+      const suffix = window.i18n ? window.i18n.t('secondsSuffix') : 'ثانية';
+      if (this.dom.timerSliderVal) this.dom.timerSliderVal.textContent = `${this.timerDuration} ${suffix}`;
+
+      this.dom.inputTimerSlider.addEventListener('input', (e) => {
+        this.timerDuration = parseInt(e.target.value, 10);
+        localStorage.setItem('picture_reveal_timer_duration', this.timerDuration);
+        if (this.dom.timerSliderVal) {
+          const sfx = window.i18n ? window.i18n.t('secondsSuffix') : 'ثانية';
+          this.dom.timerSliderVal.textContent = `${this.timerDuration} ${sfx}`;
+        }
+      });
+    }
+
+    // Music Volume Slider
+    if (this.dom.inputVolumeSlider && window.soundEngine) {
+      const initialVol = Math.round(window.soundEngine.getGameVolume() * 100);
+      this.dom.inputVolumeSlider.value = initialVol;
+      if (this.dom.volumeSliderVal) this.dom.volumeSliderVal.textContent = `${initialVol}%`;
+
+      this.dom.inputVolumeSlider.addEventListener('input', (e) => {
+        const pct = parseInt(e.target.value, 10);
+        const vol = pct / 100;
+        window.soundEngine.setGameVolume(vol);
+        if (this.dom.volumeSliderVal) this.dom.volumeSliderVal.textContent = `${pct}%`;
+      });
+    }
+
+    // Quick Settings Popovers (Click / Touch Toggle)
+    const popoverWrappers = [
+      { id: 'timer-settings-wrapper', btn: '#btn-timer-settings' },
+      { id: 'audio-settings-wrapper', btn: '#btn-toggle-audio' }
+    ];
+    popoverWrappers.forEach(({ id, btn }) => {
+      const wrapper = document.getElementById(id);
+      if (wrapper) {
+        const buttonEl = wrapper.querySelector(btn);
+        if (buttonEl && btn === '#btn-timer-settings') {
+          buttonEl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            wrapper.classList.toggle('active');
+          });
+        }
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.header-popover-wrapper')) {
+        document.querySelectorAll('.header-popover-wrapper').forEach(w => w.classList.remove('active'));
+      }
+    });
 
     // Question Screen Cancel/Close
     if (this.dom.modalCloseBtn) {
@@ -330,7 +390,7 @@ class PictureRevealGame {
   startGame() {
     if (window.soundEngine) {
       window.soundEngine.playClick();
-      window.soundEngine.stopWelcomeAmbience();
+      window.soundEngine.duckToGameVolume();
     }
     if (window.attractorEngine) {
       window.attractorEngine.stop();
@@ -346,7 +406,7 @@ class PictureRevealGame {
   showWelcomeScreen() {
     if (window.soundEngine) {
       window.soundEngine.playClick();
-      window.soundEngine.startWelcomeAmbience();
+      window.soundEngine.unduckToWelcomeVolume();
     }
     if (window.attractorEngine) {
       window.attractorEngine.start();
@@ -362,7 +422,7 @@ class PictureRevealGame {
   }
 
   /* ==========================================================================
-     INTEGRATED QUESTION COUNTDOWN TIMER (60 SECONDS)
+     INTEGRATED QUESTION COUNTDOWN TIMER (Adjustable Duration)
      ========================================================================== */
   startQuestionTimer() {
     this.stopTimer();
@@ -387,6 +447,12 @@ class PictureRevealGame {
         }
         if (this.dom.questionText) {
           this.dom.questionText.classList.add('timed-out');
+        }
+        // One-shot dramatic box shake (options remain stationary and clickable)
+        if (this.dom.qscreenContainer) {
+          this.dom.qscreenContainer.classList.remove('timed-out-shake');
+          void this.dom.qscreenContainer.offsetWidth; // Force reflow
+          this.dom.qscreenContainer.classList.add('timed-out-shake');
         }
       }
     }, 1000);
@@ -717,6 +783,7 @@ class PictureRevealGame {
     };
 
     if (this.dom.questionText) this.dom.questionText.classList.remove('timed-out');
+    if (this.dom.qscreenContainer) this.dom.qscreenContainer.classList.remove('timed-out-shake');
     if (this.dom.answerRevelationCard && !this.pendingOutcome) {
       this.dom.answerRevelationCard.classList.remove('active');
     }

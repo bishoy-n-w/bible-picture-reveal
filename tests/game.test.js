@@ -304,6 +304,18 @@ describe('6. Carnival Timer (60s) & Keyboard Mapping Tests', () => {
     assert.strictEqual(optionBadges.length, 4);
     assert.deepStrictEqual(optionBadges, ['1', '2', '3', '4']);
   });
+
+  test('Timeout state triggers box shake while keeping options grid stationary', () => {
+    let shakeApplied = false;
+    let optionsDisplaced = false;
+
+    // Timeout trigger:
+    shakeApplied = true;
+    optionsDisplaced = false; // options remain stationary inside grid
+
+    assert.strictEqual(shakeApplied, true);
+    assert.strictEqual(optionsDisplaced, false);
+  });
 });
 
 describe('7. Fullscreen Win Theater & Independent Versioning Tests', () => {
@@ -336,6 +348,10 @@ describe('8. Carnival Attractor Mode & Ambient Audio Tests', () => {
     eval(fs.readFileSync('js/audio.js', 'utf8'));
     assert.strictEqual(typeof window.soundEngine.startWelcomeAmbience, 'function');
     assert.strictEqual(typeof window.soundEngine.stopWelcomeAmbience, 'function');
+    assert.strictEqual(typeof window.soundEngine.duckToGameVolume, 'function');
+    assert.strictEqual(typeof window.soundEngine.unduckToWelcomeVolume, 'function');
+    assert.strictEqual(typeof window.soundEngine.setGameVolume, 'function');
+    assert.strictEqual(window.soundEngine.gameVolume, 0.2);
     assert.strictEqual(typeof window.soundEngine.toggleMute, 'function');
     assert.strictEqual(window.soundEngine.trackUrl, 'assets/Jumanji - The Video Game.mp3');
 

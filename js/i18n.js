@@ -71,11 +71,13 @@ class I18nEngine {
         diffMedium: "عميق",
         diffHard: "فائق",
         langSelectorTitle: "اللغة / Language",
+        volumeLabel: "مستوى الصوت:",
+        timerSettingLabel: "وقت السؤال:",
         arabicLang: "العربية",
         englishLang: "English",
         bothLang: "كلاهما (Bilingual)"
-      },
-      en: {
+        },
+        en: {
         brandTitle: "Bible Picture Reveal",
         brandSubtitle: "Servants Scripture Challenge",
         welcomeTitle: "Bible Picture Reveal",
@@ -89,8 +91,10 @@ class I18nEngine {
         startChallenge: "Start the Challenge",
         sceneBadgeLabel: "Scene:",
         home: "Home",
-        mute: "Mute Audio",
-        unmute: "Unmute Audio",
+        mute: "Mute",
+        unmute: "Unmute",
+        volumeLabel: "Volume:",
+        timerSettingLabel: "Question Timer:",
         fullscreen: "Fullscreen",
         revealFull: "Reveal Picture",
         nextScene: "Next Scene",
