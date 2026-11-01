@@ -2,9 +2,11 @@
  * 300 Full Bilingual Bible Trivia Questions for Servants (خدام)
  * Arabic: Smith & Van Dyck (فاندايك)
  * English: New King James Version (NKJV)
- * 100 Level 1 (Advanced/Hard)
- * 100 Level 2 (Deep/Very Hard)
- * 100 Level 3 (Mastery/Extremely Hard)
+ * Level 1: 100 Questions (Advanced/Hard)
+ * Level 2: 100 Questions (Deep/Very Hard)
+ * Level 3: 100 Questions (Mastery/Extremely Hard)
+ * Shuffled choices with randomized correctIndex across 0-3
+ * Uniform distractor phrasing with zero giveaways
  */
 window.QUESTIONS_BANK = [
   {
@@ -16,19 +18,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "هوشع بن بئيري",
-        "عاموس",
         "يوئيل",
-        "ميخا"
+        "ميخا",
+        "عاموس",
+        "هوشع بن بئيري"
       ],
       "en": [
-        "Hosea son of Beeri",
-        "Amos",
         "Joel",
-        "Micah"
+        "Micah",
+        "Amos",
+        "Hosea son of Beeri"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "هوشع 1: 2",
       "en": "Hosea 1: 2"
@@ -43,23 +45,23 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما هو اسم الجبل الذي صعد عليه إبراهيم ليقدم إسحق ذبيحة لله؟",
-      "en": "What was the name of the mountain where Abraham went up to offer Isaac as a sacrifice to God?"
+      "en": "What was the name of the land and mountain where Abraham went up to offer Isaac as a sacrifice to God?"
     },
     "options": {
       "ar": [
-        "جبل حوريب",
-        "جبل المريا",
+        "جبل نيبو",
         "جبل الكرمل",
-        "جبل نيبو"
+        "جبل المريا",
+        "جبل حوريب"
       ],
       "en": [
-        "Mount Horeb",
-        "Mount Moriah",
+        "Mount Nebo",
         "Mount Carmel",
-        "Mount Nebo"
+        "Mount Moriah",
+        "Mount Horeb"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 22: 2",
       "en": "Genesis 22: 2"
@@ -78,19 +80,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
+        "خمسة حجارة ملس",
         "حجر واحد",
         "ثلاثة حجارة",
-        "خمسة حجارة ملس",
         "سبعة حجارة"
       ],
       "en": [
+        "Five smooth stones",
         "One stone",
         "Three stones",
-        "Five smooth stones",
         "Seven stones"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 صموئيل 17: 40",
       "en": "1 Samuel 17: 40"
@@ -109,19 +111,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أخيمالك بن أخيطوب",
-        "صادوق الكاهن",
+        "بلعام",
         "فينحاس بن أليعازار",
-        "بلعام"
+        "صادوق الكاهن",
+        "أخيمالك بن أخيطوب"
       ],
       "en": [
-        "Ahimelech son of Ahitub",
-        "Zadok the priest",
+        "Balaam",
         "Phinehas son of Eleazar",
-        "Balaam"
+        "Zadok the priest",
+        "Ahimelech son of Ahitub"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 صموئيل 21: 1",
       "en": "1 Samuel 21: 1"
@@ -140,19 +142,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "غصن زيتون",
+        "قنديل زيت مشتعل",
         "حبل من خيوط القرمز",
         "جلد شاة مذبوحة",
-        "قنديل زيت مشتعل"
+        "غصن زيتون"
       ],
       "en": [
-        "An olive branch",
-        "A line of scarlet cord",
-        "A slain lambskin",
-        "A burning oil lamp"
+        "A burning oil lamp",
+        "A scarlet cord",
+        "A slain sheepskin",
+        "An olive branch"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "يشوع 2: 18",
       "en": "Joshua 2: 18"
@@ -171,16 +173,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "سوسنة",
-        "يوأنا",
+        "طابيثا",
         "روذا",
-        "طابيثا"
+        "سوسنة",
+        "يوأنا"
       ],
       "en": [
-        "Susanna",
-        "Joanna",
+        "Tabitha",
         "Rhoda",
-        "Tabitha"
+        "Susanna",
+        "Joanna"
       ]
     },
     "correctIndex": 2,
@@ -202,14 +204,14 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "إستفانوس",
         "فيلبس المبشر",
+        "إستفانوس",
         "برخورس",
         "نيكانور"
       ],
       "en": [
-        "Stephen",
         "Philip the Evangelist",
+        "Stephen",
         "Prochorus",
         "Nicanor"
       ]
@@ -229,19 +231,19 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو القاضي الذي ضرب ستمئة رجل من الفلسطينيين بمنساس البقر فقط؟",
-      "en": "Which judge struck down six hundred Philistines with an oxgoad?"
+      "en": "Which judge struck down six hundred Philistines with an oxgoad and delivered Israel?"
     },
     "options": {
       "ar": [
+        "جدعون",
         "إهود بن جيرا",
         "شمجر بن عناة",
-        "جدعون",
         "تولع بن فُوّة"
       ],
       "en": [
+        "Gideon",
         "Ehud son of Gera",
         "Shamgar son of Anath",
-        "Gideon",
         "Tola son of Puah"
       ]
     },
@@ -264,19 +266,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "كفرناحوم",
-        "أريحا",
         "نايين",
-        "بيت عنيا"
+        "كفرناحوم",
+        "بيت عنيا",
+        "أريحا"
       ],
       "en": [
-        "Capernaum",
-        "Jericho",
         "Nain",
-        "Bethany"
+        "Capernaum",
+        "Bethany",
+        "Jericho"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
       "ar": "لوقا 7: 11-12",
       "en": "Luke 7: 11-12"
@@ -326,19 +328,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "120 سنة",
-        "175 سنة",
         "147 سنة",
-        "180 سنة"
+        "180 سنة",
+        "175 سنة",
+        "120 سنة"
       ],
       "en": [
-        "120 years",
-        "175 years",
         "147 years",
-        "180 years"
+        "180 years",
+        "175 years",
+        "120 years"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 25: 7",
       "en": "Genesis 25: 7"
@@ -357,19 +359,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "يوشيا",
-        "حزقيا الملك",
+        "يهوشافاط",
+        "حزقيا",
         "آسا",
-        "يهوشافاط"
+        "يوشيا"
       ],
       "en": [
-        "Josiah",
-        "King Hezekiah",
+        "Jehoshaphat",
+        "Hezekiah",
         "Asa",
-        "Jehoshaphat"
+        "Josiah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "2 ملوك 20: 5-6",
       "en": "2 Kings 20: 5-6"
@@ -384,23 +386,23 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الشاب الذي باعه إخوته بـ 20 من الفضة لإسماعيليين متجهين إلى مصر؟",
-      "en": "Which youth was sold by his brothers for 20 pieces of silver to Ishmaelites going to Egypt?"
+      "en": "For how many pieces of silver did Joseph's brothers sell him to Ishmaelites going to Egypt?"
     },
     "options": {
       "ar": [
+        "يوسف",
+        "رأوبين",
         "بنيامين",
-        "يوسف الصديق",
-        "يهوذا",
-        "رأوبين"
+        "يهوذا"
       ],
       "en": [
-        "Benjamin",
         "Joseph",
-        "Judah",
-        "Reuben"
+        "Reuben",
+        "Benjamin",
+        "Judah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 37: 28",
       "en": "Genesis 37: 28"
@@ -419,19 +421,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "نهر الفرات",
+        "نهر دجلة",
         "نهر الأردن",
-        "نهر النيل",
-        "نهر دجلة"
+        "نهر الفرات",
+        "نهر النيل"
       ],
       "en": [
-        "Euphrates River",
+        "Tigris River",
         "Jordan River",
-        "Nile River",
-        "Tigris River"
+        "Euphrates River",
+        "Nile River"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 5: 10",
       "en": "2 Kings 5: 10"
@@ -450,19 +452,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "نثنائيل (برثولماوس)",
-        "توما",
         "أندراوس",
+        "توما",
+        "نثنائيل (برثولماوس)",
         "متى"
       ],
       "en": [
-        "Nathanael (Bartholomew)",
-        "Thomas",
         "Andrew",
+        "Thomas",
+        "Nathanael (Bartholomew)",
         "Matthew"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "يوحنا 1: 46",
       "en": "John 1: 46"
@@ -477,23 +479,23 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما هي المعجزة التي صنعها أليشع النبي لجيش إسرائيل وإدام حين كادوا يموتون عطشاً؟",
-      "en": "Scripture Examination (2 Kings 3: 16-17): What is the biblically verified answer concerning this sacred record?"
+      "en": "What miracle did Elisha perform for the armies of Israel and Edom when they were perishing of thirst in the valley?"
     },
     "options": {
       "ar": [
-        "أنزل مطراً غزيراً من السحاب",
-        "ملأ الوادي جباباً ماء دون ريح أو مطر",
         "شق صخرة في البرية",
+        "ملأ الوادي جباباً ماء دون ريح أو مطر",
+        "أنزل مطراً غزيراً من السحاب",
         "حوّل الماء المالح إلى عذب"
       ],
       "en": [
-        "أنزل مطراً غزيراً من السحاب",
-        "ملأ الوادي جباباً ماء دون ريح أو مطر",
-        "شق صخرة في البرية",
-        "حوّل الماء المالح إلى عذب"
+        "Split a rock in the wilderness",
+        "Filled the valley with ditches of water without wind or rain",
+        "Brought heavy rain from clouds",
+        "Turned salt water sweet"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 3: 16-17",
       "en": "2 Kings 3: 16-17"
@@ -512,19 +514,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "إرميا النبي",
         "إشعياء",
         "حزقيال",
+        "إرميا",
         "ميخا"
       ],
       "en": [
-        "Jeremiah the prophet",
         "Isaiah",
         "Ezekiel",
+        "Jeremiah",
         "Micah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "إرميا 38: 6",
       "en": "Jeremiah 38: 6"
@@ -543,19 +545,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "60 وزنة",
-        "120 وزنة ذهب",
         "300 وزنة",
+        "120 وزنة ذهب",
+        "60 وزنة",
         "666 وزنة"
       ],
       "en": [
-        "60 talents",
-        "120 talents of gold",
         "300 talents",
+        "120 talents of gold",
+        "60 talents",
         "666 talents"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "1 ملوك 10: 10",
       "en": "1 Kings 10: 10"
@@ -574,19 +576,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "يربعام",
         "آخاب الملك",
-        "منسى",
-        "آحاز"
+        "آحاز",
+        "يربعام",
+        "منسى"
       ],
       "en": [
-        "Jeroboam",
         "King Ahab",
-        "Manasseh",
-        "Ahaz"
+        "Ahaz",
+        "Jeroboam",
+        "Manasseh"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "1 ملوك 21: 4",
       "en": "1 Kings 21: 4"
@@ -606,18 +608,18 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "شكيم",
+        "بئر سبع",
         "حبرون (قريات أربع)",
-        "بيت إيل",
-        "بئر سبع"
+        "بيت إيل"
       ],
       "en": [
         "Shechem",
+        "Beersheba",
         "Hebron (Kirjath Arba)",
-        "Bethel",
-        "Beersheba"
+        "Bethel"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "تكوين 23: 19",
       "en": "Genesis 23: 19"
@@ -636,19 +638,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "باراق",
         "جدعون بن يوآش",
+        "شمشون",
         "يفتاح الجلعادي",
-        "شمشون"
+        "باراق"
       ],
       "en": [
-        "Barak",
         "Gideon son of Joash",
+        "Samson",
         "Jephthah the Gileadite",
-        "Samson"
+        "Barak"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "قضاة 6: 37",
       "en": "Judges 6: 37"
@@ -667,19 +669,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "دبورة",
         "ياعيل",
-        "خلدة",
-        "نوعدية"
+        "نوعدية",
+        "دبورة",
+        "خلدة"
       ],
       "en": [
-        "Deborah",
         "Jael",
-        "Huldah",
-        "Noadiah"
+        "Noadiah",
+        "Deborah",
+        "Huldah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "قضاة 4: 4-5",
       "en": "Judges 4: 4-5"
@@ -698,19 +700,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "دبورة",
+        "مريم",
+        "أبيجايل",
         "ياعيل زوجة حابر القيني",
-        "ميريام",
-        "أبيجايل"
+        "دبورة"
       ],
       "en": [
-        "Deborah",
-        "Jael wife of Heber the Kenite",
         "Miriam",
-        "Abigail"
+        "Abigail",
+        "Jael wife of Heber the Kenite",
+        "Deborah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "قضاة 4: 21",
       "en": "Judges 4: 21"
@@ -730,18 +732,18 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "شكيم",
-        "بيت إيل (لوز سابقاً)",
         "مجدل عدر",
+        "بيت إيل (لوز سابقاً)",
         "سوخوت"
       ],
       "en": [
         "Shechem",
-        "Bethel (formerly Luz)",
         "Migdal Eder",
+        "Bethel (formerly Luz)",
         "Succoth"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "تكوين 28: 19",
       "en": "Genesis 28: 19"
@@ -772,7 +774,7 @@ window.QUESTIONS_BANK = [
         "300 days"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "تكوين 7: 24",
       "en": "Genesis 7: 24"
@@ -791,19 +793,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أخيّو",
         "عُزَّة",
         "عوبيد أدوم",
+        "أخيّو",
         "إلعازار"
       ],
       "en": [
-        "Ahio",
         "Uzzah",
         "Obed-Edom",
+        "Ahio",
         "Eleazar"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 صموئيل 6: 6-7",
       "en": "2 Samuel 6: 6-7"
@@ -818,23 +820,23 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الرجل الذي بارك الرب بيته وكل ما له بسبب بقاء تابوت الرب في بيته ثلاثة أشهر؟",
-      "en": "Scripture Examination (2 Samuel 6: 11): What is the biblically verified answer concerning this sacred record?"
+      "en": "Whose house and all that he had did the LORD bless because the ark of the LORD remained in his house for three months?"
     },
     "options": {
       "ar": [
-        "عوبيد أدوم الجتي",
         "أبيناداب",
+        "عوبيد أدوم الجتي",
         "أخيمالك",
         "أورنان اليبوسي"
       ],
       "en": [
-        "Obed-Edom the Gittite",
         "Abinadab",
+        "Obed-Edom the Gittite",
         "Ahimelech",
         "Ornan the Jebusite"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 صموئيل 6: 11",
       "en": "2 Samuel 6: 11"
@@ -854,18 +856,18 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "أشدود",
-        "غزة",
         "عسقلان",
-        "عقرون"
+        "عقرون",
+        "غزة"
       ],
       "en": [
         "Ashdod",
-        "Gaza",
         "Ashkelon",
-        "Ekron"
+        "Ekron",
+        "Gaza"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "قضاة 16: 3",
       "en": "Judges 16: 3"
@@ -884,19 +886,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "نهر كيشون",
         "نهر الأردن",
-        "نهر اليرموك",
-        "نهر الأرنون"
+        "نهر الأرنون",
+        "نهر كيشون",
+        "نهر اليرموك"
       ],
       "en": [
-        "Kishon River",
         "Jordan River",
-        "Yarmouk River",
-        "Arnon River"
+        "Arnon River",
+        "Kishon River",
+        "Yarmouk River"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 2: 8",
       "en": "2 Kings 2: 8"
@@ -915,15 +917,15 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
+        "نيرون",
         "طيباريوس قيصر",
         "أغسطس قيصر",
-        "نيرون",
         "كلاوديوس قيصر"
       ],
       "en": [
+        "Nero",
         "Tiberius Caesar",
         "Caesar Augustus",
-        "Nero",
         "Claudius Caesar"
       ]
     },
@@ -946,16 +948,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "إشعياء",
-        "ميخا النبي",
         "هوشع",
-        "زكريا"
+        "إشعياء",
+        "زكريا",
+        "ميخا النبي"
       ],
       "en": [
+        "Hosea",
         "Isaiah",
-        "Micah the prophet",
-        "هوشع",
-        "Zechariah"
+        "Zechariah",
+        "Micah the prophet"
       ]
     },
     "correctIndex": 1,
@@ -977,19 +979,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "التلميذ الذي كان يسوع يحبه (يوحنا)",
         "يعقوب بن زبدي",
         "أندراوس",
+        "التلميذ الذي كان يسوع يحبه (يوحنا)",
         "توما"
       ],
       "en": [
-        "The disciple whom Jesus loved (John)",
         "James son of Zebedee",
         "Andrew",
+        "The disciple whom Jesus loved (John)",
         "Thomas"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "يوحنا 20: 4",
       "en": "John 20: 4"
@@ -1008,19 +1010,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "120 سمكة",
-        "153 سمكة",
+        "100 سمكة",
         "70 سمكة",
-        "100 سمكة"
+        "153 سمكة",
+        "120 سمكة"
       ],
       "en": [
-        "120 fish",
-        "153 fish",
+        "100 fish",
         "70 fish",
-        "100 fish"
+        "153 fish",
+        "120 fish"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "يوحنا 21: 11",
       "en": "John 21: 11"
@@ -1039,19 +1041,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "يسوع القائم نفسه",
         "ملاك الرب",
-        "يوحنا الرسول",
-        "حارس البستان"
+        "حارس البستان",
+        "يوحنا",
+        "يسوع القائم نفسه"
       ],
       "en": [
-        "The Risen Jesus Himself",
         "The Angel of the LORD",
-        "John the Apostle",
-        "The gardener"
+        "The gardener",
+        "John",
+        "The Risen Jesus Himself"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "يوحنا 20: 15",
       "en": "John 20: 15"
@@ -1070,19 +1072,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "فليمون",
-        "تيطس",
         "تيموثاوس",
-        "أرخبس"
+        "فليمون",
+        "أرخبس",
+        "تيطس"
       ],
       "en": [
-        "Philemon",
-        "Titus",
         "Timothy",
-        "Archippus"
+        "Philemon",
+        "Archippus",
+        "Titus"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "فليمون 1: 10",
       "en": "Philemon 1: 10"
@@ -1101,19 +1103,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "دربة",
         "لسترة",
         "إيقونية",
+        "دربة",
         "أنطاكية بيسيدية"
       ],
       "en": [
-        "Derbe",
         "Lystra",
         "Iconium",
+        "Derbe",
         "Pisidian Antioch"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 14: 12",
       "en": "Acts 14: 12"
@@ -1128,23 +1130,23 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الساحر في السامرة الذي آمن واعتمد ثم طلب شراء موهبة الروح القدس بالدراهم؟",
-      "en": "Scripture Examination (Acts 8: 18-19): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the sorcerer in Samaria who offered money to the apostles to buy the power of the Holy Spirit?"
     },
     "options": {
       "ar": [
         "عليم الساحر",
-        "سيمون الساحر",
         "باريشوع",
+        "سيمون الساحر",
         "سكيفا"
       ],
       "en": [
         "Elymas the sorcerer",
-        "Simon the sorcerer",
         "Bar-Jesus",
+        "Simon the sorcerer",
         "Sceva"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 8: 18-19",
       "en": "Acts 8: 18-19"
@@ -1159,23 +1161,23 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هي التلميذة في يافا التي كانت ممتلئة أعمالاً صالحة وإحسانات وأقامها بطرس من الموت؟",
-      "en": "Scripture Examination (Acts 9: 36): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the charitable disciple in Joppa, full of good works and almsdeeds, whom Peter raised from the dead?"
     },
     "options": {
       "ar": [
-        "طابيثا (غزالة)",
         "ليديا",
         "سوسنة",
+        "طابيثا (غزالة)",
         "يوأنا"
       ],
       "en": [
-        "Tabitha (Dorcas)",
         "Lydia",
         "Susanna",
+        "Tabitha (Dorcas)",
         "Joanna"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 9: 36",
       "en": "Acts 9: 36"
@@ -1194,16 +1196,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "يوليوس",
         "كرنيليوس",
-        "لوكيوس",
-        "غايوس"
+        "يوليوس",
+        "غايوس",
+        "لوكيوس"
       ],
       "en": [
-        "Julius",
         "Cornelius",
-        "Lucius",
-        "Gaius"
+        "Julius",
+        "Gaius",
+        "Lucius"
       ]
     },
     "correctIndex": 1,
@@ -1226,18 +1228,18 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "أورشليم",
-        "أنطاكية",
+        "الإسكندرية",
         "روما",
-        "الإسكندرية"
+        "أنطاكية"
       ],
       "en": [
         "Jerusalem",
-        "Antioch",
+        "Alexandria",
         "Rome",
-        "Alexandria"
+        "Antioch"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 11: 26",
       "en": "Acts 11: 26"
@@ -1252,30 +1254,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم النبي الذي تنبأ بجفاف ومجاعة شديدة ستحدث في كل المسكونة في سفر الأعمال؟",
-      "en": "Scripture Examination (Acts 11: 28): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the prophet who prophesied that there would be a great famine throughout all the world in the Book of Acts?"
     },
     "options": {
       "ar": [
-        "أغابوس النبي",
         "برنابا",
-        "سيلا",
-        "حننيا"
+        "أغابوس",
+        "حننيا",
+        "سيلا"
       ],
       "en": [
-        "Agabus the prophet",
-        "برنابا",
-        "Silas",
-        "Ananias"
+        "Barnabas",
+        "Agabus",
+        "Ananias",
+        "Silas"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 11: 28",
       "en": "Acts 11: 28"
     },
     "verse": {
       "ar": "وَقَامَ وَاحِدٌ مِنْهُمُ اسْمُهُ أَغَابُوسُ، وَأَشَارَ بِالرُّوحِ أَنَّ جُوعًا عَظِيمًا كَانَ عَتِيدًا أَنْ يَصِيرَ عَلَى جَمِيعِ الْمَسْكُونَةِ...",
-      "en": "Scripture record from Acts 11: 28: Verify the sacred testimony in the Holy Bible."
+      "en": "Then one of them, named Agabus, stood up and showed by the Spirit that there was going to be a great famine throughout all the world, which also happened in the days of Claudius Caesar."
     }
   },
   {
@@ -1283,30 +1285,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الرسول التلميذ الذي قتله هيرودس الملك بالسيف ليكون أول رسول يستشهد؟",
-      "en": "Scripture Examination (Acts 12: 2): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which apostle was killed with the sword by King Herod Agrippa I, becoming the first apostle to be martyred?"
     },
     "options": {
       "ar": [
-        "يعقوب بن زبدي",
         "إستفانوس",
+        "أندراوس",
         "يعقوب بن حلفي",
-        "أندراوس"
+        "يعقوب بن زبدي"
       ],
       "en": [
-        "James son of Zebedee",
         "Stephen",
-        "يعقوب بن حلفي",
-        "Andrew"
+        "Andrew",
+        "James son of Alphaeus",
+        "James son of Zebedee"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "أعمال 12: 2",
       "en": "Acts 12: 2"
     },
     "verse": {
       "ar": "فَقَتَلَ يَعْقُوبَ أَخَا يُوحَنَّا بِالسَّيْفِ.",
-      "en": "Scripture record from Acts 12: 2: Verify the sacred testimony in the Holy Bible."
+      "en": "Then he killed James the brother of John with the sword."
     }
   },
   {
@@ -1314,7 +1316,7 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الساحر اليهودي الكذاب في بافوس بقبرص الذي قاوم بولس وبرنابا فضربه بولس بالعمى؟",
-      "en": "Scripture Examination (Acts 13: 8): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the Jewish false prophet and sorcerer in Paphos who opposed Paul and Barnabas and was struck blind?"
     },
     "options": {
       "ar": [
@@ -1325,19 +1327,19 @@ window.QUESTIONS_BANK = [
       ],
       "en": [
         "Simon the sorcerer",
-        "باريشوع (عليم)",
-        "ديمتريوس",
-        "ألكسندر"
+        "Bar-Jesus (Elymas)",
+        "Demetrius",
+        "Alexander"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 13: 8",
       "en": "Acts 13: 8"
     },
     "verse": {
       "ar": "فَقَاوَمَهُمَا عَلِيمٌ السَّاحِرُ، لأَنَّ هكَذَا يُتَرْجَمُ اسْمُهُ، طَالِبًا أَنْ يُفْسِدَ الْوَالِيَ عَنِ الإِيمَانِ.",
-      "en": "Scripture record from Acts 13: 8: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Saul, who also is called Paul, filled with the Holy Spirit, looked intently at him and said... 'And now, indeed, the hand of the LORD is upon you, and you shall be blind, not seeing the sun for a time.'"
     }
   },
   {
@@ -1345,30 +1347,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الشاب الذي سقط نائماً من نافذة الطابق الثالث أثناء خطاب بولس في ترواس وأقامه بولس؟",
-      "en": "Scripture Examination (Acts 20: 9): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the young man in Troas who fell asleep and sank down from the third story window during Paul's preaching and was raised by Paul?"
     },
     "options": {
       "ar": [
-        "أفتيخوس",
         "أنسيمس",
+        "أفتيخوس",
         "تيخيكس",
         "أرسطوبولس"
       ],
       "en": [
-        "Eutychus",
         "Onesimus",
+        "Eutychus",
         "Tychicus",
         "Aristobulus"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 20: 9",
       "en": "Acts 20: 9"
     },
     "verse": {
       "ar": "وَكَانَ شَابٌّ اسْمُهُ أَفْتِيخُوسُ جَالِسًا فِي الطَّاقَةِ مُتَثَقِّلاً بِنَوْمٍ عَمِيق... فَسَقَطَ مِنَ الطَّبَقَةِ الثَّالِثَةِ إِلَى أَسْفَلُ، وَحُمِلَ مَيْتًا.",
-      "en": "Scripture record from Acts 20: 9: Verify the sacred testimony in the Holy Bible."
+      "en": "And in a window sat a certain young man named Eutychus, who was sinking into a deep sleep. He was overcome by sleep; and as Paul continued speaking, he fell down from the third story and was taken up dead."
     }
   },
   {
@@ -1376,30 +1378,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الوالي الروماني الذي ارتعب لما حاوره بولس عن البر والتعفف والدينونة العتيدة؟",
-      "en": "Scripture Examination (Acts 24: 25): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the Roman governor who trembled as Paul reasoned about righteousness, self-control, and the judgment to come?"
     },
     "options": {
       "ar": [
         "فستوس",
-        "فيلكس الوالي",
+        "بيلاطس",
         "غاليو",
-        "بيلاطس"
+        "فيلكس الوالي"
       ],
       "en": [
         "Festus",
-        "Felix the governor",
+        "Pilate",
         "Gallio",
-        "Pilate"
+        "Felix the governor"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 24: 25",
       "en": "Acts 24: 25"
     },
     "verse": {
       "ar": "وَبَيْنَمَا كَانَ يَتَكَلَّمُ عَنِ الْبِرِّ وَالتَّعَفُّفِ وَالدَّيْنُونَةِ الْعَتِيدَةِ أَنْ تَكُونَ، ارْتَعَبَ فِيلِكْسُ، وَأَجَابَ: «أَمَّا الآنَ فَاذْهَبْ...».",
-      "en": "Scripture record from Acts 24: 25: Verify the sacred testimony in the Holy Bible."
+      "en": "Now as he reasoned about righteousness, self-control, and the judgment to come, Felix was afraid and answered, 'Go away for now; when I have a convenient time I will call for you.'"
     }
   },
   {
@@ -1407,30 +1409,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الملك الذي قال لبولس الرسول في قيصرية: «بِقَلِيل تُقْنِعُنِي أَنْ أَصِيرَ مَسِيحِيًّا»؟",
-      "en": "Scripture Examination (Acts 26: 28): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which king said to the Apostle Paul in Caesarea: 'You almost persuade me to become a Christian'?"
     },
     "options": {
       "ar": [
-        "هيرودس أنتيباس",
+        "أرخيلاوس",
         "الملك أغريباس",
-        "هيرودس الكبير",
-        "أرخيلاوس"
+        "هيرودس أنتيباس",
+        "هيرودس الكبير"
       ],
       "en": [
-        "Herod Antipas",
+        "Archelaus",
         "King Agrippa",
-        "Herod the Great",
-        "Archelaus"
+        "Herod Antipas",
+        "Herod the Great"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 26: 28",
       "en": "Acts 26: 28"
     },
     "verse": {
       "ar": "فَقَالَ أَغْرِيبَاسُ لِبُولُسَ: «بِقَلِيل تُقْنِعُنِي أَنْ أَصِيرَ مَسِيحِيًّا».",
-      "en": "Scripture record from Acts 26: 28: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Agrippa said to Paul, 'You almost persuade me to become a Christian.'"
     }
   },
   {
@@ -1438,30 +1440,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما هو اسم الريح العاصفة الشديدة التي ضربت سفينة بولس الرسول في البحر الأبيض؟",
-      "en": "Scripture Examination (Acts 27: 14): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the tempestuous headwind called that struck the ship carrying Paul across the Mediterranean?"
     },
     "options": {
       "ar": [
-        "أوروكليدون",
         "السيروكو",
+        "أوروكليدون",
         "الخماسين",
         "النورديك"
       ],
       "en": [
-        "Euroclydon",
         "Sirocco",
+        "Euroclydon",
         "Khamsin",
         "Nordic"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 27: 14",
       "en": "Acts 27: 14"
     },
     "verse": {
       "ar": "وَلَكِنْ بَعْدَ قَلِيل هَاجَتْ عَلَيْهَا رِيحٌ زَوْبَعِيَّةٌ يُقَالُ لَهَا «أُورُوكْلِيدُونُ».",
-      "en": "Scripture record from Acts 27: 14: Verify the sacred testimony in the Holy Bible."
+      "en": "But not long after, a tempestuous head wind arose, called Euroclydon."
     }
   },
   {
@@ -1469,7 +1471,7 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الجزيرة التي نجا إليها ركاب سفينة بولس المكسورة وخرجت أفعى ونشبت في يد بولس؟",
-      "en": "Scripture Examination (Acts 28: 1): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the island where the shipwreck survivors landed and a viper bit Paul's hand without harming him?"
     },
     "options": {
       "ar": [
@@ -1485,14 +1487,14 @@ window.QUESTIONS_BANK = [
         "Rhodes"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 28: 1",
       "en": "Acts 28: 1"
     },
     "verse": {
       "ar": "وَلَمَّا نَجَوْا وَجَدُوا أَنَّ الْجَزِيرَةَ تُدْعَى مَلِيطَةَ.",
-      "en": "Scripture record from Acts 28: 1: Verify the sacred testimony in the Holy Bible."
+      "en": "Now when they had escaped, they then found out that the island was called Malta."
     }
   },
   {
@@ -1500,20 +1502,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم سنة مكث بولس الرسول في روما في بيت استأجره لنفسه يكرز بملكوت الله بلا مانع؟",
-      "en": "Scripture Examination (Acts 28: 30): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many whole years did the Apostle Paul dwell in his own rented house in Rome preaching the kingdom of God?"
     },
     "options": {
       "ar": [
+        "ستة أشهر",
         "سنة واحدة",
         "سنتين كاملتين",
-        "ثلاث سنوات",
-        "ستة أشهر"
+        "ثلاث سنوات"
       ],
       "en": [
-        "1 year",
-        "2 whole years",
-        "3 years",
-        "6 months"
+        "Six months",
+        "One year",
+        "Two full years",
+        "Three years"
       ]
     },
     "correctIndex": 1,
@@ -1523,7 +1525,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "وَأَقَامَ بُولُسُ سَنَتَيْنِ كَامِلَتَيْنِ فِي بَيْتٍ اسْتَأْجَرَهُ لِنَفْسِهِ. وَكَانَ يَقْبَلُ جَمِيعَ الَّذِينَ يَدْخُلُونَ إِلَيْهِ،",
-      "en": "Scripture record from Acts 28: 30: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Paul dwelt two whole years in his own rented house, and received all who came to him, preaching the kingdom of God and teaching the things which concern the Lord Jesus Christ with all confidence, no one forbidding him."
     }
   },
   {
@@ -1531,30 +1533,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم أم تيموثاوس وجدته اللتين مدح بولس إيمانهما العديم الرياء في رسالته الثانية؟",
-      "en": "Scripture Examination (2 Timothy 1: 5): What is the biblically verified answer concerning this sacred record?"
+      "en": "What were the names of Timothy's mother and grandmother whose unfeigned faith Paul praised in 2 Timothy?"
     },
     "options": {
       "ar": [
-        "أفنيكي ولوئيس",
+        "مريم وسالومة",
         "سارة ورفقة",
-        "بريسكلا وفيبي",
-        "مريم وسالومة"
+        "أفنيكي ولوئيس",
+        "بريسكلا وفيبي"
       ],
       "en": [
-        "Eunice and Lois",
+        "Mary and Salome",
         "Sarah and Rebekah",
-        "Priscilla and Phoebe",
-        "Mary and Salome"
+        "Eunice and Lois",
+        "Priscilla and Phoebe"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 تيموثاوس 1: 5",
       "en": "2 Timothy 1: 5"
     },
     "verse": {
       "ar": "إِذْ أَتَذَكَّرُ الإِيمَانَ الْعَدِيمَ الرِّيَاءِ الَّذِي فِيكَ، الَّذِي سَكَنَ أَوَّلاً فِي جَدَّتِكَ لَوْئِيسَ وَأُمِّكَ أَفْنِيكِي...",
-      "en": "Scripture record from 2 Timothy 1: 5: Verify the sacred testimony in the Holy Bible."
+      "en": "when I call to remembrance the genuine faith that is in you, which dwelt first in your grandmother Lois and your mother Eunice, and I am persuaded is in you also."
     }
   },
   {
@@ -1562,30 +1564,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو النبي الصغير الذي وبخ بني إسرائيل لأنهم أتوا بقرابين عمياء وعرجاء وسرقوا الرب في العشور؟",
-      "en": "Scripture Examination (Malachi 3: 8): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which minor prophet rebuked the priests for offering blind and lame sacrifices and robbing God in tithes and offerings?"
     },
     "options": {
       "ar": [
-        "ملاخي النبي",
-        "حجي",
         "زكريا",
+        "ملاخي",
+        "حجي",
         "صفنيا"
       ],
       "en": [
-        "Malachi the prophet",
-        "Haggai",
         "Zechariah",
+        "Malachi",
+        "Haggai",
         "Zephaniah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "ملاخي 3: 8",
       "en": "Malachi 3: 8"
     },
     "verse": {
       "ar": "«أَيَسْلُبُ الإِنْسَانُ اللهَ؟ فَإِنَّكُمْ سَلَبْتُمُونِي! فَقُلْتُمْ: بِمَ سَلَبْنَاكَ؟ فِي الْعُشُورِ وَالتَّقْدِمَةِ».",
-      "en": "Scripture record from Malachi 3: 8: Verify the sacred testimony in the Holy Bible."
+      "en": "'Will a man rob God? Yet you have robbed Me! But you say, \"In what way have we robbed You?\" In tithes and offerings.'"
     }
   },
   {
@@ -1593,20 +1595,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم النبي الذي رأى وادياً مليئاً بعظام يابسة جداً وقال له الرب أن يتنبأ ليدخل فيها الروح؟",
-      "en": "Scripture Examination (Ezekiel 37: 1-4): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which prophet saw a valley full of very dry bones and was commanded by the LORD to prophesy to the breath to enter them?"
     },
     "options": {
       "ar": [
+        "دانيال",
         "إشعياء",
         "حزقيال بن بوزي",
-        "دانيال",
         "إرميا"
       ],
       "en": [
+        "Daniel",
         "Isaiah",
         "Ezekiel son of Buzi",
-        "Daniel",
-        "إرميا"
+        "Jeremiah"
       ]
     },
     "correctIndex": 1,
@@ -1616,7 +1618,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَأَنْزَلَنِي فِي وَسَطِ الْبُقْعَةِ وَهِيَ مَلآنَةٌ عِظَامًا... فَقَالَ لِي: تَنَبَّأْ عَلَى هذِهِ الْعِظَامِ وَقُلْ لَهَا: أَيَّتُهَا الْعِظَامُ الْيَابِسَةُ، اسْمَعِي كَلِمَةَ الرَّبِّ».",
-      "en": "Scripture record from Ezekiel 37: 1-4: Verify the sacred testimony in the Holy Bible."
+      "en": "The hand of the LORD came upon me and brought me out in the Spirit of the LORD, and set me down in the midst of the valley; and it was full of bones... And He said to me, 'Son of man, can these bones live?'"
     }
   },
   {
@@ -1624,30 +1626,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الرجل الذي كان نحاساً في أفسس وقاوم أقوال بولس الرسول بشدة؟",
-      "en": "Scripture Examination (2 Timothy 4: 14): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the coppersmith in Ephesus who did the Apostle Paul much harm and strongly resisted his words?"
     },
     "options": {
       "ar": [
+        "فيليتس",
         "إسكندر النحاس",
-        "ديمتريوس الصائغ",
         "هيميناوس",
-        "فيليتس"
+        "ديمتريوس الصائغ"
       ],
       "en": [
+        "Philetus",
         "Alexander the coppersmith",
-        "Demetrius the silversmith",
         "Hymenaeus",
-        "Philetus"
+        "Demetrius the silversmith"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 تيموثاوس 4: 14",
       "en": "2 Timothy 4: 14"
     },
     "verse": {
       "ar": "إِسْكَنْدَرُ النَّحَّاسُ أَظْهَرَ لِي شُرُورًا كَثِيرَةً. لِيُجَازِهِ الرَّبُّ حَسَبَ أَعْمَالِهِ.",
-      "en": "Scripture record from 2 Timothy 4: 14: Verify the sacred testimony in the Holy Bible."
+      "en": "Alexander the coppersmith did me much harm. May the Lord repay him according to his works. You also must beware of him, for he has greatly resisted our words."
     }
   },
   {
@@ -1655,30 +1657,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم المرأة التي كانت خادمة (شماسة) كنيسة كنخريا وأوصى بها بولس في رومية 16؟",
-      "en": "Scripture Examination (Romans 16: 1): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the deaconess of the church in Cenchrea whom Paul commended in Romans 16?"
     },
     "options": {
       "ar": [
-        "فيبي",
-        "مريم",
+        "تريفوسا",
         "تريفينا",
-        "تريفوسا"
+        "مريم",
+        "فيبي"
       ],
       "en": [
-        "Phoebe",
-        "مريم",
+        "Tryphosa",
         "Tryphena",
-        "Tryphosa"
+        "Miriam",
+        "Phoebe"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "رومية 16: 1",
       "en": "Romans 16: 1"
     },
     "verse": {
       "ar": "أُوصِي إِلَيْكُمْ بِأُخْتِنَا فِيبِي، الَّتِي هِيَ خَادِمَةُ الْكَنِيسَةِ الَّتِي فِي كَنْخَرِيَّا،",
-      "en": "Scripture record from Romans 16: 1: Verify the sacred testimony in the Holy Bible."
+      "en": "I commend to you Phoebe our sister, who is a servant of the church in Cenchrea, that you may receive her in the Lord in a manner worthy of the saints,"
     }
   },
   {
@@ -1686,30 +1688,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الشخص الذي كتب رسالة رومية بيده بإملاء بولس الرسول ووجه تحيته في الإصحاح 16؟",
-      "en": "Scripture Examination (Romans 16: 22): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who wrote down the Epistle to the Romans by Paul's dictation and sent his personal greeting in chapter 16?"
     },
     "options": {
       "ar": [
-        "ترتيوس",
+        "غايوس",
         "إراستس",
-        "كوارتمس",
-        "غايوس"
+        "ترتيوس",
+        "كوارتمس"
       ],
       "en": [
-        "Tertius",
+        "Gaius",
         "Erastus",
-        "Quartus",
-        "Gaius"
+        "Tertius",
+        "Quartus"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "رومية 16: 22",
       "en": "Romans 16: 22"
     },
     "verse": {
       "ar": "أَنَا تَرْتِيُوسُ كَاتِبُ هذِهِ الرِّسَالَةِ، أُسَلِّمُ عَلَيْكُمْ فِي الرَّبِّ.",
-      "en": "Scripture record from Romans 16: 22: Verify the sacred testimony in the Holy Bible."
+      "en": "I, Tertius, who wrote this epistle, greet you in the Lord."
     }
   },
   {
@@ -1717,30 +1719,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم كان عدد المجالس العشارية (الخبز) التي أشبع بها المسيح 4000 رجل وكم سلة رفعت من الكسر؟",
-      "en": "Scripture Examination (Mark 8: 6-8): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many loaves did Jesus multiply to feed the four thousand, and how many large baskets of leftover fragments were taken up?"
     },
     "options": {
       "ar": [
+        "عشر خبزات وعشر سلال",
         "سبعة خبزات وسبع سلال كسر",
         "خمس خبزات و12 قفة",
-        "ثلاث خبزات وثلاث سلال",
-        "عشر خبزات وعشر سلال"
+        "ثلاث خبزات وثلاث سلال"
       ],
       "en": [
-        "سبعة خبزات وسبع سلال كسر",
-        "خمس خبزات و12 قفة",
-        "ثلاث خبزات وثلاث سلال",
-        "عشر خبزات وعشر سلال"
+        "Ten loaves and ten baskets",
+        "Seven loaves and seven large baskets",
+        "Five loaves and 12 baskets",
+        "Three loaves and three baskets"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "مرقس 8: 6-8",
       "en": "Mark 8: 6-8"
     },
     "verse": {
       "ar": "وَأَخَذَ السَّبْعَ خُبْزَاتٍ وَشَكَرَ وَكَسَرَ وَأَعْطَى تَلاَمِيذَهُ... فَأَكَلُوا وَشَبِعُوا. ثُمَّ رَفَعُوا فَضَلاَتِ الْكِسَرِ: سَبْعَ سِلاَل.",
-      "en": "Scripture record from Mark 8: 6-8: Verify the sacred testimony in the Holy Bible."
+      "en": "So they ate and were filled. And they took up seven large baskets of leftover fragments. Now those who had eaten were about four thousand."
     }
   },
   {
@@ -1748,30 +1750,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم رئيس دير الكهنة الفريسيين الذي دافع عن الرسل وقال لليهود إن كان هذا الرأي من الناس فسوف ينتقض؟",
-      "en": "Scripture Examination (Acts 5: 34-38): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the respected Pharisee doctor of the law who told the Sanhedrin that if this work is of men it will come to nothing?"
     },
     "options": {
       "ar": [
-        "غمالائيل",
-        "نيقوديموس",
         "قيافا",
-        "حنان"
+        "حنان",
+        "غمالائيل",
+        "نيقوديموس"
       ],
       "en": [
-        "غمالائيل",
-        "نيقوديموس",
-        "قيافا",
-        "حنان"
+        "Caiaphas",
+        "Annas",
+        "Gamaliel",
+        "Nicodemus"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 5: 34-38",
       "en": "Acts 5: 34-38"
     },
     "verse": {
       "ar": "فَقَامَ فِي الْمَجْمَعِ رَجُلٌ فَرِّيسِيٌّ اسْمُهُ غَمَالاَئِيلُ، مُعَلِّمٌ لِلنَّامُوسِ... وَالآنَ أَقُولُ لَكُمْ: تَنَحَّوْا عَنْ هؤُلاَءِ النَّاسِ وَاتْرُكُوهُمْ!",
-      "en": "Scripture record from Acts 5: 34-38: Verify the sacred testimony in the Holy Bible."
+      "en": "Then one in the council stood up, a Pharisee named Gamaliel, a teacher of the law held in respect by all the people... And now I say to you, keep away from these men and let them alone; for if this plan or this work is of men, it will come to nothing;"
     }
   },
   {
@@ -1779,19 +1781,19 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم البئر التي حفرها رعاة إسحق وتشاجروا عليها فسماها «عِسق» لأنهم نازعوه؟",
-      "en": "Scripture Examination (Genesis 26: 20): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the well that Isaac's herdsmen dug in Gerar over which the local herdsmen quarreled, naming it Esek?"
     },
     "options": {
       "ar": [
         "عِسق",
-        "سِطنة",
         "رحوبوت",
+        "سِطنة",
         "بئر سبع"
       ],
       "en": [
-        "عِسق",
-        "سِطنة",
+        "Esek",
         "Rehoboth",
+        "Sitnah",
         "Beersheba"
       ]
     },
@@ -1802,7 +1804,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَخَاصَمَ رُعَاةُ جَرَارَ رُعَاةَ إِسْحَاقَ قَائِلِينَ: «لَنَا الْمَاءُ». فَدَعَا اسْمَ الْبِئْرِ «عِسِقَ» لأَنَّهُمْ نَازَعُوهُ.",
-      "en": "Scripture record from Genesis 26: 20: Verify the sacred testimony in the Holy Bible."
+      "en": "But the herdsmen of Gerar quarreled with Isaac’s herdsmen, saying, 'The water is ours.' So he called the name of the well Esek, because they quarreled with him."
     }
   },
   {
@@ -1810,30 +1812,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الموضع الذي بارك فيه يعقوب ابنيه إفرايم ومنسى وعكس يديه فجعل يده اليمنى على إفرايم الصغير؟",
-      "en": "Scripture Examination (Genesis 48: 14): What is the biblically verified answer concerning this sacred record?"
+      "en": "Where did Jacob cross his hands, placing his right hand on the head of younger Ephraim and his left on Manasseh?"
     },
     "options": {
       "ar": [
-        "أرض مصر (جاسان)",
-        "شكيم",
         "بيت إيل",
+        "شكيم",
+        "أرض مصر (جاسان)",
         "مغارة المكفيلة"
       ],
       "en": [
-        "أرض مصر (جاسان)",
-        "Shechem",
         "Bethel",
-        "مغارة المكفيلة"
+        "Shechem",
+        "Land of Egypt (Goshen)",
+        "Cave of Machpelah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 48: 14",
       "en": "Genesis 48: 14"
     },
     "verse": {
       "ar": "فَمَدَّ إِسْرَائِيلُ يَمِينَهُ وَوَضَعَهَا عَلَى رَأْسِ أَفْرَايِمَ وَهُوَ الصَّغِيرُ، وَيَسَارَهُ عَلَى رَأْسِ مَنَسَّى. وَضَعَ يَدَيْهِ بِفِطْنَةٍ...",
-      "en": "Scripture record from Genesis 48: 14: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Israel stretched out his right hand and laid it on Ephraim’s head, who was the younger, and his left hand on Manasseh’s head, guiding his hands knowingly, for Manasseh was the firstborn."
     }
   },
   {
@@ -1841,30 +1843,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الملك الصالح الذي أزال المرتفعات وكسر تمثال حية النحاس (نهشتان) لأن بني إسرائيل عبدوها؟",
-      "en": "Scripture Examination (2 Kings 18: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which righteous king of Judah removed the high places and broke in pieces the bronze serpent Nehushtan that Israel had idolized?"
     },
     "options": {
       "ar": [
-        "حزقيا الملك",
-        "يوشيا",
+        "منسى",
         "آسا",
-        "منسى"
+        "حزقيا",
+        "يوشيا"
       ],
       "en": [
-        "King Hezekiah",
-        "Josiah",
+        "Manasseh",
         "Asa",
-        "Manasseh"
+        "Hezekiah",
+        "Josiah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 18: 4",
       "en": "2 Kings 18: 4"
     },
     "verse": {
       "ar": "هُوَ أَزَالَ الْمُرْتَفَعَاتِ، وَكَسَّرَ التَّمَاثِيلَ، وَقَطَّعَ السَّوَارِيَ، وَسَحَقَ حَيَّةَ النُّحَاسِ الَّتِي عَمِلَهَا مُوسَى، لأَنَّ بَنِي إِسْرَائِيلَ كَانُوا إِلَى تِلْكَ الأَيَّامِ يُوقِدُونَ لَهَا، وَدَعَاهَا «نَحُشْتَانَ».",
-      "en": "Scripture record from 2 Kings 18: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "He removed the high places and broke the sacred pillars, cut down the wooden image and broke in pieces the bronze serpent that Moses had made; for until those days the children of Israel burned incense to it, and called it Nehushtan."
     }
   },
   {
@@ -1872,20 +1874,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو التلميذ الذي رماه الملك هيرودس في السجن في عيد الفطير وكان محروساً بأربعة أرابع من العسكر؟",
-      "en": "Scripture Examination (Acts 12: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which apostle did King Herod put in prison during the Feast of Unleavened Bread, guarded by four squads of four soldiers each?"
     },
     "options": {
       "ar": [
         "بطرس الرسول",
-        "يوحنا الحبيب",
         "بولس الرسول",
-        "متياس"
+        "متياس",
+        "يوحنا"
       ],
       "en": [
-        "بطرس الرسول",
-        "يوحنا الحبيب",
-        "بولس الرسول",
-        "متياس"
+        "Peter the Apostle",
+        "Paul the Apostle",
+        "Matthias",
+        "John"
       ]
     },
     "correctIndex": 0,
@@ -1895,7 +1897,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "وَلَمَّا أَمْسَكَهُ وَضَعَهُ فِي السِّجْنِ، مُسَلِّمًا إِيَّاهُ إِلَى أَرْبَعَةِ أَرَابِعَ مِنَ الْعَسْكَرِ لِيَحْرُسُوهُ، نَاوِيًا أَنْ يُقَدِّمَهُ بَعْدَ الْفِصْحِ إِلَى الشَّعْبِ.",
-      "en": "Scripture record from Acts 12: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "So when he had apprehended him, he put him in prison, and delivered him to four squads of soldiers to keep him, intending to bring him before the people after Passover."
     }
   },
   {
@@ -1903,20 +1905,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هي الأرملة الفقيرة المذكورة في العهد القديم التي أطعمت إيليا النبي من كوز الزيت وقبضة الدقيق؟",
-      "en": "Scripture Examination (1 Kings 17: 9): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the poor widow in the Old Testament who fed the prophet Elijah from a handful of flour and a little oil in a jar?"
     },
     "options": {
       "ar": [
         "أرملة صرفة صيدون",
         "أرملة نايين",
-        "المرأة الشونمية",
-        "راعوث الموآبية"
+        "راعوث الموآبية",
+        "المرأة الشونمية"
       ],
       "en": [
-        "أرملة صرفة صيدون",
-        "أرملة نايين",
-        "المرأة الشونمية",
-        "راعوث الموآبية"
+        "The widow of Zarephath",
+        "The widow of Nain",
+        "Ruth the Moabitess",
+        "The Shunammite woman"
       ]
     },
     "correctIndex": 0,
@@ -1926,7 +1928,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«قُمِ اذْهَبْ إِلَى صِرْفَةَ الَّتِي لِصَيْدُونَ وَأَقِمْ هُنَاكَ. هُوَذَا قَدْ أَمَرْتُ هُنَاكَ امْرَأَةً أَرْمَلَةً أَنْ تَقُوتَكَ».",
-      "en": "Scripture record from 1 Kings 17: 9: Verify the sacred testimony in the Holy Bible."
+      "en": "'Arise, go to Zarephath, which belongs to Sidon, and dwell there. See, I have commanded a widow there to provide for you.'"
     }
   },
   {
@@ -1934,30 +1936,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم المرأة العظيمة الغنية في الشونم التي استضافت أليشع وبنت له علية صغيرة بسرير وخوان وكرسي ومنارة؟",
-      "en": "Scripture Examination (2 Kings 4: 10): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the wealthy, noble woman in Shunem who prepared a small upper room with a bed, table, chair, and lampstand for Elisha?"
     },
     "options": {
       "ar": [
-        "المرأة الشونمية",
+        "دبورة",
         "أبيجايل",
         "حنة",
-        "دبورة"
+        "المرأة الشونمية"
       ],
       "en": [
-        "المرأة الشونمية",
+        "Deborah",
         "Abigail",
-        "حنة",
-        "Deborah"
+        "Hannah",
+        "The Shunammite woman"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "2 ملوك 4: 10",
       "en": "2 Kings 4: 10"
     },
     "verse": {
       "ar": "«نَعْمَلْ عِلِّيَّةً عَلَى الْحَائِطِ صَغِيرَةً، وَنَضَعْ لَهُ هُنَاكَ سَرِيرًا وَخِوَانًا وَكُرْسِيًّا وَمَنَارَةً، حَتَّى إِذَا جَاءَ إِلَيْنَا يَمِيلُ إِلَيْهَا».",
-      "en": "Scripture record from 2 Kings 4: 10: Verify the sacred testimony in the Holy Bible."
+      "en": "'Please, let us make a small upper room on the wall; and let us put a bed for him there, and a table and a chair and a lampstand; so it will be, whenever he comes to us, he can turn in there.'"
     }
   },
   {
@@ -1965,30 +1967,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم السفر الوحيد في الكتاب المقدس الذي لا يُذكر فيه اسم «الله» صراحة قط؟",
-      "en": "Scripture Examination (سفر إستير): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which book in the Holy Bible does not explicitly mention the name of 'God' anywhere in its text?"
     },
     "options": {
       "ar": [
-        "سفر إستير",
         "سفر نشيد الأنشاد",
-        "سفر عوبديا",
-        "سفر ناحوم"
+        "سفر إستير",
+        "سفر ناحوم",
+        "سفر عوبديا"
       ],
       "en": [
-        "سفر إستير",
-        "سفر نشيد الأنشاد",
-        "سفر عوبديا",
-        "سفر ناحوم"
+        "Song of Solomon",
+        "Book of Esther",
+        "Book of Nahum",
+        "Book of Obadiah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "سفر إستير",
-      "en": "سفر إستير"
+      "en": "Esther"
     },
     "verse": {
       "ar": "سفر إستير بأكمله يدور حول عناية الله الخفية وتدبيره لشعبه دون أن يُذكر لفظ الجلالة صراحة في النص العبري.",
-      "en": "Scripture record from سفر إستير: Verify the sacred testimony in the Holy Bible."
+      "en": "The Book of Esther records the providential deliverance of the Jewish people through Queen Esther and Mordecai without directly mentioning the divine name."
     }
   },
   {
@@ -1996,30 +1998,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الصديق الفريسي الذي زار يسوع ليلاً وقال له يسوع: «إِنْ كَانَ أَحَدٌ لاَ يُولَدُ مِنَ الْمَاءِ وَالرُّوحِ لاَ يَقْدِرُ أَنْ يَدْخُلَ مَلَكُوتَ اللهِ»؟",
-      "en": "Scripture Examination (John 3: 5): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the Pharisee ruler who visited Jesus by night, to whom Jesus said: 'Unless one is born of water and the Spirit, he cannot enter the kingdom of God'?"
     },
     "options": {
       "ar": [
-        "نيقوديموس",
         "يوسف الرامي",
-        "غمالائيل",
-        "قيافا"
+        "قيافا",
+        "نيقوديموس",
+        "غمالائيل"
       ],
       "en": [
-        "نيقوديموس",
-        "يوسف الرامي",
-        "غمالائيل",
-        "قيافا"
+        "Joseph of Arimathea",
+        "Caiaphas",
+        "Nicodemus",
+        "Gamaliel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "يوحنا 3: 5",
       "en": "John 3: 5"
     },
     "verse": {
       "ar": "أَجَابَ يَسُوعُ: «الْحَقَّ الْحَقَّ أَقُولُ لَكَ: إِنْ كَانَ أَحَدٌ لاَ يُولَدُ مِنَ الْمَاءِ وَالرُّوحِ لاَ يَقْدِرُ أَنْ يَدْخُلَ مَلَكُوتَ اللهِ».",
-      "en": "Scripture record from John 3: 5: Verify the sacred testimony in the Holy Bible."
+      "en": "Jesus answered, 'Most assuredly, I say to you, unless one is born of water and the Spirit, he cannot enter the kingdom of God.'"
     }
   },
   {
@@ -2027,30 +2029,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم البئر التي جلس عندها السيد المسيح في السامرة وطلب ماء ليشرب من المرأة السامرية؟",
-      "en": "Scripture Examination (John 4: 6): What is the biblically verified answer concerning this sacred record?"
+      "en": "At which well in Samaria did the Lord Jesus sit wearied from His journey and ask a Samaritan woman for water?"
     },
     "options": {
       "ar": [
-        "بئر يعقوب في سوخار",
         "بئر سبع",
+        "بئر إيليم",
         "بئر رحوبوت",
-        "بئر إيليم"
+        "بئر يعقوب في سوخار"
       ],
       "en": [
-        "بئر يعقوب في سوخار",
         "Beersheba",
-        "بئر رحوبوت",
-        "بئر إيليم"
+        "Well of Elim",
+        "Well of Rehoboth",
+        "Jacob's well at Sychar"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "يوحنا 4: 6",
       "en": "John 4: 6"
     },
     "verse": {
       "ar": "وَكَانَتْ هُنَاكَ عَيْنُ يَعْقُوبَ. فَإِذْ كَانَ يَسُوعُ قَدْ تَعِبَ مِنَ السَّفَرِ، جَلَسَ هكَذَا عَلَى الْعَيْنِ، وَكَانَ نَحْوُ السَّاعَةِ السَّادِسَةِ.",
-      "en": "Scripture record from John 4: 6: Verify the sacred testimony in the Holy Bible."
+      "en": "Now Jacob’s well was there. Jesus therefore, being wearied from His journey, sat thus by the well. It was about the sixth hour."
     }
   },
   {
@@ -2058,30 +2060,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما هو اسم البركة التي كان عندها جمع كثير من مرضى وعمي وعرج ينتظرون تحريك الماء في أورشليم؟",
-      "en": "Scripture Examination (John 5: 2): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the pool in Jerusalem by the Sheep Gate with five porches where sick, blind, and paralyzed people waited for the stirring of the water?"
     },
     "options": {
       "ar": [
+        "بركة العتيقة",
         "بركة بيت حسدا",
-        "بركة سلوام",
         "بركة جبعون",
-        "بركة العتيقة"
+        "بركة سلوام"
       ],
       "en": [
-        "بركة بيت حسدا",
-        "بركة سلوام",
-        "بركة جبعون",
-        "بركة العتيقة"
+        "The Old Pool",
+        "Pool of Bethesda",
+        "Pool of Gibeon",
+        "Pool of Siloam"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "يوحنا 5: 2",
       "en": "John 5: 2"
     },
     "verse": {
       "ar": "وَفِي أُورُشَلِيمَ عِنْدَ بَابِ الضَّأْنِ بِرْكَةٌ يُقَالُ لَهَا بِالْعِبْرَانِيَّةِ «بَيْتُ حِسْدَا» لَهَا خَمْسَةُ أَرْوِقَةٍ.",
-      "en": "Scripture record from John 5: 2: Verify the sacred testimony in the Holy Bible."
+      "en": "Now there is in Jerusalem by the Sheep Gate a pool, which is called in Hebrew Bethesda, having five porches."
     }
   },
   {
@@ -2089,30 +2091,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم سنة كان الرجل المفلوج مطروحاً في مرضه قبل أن يشفيه السيد المسيح عند بركة بيت حسدا؟",
-      "en": "Scripture Examination (John 5: 5): What is the biblically verified answer concerning this sacred record?"
+      "en": "For how many years had the paralyzed man suffered before Jesus healed him at the Pool of Bethesda?"
     },
     "options": {
       "ar": [
-        "38 سنة",
-        "12 سنة",
         "18 سنة",
+        "12 سنة",
+        "38 سنة",
         "40 سنة"
       ],
       "en": [
-        "38 years",
-        "12 years",
         "18 years",
+        "12 years",
+        "38 years",
         "40 years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "يوحنا 5: 5",
       "en": "John 5: 5"
     },
     "verse": {
       "ar": "وَكَانَ هُنَاكَ إِنْسَانٌ بِهِ مَرَضٌ مُنْذُ ثَمَانٍ وَثَلاَثِينَ سَنَةً.",
-      "en": "Scripture record from John 5: 5: Verify the sacred testimony in the Holy Bible."
+      "en": "Now a certain man was there who had an infirmity thirty-eight years. When Jesus saw him lying there... He said to him, 'Do you want to be made well?'"
     }
   },
   {
@@ -2120,30 +2122,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو التلميذ الذي أحضر الصبي الذي معه خمسة أرغفة شعير وسمكتان في معجزة الخمسة آلاف؟",
-      "en": "Scripture Examination (John 6: 8-9): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which disciple brought the young boy with five barley loaves and two small fish to Jesus at the feeding of the five thousand?"
     },
     "options": {
       "ar": [
+        "برثولماوس",
         "أندراوس أخو بطرس",
-        "فيلبس",
         "توما",
-        "برثولماوس"
+        "فيلبس"
       ],
       "en": [
-        "أندراوس أخو بطرس",
-        "فيلبس",
+        "Bartholomew",
+        "Andrew, Peter's brother",
         "Thomas",
-        "برثولماوس"
+        "Philip"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "يوحنا 6: 8-9",
       "en": "John 6: 8-9"
     },
     "verse": {
       "ar": "قَالَ لَهُ وَاحِدٌ مِنْ تَلاَمِيذِهِ، وَهُوَ أَنْدَرَاوُسُ أَخُو سِمْعَانَ بُطْرُسَ: «هُنَا غُلاَمٌ مَعَهُ خَمْسَةُ أَرْغِفَةِ شَعِيرٍ وَسَمَكَتَانِ...».",
-      "en": "Scripture record from John 6: 8-9: Verify the sacred testimony in the Holy Bible."
+      "en": "One of His disciples, Andrew, Simon Peter’s brother, said to Him, 'There is a lad here who has five barley loaves and two small fish, but what are they among so many?'"
     }
   },
   {
@@ -2151,30 +2153,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الكاهن الشيخ الذي كان زوجاً لأليصابات وصمت لسانه حتى ولد يوحنا المعمدان؟",
-      "en": "Scripture Examination (Luke 1: 5): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the elderly priest of the division of Abijah whose speech was silenced until the birth of John the Baptist?"
     },
     "options": {
       "ar": [
-        "زكريا الكاهن من فرقة أبيا",
         "سمعان الشيخ",
         "بلعام",
+        "زكريا الكاهن من فرقة أبيا",
         "عالي الكاهن"
       ],
       "en": [
-        "زكريا الكاهن من فرقة أبيا",
-        "سمعان الشيخ",
+        "Simeon the Devout",
         "Balaam",
-        "عالي الكاهن"
+        "Zacharias the priest of the division of Abijah",
+        "Eli the priest"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "لوقا 1: 5",
       "en": "Luke 1: 5"
     },
     "verse": {
       "ar": "كَانَ فِي أَيَّامِ هِيرُودُسَ مَلِكِ الْيَهُودِيَّةِ كَاهِنٌ اسْمُهُ زَكَرِيَّا مِنْ فِرْقَةِ أَبِيَّا، وَامْرَأَتُهُ مِنْ بَنَاتِ هَارُونَ وَاسْمُهَا أَلِيصَابَاتُ.",
-      "en": "Scripture record from Luke 1: 5: Verify the sacred testimony in the Holy Bible."
+      "en": "There was in the days of Herod, the king of Judea, a certain priest named Zacharias, of the division of Abijah. His wife was of the daughters of Aaron, and her name was Elizabeth."
     }
   },
   {
@@ -2182,30 +2184,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو النبي الذي كتب نبوة كاملة عبارة عن رؤيا موجهة ضد آدوم الشرير المتكبر؟",
-      "en": "Scripture Examination (Obadiah 1: 1): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which prophet recorded a complete book consisting of a single vision of judgment against proud Edom?"
     },
     "options": {
       "ar": [
-        "عوبديا النبي",
-        "ناحوم",
         "حبقوق",
+        "عوبديا",
+        "ناحوم",
         "حجي"
       ],
       "en": [
-        "عوبديا النبي",
-        "ناحوم",
-        "حبقوق",
+        "Habakkuk",
+        "Obadiah",
+        "Nahum",
         "Haggai"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عوبديا 1: 1",
       "en": "Obadiah 1: 1"
     },
     "verse": {
       "ar": "رُؤْيَا عُوبَدْيَا: هكَذَا قَالَ السَّيِّدُ الرَّبُّ عَنْ أَدُومَ... تَكَبُّرُ قَلْبِكَ قَدْ خَدَعَكَ، أَيُّهَا السَّاكِنُ فِي مَحَاجِئِ الصَّخْرِ...",
-      "en": "Scripture record from Obadiah 1: 1: Verify the sacred testimony in the Holy Bible."
+      "en": "The vision of Obadiah. Thus says the Lord GOD concerning Edom: We have heard a report from the LORD, And an ally has been sent among the nations: 'Arise, and let us rise up against her for battle'"
     }
   },
   {
@@ -2213,20 +2215,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم المدينة التي ذهب إليها يونان في البداية هارباً في السفينة ليمضي إلى ترشيش؟",
-      "en": "Scripture Examination (Jonah 1: 3): What is the biblically verified answer concerning this sacred record?"
+      "en": "To which port city did the prophet Jonah flee to find a ship sailing to Tarshish away from the presence of the LORD?"
     },
     "options": {
       "ar": [
         "يافا",
+        "عكا",
         "صور",
-        "صيدا",
-        "عكا"
+        "صيدا"
       ],
       "en": [
-        "يافا",
-        "صور",
-        "صيدا",
-        "عكا"
+        "Joppa",
+        "Acco",
+        "Tyre",
+        "Sidon"
       ]
     },
     "correctIndex": 0,
@@ -2236,7 +2238,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَقَامَ يُونَانُ لِيَهْرُبَ إِلَى تَرْشِيشَ مِنْ وَجْهِ الرَّبِّ، فَنَزَلَ إِلَى يَافَا وَوَجَدَ سَفِينَةً ذَاهِبَةً إِلَى تَرْشِيشَ...",
-      "en": "Scripture record from Jonah 1: 3: Verify the sacred testimony in the Holy Bible."
+      "en": "But Jonah arose to flee to Tarshish from the presence of the LORD. He went down to Joppa, and found a ship going to Tarshish; so he paid the fare, and went down into it,"
     }
   },
   {
@@ -2244,20 +2246,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم النبتة التي أعدها الرب لتظلل رأس يونان من حرارة الشمس ثم ضربتها دودة فجفت؟",
-      "en": "Scripture Examination (Jonah 4: 6): What is the biblically verified answer concerning this sacred record?"
+      "en": "What plant did the LORD God prepare to grow up over Jonah's head as shade, which subsequently withered when struck by a worm?"
     },
     "options": {
       "ar": [
         "اليقطينة (الخروع)",
-        "الكرمة",
+        "الحنظل",
         "التينة",
-        "الحنظل"
+        "الكرمة"
       ],
       "en": [
-        "اليقطينة (الخروع)",
-        "الكرمة",
-        "التينة",
-        "الحنظل"
+        "The plant (gourd)",
+        "The wild gourd",
+        "The fig tree",
+        "The vine"
       ]
     },
     "correctIndex": 0,
@@ -2267,7 +2269,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَأَعَدَّ الرَّبُّ الإِلهُ يَقْطِينَةً فَارْتَفَعَتْ فَوْقَ يُونَانَ لِتَكُونَ ظِلاًّ عَلَى رَأْسِهِ... فَفَرِحَ يُونَانُ بِالْيَقْطِينَةِ فَرَحًا عَظِيمًا.",
-      "en": "Scripture record from Jonah 4: 6: Verify the sacred testimony in the Holy Bible."
+      "en": "And the LORD God prepared a plant and made it come up over Jonah, that it might be shade for his head to deliver him from his misery. So Jonah was very grateful for the plant."
     }
   },
   {
@@ -2275,30 +2277,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو النبي الذي صرخ في إصحاحه الأخير برؤيا بهجة: «فَمَعَ أَنَّهُ لاَ يُزْهِرُ التِّينُ... فَإِنِّي أَبْتَهِجُ بِالرَّبِّ وَأَفْرَحُ بِإِلهِ خَلاَصِي»؟",
-      "en": "Scripture Examination (Habakkuk 3: 17-18): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which prophet concluded his book rejoicing: 'Though the fig tree may not blossom... Yet I will rejoice in the LORD, I will joy in the God of my salvation'?"
     },
     "options": {
       "ar": [
-        "حبقوق النبي",
         "صفنيا",
-        "ناحوم",
-        "ملاخي"
+        "ملاخي",
+        "حبقوق",
+        "ناحوم"
       ],
       "en": [
-        "حبقوق النبي",
         "Zephaniah",
-        "ناحوم",
-        "ملاخي"
+        "Malachi",
+        "Habakkuk",
+        "Nahum"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "حبقوق 3: 17-18",
       "en": "Habakkuk 3: 17-18"
     },
     "verse": {
       "ar": "«فَمَعَ أَنَّهُ لاَ يُزْهِرُ التِّينُ، وَلاَ يَكُونُ حَمْلٌ فِي الْكُرُومِ... فَإِنِّي أَبْتَهِجُ بِالرَّبِّ وَأَفْرَحُ بِإِلهِ خَلاَصِي».",
-      "en": "Scripture record from Habakkuk 3: 17-18: Verify the sacred testimony in the Holy Bible."
+      "en": "Though the fig tree may not blossom, Nor fruit be on the vines... Yet I will rejoice in the LORD, I will joy in the God of my salvation."
     }
   },
   {
@@ -2306,17 +2308,17 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الملك الصالح الذي صلى فأنقذه الرب وأرسل ملاكه ليضرب 185 ألفاً من جيش سنحاريب الآشوري في ليلة واحدة؟",
-      "en": "Scripture Examination (2 Kings 19: 35): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which righteous king prayed and the angel of the LORD went out and killed 185,000 in the camp of the Assyrian king Sennacherib?"
     },
     "options": {
       "ar": [
-        "حزقيا الملك",
+        "حزقيا",
         "يوشيا",
         "آسا",
         "منسى"
       ],
       "en": [
-        "King Hezekiah",
+        "Hezekiah",
         "Josiah",
         "Asa",
         "Manasseh"
@@ -2329,7 +2331,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "وَكَانَ فِي تِلْكَ اللَّيْلَةِ أَنَّ مَلاَكَ الرَّبِّ خَرَجَ وَضَرَبَ مِنْ جَيْشِ أَشُّورَ مِئَةَ أَلْفٍ وَخَمْسَةً وَثَمَانِينَ أَلْفًا.",
-      "en": "Scripture record from 2 Kings 19: 35: Verify the sacred testimony in the Holy Bible."
+      "en": "And it came to pass on a certain night that the angel of the LORD went out, and killed in the camp of the Assyrians one hundred and eighty-five thousand; and when people arose early in the morning, there were the corpses—all dead."
     }
   },
   {
@@ -2337,30 +2339,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم قائد الجيش السوري الذي غضب لما طلب منه أليشع الاغتسال في الأردن وقال: «أَلَيْسَ أَبَانَةُ وَفَرْفَرُ نَهْرَا دِمَشْقَ أَحْسَنَ مِنْ جَمِيعِ مِيَاهِ إِسْرَائِيلَ؟»؟",
-      "en": "Scripture Examination (2 Kings 5: 12): What is the biblically verified answer concerning this sacred record?"
+      "en": "What Syrian army commander was furious when told to wash in the Jordan, claiming Abanah and Pharpar were better than all waters of Israel?"
     },
     "options": {
       "ar": [
-        "نعمان السرياني",
-        "حزائيل",
         "بنهدد",
-        "طوبال"
+        "حزائيل",
+        "طوبال",
+        "نعمان السرياني"
       ],
       "en": [
-        "نعمان السرياني",
+        "Ben-Hadad",
         "Hazael",
-        "بنهدد",
-        "طوبال"
+        "Tubal",
+        "Naaman the Syrian"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "2 ملوك 5: 12",
       "en": "2 Kings 5: 12"
     },
     "verse": {
       "ar": "«أَلَيْسَ أَبَانَةُ وَفَرْفَرُ نَهْرَا دِمَشْقَ أَحْسَنَ مِنْ جَمِيعِ مِيَاهِ إِسْرَائِيلَ؟ أَمَا كَانَ يُمْكِنُنِي أَنْ أَغْتَسِلَ بِهِمَا فَأَطْهُرَ؟» وَرَجَعَ وَمَضَى بِغَيْظٍ.",
-      "en": "Scripture record from 2 Kings 5: 12: Verify the sacred testimony in the Holy Bible."
+      "en": "'Are not the Abanah and the Pharpar, the rivers of Damascus, better than all the waters of Israel? Could I not wash in them and be clean?' So he turned and went away in a rage."
     }
   },
   {
@@ -2368,20 +2370,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم التلميذ الشاب لجامع نبوات أليشع الذي ركض وراء نعمان كاذباً ليأخذ فضة وثياباً فضربه برص نعمان؟",
-      "en": "Scripture Examination (2 Kings 5: 27): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of Elisha's young servant who greedily ran after Naaman for silver and garments and was struck with leprosy?"
     },
     "options": {
       "ar": [
         "جيحزي",
         "باروخ",
-        "عازور",
-        "أخيتوفل"
+        "أخيتوفل",
+        "عازور"
       ],
       "en": [
-        "جيحزي",
-        "باروخ",
-        "عازور",
-        "أخيتوفل"
+        "Gehazi",
+        "Baruch",
+        "Ahithophel",
+        "Azzur"
       ]
     },
     "correctIndex": 0,
@@ -2391,7 +2393,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«فَبَرَصُ نَعْمَانَ يَلْصَقُ بِكَ وَبِنَسْلِكَ إِلَى الأَبَدِ». فَخَرَجَ مِنْ أَمَامِهِ أَبْرَصَ كَالثَّلْجِ.",
-      "en": "Scripture record from 2 Kings 5: 27: Verify the sacred testimony in the Holy Bible."
+      "en": "'Therefore the leprosy of Naaman shall cling to you and your descendants forever.' And he went out from his presence leprous, as white as snow."
     }
   },
   {
@@ -2399,30 +2401,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الأداة الحديدية التي وقعت في نهر الأردن واستقرت في القاع فطفت بأمر أليشع لما ألقى عوداً خشبياً؟",
-      "en": "Scripture Examination (2 Kings 6: 6): What is the biblically verified answer concerning this sacred record?"
+      "en": "What iron tool fell into the Jordan and sank, which miraculously floated when Elisha threw in a stick of wood?"
     },
     "options": {
       "ar": [
-        "فأس الحديد",
+        "مرساة السفينة",
         "سكين الكاتب",
-        "رمح نحاسي",
-        "مرساة السفينة"
+        "فأس الحديد",
+        "رمح نحاسي"
       ],
       "en": [
-        "فأس الحديد",
-        "سكين الكاتب",
-        "رمح نحاسي",
-        "مرساة السفينة"
+        "The ship's anchor",
+        "The scribe's knife",
+        "The iron axe head",
+        "A bronze spear"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 6: 6",
       "en": "2 Kings 6: 6"
     },
     "verse": {
       "ar": "فَقَالَ رَجُلُ اللهِ: «أَيْنَ سَقَطَ؟» فَأَرَاهُ الْمَوْضِعَ، فَقَطَعَ عُودًا وَأَلْقَاهُ هُنَاكَ فَطَفَا الْحَدِيدُ.",
-      "en": "Scripture record from 2 Kings 6: 6: Verify the sacred testimony in the Holy Bible."
+      "en": "So the man of God said, 'Where did it fall?' And he showed him the place. So he cut off a stick, and threw it in there; and he made the iron float."
     }
   },
   {
@@ -2430,30 +2432,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الملك الشاب الذي كان عمره سبع سنين لما مسحه يهوياداع الكاهن ملكاً في الهيكل وقتلت أمه الشريرة عثليا؟",
-      "en": "Scripture Examination (2 Kings 11: 12): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the boy king who was seven years old when Jehoiada the priest anointed him in the temple after wicked Athaliah was overthrown?"
     },
     "options": {
       "ar": [
-        "يهوآش (يوآش)",
-        "يوشيا",
+        "حزقيا",
         "منسى",
-        "حزقيا"
+        "يهوآش (يوآش)",
+        "يوشيا"
       ],
       "en": [
-        "يهوآش (يوآش)",
-        "Josiah",
+        "Hezekiah",
         "Manasseh",
-        "حزقيا"
+        "Jehoash (Joash)",
+        "Josiah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 11: 12",
       "en": "2 Kings 11: 12"
     },
     "verse": {
       "ar": "وَأَخْرَجَ ابْنَ الْمَلِكِ وَوَضَعَ عَلَيْهِ التَّاجَ وَأَعْطَاهُ الشَّهَادَةَ، فَمَلَّكُوهُ وَمَسَحُوهُ وَصَفَّقُوا وَقَالُوا: «لِيَحْيَ الْمَلِكُ».",
-      "en": "Scripture record from 2 Kings 11: 12: Verify the sacred testimony in the Holy Bible."
+      "en": "Jehoash was seven years old when he became king."
     }
   },
   {
@@ -2461,30 +2463,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو النبي الذي وقف أمام الملك آخاب وقال له: «حَيٌّ هُوَ الرَّبُّ... إِنَّهُ لاَ يَكُونُ طَلٌّ وَلاَ مَطَرٌ فِي هذِهِ السِّنِينَ إِلاَّ عِنْدَ قَوْلِي»؟",
-      "en": "Scripture Examination (1 Kings 17: 1): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which prophet stood before King Ahab and declared: 'As the LORD God of Israel lives... there shall not be dew nor rain these years, except at my word'?"
     },
     "options": {
       "ar": [
+        "إشعياء",
         "إيليا التشبي",
-        "أليشع",
         "ميخا بن يملة",
-        "إشعياء"
+        "أليشع"
       ],
       "en": [
-        "إيليا التشبي",
-        "أليشع",
-        "ميخا بن يملة",
-        "Isaiah"
+        "Isaiah",
+        "Elijah the Tishbite",
+        "Micaiah son of Imlah",
+        "Elisha"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 ملوك 17: 1",
       "en": "1 Kings 17: 1"
     },
     "verse": {
       "ar": "وَقَالَ إِيلِيَّا التِّشْبِيُّ مِنْ مُسْتَوْطِنِي جِلْعَادَ لأَخْآبَ: «حَيٌّ هُوَ الرَّبُّ إِلهُ إِسْرَائِيلَ الَّذِي وَقَفْتُ أَمَامَهُ، إِنَّهُ لاَ يَكُونُ طَلٌّ وَلاَ مَطَرٌ فِي هذِهِ السِّنِينَ إِلاَّ عِنْدَ قَوْلِي».",
-      "en": "Scripture record from 1 Kings 17: 1: Verify the sacred testimony in the Holy Bible."
+      "en": "And Elijah the Tishbite, of the inhabitants of Gilead, said to Ahab, 'As the LORD God of Israel lives, before whom I stand, there shall not be dew nor rain these years, except at my word.'"
     }
   },
   {
@@ -2492,30 +2494,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "أين اختبأ إيليا النبي بعد إعلانه انقطاع المطر وكانت الغربان تعوله بخبز ولحم صباحاً ومساءً؟",
-      "en": "Scripture Examination (1 Kings 17: 5-6): What is the biblically verified answer concerning this sacred record?"
+      "en": "Where did Elijah hide after declaring the drought, where ravens brought him bread and meat morning and evening?"
     },
     "options": {
       "ar": [
-        "عند نهر كريث مقابل الأردن",
+        "في بئر سبع",
         "في مغارة حوريب",
         "في جبل الكرمل",
-        "في بئر سبع"
+        "عند نهر كريث مقابل الأردن"
       ],
       "en": [
-        "عند نهر كريث مقابل الأردن",
-        "في مغارة حوريب",
-        "في جبل الكرمل",
-        "في بئر سبع"
+        "In Beersheba",
+        "In the cave at Horeb",
+        "On Mount Carmel",
+        "By the Brook Cherith"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 ملوك 17: 5-6",
       "en": "1 Kings 17: 5-6"
     },
     "verse": {
       "ar": "فَانْطَلَقَ وَعَمِلَ حَسَبَ كَلاَمِ الرَّبِّ، وَذَهَبَ فَأَقَامَ عِنْدَ نَهْرِ كَرِيثَ الَّذِي هُوَ مُقَابِلُ الأُرْدُنِّ. وَكَانَتِ الْغِرْبَانُ تَأْتِي إِلَيْهِ بِخُبْزٍ وَلَحْمٍ صَبَاحًا، وَبِخُبْزٍ وَلَحْمٍ مَسَاءً...",
-      "en": "Scripture record from 1 Kings 17: 5-6: Verify the sacred testimony in the Holy Bible."
+      "en": "So he went and did according to the word of the LORD, for he went and stayed by the Brook Cherith, which flows into the Jordan. The ravens brought him bread and meat in the morning, and bread and meat in the evening; and he drank from the brook."
     }
   },
   {
@@ -2523,30 +2525,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم كان عدد أنبياء البعل الذين تحدّاهم إيليا النبي على جبل الكرمل أمام كل الشعب؟",
-      "en": "Scripture Examination (1 Kings 18: 19): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many prophets of Baal did Elijah challenge on Mount Carmel before all the people of Israel?"
     },
     "options": {
       "ar": [
-        "450 نبياً",
         "400 نبي",
-        "850 نبياً",
-        "100 نبي"
+        "450 نبياً",
+        "100 نبي",
+        "850 نبياً"
       ],
       "en": [
-        "450 نبياً",
-        "400 نبي",
-        "850 نبياً",
-        "100 نبي"
+        "400 prophets",
+        "450 prophets",
+        "100 prophets",
+        "850 prophets"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 ملوك 18: 19",
       "en": "1 Kings 18: 19"
     },
     "verse": {
       "ar": "«فَالآنَ أَرْسِلْ وَاجْمَعْ إِلَيَّ كُلَّ إِسْرَائِيلَ إِلَى جَبَلِ الْكَرْمَلِ، وَأَنْبِيَاءَ الْبَعْلِ أَرْبَعَ الْمِئَةِ وَالْخَمْسِينَ، وَأَنْبِيَاءَ السَّوَارِي أَرْبَعَ الْمِئَةِ الَّذِينَ يَأْكُلُونَ عَلَى مَائِدَةِ إِيزَابِلَ».",
-      "en": "Scripture record from 1 Kings 18: 19: Verify the sacred testimony in the Holy Bible."
+      "en": "'Now therefore, send and gather all Israel to me on Mount Carmel, the four hundred and fifty prophets of Baal, and the four hundred prophets of Asherah, who eat at Jezebel’s table.'"
     }
   },
   {
@@ -2554,20 +2556,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما هي المعجزة التي حدثت لما صلى إيليا صلاته القصيرة على جبل الكرمل عند تقديم ذبيحة المساء؟",
-      "en": "Scripture Examination (1 Kings 18: 38): What is the biblically verified answer concerning this sacred record?"
+      "en": "What miracle occurred when Elijah offered his prayer on Mount Carmel at the time of the evening sacrifice?"
     },
     "options": {
       "ar": [
         "هبطت نار الرب ولحست الماء والتراب والحجارة والذبيحة",
-        "انشق الجبل وخرج نبع ماء",
         "هبت عاصفة رعدية أطفأت النار",
-        "تكلم صوت من السماء فقط"
+        "تكلم صوت من السماء فقط",
+        "انشق الجبل وخرج نبع ماء"
       ],
       "en": [
-        "هبطت نار الرب ولحست الماء والتراب والحجارة والذبيحة",
-        "انشق الجبل وخرج نبع ماء",
-        "هبت عاصفة رعدية أطفأت النار",
-        "تكلم صوت من السماء فقط"
+        "The fire of the LORD fell and consumed the sacrifice, wood, stones, and water",
+        "A thunderstorm arose and extinguished the fire",
+        "Only a voice spoke from heaven",
+        "The mountain split and water gushed out"
       ]
     },
     "correctIndex": 0,
@@ -2577,7 +2579,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَسَقَطَتْ نَارُ الرَّبِّ وَأَكَلَتِ الْمُحْرَقَةَ وَالْحَطَبَ وَالْحِجَارَةَ وَالتُّرَابَ، وَلَحَسَتِ الْمِيَاهَ الَّتِي فِي الْقَنَاةِ.",
-      "en": "Scripture record from 1 Kings 18: 38: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the fire of the LORD fell and consumed the burnt sacrifice, and the wood and the stones and the dust, and it licked up the water that was in the trench."
     }
   },
   {
@@ -2585,30 +2587,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم صوت الله الذي سمعه إيليا عند مغارة جبل حوريب بعد الزلزلة والريح والنار؟",
-      "en": "Scripture Examination (1 Kings 19: 12): What is the biblically verified answer concerning this sacred record?"
+      "en": "What manifestation of God did Elijah experience at the cave on Mount Horeb after the wind, earthquake, and fire?"
     },
     "options": {
       "ar": [
-        "صوت منخفض خفيف (نسيم هادئ)",
-        "رعد قاصف شديد",
         "بوق عظيم",
-        "صوت مياه كثيرة"
+        "صوت مياه كثيرة",
+        "رعد قاصف شديد",
+        "صوت منخفض خفيف (نسيم هادئ)"
       ],
       "en": [
-        "صوت منخفض خفيف (نسيم هادئ)",
-        "رعد قاصف شديد",
-        "بوق عظيم",
-        "صوت مياه كثيرة"
+        "A great trumpet",
+        "Sound of many waters",
+        "Loud thunder",
+        "A still small voice"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 ملوك 19: 12",
       "en": "1 Kings 19: 12"
     },
     "verse": {
       "ar": "وَبَعْدَ الزَّلْزَلَةِ نَارٌ، وَلَمْ يَكُنِ الرَّبُّ فِي النَّارِ. وَبَعْدَ النَّارِ صَوْتٌ مُنْخَفِضٌ خَفِيفٌ.",
-      "en": "Scripture record from 1 Kings 19: 12: Verify the sacred testimony in the Holy Bible."
+      "en": "and after the earthquake a fire, but the LORD was not in the fire; and after the fire a still small voice."
     }
   },
   {
@@ -2616,30 +2618,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم ركبة في إسرائيل أبقى الرب لنفسه في عهد إيليا لم تجثُ للبعل ولم تقبله فم؟",
-      "en": "Scripture Examination (1 Kings 19: 18): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many knees in Israel did the LORD reserve for Himself who had not bowed to Baal nor kissed his image?"
     },
     "options": {
       "ar": [
-        "سبعة آلاف",
-        "عشرة آلاف",
         "ألف رجل",
-        "مئة وأربعون ألفاً"
+        "مئة وأربعون ألفاً",
+        "عشرة آلاف",
+        "سبعة آلاف"
       ],
       "en": [
-        "سبعة آلاف",
-        "عشرة آلاف",
-        "ألف men",
-        "مئة وأربعون ألفاً"
+        "One thousand men",
+        "144,000",
+        "Ten thousand",
+        "Seven thousand"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 ملوك 19: 18",
       "en": "1 Kings 19: 18"
     },
     "verse": {
       "ar": "«وَقَدْ أَبْقَيْتُ فِي إِسْرَائِيلَ سَبْعَةَ آلاَفٍ، كُلَّ الرُّكَبِ الَّتِي لَمْ تَجْثُ لِلْبَعْلِ وَكُلَّ فَمٍ لَمْ يُقَبِّلْهُ».",
-      "en": "Scripture record from 1 Kings 19: 18: Verify the sacred testimony in the Holy Bible."
+      "en": "'Yet I have reserved seven thousand in Israel, all whose knees have not bowed to Baal, and every mouth that has not kissed him.'"
     }
   },
   {
@@ -2647,20 +2649,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ماذا كان أليشع النبي يفعل عندما مر به إيليا وطرح رداءه عليه ليدعوه للتلمذة؟",
-      "en": "Scripture Examination (1 Kings 19: 19): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was Elisha doing when Elijah passed by him and threw his mantle upon him to call him into discipleship?"
     },
     "options": {
       "ar": [
         "يحرث باثني عشر فدان بقر",
-        "يرعى غنماً في البرية",
         "يصلي في خيمته",
-        "يصطاد سمكاً في الأردن"
+        "يصطاد سمكاً في الأردن",
+        "يرعى غنماً في البرية"
       ],
       "en": [
-        "يحرث باثني عشر فدان بقر",
-        "يرعى غنماً في البرية",
-        "يصلي في خيمته",
-        "يصطاد سمكاً في الأردن"
+        "Plowing with twelve yoke of oxen",
+        "Praying in his tent",
+        "Fishing in the Jordan",
+        "Shepherding sheep in the wilderness"
       ]
     },
     "correctIndex": 0,
@@ -2670,7 +2672,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَذَهَبَ مِنْ هُنَاكَ وَوَجَدَ أَلِيشَعَ بْنَ شَافَاطَ يَحْرُثُ، وَاثْنَا عَشَرَ فَدَانَ بَقَرٍ قُدَّامَهُ، وَهُوَ مَعَ الثَّانِي عَشَرَ. فَمَرَّ إِيلِيَّا بِهِ وَطَرَحَ رِدَاءَهُ عَلَيْهِ.",
-      "en": "Scripture record from 1 Kings 19: 19: Verify the sacred testimony in the Holy Bible."
+      "en": "So he departed from there, and found Elisha the son of Shaphat, who was plowing with twelve yoke of oxen before him, and he was with the twelfth. Then Elijah passed by him and threw his mantle upon him."
     }
   },
   {
@@ -2678,30 +2680,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم النبي الأمين الذي سأله آخاب الملك في الحرب مع يهوشافاط وتنبأ بسقوط آخاب وموته في راموت جلعاد؟",
-      "en": "Scripture Examination (1 Kings 22: 14): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which prophet foretold Ahab's defeat and death at Ramoth Gilead when consulted by Ahab and Jehoshaphat?"
     },
     "options": {
       "ar": [
+        "حنانيا النبي",
         "ميخا بن يملة",
-        "صدقيا بن كنعنة",
         "إيليا النبي",
-        "حنانيا النبي"
+        "صدقيا بن كنعنة"
       ],
       "en": [
-        "ميخا بن يملة",
-        "صدقيا بن كنعنة",
-        "إيليا النبي",
-        "حنانيا النبي"
+        "Hananiah the prophet",
+        "Micaiah son of Imlah",
+        "Elijah",
+        "Zedekiah son of Chenaanah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 ملوك 22: 14",
       "en": "1 Kings 22: 14"
     },
     "verse": {
       "ar": "فَقَالَ مِيخَا: «حَيٌّ هُوَ الرَّبُّ، إِنَّ مَا يَقُولُهُ لِيَ الرَّبُّ بِهِ أَتَكَلَّمُ».",
-      "en": "Scripture record from 1 Kings 22: 14: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Micaiah said, 'If you ever return in peace, the LORD has not spoken by me.' And he said, 'Take heed, all you people!'"
     }
   },
   {
@@ -2709,20 +2711,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الموضع الذي تاه فيه بنو إسرائيل واشتكوا لعدم وجود ماء فضرب موسى الصخرة مرتين بعصاه في قادش؟",
-      "en": "Scripture Examination (Numbers 20: 11-13): What is the biblically verified answer concerning this sacred record?"
+      "en": "At which wilderness site did the Israelites quarrel over lack of water where Moses struck the rock twice in Kadesh?"
     },
     "options": {
       "ar": [
         "ماء مريبة في قادش",
+        "مارة",
         "إيليم",
-        "حوريب",
-        "مارة"
+        "حوريب"
       ],
       "en": [
-        "ماء مريبة في قادش",
+        "Water of Meribah in Kadesh",
+        "Marah",
         "Elim",
-        "حوريب",
-        "Marah"
+        "Horeb"
       ]
     },
     "correctIndex": 0,
@@ -2732,7 +2734,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "وَرَفَعَ مُوسَى يَدَهُ وَضَرَبَ الصَّخْرَةَ بِعَصَاهُ مَرَّتَيْنِ، فَخَرَجَ مَاءٌ غَزِيرٌ... هذَا مَاءُ مَرِيبَةَ حَيْثُ خَاصَمَ بَنُو إِسْرَائِيلَ الرَّبَّ.",
-      "en": "Scripture record from Numbers 20: 11-13: Verify the sacred testimony in the Holy Bible."
+      "en": "This was the water of Meribah, because the children of Israel contended with the LORD, and He was hallowed among them."
     }
   },
   {
@@ -2740,30 +2742,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم النهر الذي قطعه يعقوب لما كان عائداً إلى كنعان وصارع ملاك الرب هناك حتى مطلع الفجر؟",
-      "en": "Scripture Examination (Genesis 32: 22-24): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which river did Jacob cross when returning to Canaan where he wrestled with the Angel until the break of dawn?"
     },
     "options": {
       "ar": [
-        "مخاضة يبوق",
-        "نهر الأردن",
         "نهر الأرنون",
-        "نهر كيشون"
+        "نهر كيشون",
+        "مخاضة يبوق",
+        "نهر الأردن"
       ],
       "en": [
-        "مخاضة يبوق",
-        "Jordan River",
         "Arnon River",
-        "Kishon River"
+        "Kishon River",
+        "Ford of Jabbok",
+        "Jordan River"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 32: 22-24",
       "en": "Genesis 32: 22-24"
     },
     "verse": {
       "ar": "ثُمَّ قَامَ فِي تِلْكَ اللَّيْلَةِ وَأَخَذَ امْرَأَتَيْهِ وَجَارِيَتَيْهِ وَأَوْلاَدَهُ الأَحَدَ عَشَرَ وَعَبَرَ مَخَاضَةَ يَبُّوقَ... فَبَقِيَ يَعْقُوبُ وَحْدَهُ، وَصَارَعَهُ إِنْسَانٌ حَتَّى طُلُوعِ الْفَجْرِ.",
-      "en": "Scripture record from Genesis 32: 22-24: Verify the sacred testimony in the Holy Bible."
+      "en": "And he arose that night and took his two wives, his two female servants, and his eleven sons, and crossed over the ford of Jabbok."
     }
   },
   {
@@ -2771,30 +2773,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما الاسم الذي أطلقه يعقوب على المكان الذي صارع فيه ملاك الرب وقال: «لأَنِّي نَظَرْتُ اللهَ وَجْهًا لِوَجْهٍ، وَنُجِّيَتْ نَفْسِي»؟",
-      "en": "Scripture Examination (Genesis 32: 30): What is the biblically verified answer concerning this sacred record?"
+      "en": "What name did Jacob give to the place where he wrestled with God, declaring: 'For I have seen God face to face, and my life is preserved'?"
     },
     "options": {
       "ar": [
-        "فنيئيل (فنوئيل)",
-        "بيت إيل",
+        "سكوت",
         "محنايم",
-        "سكوت"
+        "بيت إيل",
+        "فنيئيل (فنوئيل)"
       ],
       "en": [
-        "فنيئيل (فنوئيل)",
+        "Succoth",
+        "Mahanaim",
         "Bethel",
-        "محنايم",
-        "سكوت"
+        "Peniel (Penuel)"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 32: 30",
       "en": "Genesis 32: 30"
     },
     "verse": {
       "ar": "فَدَعَا يَعْقُوبُ اسْمَ الْمَكَانِ «فَنِيئِيلَ» قَائِلاً: «لأَنِّي نَظَرْتُ اللهَ وَجْهًا لِوَجْهٍ، وَنُجِّيَتْ نَفْسِي».",
-      "en": "Scripture record from Genesis 32: 30: Verify the sacred testimony in the Holy Bible."
+      "en": "So Jacob called the name of the place Peniel: 'For I have seen God face to face, and my life is preserved.'"
     }
   },
   {
@@ -2802,30 +2804,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم كان عمر موسى النبي عندما وقف لأول مرة أمام فرعون مصر ليطالبه بإطلاق شعب إسرائيل؟",
-      "en": "Scripture Examination (Exodus 7: 7): What is the biblically verified answer concerning this sacred record?"
+      "en": "How old was Moses when he first stood before Pharaoh to demand the release of the Israelites from Egypt?"
     },
     "options": {
       "ar": [
-        "80 سنة",
         "40 سنة",
         "120 سنة",
-        "70 سنة"
+        "70 سنة",
+        "80 سنة"
       ],
       "en": [
-        "80 years",
         "40 years",
         "120 years",
-        "70 years"
+        "70 years",
+        "80 years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "خروج 7: 7",
       "en": "Exodus 7: 7"
     },
     "verse": {
       "ar": "وَكَانَ مُوسَى ابْنَ ثَمَانِينَ سَنَةً، وَهَارُونُ ابْنَ ثَلاَثٍ وَثَمَانِينَ سَنَةً حِينَ كَلَّمَا فِرْعَوْنَ.",
-      "en": "Scripture record from Exodus 7: 7: Verify the sacred testimony in the Holy Bible."
+      "en": "And Moses was eighty years old and Aaron eighty-three years old when they spoke to Pharaoh."
     }
   },
   {
@@ -2833,7 +2835,7 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم ابن موسى البكر الذي ولد له في مديان من صفورة ابنة يثرون؟",
-      "en": "Scripture Examination (Exodus 2: 22): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of Moses' firstborn son born to him in Midian by Zipporah daughter of Jethro?"
     },
     "options": {
       "ar": [
@@ -2843,10 +2845,10 @@ window.QUESTIONS_BANK = [
         "نداب"
       ],
       "en": [
-        "جرشوم",
-        "أليعازر",
-        "فينحاس",
-        "نداب"
+        "Gershom",
+        "Eliezer",
+        "Phinehas",
+        "Nadab"
       ]
     },
     "correctIndex": 0,
@@ -2856,7 +2858,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَوَلَدَتِ ابْنًا وَدَعَا اسْمَهُ «جَرْشُومَ»، لأَنَّهُ قَالَ: «كُنْتُ نَزِيلاً فِي أَرْضٍ غَرِيبَةٍ».",
-      "en": "Scripture record from Exodus 2: 22: Verify the sacred testimony in the Holy Bible."
+      "en": "And she bore him a son, and he called his name Gershom; for he said, 'I have been a stranger in a foreign land.'"
     }
   },
   {
@@ -2864,20 +2866,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الرجل الذي كان رئيس كتبة سليمان الملك ومعه يهوشافاط بن أخيلود مسجلاً؟",
-      "en": "Scripture Examination (1 Kings 4: 3): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who were the royal scribes of King Solomon mentioned alongside Jehoshaphat son of Ahilud the recorder?"
     },
     "options": {
       "ar": [
         "أليحورف وأخيا ابنا شيشا",
         "صادوق",
-        "ناثان",
-        "بنايا بن يهوياداع"
+        "بنايا بن يهوياداع",
+        "ناثان"
       ],
       "en": [
-        "أليحورف وأخيا ابنا شيشا",
-        "صادوق",
-        "ناثان",
-        "بنايا بن يهوياداع"
+        "Elihoreph and Ahijah, sons of Shisha",
+        "Zadok",
+        "Benaiah son of Jehoiada",
+        "Nathan"
       ]
     },
     "correctIndex": 0,
@@ -2887,7 +2889,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "أَلِيحُورَفُ وَأَخِيَّا ابْنَا شِيشَا كَاتِبَانِ. يَهُوشَافَاطُ بْنُ أَخِيلُودَ الْمُسَجِّلُ.",
-      "en": "Scripture record from 1 Kings 4: 3: Verify the sacred testimony in the Holy Bible."
+      "en": "Elihoreph and Ahijah, the sons of Shisha, scribes; Jehoshaphat the son of Ahilud, the recorder;"
     }
   },
   {
@@ -2895,30 +2897,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم رئيس جيش داود الملك الذي قاد الجيوش في أغلب حروبه وهو ابن صروية أخت داود؟",
-      "en": "Scripture Examination (2 Samuel 8: 16): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of King David's supreme commander who led his armies in war, the son of David's sister Zeruiah?"
     },
     "options": {
       "ar": [
-        "يوآب بن صروية",
         "أبنير بن نير",
-        "عماسا",
-        "بنايا بن يهوياداع"
+        "بنايا بن يهوياداع",
+        "يوآب بن صروية",
+        "عماسا"
       ],
       "en": [
-        "يوآب بن صروية",
-        "أبنير بن نير",
-        "عماسا",
-        "بنايا بن يهوياداع"
+        "Abner son of Ner",
+        "Benaiah son of Jehoiada",
+        "Joab son of Zeruiah",
+        "Amasa"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 صموئيل 8: 16",
       "en": "2 Samuel 8: 16"
     },
     "verse": {
       "ar": "وَكَانَ يُوآبُ ابْنُ صَرُويَةَ عَلَى الْجَيْشِ، وَيَهُوشَافَاطُ بْنُ أَخِيلُودَ مُسَجِّلاً.",
-      "en": "Scripture record from 2 Samuel 8: 16: Verify the sacred testimony in the Holy Bible."
+      "en": "Joab the son of Zeruiah was over the army; Jehoshaphat the son of Ahilud was recorder;"
     }
   },
   {
@@ -2926,20 +2928,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "من هو الرجل البنياميني الشرير الذي سبّ داود ورجمه بالحجارة والتراب وهو هارب من أبشالوم؟",
-      "en": "Scripture Examination (2 Samuel 16: 5-6): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the Benjamite man of the house of Saul who cursed David and threw stones and dust at him as David fled from Absalom?"
     },
     "options": {
       "ar": [
         "شمعي بن جيرا",
-        "شبعا بن بكرى",
+        "دواغ الأدومي",
         "أخيتوفل",
-        "دواغ الأدومي"
+        "شبعا بن بكرى"
       ],
       "en": [
-        "شمعي بن جيرا",
-        "شبعا بن بكرى",
-        "أخيتوفل",
-        "دواغ الأدومي"
+        "Shimei son of Gera",
+        "Doeg the Edomite",
+        "Ahithophel",
+        "Sheba son of Bichri"
       ]
     },
     "correctIndex": 0,
@@ -2949,7 +2951,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "وَجَاءَ الْمَلِكُ دَاوُدُ إِلَى بَحُورِيمَ، وَإِذَا بِرَجُل خَارِجٍ مِنْ هُنَاكَ مِنْ عَشِيرَةِ بَيْتِ شَاوُلَ اسْمُهُ شَمْعِي بْنُ جِيرَا... وَرَشَقَ دَاوُدَ بِالْحِجَارَةِ وَجَمِيعَ عَبِيدِ الْمَلِكِ دَاوُدَ...",
-      "en": "Scripture record from 2 Samuel 16: 5-6: Verify the sacred testimony in the Holy Bible."
+      "en": "Now when King David came to Bahurim, there was a man from the family of the house of Saul, whose name was Shimei the son of Gera, coming out. He came out, cursing continually as he came. And he threw stones at David"
     }
   },
   {
@@ -2957,20 +2959,20 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم مشير داود الحكيم الذي خان داود وصار مشيراً لأبشالوم ثم شنق نفسه لما رُفضت مشورته؟",
-      "en": "Scripture Examination (2 Samuel 17: 23): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which wise counselor of David defected to Absalom and then hanged himself when his counsel was rejected?"
     },
     "options": {
       "ar": [
         "أخيتوفل الجيلوني",
         "حوشاي الأركي",
-        "يهوناتان",
-        "إتاي الجتي"
+        "إتاي الجتي",
+        "يهوناتان"
       ],
       "en": [
-        "أخيتوفل الجيلوني",
-        "حوشاي الأركي",
-        "يهوناتان",
-        "إتاي الجتي"
+        "Ahithophel the Gilonite",
+        "Hushai the Archite",
+        "Ittai the Gittite",
+        "Jehonathan"
       ]
     },
     "correctIndex": 0,
@@ -2980,7 +2982,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "وَأَمَّا أَخِيتُوفَلُ فَلَمَّا رَأَى أَنَّ مَشُورَتَهُ لَمْ يُعْمَلْ بِهَا، شَدَّ عَلَى الْحِمَارِ وَقَامَ وَانْطَلَقَ إِلَى بَيْتِهِ... وَخَنَقَ نَفْسَهُ وَمَاتَ.",
-      "en": "Scripture record from 2 Samuel 17: 23: Verify the sacred testimony in the Holy Bible."
+      "en": "Now when Ahithophel saw that his advice was not followed, he saddled a donkey, and arose and went home to his house, to his city. Then he put his household in order, and hanged himself, and died;"
     }
   },
   {
@@ -2988,30 +2990,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الصديق الوفي لداود الذي أرسله داود إلى أورشليم ليبطل مشورة أخيتوفل لأبشالوم؟",
-      "en": "Scripture Examination (2 Samuel 15: 34): What is the biblically verified answer concerning this sacred record?"
+      "en": "What faithful friend of David was sent back to Jerusalem to defeat and frustrate the counsel of Ahithophel?"
     },
     "options": {
       "ar": [
-        "حوشاي الأركي",
         "صادوق",
         "أبياثار",
-        "بنايا"
+        "بنايا",
+        "حوشاي الأركي"
       ],
       "en": [
-        "حوشاي الأركي",
-        "صادوق",
-        "أبياثار",
-        "بنايا"
+        "Zadok",
+        "Abiathar",
+        "Benaiah",
+        "Hushai the Archite"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "2 صموئيل 15: 34",
       "en": "2 Samuel 15: 34"
     },
     "verse": {
       "ar": "«وَلكِنْ إِذَا رَجَعْتَ إِلَى الْمَدِينَةِ وَقُلْتَ لأَبْشَالُومَ: أَنَا أَكُونُ عَبْدَكَ أَيُّهَا الْمَلِكُ... تُبْطِلُ لِي مَشُورَةَ أَخِيتُوفَلَ».",
-      "en": "Scripture record from 2 Samuel 15: 34: Verify the sacred testimony in the Holy Bible."
+      "en": "'but if you return to the city, and say to Absalom, \"I will be your servant, O king...\" then you may defeat the counsel of Ahithophel for me.'"
     }
   },
   {
@@ -3019,30 +3021,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم كان عدد أذرع البحر النحاسي العظيم الذي صنعه حيرام لسليمان في الهيكل من حافته إلى حافته؟",
-      "en": "Scripture Examination (1 Kings 7: 23): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the diameter of the great bronze Sea made by Hiram for Solomon's temple from brim to brim?"
     },
     "options": {
       "ar": [
-        "عشر أذرع من حافته إلى حافته",
-        "خمس أذرع",
         "عشرون ذراعاً",
-        "ثلاثون ذراعاً"
+        "عشر أذرع من حافته إلى حافته",
+        "ثلاثون ذراعاً",
+        "خمس أذرع"
       ],
       "en": [
-        "عشر أذرع من حافته إلى حافته",
-        "خمس أذرع",
-        "عشرون ذراعاً",
-        "ثلاثون ذراعاً"
+        "Twenty cubits",
+        "Ten cubits from brim to brim",
+        "Thirty cubits",
+        "Five cubits"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 ملوك 7: 23",
       "en": "1 Kings 7: 23"
     },
     "verse": {
       "ar": "وَعَمِلَ الْبَحْرَ مَسْبُوكًا. عَشَرَ أَذْرُعٍ مِنْ حَافَتِهِ إِلَى حَافَتِهِ، وَكَانَ مُدَوَّرًا مُسْتَدِيرًا، ارْتِفَاعُهُ خَمْسُ أَذْرُعٍ، وَخَيْطٌ ثَلاَثُونَ ذِرَاعًا يُحِيطُ بِهِ دَائِرًا.",
-      "en": "Scripture record from 1 Kings 7: 23: Verify the sacred testimony in the Holy Bible."
+      "en": "And he made the Sea of cast bronze, ten cubits from one brim to the other; it was completely round. Its height was five cubits, and a line of thirty cubits measured its circumference."
     }
   },
   {
@@ -3050,30 +3052,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما هما الاسمان اللذان أطلقهما سليمان الملك على العمودين النحاسيين العظيمين في رواق الهيكل؟",
-      "en": "Scripture Examination (1 Kings 7: 21): What is the biblically verified answer concerning this sacred record?"
+      "en": "What names did King Solomon give to the two great bronze pillars set up in the vestibule of the temple?"
     },
     "options": {
       "ar": [
-        "ياكين وبوعز",
         "أوريم وتوميم",
         "نير وحور",
-        "ميشيل وكالب"
+        "ميشيل وكالب",
+        "ياكين وبوعز"
       ],
       "en": [
-        "ياكين وبوعز",
-        "أوريم وتوميم",
-        "نير وحور",
-        "ميشيل وكالب"
+        "Urim and Thummim",
+        "Ner and Hur",
+        "Mishael and Caleb",
+        "Jachin and Boaz"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 ملوك 7: 21",
       "en": "1 Kings 7: 21"
     },
     "verse": {
       "ar": "وَأَقَامَ الْعَمُودَيْنِ فِي رِوَاقِ الْهَيْكَلِ. فَأَقَامَ الْعَمُودَ الأَيْمَنَ وَدَعَا اسْمَهُ «يَاكِينَ»، ثُمَّ أَقَامَ الْعَمُودَ الأَيْسَرَ وَدَعَا اسْمَهُ «بُوعَزَ».",
-      "en": "Scripture record from 1 Kings 7: 21: Verify the sacred testimony in the Holy Bible."
+      "en": "He set up the pillars in the vestibule of the temple; he set up the pillar on the right and called its name Jachin, and he set up the pillar on the left and called its name Boaz."
     }
   },
   {
@@ -3081,30 +3083,30 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم العيد الذي احتفل به سليمان بتدشين الهيكل واستمر فيه الاحتفال أربعة عشر يوماً؟",
-      "en": "Scripture Examination (1 Kings 8: 65): What is the biblically verified answer concerning this sacred record?"
+      "en": "At which sacred feast did King Solomon dedicate the temple, celebrating for fourteen days before all Israel?"
     },
     "options": {
       "ar": [
-        "عيد المظال",
-        "عيد الفصح",
         "عيد الأسابيع (الخمسين)",
+        "عيد الفصح",
+        "عيد المظال",
         "عيد الكفارة"
       ],
       "en": [
-        "عيد المظال",
-        "عيد الفصح",
-        "عيد الأسابيع (الخمسين)",
-        "عيد الكفارة"
+        "Feast of Weeks (Pentecost)",
+        "Passover",
+        "Feast of Tabernacles",
+        "Day of Atonement"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "1 ملوك 8: 65",
       "en": "1 Kings 8: 65"
     },
     "verse": {
       "ar": "وَعَيَّدَ سُلَيْمَانُ الْعِيدَ فِي ذلِكَ الْوَقْتِ وَجَمِيعُ إِسْرَائِيلَ مَعَهُ... أَمَامَ الرَّبِّ إِلهِنَا سَبْعَةَ أَيَّامٍ وَسَبْعَةَ أَيَّامٍ، أَرْبَعَةَ عَشَرَ يَوْمًا.",
-      "en": "Scripture record from 1 Kings 8: 65: Verify the sacred testimony in the Holy Bible."
+      "en": "At that time Solomon held a feast, and all Israel with him, a great assembly, from the entrance of Hamath to the Brook of Egypt, before the LORD our God, seven days and seven more days—fourteen days."
     }
   },
   {
@@ -3112,30 +3114,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الكاتب الذي أملاه إرميا النبي دَرج النبوات الذي شقه الملك يهوياقيم بسكين الكاتب؟",
-      "en": "Scripture Examination (Jeremiah 36: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of Jeremiah's scribe who wrote the scroll of prophecies that King Jehoiakim cut with a scribe's knife?"
     },
     "options": {
       "ar": [
+        "جدليا بن أخيقام",
         "باروخ بن نيريا",
         "سرايا بن نيريا",
-        "جدليا بن أخيقام",
         "عزرا الكاتب"
       ],
       "en": [
+        "Gedaliah son of Ahikam",
         "Baruch son of Neriah",
         "Seraiah son of Neriah",
-        "Gedaliah son of Ahikam",
         "Ezra the scribe"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "إرميا 36: 4",
       "en": "Jeremiah 36: 4"
     },
     "verse": {
       "ar": "فَدَعَا إِرْمِيَا بَارُوخَ بْنَ نِيرِيَّا، فَكَتَبَ بَارُوخُ عَنْ فَمِ إِرْمِيَا كُلَّ كَلاَمِ الرَّبِّ الَّذِي كَلَّمَهُ بِهِ فِي دَرْجِ سِفْرٍ.",
-      "en": "Scripture record from Jeremiah 36: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Jeremiah called Baruch the son of Neriah; and Baruch wrote on a scroll of a book, at the instruction of Jeremiah, all the words of the LORD which He had spoken to him."
     }
   },
   {
@@ -3143,30 +3145,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم رئيس الخصيان البابلي الذي أوكل إليه نبوخذنصر تدريب دانيال ورفاقه وتغيير أسمائهم؟",
-      "en": "Scripture Examination (Daniel 1: 3): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the master of the Babylonian eunuchs entrusted with training Daniel and his three companions?"
     },
     "options": {
       "ar": [
-        "أشفنز",
-        "أريوخ",
         "نبوزردان",
-        "بيلشاصر"
+        "أشفنز",
+        "بيلشاصر",
+        "أريوخ"
       ],
       "en": [
-        "Ashpenaz",
-        "Arioch",
         "Nebuzaradan",
-        "Belshazzar"
+        "Ashpenaz",
+        "Belshazzar",
+        "Arioch"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "دانيال 1: 3",
       "en": "Daniel 1: 3"
     },
     "verse": {
       "ar": "وَأَمَرَ الْمَلِكُ أَشْفَنَزَ رَئِيسَ خِصْيَانِهِ أَنْ يُحْضِرَ مِنْ بَنِي إِسْرَائِيلَ وَمِنْ نَسْلِ الْمُلْكِ وَمِنَ الشُّرَفَاءِ...",
-      "en": "Scripture record from Daniel 1: 3: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the king instructed Ashpenaz, the master of his eunuchs, to bring some of the children of Israel and some of the king’s descendants and some of the nobles,"
     }
   },
   {
@@ -3174,30 +3176,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما هو الاسم البابلي الذي أُطلق على حنانيا أحد رفقاء دانيال الثلاثة؟",
-      "en": "Scripture Examination (Daniel 1: 7): What is the biblically verified answer concerning this sacred record?"
+      "en": "What Babylonian name was given to Hananiah, one of Daniel's three companions?"
     },
     "options": {
       "ar": [
-        "شدرخ",
         "ميشخ",
-        "عبد نغو",
-        "بلطشاصر"
+        "بلطشاصر",
+        "شدرخ",
+        "عبد نغو"
       ],
       "en": [
-        "Shadrach",
         "Meshach",
-        "Abednego",
-        "Belteshazzar"
+        "Belteshazzar",
+        "Shadrach",
+        "Abednego"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "دانيال 1: 7",
       "en": "Daniel 1: 7"
     },
     "verse": {
       "ar": "فَوَضَعَ لَهُمْ رَئِيسُ الْخِصْيَانِ أَسْمَاءً، فَوَضَعَ لِدَانِيآلَ «بَلْطَشَاصَّرَ»، وَلِحَنَنِيَّا «شَدْرَخَ»، وَلِمِيشَائِيلَ «مِيشَخَ»، وَلِعَزَرْيَا «عَبْدَ نَغُوَ».",
-      "en": "Scripture record from Daniel 1: 7: Verify the sacred testimony in the Holy Bible."
+      "en": "To them the chief of the eunuchs gave names: he gave Daniel the name Belteshazzar; to Hananiah, Shadrach; to Mishael, Meshach; and to Azariah, Abed-Nego."
     }
   },
   {
@@ -3205,30 +3207,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "كم قامة قاس الملاحون عمق البحر لما اقتربوا من اليابسة في سفر الأعمال 27؟",
-      "en": "Scripture Examination (Acts 27: 28): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many fathoms did the sailors measure when taking soundings near land during the shipwreck in Acts 27?"
     },
     "options": {
       "ar": [
+        "خمسين قامة ثم عشرين",
         "عشرين قامة ثم خمس عشرة قامة",
         "ثلاثين قامة ثم عشرين",
-        "أربعين قامة ثم عشرين",
-        "خمسين قامة ثم عشرين"
+        "أربعين قامة ثم عشرين"
       ],
       "en": [
+        "Fifty fathoms then twenty",
         "Twenty fathoms then fifteen fathoms",
-        "ثلاثين قامة ثم عشرين",
-        "أربعين قامة ثم عشرين",
-        "خمسين قامة ثم عشرين"
+        "Thirty fathoms then twenty",
+        "Forty fathoms then twenty"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 27: 28",
       "en": "Acts 27: 28"
     },
     "verse": {
       "ar": "فَقَاسُوا وَوَجَدُوا عِشْرِينَ قَامَةً. وَلَمَّا جَازُوا قَلِيلاً قَاسُوا أَيْضًا فَوَجَدُوا خَمْسَ عَشْرَةَ قَامَةً.",
-      "en": "Scripture record from Acts 27: 28: Verify the sacred testimony in the Holy Bible."
+      "en": "And they took soundings and found it to be twenty fathoms; and when they had gone a little farther, they took soundings again and found it to be fifteen fathoms."
     }
   },
   {
@@ -3236,30 +3238,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الساحرين المصريين اللذين قاوما موسى النبي وذكرهما القديس بولس بالاسم في رسالته؟",
-      "en": "Scripture Examination (2 Timothy 3: 8): What is the biblically verified answer concerning this sacred record?"
+      "en": "What were the names of the two Egyptian magicians who opposed Moses, cited by Paul in 2 Timothy?"
     },
     "options": {
       "ar": [
-        "ينيس ويمبريس",
         "بلعام وبالاق",
+        "ينيس ويمبريس",
         "ديمتريوس وإسكندر",
         "حفني وفينحاس"
       ],
       "en": [
+        "Balaam and Balak",
         "Jannes and Jambres",
-        "بلعام وبالاق",
-        "ديمتريوس وإسكندر",
-        "حفني وفينحاس"
+        "Demetrius and Alexander",
+        "Hophni and Phinehas"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 تيموثاوس 3: 8",
       "en": "2 Timothy 3: 8"
     },
     "verse": {
       "ar": "وَكَمَا قَاوَمَ يَنِّيسُ وَيَمْبِرِيسُ مُوسَى، كَذلِكَ هؤُلاَءِ أَيْضًا يُقَاوِمُونَ الْحَقَّ.",
-      "en": "Scripture record from 2 Timothy 3: 8: Verify the sacred testimony in the Holy Bible."
+      "en": "Now as Jannes and Jambres resisted Moses, so do these also resist the truth: men of corrupt minds, disapproved concerning the faith;"
     }
   },
   {
@@ -3267,30 +3269,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الرجل الذي اشترى منه داود بيدر الحنطة ليبني مذبحاً للرب لرفع الوباء عن الشعب؟",
-      "en": "Scripture Examination (1 Chronicles 21: 22): What is the biblically verified answer concerning this sacred record?"
+      "en": "From whom did David purchase the threshing floor to build an altar to the LORD to stay the plague?"
     },
     "options": {
       "ar": [
+        "نابال الكرملي",
         "أورنان (أرونة) اليبوسي",
         "عفرون الحثي",
-        "نابال الكرملي",
         "ملكي صادق"
       ],
       "en": [
+        "Nabal the Carmelite",
         "Ornan (Araunah) the Jebusite",
-        "عفرون الحثي",
-        "نابال الكرملي",
+        "Ephron the Hittite",
         "Melchizedek"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 أخبار 21: 22",
       "en": "1 Chronicles 21: 22"
     },
     "verse": {
       "ar": "فَقَالَ دَاوُدُ لأُورْنَانَ: «أَعْطِنِي مَكَانَ الْبَيْدَرِ فَأَبْنِيَ فِيهِ مَذْبَحًا لِلرَّبِّ. بِفِضَّةٍ كَامِلَةٍ أَعْطِنِي إِيَّاهُ، فَتَكُفَّ الضَّرْبَةُ عَنِ الشَّعْبِ».",
-      "en": "Scripture record from 1 Chronicles 21: 22: Verify the sacred testimony in the Holy Bible."
+      "en": "Then David said to Ornan, 'Grant me the place of this threshing floor, that I may build an altar on it to the LORD. You shall grant it to me at the full price, that the plague may be withdrawn from the people.'"
     }
   },
   {
@@ -3298,19 +3300,19 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الملك الصالح الذي رمم الهيكل ووجد حلقيا الكاهن فيه سفر الشريعة فبكى ومزق ثيابه؟",
-      "en": "Scripture Examination (2 Kings 22: 11): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which righteous king tore his clothes and wept upon hearing the words of the Book of the Law found in the temple during repairs?"
     },
     "options": {
       "ar": [
-        "يوشيا الملك",
-        "حزقيا",
+        "يوشيا",
         "آسا",
+        "حزقيا",
         "يهوشافاط"
       ],
       "en": [
-        "King Josiah",
-        "حزقيا",
+        "Josiah",
         "Asa",
+        "Hezekiah",
         "Jehoshaphat"
       ]
     },
@@ -3321,7 +3323,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَلَمَّا سَمِعَ الْمَلِكُ كَلاَمَ سِفْرِ الشَّرِيعَةِ مَزَّقَ ثِيَابَهُ.",
-      "en": "Scripture record from 2 Kings 22: 11: Verify the sacred testimony in the Holy Bible."
+      "en": "Now it happened, when the king heard the words of the Book of the Law, that he tore his clothes."
     }
   },
   {
@@ -3329,30 +3331,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "من هي النبية التي استشارها الملك يوشيا بعد قراءة سفر الشريعة وكانت تسكن في حارة أورشليم؟",
-      "en": "Which righteous king tore his clothes and wept upon hearing the words of the Book of the Law found in the temple?"
+      "en": "Which prophetess did King Josiah consult after hearing the Book of the Law, who was dwelling in Jerusalem in the Second Quarter?"
     },
     "options": {
       "ar": [
-        "خلدة النبية",
+        "مريم",
         "دبورة",
-        "حنة",
-        "ميريام"
+        "خلدة",
+        "حنة"
       ],
       "en": [
-        "Huldah the prophetess",
+        "Miriam",
         "Deborah",
-        "حنة",
-        "Miriam"
+        "Huldah",
+        "Hannah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 22: 14",
       "en": "2 Kings 22: 14"
     },
     "verse": {
       "ar": "فَذَهَبَ حِلْقِيَّا الْكَاهِنُ... إِلَى خَلْدَةَ النَّبِيَّةِ، امْرَأَةِ شَلُّومَ بْنِ تِقْوَةَ... وَهِيَ سَاكِنَةٌ فِي أُورُشَلِيمَ فِي الثَّانِي، وَكَلَّمُوهَا.",
-      "en": "Scripture record from 2 Kings 22: 14: Verify the sacred testimony in the Holy Bible."
+      "en": "So Hilkiah the priest, Ahikam, Achbor, Shaphan, and Asaiah went to Huldah the prophetess, the wife of Shallum the son of Tikvah, the son of Harhas, keeper of the wardrobe. (She dwelt in Jerusalem in the Second Quarter.) And they spoke with her."
     }
   },
   {
@@ -3360,30 +3362,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "كم كان عدد حراس الأسوار الذين وزعهم نحميا على السور وكان نصفهم يمسكون الرماح والتروس؟",
-      "en": "Scripture Examination (Nehemiah 4: 16): What is the biblically verified answer concerning this sacred record?"
+      "en": "How did Nehemiah divide his servants during the rebuilding of the wall when enemies threatened to attack?"
     },
     "options": {
       "ar": [
-        "نصف الغلمان يعملون ونصفهم يمسكون الرماح",
-        "كل الرجال مسلحون بلا بناء",
         "حراس الليل فقط",
-        "عشرة حراس لكل باب"
+        "عشرة حراس لكل باب",
+        "نصف الغلمان يعملون ونصفهم يمسكون الرماح",
+        "كل الرجال مسلحون بلا بناء"
       ],
       "en": [
-        "نصف الغلمان يعملون ونصفهم يمسكون الرماح",
-        "كل الmen مسلحون بلا بناء",
-        "حراس الليل فقط",
-        "عشرة حراس لكل باب"
+        "Night watchmen only",
+        "Ten guards for each gate",
+        "Half the servants worked while half held spears",
+        "All men armed without building"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "نحميا 4: 16",
       "en": "Nehemiah 4: 16"
     },
     "verse": {
       "ar": "وَكَانَ مِنْ ذلِكَ الْيَوْمِ أَنَّ نِصْفَ غِلْمَانِي يَعْمَلُونَ فِي الْعَمَلِ، وَنِصْفَهُمْ يُمْسِكُونَ الرِّمَاحَ وَالأَتْرَاسَ وَالْقِسِيَّ وَالدُّرُوعَ...",
-      "en": "Scripture record from Nehemiah 4: 16: Verify the sacred testimony in the Holy Bible."
+      "en": "So it was, from that time on, that half of my servants worked at construction, while the other half held the spears, the shields, the bows, and the armor; and the leaders were behind all the house of Judah."
     }
   },
   {
@@ -3391,30 +3393,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الرجل الشرير الحوروني الذي قاوم نحميا وسخر من بناء سور أورشليم؟",
-      "en": "Scripture Examination (Nehemiah 2: 19): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the Horonite governor who maliciously mocked and opposed Nehemiah in rebuilding the walls?"
     },
     "options": {
       "ar": [
+        "هامان الأجاجي",
         "سنبلط الحوروني",
         "طوبيا العموني",
-        "جشم العربي",
-        "هامان الأجاجي"
+        "جشم العربي"
       ],
       "en": [
-        "سنبلط الحوروني",
-        "طوبيا العموني",
-        "جشم العربي",
-        "هامان الأجاجي"
+        "Haman the Agagite",
+        "Sanballat the Horonite",
+        "Tobiah the Ammonite",
+        "Geshem the Arab"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "نحميا 2: 19",
       "en": "Nehemiah 2: 19"
     },
     "verse": {
       "ar": "وَلَمَّا سَمِعَ سَنْبَلَّطُ الْحَوْرُونِيُّ وَطُوبِيَّا الْعَبْدُ الْعَمُّونِيُّ وَجَشَمٌ الْعَرَبِيُّ، هَزِئُوا بِنَا وَاحْتَقَرُونَا...",
-      "en": "Scripture record from Nehemiah 2: 19: Verify the sacred testimony in the Holy Bible."
+      "en": "But when Sanballat the Horonite, Tobiah the Ammonite official, and Geshem the Arab heard of it, they laughed at us and despised us, and said, 'What is this thing that you are doing? Will you rebel against the king?'"
     }
   },
   {
@@ -3422,30 +3424,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "في كم يوماً تم بناء سور أورشليم بالكامل تحت قيادة نحميا البار رغم كل المؤامرات؟",
-      "en": "Scripture Examination (Nehemiah 6: 15): What is the biblically verified answer concerning this sacred record?"
+      "en": "In how many days was the entire wall of Jerusalem rebuilt under Nehemiah's leadership despite intense opposition?"
     },
     "options": {
       "ar": [
-        "52 يوماً",
-        "40 يوماً",
         "70 يوماً",
-        "100 يوم"
+        "100 يوم",
+        "52 يوماً",
+        "40 يوماً"
       ],
       "en": [
-        "52 days",
-        "40 days",
         "70 days",
-        "100 days"
+        "100 days",
+        "52 days",
+        "40 days"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "نحميا 6: 15",
       "en": "Nehemiah 6: 15"
     },
     "verse": {
       "ar": "وَكَمِلَ السُّورُ فِي الْخَامِسِ وَالْعِشْرِينَ مِنْ أَيْلُولَ، فِي اثْنَيْنِ وَخَمْسِينَ يَوْمًا.",
-      "en": "Scripture record from Nehemiah 6: 15: Verify the sacred testimony in the Holy Bible."
+      "en": "So the wall was finished on the twenty-fifth day of Elul, in fifty-two days."
     }
   },
   {
@@ -3453,30 +3455,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم البئر التي حفرها إسحق بعد عِسق وسطنة وسماها بهذا الاسم لأن الرب قد أرحب لهم؟",
-      "en": "Scripture Examination (Genesis 26: 22): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the well that Isaac dug in Gerar over which there was no quarreling, saying 'Now the LORD has made room for us'?"
     },
     "options": {
       "ar": [
-        "رحوبوت",
         "شبعة",
-        "بيت إيل",
-        "جرار"
+        "جرار",
+        "رحوبوت",
+        "بيت إيل"
       ],
       "en": [
+        "Shebah",
+        "Gerar",
         "Rehoboth",
-        "شبعة",
-        "Bethel",
-        "جرار"
+        "Bethel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 26: 22",
       "en": "Genesis 26: 22"
     },
     "verse": {
       "ar": "فَنَقَلَ مِنْ هُنَاكَ وَحَفَرَ بِئْرًا أُخْرَى وَلَمْ يَتَخَاصَمُوا عَلَيْهَا، فَدَعَا اسْمَهَا «رَحُوبُوتَ»، وَقَالَ: «إِنَّهُ الآنَ قَدْ أَرْحَبَ لَنَا الرَّبُّ وَأَثْمَرْنَا فِي الأَرْضِ».",
-      "en": "Scripture record from Genesis 26: 22: Verify the sacred testimony in the Holy Bible."
+      "en": "And he moved from there and dug another well, and they did not quarrel over it. So he called its name Rehoboth, because he said, 'For now the LORD has made room for us, and we shall be fruitful in the land.'"
     }
   },
   {
@@ -3484,30 +3486,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الرجل الكرملي الغني اللئيم الأحمق الذي رفض إعطاء طعام لغلمان داود وأنقذت بيته زوجته أبيجايل؟",
-      "en": "Scripture Examination (1 Samuel 25: 3): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the wealthy, harsh Carmelite who refused to provide food for David's men?"
     },
     "options": {
       "ar": [
-        "نابال",
         "دواغ الأدومي",
+        "نابال",
         "بارزيلاي",
         "أخيتوفل"
       ],
       "en": [
+        "Doeg the Edomite",
         "Nabal",
-        "دواغ الأدومي",
-        "بارزيلاي",
-        "أخيتوفل"
+        "Barzillai",
+        "Ahithophel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 صموئيل 25: 3",
       "en": "1 Samuel 25: 3"
     },
     "verse": {
       "ar": "وَاسْمُ الرَّجُلِ نَابَالُ، وَاسْمُ امْرَأَتِهِ أَبِيجَايِلُ. وَكَانَتِ الْمَرْأَةُ جَيِّدَةَ الْفَهْمِ وَجَمِيلَةَ الصُّورَةِ، وَأَمَّا الرَّجُلُ فَكَانَ قَاسِيًا وَرَدِيءَ الأَعْمَالِ...",
-      "en": "Scripture record from 1 Samuel 25: 3: Verify the sacred testimony in the Holy Bible."
+      "en": "The name of the man was Nabal, and the name of his wife Abigail. And she was a woman of good understanding and beautiful appearance; but the man was harsh and evil in his doings. He was of the house of Caleb."
     }
   },
   {
@@ -3519,26 +3521,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "180 يوماً (نصف سنة)",
-        "30 يوماً",
         "7 أيام",
-        "40 يوماً"
+        "30 يوماً",
+        "40 يوماً",
+        "180 يوماً (نصف سنة)"
       ],
       "en": [
-        "180 يوماً (نصف years)",
+        "7 days",
         "30 days",
-        "7 أيام",
-        "40 days"
+        "40 days",
+        "180 days"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "إستير 1: 4",
       "en": "Esther 1: 4"
     },
     "verse": {
       "ar": "حِينَ أَظْهَرَ غِنَى مَجْدِ مُلْكِهِ وَوَقَارَ جَلاَلِ عَظَمَتِهِ أَيَّامًا كَثِيرَةً، مِئَةً وَثَمَانِينَ يَوْمًا.",
-      "en": "Scripture record from Esther 1: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "when he showed the riches of his glorious kingdom and the splendor of his excellent majesty for many days, one hundred and eighty days in all."
     }
   },
   {
@@ -3546,30 +3548,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الملكة الفارسية التي عُزلت لأنها رفضت المجيء بتاج الملك أمام شعوب ورؤساء أحشويروش؟",
-      "en": "Scripture Examination (Esther 1: 12): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which Persian queen was deposed after refusing to appear at King Ahasuerus's banquet to show her beauty?"
     },
     "options": {
       "ar": [
+        "أتوسا",
         "وشتي",
-        "إستير",
         "زرش",
-        "أتوسا"
+        "إستير"
       ],
       "en": [
+        "Atossa",
         "Vashti",
-        "إستير",
-        "زرش",
-        "أتوسا"
+        "Zeresh",
+        "Esther"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "إستير 1: 12",
       "en": "Esther 1: 12"
     },
     "verse": {
       "ar": "فَأَبَتِ الْمَلِكَةُ وَشْتِي أَنْ تَأْتِيَ حَسَبَ أَمْرِ الْمَلِكِ عَنْ يَدِ الْخِصْيَانِ، فَاغْتَاظَ الْمَلِكُ جِدًّا وَاشْتَعَلَ غَضَبُهُ فِيهِ.",
-      "en": "Scripture record from Esther 1: 12: Verify the sacred testimony in the Holy Bible."
+      "en": "But Queen Vashti refused to come at the king’s command brought by his eunuchs; therefore the king was furious, and his anger burned within him."
     }
   },
   {
@@ -3577,30 +3579,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم والد إستير بالتبني وابن عمها الذي كان يجلس عند باب الملك واكتشف مؤامرة بغثان وتيرش؟",
-      "en": "Scripture Examination (Esther 2: 7): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was Esther's cousin and adoptive guardian who sat at the king's gate and uncovered the plot against the king?"
     },
     "options": {
       "ar": [
-        "مردخاي بن يائير",
         "هامان",
-        "حربونا",
-        "ميموخان"
+        "ميموخان",
+        "مردخاي بن يائير",
+        "حربونا"
       ],
       "en": [
+        "Haman",
+        "Memucan",
         "Mordecai son of Jair",
-        "هامان",
-        "حربونا",
-        "ميموخان"
+        "Harbonah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "إستير 2: 7",
       "en": "Esther 2: 7"
     },
     "verse": {
       "ar": "وَكَانَ حَاضِنًا لِهَدَسَّةَ أَيْ إِسْتِيرَ بِنْتِ عَمِّهِ، لأَنَّهُ لَمْ يَكُنْ لَهَا أَبٌ وَلاَ أُمٌّ... اتَّخَذَهَا مُرْدَخَايُ لِنَفْسِهِ ابْنَةً.",
-      "en": "Scripture record from Esther 2: 7: Verify the sacred testimony in the Holy Bible."
+      "en": "And Mordecai had brought up Hadassah, that is Esther, his uncle’s daughter, for she had neither father nor mother. The young woman was lovely and beautiful. When her father and mother died, Mordecai took her as his own daughter."
     }
   },
   {
@@ -3608,30 +3610,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "كم كان ارتفاع الخشبة التي أعدها هامان الشرير ليصلب عليها مردخاي فصلب هو عليها؟",
-      "en": "Who was Esther's cousin and adoptive guardian who sat at the king's gate and uncovered the plot against the king?"
+      "en": "How high was the gallows that Haman constructed to hang Mordecai, upon which he himself was hanged?"
     },
     "options": {
       "ar": [
-        "خمسين ذراعاً",
         "ثلاثين ذراعاً",
+        "خمسين ذراعاً",
         "عشرين ذراعاً",
         "سبعين ذراعاً"
       ],
       "en": [
+        "Thirty cubits",
         "Fifty cubits",
-        "ثلاثين ذراعاً",
-        "عشرين ذراعاً",
-        "سبعين ذراعاً"
+        "Twenty cubits",
+        "Seventy cubits"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "إستير 7: 9",
       "en": "Esther 7: 9"
     },
     "verse": {
       "ar": "فَقَالَ حَرْبُونَا، وَاحِدٌ مِنَ الْخِصْيَانِ الَّذِينَ قُدَّامَ الْمَلِكِ: «هُوَذَا الْخَشَبَةُ أَيْضًا الَّتِي عَمِلَهَا هَامَانُ لِمُرْدَخَايَ... قَائِمَةٌ فِي بَيْتِ هَامَانَ، ارْتِفَاعُهَا خَمْسُونَ ذِرَاعًا». فَقَالَ الْمَلِكُ: «اصْلِبُوهُ عَلَيْهَا».",
-      "en": "Scripture record from Esther 7: 9: Verify the sacred testimony in the Holy Bible."
+      "en": "Now Harbonah, one of the eunuchs, said to the king, 'Look! The gallows, fifty cubits high, which Haman made for Mordecai, who spoke good on the king’s behalf, is standing at the house of Haman.' Then the king said, 'Hang him on it!'"
     }
   },
   {
@@ -3639,30 +3641,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما هو العيد اليهودي المذكور في سفر إستير الذي يحتفل فيه اليهود بنجاتهم من مؤامرة هامان؟",
-      "en": "Scripture Examination (Esther 9: 26): What is the biblically verified answer concerning this sacred record?"
+      "en": "What Jewish festival instituted in the Book of Esther commemorates the deliverance of the Jews from Haman's plot?"
     },
     "options": {
       "ar": [
+        "عيد المظال",
         "عيد الفوريم",
         "عيد الحصاد",
-        "عيد الأنوار (الحنوكا)",
-        "عيد المظال"
+        "عيد الأنوار (الحنوكا)"
       ],
       "en": [
+        "Feast of Tabernacles",
         "Feast of Purim",
-        "عيد الحصاد",
-        "عيد الأنوار (الحنوكا)",
-        "عيد المظال"
+        "Feast of Harvest",
+        "Feast of Dedication (Hanukkah)"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "إستير 9: 26",
       "en": "Esther 9: 26"
     },
     "verse": {
       "ar": "لِذلِكَ دَعَوْا تِلْكَ الأَيَّامَ «فُورِيمَ» عَلَى اسْمِ الْفُورِ...",
-      "en": "Scripture record from Esther 9: 26: Verify the sacred testimony in the Holy Bible."
+      "en": "So they called these days Purim, after the name Pur. Therefore, because of all the words of this letter, what they had seen concerning this matter, and what had happened to them,"
     }
   },
   {
@@ -3674,26 +3676,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "حبقوق النبي",
         "إشعياء",
         "حزقيال",
+        "حبقوق",
         "يوئيل"
       ],
       "en": [
-        "حبقوق النبي",
         "Isaiah",
         "Ezekiel",
+        "Habakkuk",
         "Joel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "حبقوق 1: 2",
       "en": "Habakkuk 1: 2"
     },
     "verse": {
       "ar": "حَتَّى مَتَى يَا رَبُّ أَدْعُو وَأَنْتَ لاَ تَسْمَعُ؟ أَصْرُخُ إِلَيْكَ مِنَ الظُّلْمِ وَأَنْتَ لاَ تُخَلِّصُ؟",
-      "en": "Scripture record from Habakkuk 1: 2: Verify the sacred testimony in the Holy Bible."
+      "en": "O LORD, how long shall I cry, And You will not hear? Even cry out to You, 'Violence!' And You will not save."
     }
   },
   {
@@ -3701,20 +3703,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما هي الشجرة التي استظل تحتها إيليا في البرية وطلب الموت لنفسه قبل أن يطعمه الملاك كعكة رضف وكوز ماء؟",
-      "en": "Scripture Examination (1 Kings 19: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "Under which desert tree did Elijah sit down and pray that he might die before an angel refreshed him with cake and water?"
     },
     "options": {
       "ar": [
         "شجرة الرتم",
-        "شجرة السنديان",
         "شجرة العرعر",
-        "شجرة الطرفاء"
+        "شجرة الطرفاء",
+        "شجرة السنديان"
       ],
       "en": [
         "A broom tree (juniper)",
-        "شجرة السنديان",
-        "شجرة العرعر",
-        "شجرة الطرفاء"
+        "A juniper tree",
+        "A tamarisk tree",
+        "An oak tree"
       ]
     },
     "correctIndex": 0,
@@ -3724,7 +3726,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "ثُمَّ سَارَ فِي الْبَرِّيَّةِ مَسِيرَةَ يَوْمٍ، وَأَتَى وَجَلَسَ تَحْتَ رَتَمَةٍ وَطَلَبَ الْمَوْتَ لِنَفْسِهِ...",
-      "en": "Scripture record from 1 Kings 19: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "But he himself went a day’s journey into the wilderness, and came and sat down under a broom tree. And he prayed that he might die, and said, 'It is enough! Now, LORD, take my life, for I am no better than my fathers!'"
     }
   },
   {
@@ -3732,30 +3734,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "كم يوماً سار إيليا بقوة تلك الأكلة حتى وصل إلى حوريب جبل الله؟",
-      "en": "Scripture Examination (1 Kings 19: 8): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many days did Elijah travel in the strength of that divine food until he reached Horeb, the mountain of God?"
     },
     "options": {
       "ar": [
-        "أربعين نهاراً وأربعين ليلة",
-        "ثلاثين يوماً",
+        "عشرين يوماً",
         "سبعة أيام",
-        "عشرين يوماً"
+        "ثلاثين يوماً",
+        "أربعين نهاراً وأربعين ليلة"
       ],
       "en": [
-        "أربعين نهاراً وأربعين ليلة",
-        "ثلاثين days",
-        "سبعة أيام",
-        "عشرين days"
+        "Twenty days",
+        "Seven days",
+        "Thirty days",
+        "40 days and 40 nights"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 ملوك 19: 8",
       "en": "1 Kings 19: 8"
     },
     "verse": {
       "ar": "فَقَامَ وَأَكَلَ وَشَرِبَ، وَسَارَ بِقُوَّةِ تِلْكَ الأَكْلَةِ أَرْبَعِينَ نَهَارًا وَأَرْبَعِينَ لَيْلَةً إِلَى جَبَلِ اللهِ حُورِيبَ.",
-      "en": "Scripture record from 1 Kings 19: 8: Verify the sacred testimony in the Holy Bible."
+      "en": "So he arose, and ate and drank; and he went in the strength of that food forty days and forty nights as far as Horeb, the mountain of God."
     }
   },
   {
@@ -3763,30 +3765,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "من هو الرجل الذي ذبح ابنه البكر وأصغر أولاده لما بنى أريحا وفق نبوة يشوع بن نون؟",
-      "en": "Scripture Examination (1 Kings 16: 34): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who laid the foundation of Jericho at the cost of his firstborn Abiram and set up its gates at the cost of his youngest son Segub?"
     },
     "options": {
       "ar": [
+        "حيرام",
         "حيئيل البيتئيلي",
-        "أخاب",
         "عمرام",
-        "حيرام"
+        "أخاب"
       ],
       "en": [
+        "Hiram",
         "Hiel of Bethel",
-        "أخاب",
-        "عمرام",
-        "حيرام"
+        "Amram",
+        "Ahab"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 ملوك 16: 34",
       "en": "1 Kings 16: 34"
     },
     "verse": {
       "ar": "فِي أَيَّامِهِ بَنَى حِيئِيلُ الْبَيْتَئِيلِيُّ أَرِيحَا. بِأَبِيرَامَ بِكْرِهِ وَضَعَ أَسَاسَهَا، وَبِسَجُوبَ صَغِيرِهِ نَصَبَ أَبْوَابَهَا، حَسَبَ قَوْلِ الرَّبِّ الَّذِي تَكَلَّمَ بِهِ عَنْ يَدِ يَشُوعَ بْنِ نُونٍ.",
-      "en": "Scripture record from 1 Kings 16: 34: Verify the sacred testimony in the Holy Bible."
+      "en": "In his days Hiel of Bethel built Jericho. He laid its foundation with Abiram his firstborn, and with his youngest son Segub he set up its gates, according to the word of the LORD, which He had spoken through Joshua the son of Nun."
     }
   },
   {
@@ -3794,30 +3796,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم ابن داود المشلول في رجليه الاثنين والذي استضافه داود على مائدته إكراماً ليوناثان؟",
-      "en": "Scripture Examination (2 Samuel 9: 7): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of Jonathan's son who was lame in both feet, whom David honored by having him dine continually at his royal table?"
     },
     "options": {
       "ar": [
+        "كيلآب",
         "مفيبوشث بن يوناثان",
-        "أمنون",
         "أدونيا",
-        "كيلآب"
+        "أمنون"
       ],
       "en": [
+        "Chileab",
         "Mephibosheth son of Jonathan",
-        "أمنون",
-        "أدونيا",
-        "كيلآب"
+        "Adonijah",
+        "Amnon"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 صموئيل 9: 7",
       "en": "2 Samuel 9: 7"
     },
     "verse": {
       "ar": "فَقَالَ لَهُ دَاوُدُ: «لاَ تَخَفْ. فَإِنِّي لأَعْمَلَنَّ مَعَكَ مَعْرُوفًا مِنْ أَجْلِ يُونَاثَانَ أَبِيكَ، وَأَرُدُّ لَكَ كُلَّ حُقُولِ شَاوُلَ أَبِيكَ، وَأَنْتَ تَأْكُلُ خُبْزًا عَلَى مَائِدَتِي دَائِمًا».",
-      "en": "Scripture record from 2 Samuel 9: 7: Verify the sacred testimony in the Holy Bible."
+      "en": "David said to him, 'Do not fear, for I will surely show you kindness for Jonathan your father’s sake, and will restore to you all the land of Saul your grandfather; and you shall eat bread at my table continually.'"
     }
   },
   {
@@ -3825,30 +3827,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الرجل الذي سأله داود قائلاً: «أَمِنْ سَلاَمٍ لِلْفَتَى أَبْشَالُومَ؟» عند وصول أخبار المعركة؟",
-      "en": "Scripture Examination (2 Samuel 18: 29): What is the biblically verified answer concerning this sacred record?"
+      "en": "What anxious question did King David ask the messengers arriving from the battle in the forest of Ephraim?"
     },
     "options": {
       "ar": [
-        "أخيماص بن صادوق / كوشي",
         "يوآب",
-        "أتاي",
-        "بنايا"
+        "أخيماص بن صادوق / كوشي",
+        "بنايا",
+        "أتاي"
       ],
       "en": [
-        "أخيماص بن صادوق / كوشي",
-        "يوآب",
-        "أتاي",
-        "بنايا"
+        "Joab",
+        "Ahimaaz son of Zadok / Cushite",
+        "Benaiah",
+        "Attai"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 صموئيل 18: 29",
       "en": "2 Samuel 18: 29"
     },
     "verse": {
       "ar": "فَقَالَ الْمَلِكُ: «أَسَلاَمٌ لِلْفَتَى أَبْشَالُومَ؟» فَقَالَ أَخِيمَاعَصُ: «رَأَيْتُ جُمْهُورًا عَظِيمًا... وَلكِنِّي لَمْ أَعْلَمْ مَاذَا».",
-      "en": "Scripture record from 2 Samuel 18: 29: Verify the sacred testimony in the Holy Bible."
+      "en": "The king said, 'Is the young man Absalom safe?' Ahimaaz answered, 'When Joab sent the king’s servant and me your servant, I saw a great tumult, but I did not know what it was about.'"
     }
   },
   {
@@ -3862,14 +3864,14 @@ window.QUESTIONS_BANK = [
       "ar": [
         "ناثان النبي",
         "جاد الرائي",
-        "صموئيل النبي",
-        "أخيا الشيلوني"
+        "أخيا الشيلوني",
+        "صموئيل النبي"
       ],
       "en": [
-        "ناثان النبي",
-        "جاد الرائي",
-        "صموئيل النبي",
-        "أخيا الشيلوني"
+        "Nathan the prophet",
+        "Gad the seer",
+        "Ahijah the Shilonite",
+        "Samuel the prophet"
       ]
     },
     "correctIndex": 0,
@@ -3879,7 +3881,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَأَرْسَلَ الرَّبُّ نَاثَانَ إِلَى دَاوُدَ. فَجَاءَ إِلَيْهِ وَقَالَ لَهُ: «كَانَ رَجُلاَنِ فِي مَدِينَةٍ وَاحِدَةٍ، وَاحِدٌ مِنْهُمَا غَنِيٌّ وَالآخَرُ فَقِيرٌ...».",
-      "en": "Scripture record from 2 Samuel 12: 1-2: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the LORD sent Nathan to David. And he came to him, and said to him: 'There were two men in one city, one rich and the other poor.'"
     }
   },
   {
@@ -3887,30 +3889,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما هي الكلمة المرعبة التي قالها ناثان النبي لداود الملك بعد سماع حكم داود على الرجل الغني؟",
-      "en": "Scripture Examination (2 Samuel 12: 7): What is the biblically verified answer concerning this sacred record?"
+      "en": "What solemn words did Nathan the prophet utter to David after David pronounced judgment on the rich man in the parable?"
     },
     "options": {
       "ar": [
-        "«أَنْتَ هُوَ الرَّجُلُ!»",
         "«الموت لك!»",
         "«سقط ملكك!»",
+        "«أَنْتَ هُوَ الرَّجُلُ!»",
         "«ويل لك يا داود!»"
       ],
       "en": [
+        "'Death to you!'",
+        "'Your kingdom has fallen!'",
         "'You are the man!'",
-        "«الموت لك!»",
-        "«سقط ملكك!»",
-        "«ويل لك يا داود!»"
+        "'Woe to you, David!'"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 صموئيل 12: 7",
       "en": "2 Samuel 12: 7"
     },
     "verse": {
       "ar": "فَقَالَ نَاثَانُ لِدَاوُدَ: «أَنْتَ هُوَ الرَّجُلُ! هكَذَا قَالَ الرَّبُّ إِلهُ إِسْرَائِيلَ: أَنَا مَسَحْتُكَ مَلِكًا عَلَى إِسْرَائِيلَ...».",
-      "en": "Scripture record from 2 Samuel 12: 7: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Nathan said to David, 'You are the man! Thus says the LORD God of Israel: \"I anointed you king over Israel, and I delivered you from the hand of Saul.\"'"
     }
   },
   {
@@ -3918,30 +3920,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما الاسم الذي أطلقه الرب على سليمان عن يد ناثان النبي ومعناه «محبوب الرب»؟",
-      "en": "Scripture Examination (2 Samuel 12: 25): What is the biblically verified answer concerning this sacred record?"
+      "en": "What special name, meaning 'Beloved of the LORD', did Nathan the prophet give to infant Solomon by command of the LORD?"
     },
     "options": {
       "ar": [
-        "يديديا",
         "ملكيئيل",
+        "يديديا",
         "شلومو",
         "عمانوئيل"
       ],
       "en": [
+        "Malchiel",
         "Jedidiah",
-        "ملكيئيل",
-        "شلومو",
-        "عمانوئيل"
+        "Shelomoh",
+        "Immanuel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 صموئيل 12: 25",
       "en": "2 Samuel 12: 25"
     },
     "verse": {
       "ar": "وَأَرْسَلَ بِيَدِ نَاثَانَ النَّبِيِّ وَدَعَا اسْمَهُ «يَدِيدِيَّا» مِنْ أَجْلِ الرَّبِّ.",
-      "en": "Scripture record from 2 Samuel 12: 25: Verify the sacred testimony in the Holy Bible."
+      "en": "and he sent word by the hand of Nathan the prophet: so he called his name Jedidiah, because of the LORD."
     }
   },
   {
@@ -3949,30 +3951,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم المدينة التي كان فيها تابوت عهد الرب في عهد عالي الكاهن قبل أن يسبيه الفلسطينيون؟",
-      "en": "Scripture Examination (1 Samuel 4: 3): What is the biblically verified answer concerning this sacred record?"
+      "en": "In which city did the Tabernacle and the Ark of the Covenant reside during the judgeship of Eli the priest?"
     },
     "options": {
       "ar": [
-        "شيلوه",
-        "جلجال",
         "حبرون",
-        "أورشليم"
+        "جلجال",
+        "أورشليم",
+        "شيلوه"
       ],
       "en": [
-        "شيلوه",
-        "جلجال",
-        "حبرون",
-        "Jerusalem"
+        "Hebron",
+        "Gilgal",
+        "Jerusalem",
+        "Shiloh"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 صموئيل 4: 3",
       "en": "1 Samuel 4: 3"
     },
     "verse": {
       "ar": "فَقَالَ شُيُوخُ إِسْرَائِيلَ: «لِمَاذَا كَسَرَنَا الْيَوْمَ الرَّبُّ أَمَامَ الْفِلِسْطِينِيِّينَ؟ لِنَأْخُذْ إِلَيْنَا مِنْ شِيلُوهَ تَابُوتَ عَهْدِ الرَّبِّ...».",
-      "en": "Scripture record from 1 Samuel 4: 3: Verify the sacred testimony in the Holy Bible."
+      "en": "And this man went up from his city yearly to worship and sacrifice to the LORD of hosts in Shiloh. Also the two sons of Eli, Hophni and Phinehas, the priests of the LORD, were there."
     }
   },
   {
@@ -3980,30 +3982,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسما ابني عالي الكاهن الشريرين اللذين ماتا في يوم واحد عندما أُخذ تابوت الله في المعركة؟",
-      "en": "Scripture Examination (1 Samuel 4: 11): What is the biblically verified answer concerning this sacred record?"
+      "en": "What were the names of Eli's two corrupt sons who served as priests and died on the same day when the Ark was captured?"
     },
     "options": {
       "ar": [
-        "حفني وفينحاس",
         "نداب وأبيهو",
         "ألعازار وإيثامار",
-        "محلي وموشي"
+        "محلي وموشي",
+        "حفني وفينحاس"
       ],
       "en": [
-        "حفني وفينحاس",
         "Nadab and Abihu",
-        "ألعازار وإيثامار",
-        "محلي وموشي"
+        "Eleazar and Ithamar",
+        "Mahli and Mushi",
+        "Hophni and Phinehas"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 صموئيل 4: 11",
       "en": "1 Samuel 4: 11"
     },
     "verse": {
       "ar": "وَأُخِذَ تَابُوتُ اللهِ، وَمَاتَ ابْنَا عَالِي: حَفْنِي وَفِينَحَاسُ.",
-      "en": "Scripture record from 1 Samuel 4: 11: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the messenger answered and said, 'Israel has fled before the Philistines, and there has been a great slaughter among the people. Also your two sons, Hophni and Phinehas, are dead; and the ark of God has been captured.'"
     }
   },
   {
@@ -4011,30 +4013,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما الاسم الذي أطلقته زوجة فينحاس على طفلها عند ولادته وهي تموت وقالت: «زَالَ الْمَجْدُ مِنْ إِسْرَائِيلَ»؟",
-      "en": "Scripture Examination (1 Samuel 4: 21): What is the biblically verified answer concerning this sacred record?"
+      "en": "What name did Phinehas's dying wife give to her newborn child, declaring: 'The glory has departed from Israel'?"
     },
     "options": {
       "ar": [
-        "إيخابود",
-        "بنيامين",
         "محير",
-        "يعبيص"
+        "يعبيص",
+        "بنيامين",
+        "إيخابود"
       ],
       "en": [
-        "إيخابود",
+        "Mehir",
+        "Jabez",
         "Benjamin",
-        "محير",
-        "يعبيص"
+        "Ichabod"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 صموئيل 4: 21",
       "en": "1 Samuel 4: 21"
     },
     "verse": {
       "ar": "فَدَعَتِ الصَّبِيَّ «إِيخَابُودَ» قَائِلَةً: «قَدْ زَالَ الْمَجْدُ مِنْ إِسْرَائِيلَ». لأَنَّ تَابُوتَ اللهِ قَدْ أُخِذَ...",
-      "en": "Scripture record from 1 Samuel 4: 21: Verify the sacred testimony in the Holy Bible."
+      "en": "Then she named the child Ichabod, saying, 'The glory has departed from Israel!' because the ark of God had been captured and because of her father-in-law and her husband."
     }
   },
   {
@@ -4042,20 +4044,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الصنم الفلسطيني الذي سقط على وجهه إلى الأرض أمام تابوت الرب في أشدود وقُطعت رأسه ويداه؟",
-      "en": "Scripture Examination (1 Samuel 5: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which Philistine idol fell face down before the Ark of the LORD in Ashdod and had its head and hands severed?"
     },
     "options": {
       "ar": [
         "داجون",
-        "بعل زبوب",
         "ملكوم",
-        "كموش"
+        "كموش",
+        "بعل زبوب"
       ],
       "en": [
         "Dagon",
-        "بعل زبوب",
-        "ملكوم",
-        "كموش"
+        "Milcom",
+        "Chemosh",
+        "Baal-Zebub"
       ]
     },
     "correctIndex": 0,
@@ -4065,7 +4067,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "وَبَكَّرُوا صَبَاحًا فِي الْغَدِ وَإِذَا بِدَاجُونَ سَاقِطٌ عَلَى وَجْهِهِ عَلَى الأَرْضِ أَمَامَ تَابُوتِ الرَّبِّ، وَرَأْسُ دَاجُونَ وَيَدَاهُ مَقْطُوعَةٌ...",
-      "en": "Scripture record from 1 Samuel 5: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "And when they arose early the next morning, there was Dagon, fallen on its face to the ground before the ark of the LORD. The head of Dagon and both the palms of its hands were broken off on the threshold; only Dagon’s torso was left of it."
     }
   },
   {
@@ -4073,30 +4075,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الضربة التي ضرب بها الرب أهل أشدود والفلسطينيين بسبب أخذهم لتابوت الرب؟",
-      "en": "Scripture Examination (1 Samuel 5: 6): What is the biblically verified answer concerning this sacred record?"
+      "en": "With what afflictions did the LORD strike the men of Ashdod and Philistia because they retained the Ark of the Covenant?"
     },
     "options": {
       "ar": [
+        "الضفادع والبعوض",
         "البواسير والفئران",
         "البرص والدمامل",
-        "الضفادع والبعوض",
         "الظلام الدامس"
       ],
       "en": [
+        "Frogs and lice",
         "Tumors and rats",
-        "البرص والدمامل",
-        "الضفادع والبعوض",
-        "الظلام الدامس"
+        "Leprosy and boils",
+        "Thick darkness"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 صموئيل 5: 6",
       "en": "1 Samuel 5: 6"
     },
     "verse": {
       "ar": "فَثَقُلَتْ يَدُ الرَّبِّ عَلَى الأَشْدُودِيِّينَ، وَأَخْرَبَهُمْ وَضَرَبَهُمْ بِالْبَوَاسِيرِ فِي أَشْدُودَ وَتُخُومِهَا.",
-      "en": "Scripture record from 1 Samuel 5: 6: Verify the sacred testimony in the Holy Bible."
+      "en": "But the hand of the LORD was heavy on the people of Ashdod, and He ravaged them and struck them with tumors, both Ashdod and its territory."
     }
   },
   {
@@ -4104,20 +4106,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما الحيوانان اللذان حملا التابوت في عجلة جديدة متوجهين مباشرة إلى بيتشمس دون أن يميلا يمنة أو يسرة؟",
-      "en": "Scripture Examination (1 Samuel 6: 10-12): What is the biblically verified answer concerning this sacred record?"
+      "en": "What animals pulled the new cart bearing the Ark of the LORD directly toward Beth Shemesh without turning right or left?"
     },
     "options": {
       "ar": [
         "بقرتان مرضعتان لم يعلهما نير",
         "حماران",
-        "حصانان",
-        "ثوران قويان"
+        "ثوران قويان",
+        "حصانان"
       ],
       "en": [
         "Two milk cows on which there had been no yoke",
-        "حماران",
-        "حصانان",
-        "ثوران قويان"
+        "Two donkeys",
+        "Two strong oxen",
+        "Two horses"
       ]
     },
     "correctIndex": 0,
@@ -4127,7 +4129,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَفَعَلَ الرِّجَالُ كَذلِكَ، وَأَخَذُوا بَقَرَتَيْنِ مُرْضِعَتَيْنِ وَرَبَطُوهُمَا إِلَى الْعَجَلَةِ... فَاسْتَقَامَتِ الْبَقَرَتَانِ فِي الطَّرِيقِ... وَلَمْ تَمِيلاَ يَمِينًا وَلاَ شِمَالاً...",
-      "en": "Scripture record from 1 Samuel 6: 10-12: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the cows headed straight for the road to Beth Shemesh, and went along the highway, lowing as they went, and did not turn aside to the right hand or to the left."
     }
   },
   {
@@ -4135,20 +4137,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الصخرة التي أقامها صموئيل النبي وقال: «إِلَى هُنَا أَعَانَنَا الرَّبُّ»؟",
-      "en": "Scripture Examination (1 Samuel 7: 12): What is the biblically verified answer concerning this sacred record?"
+      "en": "What stone did Samuel set up between Mizpah and Shen, naming it 'Ebenezer' saying: 'Thus far the LORD has helped us'?"
     },
     "options": {
       "ar": [
         "حجر المعونة (أبن عازر)",
-        "صخرة حوريب",
         "صخرة سالع المحاليق",
-        "صخرة ريمون"
+        "صخرة ريمون",
+        "صخرة حوريب"
       ],
       "en": [
         "Ebenezer (Stone of Help)",
-        "صخرة حوريب",
-        "صخرة سالع المحاليق",
-        "صخرة ريمون"
+        "Rock of Escape",
+        "Rock of Rimmon",
+        "Rock of Horeb"
       ]
     },
     "correctIndex": 0,
@@ -4158,7 +4160,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَأَخَذَ صَمُوئِيلُ حَجَرًا وَنَصَبَهُ بَيْنَ الْمِصْفَاةِ وَالسِّنِّ، وَدَعَا اسْمَهُ «أَبَنَ عِزْرَ» وَقَالَ: «إِلَى هُنَا أَعَانَنَا الرَّبُّ».",
-      "en": "Scripture record from 1 Samuel 7: 12: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Samuel took a stone and set it up between Mizpah and Shen, and called its name Ebenezer, saying, 'Thus far the LORD has helped us.'"
     }
   },
   {
@@ -4166,30 +4168,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم المدينة التي صعد إليها إلقانة وحنة سنوياً ليسجدوا ويذبحوا لرب الجنود في شيلوه؟",
-      "en": "In which city did the Tabernacle and the Ark of the Covenant reside during the judgeship of Eli the priest?"
+      "en": "From which city did Elkanah and Hannah travel annually to worship and sacrifice to the LORD of hosts in Shiloh?"
     },
     "options": {
       "ar": [
-        "الرامة",
         "بيت لحم",
         "أورشليم",
+        "الرامة",
         "حبرون"
       ],
       "en": [
-        "الرامة",
-        "بيت لحم",
+        "Bethlehem",
         "Jerusalem",
-        "حبرون"
+        "Ramah",
+        "Hebron"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "1 صموئيل 1: 3",
       "en": "1 Samuel 1: 3"
     },
     "verse": {
       "ar": "وَكَانَ هذَا الرَّجُلُ يَصْعَدُ مِنْ مَدِينَتِهِ مِنْ سَنَةٍ إِلَى سَنَةٍ لِيَسْجُدَ وَيَذْبَحَ لِرَبِّ الْجُنُودِ فِي شِيلُوهَ.",
-      "en": "Scripture record from 1 Samuel 1: 3: Verify the sacred testimony in the Holy Bible."
+      "en": "Now there was a certain man of Ramathaim Zophim, of the mountains of Ephraim, and his name was Elkanah"
     }
   },
   {
@@ -4197,30 +4199,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "كم كان عدد السنوات التي قضى فيها داود ملكاً على كل إسرائيل ويهوذا في أورشليم وحبرون؟",
-      "en": "Scripture Examination (2 Samuel 5: 4-5): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many total years did David reign over Israel and Judah, including his reign in Hebron and Jerusalem?"
     },
     "options": {
       "ar": [
-        "40 سنة (7 في حبرون و33 في أورشليم)",
-        "30 سنة",
         "50 سنة",
-        "20 سنة"
+        "20 سنة",
+        "40 سنة (7 في حبرون و33 في أورشليم)",
+        "30 سنة"
       ],
       "en": [
-        "40 years (7 في حبرون و33 في أورشليم)",
-        "30 years",
         "50 years",
-        "20 years"
+        "20 years",
+        "40 years (7 in Hebron and 33 in Jerusalem)",
+        "30 years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 صموئيل 5: 4-5",
       "en": "2 Samuel 5: 4-5"
     },
     "verse": {
       "ar": "كَانَ دَاوُدُ ابْنَ ثَلاَثِينَ سَنَةً حِينَ مَلَكَ، وَمَلَكَ أَرْبَعِينَ سَنَةً. فِي حَبْرُونَ مَلَكَ عَلَى يَهُوذَا سَبْعَ سِنِينٍ وَسِتَّةَ أَشْهُرٍ. وَفِي أُورُشَلِيمَ مَلَكَ ثَلاَثًا وَثَلاَثِينَ سَنَةً...",
-      "en": "Scripture record from 2 Samuel 5: 4-5: Verify the sacred testimony in the Holy Bible."
+      "en": "David was thirty years old when he began to reign, and he reigned forty years. In Hebron he reigned over Judah seven years and six months, and in Jerusalem he reigned thirty-three years over all Israel and Judah."
     }
   },
   {
@@ -4232,26 +4234,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
+        "ميخا",
         "إشعياء بن آموص",
         "إرميا",
-        "حزقيال",
-        "ميخا"
+        "حزقيال"
       ],
       "en": [
-        "إشعياء بن آموص",
-        "إرميا",
-        "Ezekiel",
-        "Micah"
+        "Micah",
+        "Isaiah son of Amoz",
+        "Jeremiah",
+        "Ezekiel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "إشعياء 20: 3",
       "en": "Isaiah 20: 3"
     },
     "verse": {
       "ar": "فَقَالَ الرَّبُّ: «كَمَا مَشَى عَبْدِي إِشَعْيَاءُ مُعَرًّى وَحَافِيًا ثَلاَثَ سِنِينٍ، آيَةً وَأُعْجُوبَةً عَلَى مِصْرَ وَعَلَى كُوشَ...».",
-      "en": "Scripture record from Isaiah 20: 3: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the LORD said, 'Just as My servant Isaiah has walked naked and barefoot three years for a sign and a wonder against Egypt and Ethiopia,'"
     }
   },
   {
@@ -4259,30 +4261,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم السفر المكتوب بلغة شعرية رثائية حزينة على خراب أورشليم وسقوط هيكلها؟",
-      "en": "Scripture Examination (Lamentations 1: 1): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which poetic book of the Old Testament opens with the lament: 'How lonely sits the city that was full of people!'?"
     },
     "options": {
       "ar": [
-        "مراثي إرميا",
+        "سفر أيوب",
         "سفر الجامعة",
         "سفر هوشع",
-        "سفر أيوب"
+        "مراثي إرميا"
       ],
       "en": [
-        "مراثي إرميا",
-        "سفر الجامعة",
-        "سفر هوشع",
-        "سفر أيوب"
+        "Book of Job",
+        "Book of Ecclesiastes",
+        "Book of Hosea",
+        "Lamentations of Jeremiah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "مراثي 1: 1",
       "en": "Lamentations 1: 1"
     },
     "verse": {
       "ar": "كَيْفَ جَلَسَتْ وَحْدَهَا الْمَدِينَةُ الْكَثِيرَةُ الشَّعْبِ! كَيْفَ صَارَتْ كَأَرْمَلَةٍ! الْعَظِيمَةُ فِي الأُمَمِ...",
-      "en": "Scripture record from Lamentations 1: 1: Verify the sacred testimony in the Holy Bible."
+      "en": "How lonely sits the city That was full of people! How like a widow is she, Who was great among the nations! The princess among the provinces Has become a slave!"
     }
   },
   {
@@ -4290,30 +4292,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم التلميذين اللذين مشى معهما يسوع بعد القيامة وتحدث معهما ولم يعرفاه حتى كسر الخبز؟",
-      "en": "Scripture Examination (Luke 24: 18): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the disciple on the road to Emmaus who conversed with the risen Christ without recognizing Him?"
     },
     "options": {
       "ar": [
-        "كليوباس وتلميذ آخر",
-        "بطرس ويوحنا",
         "توما ومتى",
-        "يعقوب وفيلبس"
+        "كليوباس وتلميذ آخر",
+        "يعقوب وفيلبس",
+        "بطرس ويوحنا"
       ],
       "en": [
-        "كليوباس وتلميذ آخر",
-        "بطرس ويوحنا",
-        "توما ومتى",
-        "يعقوب وفيلبس"
+        "Thomas and Matthew",
+        "Cleopas and another disciple",
+        "James and Philip",
+        "Peter and John"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "لوقا 24: 18",
       "en": "Luke 24: 18"
     },
     "verse": {
       "ar": "فَأَجَابَ أَحَدُهُمَا، الَّذِي اسْمُهُ كِلْيُوبَاسُ: «هَلْ أَنْتَ مُتَغَرِّبٌ وَحْدَكَ فِي أُورُشَلِيمَ وَلَمْ تَعْلَمِ الأُمُورَ الَّتِي حَدَثَتْ فِيهَا فِي هذِهِ الأَيَّامِ؟»",
-      "en": "Scripture record from Luke 24: 18: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the one whose name was Cleopas answered and said to Him, 'Are You the only stranger in Jerusalem, and have You not known the things which happened there in these days?'"
     }
   },
   {
@@ -4321,30 +4323,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم القرية التي كانا منطلقين إليها على بعد نحو ستين غلوة من أورشليم وكسر يسوع الخبز فيها؟",
-      "en": "Scripture Examination (Luke 24: 13): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the village about seven miles from Jerusalem where the two disciples recognized Jesus in the breaking of bread?"
     },
     "options": {
       "ar": [
-        "عمواس",
-        "بيت عنيا",
         "بيت فاجي",
-        "أريحا"
+        "عمواس",
+        "أريحا",
+        "بيت عنيا"
       ],
       "en": [
-        "عمواس",
-        "Bethany",
-        "بيت فاجي",
-        "Jericho"
+        "Bethphage",
+        "Emmaus",
+        "Jericho",
+        "Bethany"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "لوقا 24: 13",
       "en": "Luke 24: 13"
     },
     "verse": {
       "ar": "وَإِذَا اثْنَانِ مِنْهُمْ كَانَا مُنْطَلِقَيْنِ فِي ذلِكَ الْيَوْمِ إِلَى قَرْيَةٍ بَعِيدَةٍ عَنْ أُورُشَلِيمَ سِتِّينَ غَلْوَةً، اسْمُهَا «عِمْوَاسُ».",
-      "en": "Scripture record from Luke 24: 13: Verify the sacred testimony in the Holy Bible."
+      "en": "Now behold, two of them were traveling that same day to a village called Emmaus, which was seven miles from Jerusalem."
     }
   },
   {
@@ -4356,26 +4358,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "كنيسة أهل بيرية",
         "كنيسة أثينا",
         "كنيسة كورنثوس",
+        "كنيسة أهل بيرية",
         "كنيسة فيلبي"
       ],
       "en": [
+        "The Athenian Church",
+        "The Corinthian Church",
         "The Berean Church",
-        "كنيسة أثينا",
-        "كنيسة كورنثوس",
-        "كنيسة فيلبي"
+        "The Philippian Church"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 17: 11",
       "en": "Acts 17: 11"
     },
     "verse": {
       "ar": "وَكَانَ هؤُلاَءِ أَشْرَفَ مِنَ الَّذِينَ فِي تَسَالُونِيكِي، فَقَبِلُوا الْكَلِمَةَ بِكُلِّ نَشَاطٍ فَاحِصِينَ الْكُتُبَ كُلَّ يَوْمٍ: هَلْ هذِهِ الأُمُورُ هكَذَا؟",
-      "en": "Scripture record from Acts 17: 11: Verify the sacred testimony in the Holy Bible."
+      "en": "These were more fair-minded than those in Thessalonica, in that they received the word with all readiness, and searched the Scriptures daily to find out whether these things were so."
     }
   },
   {
@@ -4383,30 +4385,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الرجل السكندري اليهودي الفصيح المقتدر في الكتب الذي كان يعلم بتدقيق ما يختص بالرب وهو عارف معمودية يوحنا فقط؟",
-      "en": "Scripture Examination (Acts 18: 24-25): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the eloquent Alexandrian Jew, mighty in the Scriptures, who knew only the baptism of John before meeting Aquila and Priscilla?"
     },
     "options": {
       "ar": [
-        "أبلوس",
-        "كرنيليوس",
         "تيخيكس",
-        "أرسترخس"
+        "أرسترخس",
+        "أبلوس",
+        "كرنيليوس"
       ],
       "en": [
-        "Apollos",
-        "Cornelius",
         "Tychicus",
-        "أرسترخس"
+        "Aristarchus",
+        "Apollos",
+        "Cornelius"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 18: 24-25",
       "en": "Acts 18: 24-25"
     },
     "verse": {
       "ar": "ثُمَّ أَقْبَلَ إِلَى أَفَسُسَ يَهُودِيٌّ اسْمُهُ أَبُلَّوسُ، إِسْكَنْدَرِيُّ الْجِنْسِ، رَجُلٌ فَصِيحٌ مُقْتَدِرٌ فِي الْكُتُبِ. كَانَ هذَا خَبِيرًا فِي طَرِيقِ الرَّبِّ... وَهُوَ لاَ يَعْرِفُ إِلاَّ مَعْمُودِيَّةَ يُوحَنَّا.",
-      "en": "Scripture record from Acts 18: 24-25: Verify the sacred testimony in the Holy Bible."
+      "en": "Now a certain Jew named Apollos, born at Alexandria, an eloquent man and mighty in the Scriptures, came to Ephesus."
     }
   },
   {
@@ -4414,30 +4416,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الزوجين صانعي الخيام اللذين أخذا أبلوس وشرحا له طريق الرب بأكثر تدقيق؟",
-      "en": "Who was the eloquent Alexandrian Jew, mighty in the Scriptures, who knew only the baptism of John before meeting Aquila and Priscilla?"
+      "en": "Which tentmaking couple took Apollos aside in Ephesus and explained the way of God to him more accurately?"
     },
     "options": {
       "ar": [
+        "أندارونكوس ويونيا",
         "أكيلا وبريسكلا",
         "أنسيمس وفليمون",
-        "حننيا وسفيرة",
-        "أندارونكوس ويونيا"
+        "حننيا وسفيرة"
       ],
       "en": [
+        "Andronicus and Junia",
         "Aquila and Priscilla",
-        "أنسيمس وفليمون",
-        "حننيا وسفيرة",
-        "أندارونكوس ويونيا"
+        "Onesimus and Philemon",
+        "Ananias and Sapphira"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 18: 26",
       "en": "Acts 18: 26"
     },
     "verse": {
       "ar": "فَلَمَّا سَمِعَهُ أَكِيلاَ وَبِرِيسْكِلاَّ أَخَذَاهُ إِلَيْهِمَا، وَشَرَحَا لَهُ طَرِيقَ الرَّبِّ بِأَكْثَرِ تَدْقِيقٍ.",
-      "en": "Scripture record from Acts 18: 26: Verify the sacred testimony in the Holy Bible."
+      "en": "So he began to speak boldly in the synagogue. When Aquila and Priscilla heard him, they took him aside and explained to him the way of God more accurately."
     }
   },
   {
@@ -4449,26 +4451,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أغابوس النبي",
-        "سيلا",
         "تيمون",
-        "أرخبس"
+        "أرخبس",
+        "أغابوس",
+        "سيلا"
       ],
       "en": [
-        "Agabus the prophet",
-        "Silas",
         "Timon",
-        "Archippus"
+        "Archippus",
+        "Agabus",
+        "Silas"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 21: 11",
       "en": "Acts 21: 11"
     },
     "verse": {
       "ar": "فَجَاءَ إِلَيْنَا، وَأَخَذَ مِنْطَقَةَ بُولُسَ، وَرَبَطَ يَدَيْ نَفْسِهِ وَرِجْلَيْهِ وَقَالَ: «هذَا يَقُولُهُ الرُّوحُ الْقُدُسُ: الرَّجُلُ الَّذِي لَهُ هذِهِ الْمِنْطَقَةُ، هكَذَا سَيَرْبِطُهُ الْيَهُودُ فِي أُورُشَلِيمَ...».",
-      "en": "Scripture record from Acts 21: 11: Verify the sacred testimony in the Holy Bible."
+      "en": "When he had come to us, he took Paul’s belt, bound his own hands and feet, and said, 'Thus says the Holy Spirit, \"So shall the Jews at Jerusalem bind the man who owns this belt, and deliver him into the hands of the Gentiles.\"'"
     }
   },
   {
@@ -4476,30 +4478,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الصائغ في أفسس الذي صنع هياكل فضة لأرطاميس وأثار هيجاناً عظيماً ضد بولس؟",
-      "en": "Scripture Examination (Acts 19: 24): What is the biblically verified answer concerning this sacred record?"
+      "en": "What silversmith in Ephesus stirred up a major riot against Paul because his preaching threatened the worship of Artemis?"
     },
     "options": {
       "ar": [
-        "ديمتريوس الصائغ",
+        "ألكسندر",
         "إسكندر النحاس",
         "سكيوا",
-        "ألكسندر"
+        "ديمتريوس الصائغ"
       ],
       "en": [
-        "Demetrius the silversmith",
+        "Alexander",
         "Alexander the coppersmith",
-        "سكيوا",
-        "ألكسندر"
+        "Sceva",
+        "Demetrius the silversmith"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "أعمال 19: 24",
       "en": "Acts 19: 24"
     },
     "verse": {
       "ar": "لأَنَّ إِنْسَانًا اسْمُهُ دِيمِتْرِيُوسُ، صَائِغٌ صَانِعُ هَيَاكِلِ فِضَّةٍ لأَرْطَامِيسَ، كَانَ يُكَسِّبُ الصُّنَّاعَ مَكْسَبًا لَيْسَ بِقَلِيل.",
-      "en": "Scripture record from Acts 19: 24: Verify the sacred testimony in the Holy Bible."
+      "en": "For a certain man named Demetrius, a silversmith, who made silver shrines of Diana, brought no small profit to the craftsmen."
     }
   },
   {
@@ -4507,30 +4509,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ماذا هتف الجمع في مسرح أفسس لمدة نحو ساعتين دفاعاً عن وثنهم؟",
-      "en": "Scripture Examination (Acts 19: 34): What is the biblically verified answer concerning this sacred record?"
+      "en": "What cry did the mob in the theater at Ephesus shout for about two hours in defense of their pagan idol?"
     },
     "options": {
       "ar": [
+        "«الموت لبولس!»",
         "«عَظِيمَةٌ هِيَ أَرْطَامِيسُ الأَفَسُسِيِّينَ!»",
         "«عظيم هو زفس!»",
-        "«الموت لبولس!»",
         "«مبارك إله أفسس!»"
       ],
       "en": [
+        "'Death to Paul!'",
         "'Great is Diana (Artemis) of the Ephesians!'",
-        "«عظيم هو زفس!»",
-        "«الموت لبولس!»",
-        "«مبارك إله أفسس!»"
+        "'Great is Zeus!'",
+        "'Blessed is the god of Ephesus!'"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 19: 34",
       "en": "Acts 19: 34"
     },
     "verse": {
       "ar": "فَلَمَّا عَرَفُوا أَنَّهُ يَهُودِيٌّ، صَارَ صَوْتٌ وَاحِدٌ مِنَ الْجَمِيعِ صَارِخِينَ نَحْوَ مُدَّةِ سَاعَتَيْنِ: «عَظِيمَةٌ هِيَ أَرْطَامِيسُ الأَفَسُسِيِّينَ!».",
-      "en": "Scripture record from Acts 19: 34: Verify the sacred testimony in the Holy Bible."
+      "en": "But when they found out that he was a Jew, all with one voice cried out for about two hours, 'Great is Diana of the Ephesians!'"
     }
   },
   {
@@ -4538,30 +4540,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "من هو الشخص الذي أرسله بولس إلى فيلبي ووصفه بأنه: «أَخِي، وَالْعَامِلُ مَعِي، وَالْمُتَجَنِّدُ مَعِي، وَرَسُولُكُمْ»؟",
-      "en": "Scripture Examination (Philippians 2: 25): What is the biblically verified answer concerning this sacred record?"
+      "en": "Whom did Paul call his 'brother, fellow worker, and fellow soldier, but your messenger and the one who ministered to my need'?"
     },
     "options": {
       "ar": [
-        "أبفرودتس",
-        "تيموثاوس",
         "تيطس",
-        "أنسيمس"
+        "أنسيمس",
+        "أبفرودتس",
+        "تيموثاوس"
       ],
       "en": [
-        "Epaphroditus",
-        "Timothy",
         "Titus",
-        "Onesimus"
+        "Onesimus",
+        "Epaphroditus",
+        "Timothy"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "فيلبي 2: 25",
       "en": "Philippians 2: 25"
     },
     "verse": {
       "ar": "وَلكِنِّي حَسِبْتُ مِنَ اللاَّزِمِ أَنْ أُرْسِلَ إِلَيْكُمْ أَبَفْرُودِتُسَ أَخِي، وَالْعَامِلَ مَعِي، وَالْمُتَجَنِّدَ مَعِي، وَرَسُولَكُمْ، وَالْخَادِمَ لِحَاجَتِي.",
-      "en": "Scripture record from Philippians 2: 25: Verify the sacred testimony in the Holy Bible."
+      "en": "Yet I considered it necessary to send to you Epaphroditus, my brother, fellow worker, and fellow soldier, but your messenger and the one who ministered to my need;"
     }
   },
   {
@@ -4569,30 +4571,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الكنيسة التي كان فيها العبد أنسيمس وسيده فليمون وأسقفها أرخبس؟",
-      "en": "Scripture Examination (Colossians 4: 9): What is the biblically verified answer concerning this sacred record?"
+      "en": "To which church's community did the runaway slave Onesimus and his master Philemon belong?"
     },
     "options": {
       "ar": [
+        "كنيسة كورنثوس",
         "كنيسة كولوسي",
         "كنيسة أفسس",
-        "كنيسة فيلبي",
-        "كنيسة كورنثوس"
+        "كنيسة فيلبي"
       ],
       "en": [
-        "The Church of Colossae",
-        "كنيسة أفسس",
-        "كنيسة فيلبي",
-        "كنيسة كورنثوس"
+        "The Corinthian Church",
+        "The Colossian Church",
+        "The Ephesian Church",
+        "The Philippian Church"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "كولوسي 4: 9",
       "en": "Colossians 4: 9"
     },
     "verse": {
       "ar": "«مَعَ أُنِسِيمُسَ الأَخِ الأَمِينِ الْحَبِيبِ الَّذِي هُوَ مِنْكُمْ... وَقُولُوا لأَرْخِبُّسَ: انْظُرْ إِلَى الْخِدْمَةِ الَّتِي قَبِلْتَهَا فِي الرَّبِّ لِكَيْ تُتَمِّمَهَا».",
-      "en": "Scripture record from Colossians 4: 9: Verify the sacred testimony in the Holy Bible."
+      "en": "with Onesimus, a faithful and beloved brother, who is one of you. They will make known to you all things which are happening here."
     }
   },
   {
@@ -4600,30 +4602,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "في أي رسالة كتب بولس نشيد المحبة العظيم: «الْمَحَبَّةُ تَتَأَنَّى وَتَرْفُقُ. الْمَحَبَّةُ لاَ تَحْسِدُ...»؟",
-      "en": "Scripture Examination (1 Corinthians 13: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "In which epistle and chapter did the Apostle Paul write the great Hymn of Love: 'Love suffers long and is kind...'?"
     },
     "options": {
       "ar": [
-        "1 كورنثوس 13",
-        "رومية 12",
         "أفسس 4",
-        "غلاطية 5"
+        "غلاطية 5",
+        "رومية 12",
+        "1 كورنثوس 13"
       ],
       "en": [
-        "1 Corinthians 13",
-        "رومية 12",
-        "أفسس 4",
-        "غلاطية 5"
+        "Ephesians 4",
+        "Galatians 5",
+        "Romans 12",
+        "1 Corinthians 13"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 كورنثوس 13: 4",
       "en": "1 Corinthians 13: 4"
     },
     "verse": {
       "ar": "اَلْمَحَبَّةُ تَتَأَنَّى وَتَرْفُقُ. اَلْمَحَبَّةُ لاَ تَحْسِدُ. اَلْمَحَبَّةُ لاَ تَتَفَاخَرُ، وَلاَ تَنْتَفِخُ،",
-      "en": "Scripture record from 1 Corinthians 13: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "Love suffers long and is kind; love does not envy; love does not parade itself, is not puffed up;"
     }
   },
   {
@@ -4635,26 +4637,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "عبرانيين 11",
-        "رومية 8",
         "يعقوب 2",
-        "1 بطرس 1"
+        "رومية 8",
+        "1 بطرس 1",
+        "عبرانيين 11"
       ],
       "en": [
-        "Hebrews 11",
-        "رومية 8",
-        "يعقوب 2",
-        "1 بطرس 1"
+        "James 2",
+        "Romans 8",
+        "1 Peter 1",
+        "Hebrews 11"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عبرانيين 11: 1",
       "en": "Hebrews 11: 1"
     },
     "verse": {
       "ar": "وَأَمَّا الإِيمَانُ فَهُوَ الثِّقَةُ بِمَا يُرْجَى وَالإِيقَانُ بِأُمُورٍ لاَ تُرَى.",
-      "en": "Scripture record from Hebrews 11: 1: Verify the sacred testimony in the Holy Bible."
+      "en": "Now faith is the substance of things hoped for, the evidence of things not seen. For by it the elders obtained a good testimony."
     }
   },
   {
@@ -4662,20 +4664,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 51: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many years did the children of Israel wander in the wilderness until all the men of war had died?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
+        "عشرين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "سبعين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Thirty years",
+        "Seventy years"
       ]
     },
     "correctIndex": 0,
@@ -4685,7 +4687,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And the space in which we came from Kadesh Barnea until we crossed over the Valley of the Zered was thirty-eight years, until all the generation of the men of war was consumed from the midst of the camp, just as the LORD had sworn to them."
     }
   },
   {
@@ -4693,30 +4695,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 52: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the valley where Joshua commanded the moon to stand still while the sun stood still over Gibeon?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
+        "عشرين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Twenty years",
+        "Thirty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Joshua spoke to the LORD in the day when the LORD delivered up the Amorites before the children of Israel, and he said in the sight of Israel: 'Sun, stand still over Gibeon; And Moon, in the Valley of Aijalon.'"
     }
   },
   {
@@ -4724,20 +4726,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 53: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the first judge of Israel, the younger brother of Caleb, who delivered Israel from the king of Mesopotamia?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Twenty years",
+        "Thirty years"
       ]
     },
     "correctIndex": 0,
@@ -4747,7 +4749,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "When the children of Israel cried out to the LORD, the LORD raised up a deliverer for the children of Israel, who delivered them: Othniel the son of Kenaz, Caleb’s younger brother."
     }
   },
   {
@@ -4755,30 +4757,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 54: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many men did Gideon take with him into the camp of Midian carrying trumpets, pitchers, and torches?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Thirty years",
+        "Twenty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then he divided the three hundred men into three companies, and he put a trumpet into every man’s hand, with empty pitchers, and torches inside the pitchers."
     }
   },
   {
@@ -4786,30 +4788,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 55: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of Gideon's illegitimate son who murdered his seventy brothers upon one stone in Ophrah?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "أربعين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
+        "Seventy years",
+        "Twenty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then he went to his father’s house at Ophrah and killed his brothers, the seventy sons of Jerubbaal, on one stone. But Jotham the youngest son of Jerubbaal was left, for he hid himself."
     }
   },
   {
@@ -4817,30 +4819,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 56: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which youngest son of Gideon escaped the massacre and spoke the Parable of the Trees from the top of Mount Gerizim?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
+        "أربعين سنة",
         "ثلاثين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now when they told Jotham, he went and stood on top of Mount Gerizim, and lifted his voice and cried out. And he said to them: 'Listen to me, you men of Shechem, That God may listen to you!'"
     }
   },
   {
@@ -4848,30 +4850,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 57: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the tragic vow made by Jephthah the Gileadite before defeating the children of Ammon?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
+        "عشرين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
+        "Twenty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And Jephthah made a vow to the LORD, and said, 'If You will indeed deliver the people of Ammon into my hands, then it will be that whatever comes out of the doors of my house to meet me... shall surely be the LORD’s, and I will offer it up as a burnt offering.'"
     }
   },
   {
@@ -4879,30 +4881,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 58: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What riddle did Samson put forth to the thirty Philistine companions at his wedding feast in Timnah?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
+        "أربعين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Thirty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "So he said to them: 'Out of the eater came something to eat, And out of the strong came something sweet.' Now for three days they could not explain the riddle."
     }
   },
   {
@@ -4910,30 +4912,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 59: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "With what weapon did Samson strike down one thousand Philistines at Lehi?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Thirty years",
+        "Twenty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Samson said: 'With the jawbone of a donkey, Heaps upon heaps, With the jawbone of a donkey I have slain a thousand men!'"
     }
   },
   {
@@ -4941,20 +4943,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 60: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of Samson's father from the family of the Danites from Zorah?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
         "عشرين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Seventy years",
+        "Twenty years"
       ]
     },
     "correctIndex": 0,
@@ -4964,7 +4966,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now there was a certain man from Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren and had no children."
     }
   },
   {
@@ -4972,30 +4974,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 61: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of Boaz's mother, formerly of Jericho, recorded in the genealogy of Jesus Christ?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "عشرين سنة",
+        "سبعين سنة"
       ],
       "en": [
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Seventy years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Salmon begot Boaz by Rahab, Boaz begot Obed by Ruth, Obed begot Jesse,"
     }
   },
   {
@@ -5003,20 +5005,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 62: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What close relative of Naomi had the first right of redemption for Elimelech's land before Boaz redeemed it?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "سبعين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years",
+        "Seventy years"
       ]
     },
     "correctIndex": 0,
@@ -5026,7 +5028,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Boaz said to the close relative, 'Naomi, who has come back from the country of Moab, sold the piece of land which belonged to our brother Elimelech.'"
     }
   },
   {
@@ -5034,30 +5036,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 63: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What town was the birthplace of Samuel the prophet and the home of his parents Elkanah and Hannah?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
+        "أربعين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Thirty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now there was a certain man of Ramathaim Zophim, of the mountains of Ephraim, and his name was Elkanah"
     }
   },
   {
@@ -5065,30 +5067,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 64: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of King Saul's father from the tribe of Benjamin?"
     },
     "options": {
       "ar": [
+        "عشرين سنة",
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "سبعين سنة"
       ],
       "en": [
+        "Twenty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Seventy years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "There was a man of Benjamin whose name was Kish the son of Abiel, the son of Zeror, the son of Bechorath, the son of Aphiah, a Benjamite, a mighty man of power."
     }
   },
   {
@@ -5096,30 +5098,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 65: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "From which Amalekite king did Saul spare life along with the best sheep and oxen, directly disobeying the LORD?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
+        "أربعين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Seventy years",
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "He also took Agag king of the Amalekites alive, and utterly destroyed all the people with the edge of the sword."
     }
   },
   {
@@ -5127,30 +5129,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 66: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who killed Agag the king of the Amalekites in Gilgal before the LORD after Saul failed to do so?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "عشرين سنة",
+        "سبعين سنة"
       ],
       "en": [
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Seventy years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "So Samuel said, 'As your sword has made women childless, so shall your mother be childless among women.' And Samuel hacked Agag in pieces before the LORD in Gilgal."
     }
   },
   {
@@ -5158,30 +5160,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 67: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "In which cave did David spare Saul's life by cutting off only the corner of Saul's robe while Saul slept?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
+        "عشرين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
+        "Twenty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And he came to the sheepfolds by the road, where there was a cave; and Saul went in to attend to his needs. (David and his men were staying in the recesses of the cave.)"
     }
   },
   {
@@ -5189,30 +5191,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 68: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "In which desert wilderness did David again spare Saul's life, taking only Saul's spear and jug of water from beside his head?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "عشرين سنة",
+        "سبعين سنة"
       ],
       "en": [
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Seventy years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "So David and Abishai came to the people by night; and there Saul lay sleeping within the camp, with his spear stuck in the ground by his head. And Abner and the people lay all around him."
     }
   },
   {
@@ -5220,30 +5222,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 69: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What Philistine king of Gath gave the city of Ziklag to David while David was fleeing from Saul?"
     },
     "options": {
       "ar": [
+        "عشرين سنة",
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "ثلاثين سنة"
       ],
       "en": [
+        "Twenty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Achish gave him Ziklag that day. Therefore Ziklag has belonged to the kings of Judah to this day."
     }
   },
   {
@@ -5251,30 +5253,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 70: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "On which mountain did King Saul and his sons Jonathan, Abinadab, and Malchishua die in battle against the Philistines?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "سبعين سنة",
+        "عشرين سنة",
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Seventy years",
+        "Twenty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now the Philistines fought against Israel; and the men of Israel fled from before the Philistines, and fell slain on Mount Gilboa."
     }
   },
   {
@@ -5282,30 +5284,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 71: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who were the courageous men who journeyed all night to rescue the bodies of Saul and his sons from the wall of Beth Shan?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
+        "أربعين سنة",
         "ثلاثين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "all the valiant men arose and traveled all night, and took the body of Saul and the bodies of his sons from the wall of Beth Shan; and they came to Jabesh and burned them there."
     }
   },
   {
@@ -5313,20 +5315,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 72: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the commander of Saul's army who made Saul's son Ishbosheth king over Israel in Mahanaim?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
+        "عشرين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "ثلاثين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Seventy years",
+        "Thirty years"
       ]
     },
     "correctIndex": 0,
@@ -5336,7 +5338,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "But Abner the son of Ner, commander of Saul’s army, took Ishbosheth the son of Saul and brought him over to Mahanaim;"
     }
   },
   {
@@ -5344,30 +5346,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 73: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the swift-footed brother of Joab who was killed by Abner son of Ner with the blunt end of his spear?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "سبعين سنة",
+        "عشرين سنة",
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Seventy years",
+        "Twenty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now Asahel was as fleet of foot as a wild gazelle. So Asahel pursued Abner, and in contemplating his pursuit he did not turn to the right hand or to the left from following Abner."
     }
   },
   {
@@ -5375,20 +5377,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 74: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who murdered Abner son of Ner deceitfully at the gate of Hebron to avenge the blood of his brother Asahel?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
         "عشرين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Seventy years",
+        "Twenty years"
       ]
     },
     "correctIndex": 0,
@@ -5398,7 +5400,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now when Abner had returned to Hebron, Joab took him aside in the gate to speak with him privately, and there stabbed him in the stomach, so that he died for the blood of Asahel his brother."
     }
   },
   {
@@ -5406,30 +5408,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 75: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who assassinated Ishbosheth in his bed at noon in his house and brought his head to David in Hebron?"
     },
     "options": {
       "ar": [
+        "ثلاثين سنة",
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And they came there into the middle of the house, like men getting wheat, and they stabbed him in the stomach. Then Rechab and Baanah his brother escaped."
     }
   },
   {
@@ -5437,30 +5439,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 76: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "From which ancient people did David capture the stronghold of Zion, renaming it the City of David?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
+        "أربعين سنة",
         "ثلاثين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Nevertheless David took the stronghold of Zion (that is, the City of David)."
     }
   },
   {
@@ -5468,30 +5470,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 77: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was David's wife, Saul's daughter, who despised David in her heart when she saw him leaping and whirling before the LORD?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
+        "أربعين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Thirty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now as the ark of the LORD came into the City of David, Michal, Saul’s daughter, looked through a window and saw King David leaping and whirling before the LORD; and she despised him in her heart."
     }
   },
   {
@@ -5499,30 +5501,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 78: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the covenant promise made by God to David through Nathan regarding his kingdom and throne?"
     },
     "options": {
       "ar": [
+        "عشرين سنة",
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "ثلاثين سنة"
       ],
       "en": [
+        "Twenty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "'And your house and your kingdom shall be established forever before you. Your throne shall be established forever.'"
     }
   },
   {
@@ -5530,30 +5532,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 79: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the Hittite warrior, husband of Bathsheba, whom David treacherously ordered to be placed in the forefront of the hottest battle?"
     },
     "options": {
       "ar": [
+        "عشرين سنة",
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "ثلاثين سنة"
       ],
       "en": [
+        "Twenty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And he wrote in the letter, saying, 'Set Uriah in the forefront of the hottest battle, and retire from him, that he may be struck down and die.'"
     }
   },
   {
@@ -5561,30 +5563,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 80: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which son of David violated his half-sister Tamar and was later assassinated by Absalom's servants at Baal Hazor?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "أربعين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
+        "Seventy years",
+        "Twenty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now it came to pass after two full years that Absalom had sheepshearers in Baal Hazor, which is near Ephraim; and Absalom invited all the king’s sons... Now Absalom had commanded his servants, saying, 'Watch now, when Amnon’s heart is merry with wine... strike Amnon and kill him.'"
     }
   },
   {
@@ -5592,20 +5594,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 81: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "In which city did Absalom first proclaim himself king and launch his rebellion against his father David?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "سبعين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years",
+        "Seventy years"
       ]
     },
     "correctIndex": 0,
@@ -5615,7 +5617,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Absalom sent spies throughout all the tribes of Israel, saying, 'As soon as you hear the sound of the trumpet, then you shall say, \"Absalom reigns in Hebron!\"'"
     }
   },
   {
@@ -5623,20 +5625,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 82: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "In which forest did the battle take place between the armies of David and the forces of Absalom?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
         "عشرين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Seventy years",
+        "Twenty years"
       ]
     },
     "correctIndex": 0,
@@ -5646,7 +5648,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "So the people went out into the field against Israel. And the battle was in the woods of Ephraim."
     }
   },
   {
@@ -5654,20 +5656,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 83: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "How was Absalom caught and suspended in the forest before Joab struck him with three darts through his heart?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Twenty years",
+        "Thirty years"
       ]
     },
     "correctIndex": 0,
@@ -5677,7 +5679,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Absalom met the servants of David. Absalom rode on a mule. The mule went under the thick boughs of a great terebinth tree, and his head got caught in the terebinth; so he was left hanging between heaven and earth."
     }
   },
   {
@@ -5685,30 +5687,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 84: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the Benjamite rebel who blew a trumpet saying: 'We have no share in David... Every man to his tents, O Israel!'?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
+        "عشرين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
+        "Twenty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And there happened to be there a rebel, whose name was Sheba the son of Bichri, a Benjamite. And he blew a trumpet, and said: 'We have no share in David, Nor do we have inheritance in the son of Jesse. Every man to his tents, O Israel!'"
     }
   },
   {
@@ -5716,30 +5718,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 85: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "In which city was Sheba son of Bichri besieged until a wise woman persuaded the citizens to throw his severed head over the wall?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Thirty years",
+        "Twenty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And they came and besieged him in Abel of Beth Maachah; and they cast up a siege mound against the city, and it stood by the rampart."
     }
   },
   {
@@ -5747,30 +5749,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 86: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which brother of Solomon attempted to usurp the throne when David was old, anointing himself king at the Stone of Zoheleth?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
+        "أربعين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Seventy years",
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Adonijah the son of Haggith exalted himself, saying, 'I will be king'; and he prepared for himself chariots and horsemen, and fifty men to run before him."
     }
   },
   {
@@ -5778,20 +5780,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 87: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who went to King David along with Nathan the prophet to remind David of his oath that Solomon would reign?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
         "عشرين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Seventy years",
+        "Twenty years"
       ]
     },
     "correctIndex": 0,
@@ -5801,7 +5803,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "So Bathsheba went into the chamber to the king. (Now the king was very old, and Abishag the Shunammite was serving the king.)"
     }
   },
   {
@@ -5809,30 +5811,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 88: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "At which spring near Jerusalem was Solomon anointed king of Israel by Zadok the priest and Nathan the prophet?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Thirty years",
+        "Twenty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "So Zadok the priest, Nathan the prophet, Benaiah the son of Jehoiada, the Cherethites, and the Pelethites went down and had Solomon ride on King David’s mule, and brought him to Gihon."
     }
   },
   {
@@ -5840,30 +5842,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 89: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What request did King Solomon make of the LORD in his dream at Gibeon when God offered him whatever he asked?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "سبعين سنة",
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years",
+        "Seventy years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "'Therefore give to Your servant an understanding heart to judge Your people, that I may discern between good and evil. For who is able to judge this great people of Yours?'"
     }
   },
   {
@@ -5871,30 +5873,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 90: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What wise judgment did Solomon make to discover the true mother of the living infant brought before him?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
+        "أربعين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Seventy years",
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And the king said, 'Divide the living child in two, and give half to one, and half to the other.'"
     }
   },
   {
@@ -5902,30 +5904,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 91: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What Phoenician king of Tyre supplied cedar and cypress timbers and gold to Solomon for the building of the temple?"
     },
     "options": {
       "ar": [
+        "ثلاثين سنة",
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now Hiram king of Tyre sent his servants to Solomon, because he heard that they had anointed him king in place of his father, for Hiram had always loved David."
     }
   },
   {
@@ -5933,30 +5935,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 92: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "In what year of Solomon's reign, and in which month, did construction begin on the house of the LORD in Jerusalem?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
+        "عشرين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
+        "Twenty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And it came to pass in the four hundred and eightieth year after the children of Israel had come out of the land of Egypt, in the fourth year of Solomon’s reign over Israel, in the month of Ziv, which is the second month, that he began to build the house of the LORD."
     }
   },
   {
@@ -5964,30 +5966,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 93: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many years was King Solomon engaged in building the temple of the LORD in Jerusalem until its completion?"
     },
     "options": {
       "ar": [
+        "ثلاثين سنة",
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "In the fourth year the foundation of the house of the LORD was laid, in the month of Ziv. And in the eleventh year, in the month of Bul, which is the eighth month, the house was finished in all its details and according to all its plans. So he was seven years in building it."
     }
   },
   {
@@ -5995,30 +5997,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 94: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Where did Jeroboam son of Nebat set up two golden calves so that northern Israel would not go up to Jerusalem to sacrifice?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
         "سبعين سنة",
+        "أربعين سنة",
         "ثلاثين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Therefore the king asked advice, made two calves of gold, and said to the people, 'It is too much for you to go up to Jerusalem. Here are your gods, O Israel, which brought you up from the land of Egypt!' And he set up one in Bethel, and the other he put in Dan."
     }
   },
   {
@@ -6026,30 +6028,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 95: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which prophet from Shiloh tore his new garment into twelve pieces and gave ten to Jeroboam?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
+        "سبعين سنة",
+        "أربعين سنة",
         "عشرين سنة"
       ],
       "en": [
+        "Thirty years",
+        "Seventy years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Now it happened at that time, when Jeroboam went out of Jerusalem, that the prophet Ahijah the Shilonite met him on the way; and he had clothed himself with a new garment, and the two were alone in the field. Then Ahijah took hold of the new garment that was on him, and tore it into twelve pieces."
     }
   },
   {
@@ -6057,30 +6059,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 96: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which prophet told King Rehoboam and Judah not to fight against their brethren of the northern tribes of Israel?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة",
+        "عشرين سنة",
+        "سبعين سنة"
       ],
       "en": [
+        "Thirty years",
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Seventy years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Shemaiah the prophet came to Rehoboam and the leaders of Judah, who were gathered in Jerusalem because of Shishak, and said to them, 'Thus says the LORD: \"You have forsaken Me, and therefore I also have left you in the hand of Shishak.\"'"
     }
   },
   {
@@ -6088,20 +6090,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 97: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What Egyptian Pharaoh invaded Jerusalem during the reign of Rehoboam and carried away the treasures of the temple and royal palace?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
+        "عشرين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "ثلاثين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Seventy years",
+        "Thirty years"
       ]
     },
     "correctIndex": 0,
@@ -6111,7 +6113,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And it happened in the fifth year of King Rehoboam that Shishak king of Egypt came up against Jerusalem. And he took away the treasures of the house of the LORD and the treasures of the king’s house;"
     }
   },
   {
@@ -6119,20 +6121,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 98: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which king of Israel built the new capital city of Samaria on a hill purchased from Shemer for two talents of silver?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
-        "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "سبعين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Thirty years",
+        "Twenty years",
+        "Seventy years"
       ]
     },
     "correctIndex": 0,
@@ -6142,7 +6144,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And he bought the hill of Samaria from Shemer for two talents of silver; and he built on the hill, and called the name of the city which he built, Samaria, after the name of Shemer, owner of the hill."
     }
   },
   {
@@ -6150,30 +6152,30 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 99: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the Sidonian princess, daughter of Ethbaal king of the Sidonians, who married King Ahab and introduced Baal worship to Israel?"
     },
     "options": {
       "ar": [
-        "أربعين سنة",
+        "عشرين سنة",
         "سبعين سنة",
         "ثلاثين سنة",
-        "عشرين سنة"
+        "أربعين سنة"
       ],
       "en": [
-        "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Twenty years",
+        "Seventy years",
+        "Thirty years",
+        "Forty years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 14: 33",
       "en": "Numbers 14: 33"
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And it came to pass, as though it had been a trivial thing for him to walk in the sins of Jeroboam the son of Nebat, that he took as wife Jezebel the daughter of Ethbaal, king of the Sidonians; and he went and served Baal and worshiped him."
     }
   },
   {
@@ -6181,20 +6183,20 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "سؤال العهد والخدمة رقم 100: كم سنة تاه بنو إسرائيل في برية سيناء حتى فني ذلك الجيل؟",
-      "en": "Scripture Examination (Numbers 14: 33): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the town where Naboth owned a vineyard adjacent to the royal palace of King Ahab?"
     },
     "options": {
       "ar": [
         "أربعين سنة",
         "سبعين سنة",
-        "ثلاثين سنة",
-        "عشرين سنة"
+        "عشرين سنة",
+        "ثلاثين سنة"
       ],
       "en": [
         "Forty years",
-        "سبعين years",
-        "ثلاثين years",
-        "عشرين years"
+        "Seventy years",
+        "Twenty years",
+        "Thirty years"
       ]
     },
     "correctIndex": 0,
@@ -6204,7 +6206,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "«وَتَكُونُونَ رُعَاةً فِي الْقَفْرِ أَرْبَعِينَ سَنَةً، وَتَحْمِلُونَ فِسْقَكُمْ حَتَّى تَفْنَى جُثَثُكُمْ فِي الْقَفْرِ».",
-      "en": "Scripture record from Numbers 14: 33: Verify the sacred testimony in the Holy Bible."
+      "en": "And it came to pass after these things that Naboth the Jezreelite had a vineyard which was in Jezreel, next to the palace of Ahab king of Samaria."
     }
   },
   {
@@ -6217,15 +6219,15 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "تسع أذرع",
-        "سبع أذرع",
+        "خمس عشرة ذراعاً",
         "اثنتا عشرة ذراعاً",
-        "خمس عشرة ذراعاً"
+        "سبع أذرع"
       ],
       "en": [
         "Nine cubits",
-        "Seven cubits",
+        "Fifteen cubits",
         "Twelve cubits",
-        "Fifteen cubits"
+        "Seven cubits"
       ]
     },
     "correctIndex": 0,
@@ -6235,7 +6237,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "إِنَّ عُوجَ مَلِكَ بَاشَانَ وَحْدَهُ بَقِيَ مِنْ بَقِيَّةِ الرَّفَائِيِّينَ. هُوَذَا سَرِيرُهُ سَرِيرٌ مِنْ حَدِيدٍ... طُولُهُ تِسْعُ أَذْرُعٍ، وَعَرْضُهُ أَرْبَعُ أَذْرُعٍ بِذِرَاعِ رَجُل.",
-      "en": "'For only Og king of Bashan remained of the remnant of the giants. Indeed his bedstead was an iron bedstead... Nine cubits is its length and four cubits its width, according to the standard cubit.'"
+      "en": "For only Og king of Bashan remained of the remnant of the giants. Indeed his bedstead was an iron bedstead... Nine cubits is its length and four cubits its width, according to the standard cubit."
     }
   },
   {
@@ -6247,26 +6249,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "فوطيفارع كاهن أون",
         "فوطيفار",
-        "يامبريس",
-        "فرعون"
+        "فوطيفارع كاهن أون",
+        "فرعون",
+        "يامبريس"
       ],
       "en": [
-        "Potiphera priest of On",
         "Potiphar",
-        "Jambres",
-        "Pharaoh"
+        "Potiphera priest of On",
+        "Pharaoh",
+        "Jambres"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "تكوين 41: 45",
       "en": "Genesis 41: 45"
     },
     "verse": {
       "ar": "وَأَعْطَاهُ أَسْنَاتَ بِنْتَ فُوطِيفَارَعَ كَاهِنِ أُونَ زَوْجَةً. فَخَرَجَ يُوسُفُ عَلَى أَرْضِ مِصْرَ.",
-      "en": "And Pharaoh called Joseph's name Zaphenath-Paneah. And he gave him as a wife Asenath, the daughter of Poti-Pherah priest of On. So Joseph went out over all the land of Egypt."
+      "en": "And Pharaoh called Joseph’s name Zaphenath-Paneah. And he gave him as a wife Asenath, the daughter of Poti-Pherah priest of On. So Joseph went out over all the land of Egypt."
     }
   },
   {
@@ -6274,7 +6276,7 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم الملك الموآبي البدين جداً الذي قتله إهود بن جيرا بسيف ذي حدين طوله ذراع في علية بروده؟",
-      "en": "Scripture Examination (Judges 3: 17): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the very fat king of Moab who was struck down in his cool upper chamber by Ehud son of Gera?"
     },
     "options": {
       "ar": [
@@ -6305,23 +6307,23 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما هي الكلمة السرية التي امتحن بها الجلعاديون أهل إفرايم الهاربين عند مخاضات الأردن وكانوا يلفظونها سيناً؟",
-      "en": "Scripture Examination (Judges 12: 6): What is the biblically verified answer concerning this sacred record?"
+      "en": "What test word did the Gileadites demand at the Jordan crossings, which the fleeing Ephraimites mispronounced as 'Sibboleth'?"
     },
     "options": {
       "ar": [
-        "شِبّولَت",
-        "سِبّولَت",
         "شيبولت",
-        "سابوليت"
+        "سابوليت",
+        "شِبّولَت",
+        "سِبّولَت"
       ],
       "en": [
         "Shibboleth",
-        "Sibboleth",
-        "شيبولت",
-        "سابوليت"
+        "Saboleth",
+        "Shibboleth",
+        "Sibboleth"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "قضاة 12: 6",
       "en": "Judges 12: 6"
@@ -6336,20 +6338,20 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "من هو الرجل الذي خبأ مئة نبي من أنبياء الرب في مغارتين خمسين خمسين وأطعمهم بخبز وماء في عهد إيزابل؟",
-      "en": "Scripture Examination (1 Kings 18: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who hid one hundred prophets of the LORD by fifties in caves and fed them with bread and water during Jezebel's purge?"
     },
     "options": {
       "ar": [
         "عوبديا وكيل بيت آخاب",
-        "ميخا بن يملة",
         "يهوشافاط",
-        "حزائيل"
+        "حزائيل",
+        "ميخا بن يملة"
       ],
       "en": [
         "Obadiah steward of Ahab's house",
-        "ميخا بن يملة",
         "Jehoshaphat",
-        "Hazael"
+        "Hazael",
+        "Micaiah son of Imlah"
       ]
     },
     "correctIndex": 0,
@@ -6372,15 +6374,15 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "ثماني سنين",
+        "عشرون سنة",
         "اثنتا عشرة سنة",
-        "ست عشرة سنة",
-        "عشرون سنة"
+        "ست عشرة سنة"
       ],
       "en": [
         "Eight years",
+        "Twenty years",
         "Twelve years",
-        "Sixteen years",
-        "Twenty years"
+        "Sixteen years"
       ]
     },
     "correctIndex": 0,
@@ -6402,19 +6404,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "جبل هور",
-        "جبل نيبو",
+        "جبل سعير",
         "جبل سيناء",
-        "جبل سعير"
+        "جبل نيبو",
+        "جبل هور"
       ],
       "en": [
-        "Mount Hor",
+        "Mount Seir",
+        "Mount Sinai",
         "Mount Nebo",
-        "جبل سيناء",
-        "جبل سعير"
+        "Mount Hor"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 20: 28",
       "en": "Numbers 20: 28"
@@ -6433,26 +6435,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "جبل نيبو (رأس الفسجة)",
-        "جبل هور",
         "جبل جرزيم",
-        "جبل عيبال"
+        "جبل عيبال",
+        "جبل هور",
+        "جبل نيبو (رأس الفسجة)"
       ],
       "en": [
-        "Mount Nebo (Pisgah)",
+        "Mount Gerizim",
+        "Mount Ebal",
         "Mount Hor",
-        "جبل جرزيم",
-        "جبل عيبال"
+        "Mount Nebo (Pisgah)"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تثنية 34: 1",
       "en": "Deuteronomy 34: 1"
     },
     "verse": {
       "ar": "وَصَعِدَ مُوسَى مِنْ عَرَبَاتِ مُوآبَ إِلَى جَبَلِ نَبُو، إِلَى رَأْسِ الْفِسْجَةِ الَّذِي قُبَالَةَ أَرِيحَا، فَأَرَاهُ الرَّبُّ جَمِيعَ الأَرْضِ...",
-      "en": "Then Moses went up from the plains of Moab to Mount Nebo, to the top of Pisgah, which is across from Jericho. And the LORD showed him all the land..."
+      "en": "Then Moses went up from the plains of Moab to Mount Nebo, to the top of Pisgah, which is across from Jericho. And the LORD showed him all the land... So Moses the servant of the LORD died there in the land of Moab, according to the word of the LORD. And He buried him in a valley"
     }
   },
   {
@@ -6460,23 +6462,23 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم البئر التي حفرها إبراهيم وقطع عندها عهداً مع أبيمالك وحلفا كلاهما هناك؟",
-      "en": "Scripture Examination (Genesis 21: 31): What is the biblically verified answer concerning this sacred record?"
+      "en": "What well did Abraham dig and make a covenant there with Abimelech, swearing an oath to each other?"
     },
     "options": {
       "ar": [
+        "بئر مارة",
         "بئر سبع",
         "بئر لحي رئي",
-        "بئر رحوبوت",
-        "بئر مارة"
+        "بئر رحوبوت"
       ],
       "en": [
+        "Well of Marah",
         "Beersheba",
         "Beer Lahai Roi",
-        "بئر رحوبوت",
-        "بئر مارة"
+        "Well of Rehoboth"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "تكوين 21: 31",
       "en": "Genesis 21: 31"
@@ -6495,19 +6497,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "بئر لحي رئي",
+        "بئر مدين",
         "بئر سبع",
         "بئر يعقوب",
-        "بئر مدين"
+        "بئر لحي رئي"
       ],
       "en": [
-        "Beer Lahai Roi",
+        "Well of Midian",
         "Beersheba",
-        "بئر يعقوب",
-        "بئر مدين"
+        "Jacob's well",
+        "Beer Lahai Roi"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 16: 14",
       "en": "Genesis 16: 14"
@@ -6522,30 +6524,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "كم كان عدد شواقل الفضة التي وزنها إبراهيم لعفرون الحثي ثمناً لحقل مغارة المكفيلة؟",
-      "en": "In what location did Abraham purchase the field and cave of Machpelah to bury his wife Sarah?"
+      "en": "How many shekels of silver did Abraham weigh out to Ephron the Hittite for the purchase of the cave of Machpelah?"
     },
     "options": {
       "ar": [
-        "أربعمئة شاقل فضة",
-        "ثلاثمئة شاقل",
+        "خمسون شاقلاً",
         "مئتا شاقل",
-        "خمسون شاقلاً"
+        "ثلاثمئة شاقل",
+        "أربعمئة شاقل فضة"
       ],
       "en": [
-        "400 shekels of silver",
-        "300 shekels",
+        "50 shekels",
         "200 shekels",
-        "50 shekels"
+        "300 shekels",
+        "400 shekels of silver"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 23: 16",
       "en": "Genesis 23: 16"
     },
     "verse": {
       "ar": "فَسَمِعَ إِبْرَاهِيمُ لِعَفْرُونَ، وَوَزَنَ إِبْرَاهِيمُ لِعَفْرُونَ الْفِضَّةَ الَّتِي ذَكَرَهَا... أَرْبَعَ مِئَةِ شَاقِلِ فِضَّةٍ جَائِزَةٍ عِنْدَ التُّجَّارِ.",
-      "en": "Scripture record from Genesis 23: 16: Verify the sacred testimony in the Holy Bible."
+      "en": "And Abraham listened to Ephron; and Abraham weighed out the silver for Ephron which he had named in the hearing of the sons of Heth, four hundred shekels of silver, currency of the merchants."
     }
   },
   {
@@ -6553,30 +6555,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم أم موسى وهارون ومريم المذكورة بالاسم في سفري الخروج والعدد؟",
-      "en": "Scripture Examination (Exodus 6: 20): What is the biblically verified answer concerning this sacred record?"
+      "en": "What was the name of the mother of Aaron, Moses, and Miriam, explicitly named in Exodus and Numbers?"
     },
     "options": {
       "ar": [
-        "يوكابد",
-        "صفورة",
         "شفرة",
-        "فوعة"
+        "يوكابد",
+        "فوعة",
+        "صفورة"
       ],
       "en": [
-        "Jochebed",
-        "Zipporah",
         "Shiphrah",
-        "Puah"
+        "Jochebed",
+        "Puah",
+        "Zipporah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "خروج 6: 20",
       "en": "Exodus 6: 20"
     },
     "verse": {
       "ar": "وَأَخَذَ عَمْرَامُ يُوكَابَدَ عَمَّتَهُ زَوْجَةً لَهُ. فَوَلَدَتْ لَهُ هَارُونَ وَمُوسَى. وَكَانَتْ سِنُو حَيَاةِ عَمْرَامَ مِئَةً وَسَبْعًا وَثَلاَثِينَ سَنَةً.",
-      "en": "Scripture record from Exodus 6: 20: Verify the sacred testimony in the Holy Bible."
+      "en": "Now Amram took for himself Jochebed, his father’s sister, as wife; and she bore him Aaron and Moses. And the years of the life of Amram were one hundred and thirty-seven."
     }
   },
   {
@@ -6588,26 +6590,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "شفرة وفوعة",
         "يوكابد وصفورة",
         "أفنيكي ولوئيس",
+        "شفرة وفوعة",
         "أفنيرة ورفقة"
       ],
       "en": [
-        "Shiphrah and Puah",
-        "يوكابد وصفورة",
+        "Jochebed and Zipporah",
         "Eunice and Lois",
-        "أفنيرة ورفقة"
+        "Shiphrah and Puah",
+        "Ophrah and Rebekah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "خروج 1: 15",
       "en": "Exodus 1: 15"
     },
     "verse": {
       "ar": "وَكَلَّمَ مَلِكُ مِصْرَ قَابِلَتَيِ الْعِبْرَانِيَّاتِ، اللَّتَيْنِ اسْمُ إِحْدَاهُمَا شِفْرَةُ وَاسْمُ الأُخْرَى فُوعَةُ...",
-      "en": "Scripture record from Exodus 1: 15: Verify the sacred testimony in the Holy Bible."
+      "en": "Then the king of Egypt spoke to the Hebrew midwives, of whom the name of one was Shiphrah and the name of the other Puah; and he said, 'When you do the duties of a midwife for the Hebrew women... if it is a son, then you shall kill him'"
     }
   },
   {
@@ -6619,26 +6621,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "إيليم",
         "مارة",
+        "قادش برنيع",
         "رفيديم",
-        "قادش برنيع"
+        "إيليم"
       ],
       "en": [
-        "Elim",
         "Marah",
+        "Kadesh Barnea",
         "Rephidim",
-        "Kadesh Barnea"
+        "Elim"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "خروج 15: 27",
       "en": "Exodus 15: 27"
     },
     "verse": {
       "ar": "ثُمَّ جَاءُوا إِلَى إِيلِيمَ وَهُنَاكَ اثْنَتَا عَشْرَةَ عَيْنَ مَاءٍ وَسَبْعُونَ نَخْلَةً. فَنَزَلُوا هُنَاكَ عِنْدَ الْمَاءِ.",
-      "en": "Scripture record from Exodus 15: 27: Verify the sacred testimony in the Holy Bible."
+      "en": "Then they came to Elim, where there were twelve wells of water and seventy palm trees; so they camped there by the waters."
     }
   },
   {
@@ -6646,30 +6648,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "من هما الرجلان اللذان رفعا يدي موسى النبي حتى غروب الشمس فغلب يشوع عماليق في رفيديم؟",
-      "en": "Scripture Examination (Exodus 17: 12): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who were the two men who held up Moses' hands until sunset so that Joshua defeated Amalek at Rephidim?"
     },
     "options": {
       "ar": [
+        "فينحاس وجرشوم",
         "هارون وحور",
-        "هارون ويشوع",
         "كالب وألعازار",
-        "فينحاس وجرشوم"
+        "هارون ويشوع"
       ],
       "en": [
+        "Phinehas and Gershom",
         "Aaron and Hur",
-        "هارون ويشوع",
-        "كالب وألعازار",
-        "فينحاس وجرشوم"
+        "Caleb and Eleazar",
+        "Aaron and Joshua"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "خروج 17: 12",
       "en": "Exodus 17: 12"
     },
     "verse": {
       "ar": "فَأَخَذَا حَجَرًا وَوَضَعَاهُ تَحْتَهُ فَجَلَسَ عَلَيْهِ. وَدَعَمَ هَارُونُ وَحُورُ يَدَيْهِ، الْوَاحِدُ مِنْ هُنَا وَالآخَرُ مِنْ هُنَاكَ. فَكَانَتْ يَدَاهُ ثَابِتَتَيْنِ إِلَى غُرُوبِ الشَّمْسِ.",
-      "en": "Scripture record from Exodus 17: 12: Verify the sacred testimony in the Holy Bible."
+      "en": "But Moses’ hands became heavy; so they took a stone and put it under him, and he sat on it. And Aaron and Hur supported his hands, one on one side, and the other on the other side; and his hands were steady until the going down of the sun."
     }
   },
   {
@@ -6677,20 +6679,20 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم المذبح الذي بناه موسى بعد هزيمة عماليق في رفيديم؟",
-      "en": "Scripture Examination (Exodus 17: 15): What is the biblically verified answer concerning this sacred record?"
+      "en": "What did Moses name the altar he built after the victory over Amalek at Rephidim, meaning 'The-LORD-Is-My-Banner'?"
     },
     "options": {
       "ar": [
         "يهوه نسّي (الرب رايتي)",
         "يهوه يِرأه",
-        "يهوه شالوم",
-        "إيل إلوهي إسرائيل"
+        "إيل إلوهي إسرائيل",
+        "يهوه شالوم"
       ],
       "en": [
         "The-LORD-Is-My-Banner (Yahweh Nissi)",
-        "يهوه يِرأه",
-        "يهوه شالوم",
-        "إيل إلوهي إسرائيل"
+        "The-LORD-Will-Provide (Yahweh Jireh)",
+        "El Elohe Israel",
+        "The-LORD-Is-Peace (Yahweh Shalom)"
       ]
     },
     "correctIndex": 0,
@@ -6700,7 +6702,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَبَنَى مُوسَى مَذْبَحًا وَدَعَا اسْمَهُ «يَهْوَهْ نِسِّي».",
-      "en": "Scripture record from Exodus 17: 15: Verify the sacred testimony in the Holy Bible."
+      "en": "And Moses built an altar and called its name, The-LORD-Is-My-Banner (Yahweh Nissi);"
     }
   },
   {
@@ -6708,30 +6710,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسما الحرفيين الماهرين الممتلئين من روح الله بالحكمة والصناعة لبناء خيمة الاجتماع؟",
-      "en": "Scripture Examination (Exodus 31: 2-6): What is the biblically verified answer concerning this sacred record?"
+      "en": "What were the names of the two master craftsmen filled with the Spirit of God to construct the Tabernacle and its furnishings?"
     },
     "options": {
       "ar": [
-        "بصلئيل بن أوري وأهوآلياب بن أخيساماك",
-        "حيرام وأدونيرام",
         "أليحورف وأخيا",
-        "صادوق وناثان"
+        "صادوق وناثان",
+        "حيرام وأدونيرام",
+        "بصلئيل بن أوري وأهوآلياب بن أخيساماك"
       ],
       "en": [
-        "Bezalel son of Uri and Aholiab son of Ahisamach",
-        "حيرام وأدونيرام",
-        "أليحورف وأخيا",
-        "صادوق وناثان"
+        "Elihoreph and Ahijah",
+        "Zadok and Nathan",
+        "Hiram and Adoniram",
+        "Bezalel and Aholiab"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "خروج 31: 2-6",
       "en": "Exodus 31: 2-6"
     },
     "verse": {
       "ar": "«انْظُرْ، قَدْ دَعَوْتُ بَصَلْئِيلَ بْنَ أُورِي بْنَ حُورَ مِنْ سِبْطِ يَهُوذَا بِاسْمِهِ، وَمَلأْتُهُ مِنْ رُوحِ اللهِ... وَهَا أَنَا قَدْ جَعَلْتُ مَعَهُ أُهُولِيآبَ بْنَ أَخِيسَامَاكَ مِنْ سِبْطِ دَانَ...».",
-      "en": "Scripture record from Exodus 31: 2-6: Verify the sacred testimony in the Holy Bible."
+      "en": "'See, I have called by name Bezalel the son of Uri, the son of Hur, of the tribe of Judah... And I, indeed I, have appointed with him Aholiab the son of Ahisamach, of the tribe of Dan; and I have put wisdom in the hearts of all who are gifted artisans'"
     }
   },
   {
@@ -6739,30 +6741,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما هما اسما ابني هارون اللذين قدما ناراً غريبة أمام الرب لم يأمرهما بها فخرجت نار وأكلتهما؟",
-      "en": "Scripture Examination (Leviticus 10: 1-2): What is the biblically verified answer concerning this sacred record?"
+      "en": "What were the names of the two sons of Aaron who offered profane fire before the LORD and died before the LORD?"
     },
     "options": {
       "ar": [
-        "نداب وأبيهو",
-        "ألعازار وإيثامار",
+        "قورح وداثان",
         "حفني وفينحاس",
-        "قورح وداثان"
+        "ألعازار وإيثامار",
+        "نداب وأبيهو"
       ],
       "en": [
-        "Nadab and Abihu",
-        "ألعازار وإيثامار",
-        "حفني وفينحاس",
-        "قورح وداثان"
+        "Korah and Dathan",
+        "Hophni and Phinehas",
+        "Eleazar and Ithamar",
+        "Nadab and Abihu"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "لاويين 10: 1-2",
       "en": "Leviticus 10: 1-2"
     },
     "verse": {
       "ar": "وَأَخَذَ ابْنَا هَارُونَ: نَادَابُ وَأَبِيهُو، كُلٌّ مِنْهُمَا مِجْمَرَتَهُ وَجَعَلاَ فِيهِمَا نَارًا وَوَضَعَا عَلَيْهَا بَخُورًا، وَقَرَّبَا أَمَامَ الرَّبِّ نَارًا غَرِيبَةً... فَخَرَجَتْ نَارٌ مِنْ عِنْدِ الرَّبِّ وَأَكَلَتْهُمَا، فَمَاتَا أَمَامَ الرَّبِّ.",
-      "en": "Scripture record from Leviticus 10: 1-2: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Nadab and Abihu, the sons of Aaron, each took his censer and put fire in it, put incense on it, and offered profane fire before the LORD, which He had not commanded them. So fire went out from the LORD and devoured them, and they died before the LORD."
     }
   },
   {
@@ -6774,26 +6776,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
+        "تبعيرا",
         "محلَّة قورح في البرية",
-        "قادش",
         "حضيروت",
-        "تبعيرا"
+        "قادش"
       ],
       "en": [
-        "محلَّة قورح في البرية",
-        "قادش",
-        "حضيروت",
-        "تبعيرا"
+        "Taberah",
+        "Camp of Korah in the wilderness",
+        "Hazeroth",
+        "Kadesh"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "عدد 16: 31-32",
       "en": "Numbers 16: 31-32"
     },
     "verse": {
       "ar": "فَانْشَقَّتِ الأَرْضُ الَّتِي تَحْتَهُمْ، وَفَتَحَتِ الأَرْضُ فَاهَا وَابْتَلَعَتْهُمْ وَبُيُوتَهُمْ وَكُلَّ مَنْ كَانَ لِقُورَحَ مَعَ كُلِّ الأَمْوَالِ.",
-      "en": "Scripture record from Numbers 16: 31-32: Verify the sacred testimony in the Holy Bible."
+      "en": "and the earth opened its mouth and swallowed them up, with their households and all the men with Korah, with all their goods. So they and all those with them went down alive into the pit; the earth closed over them, and they perished from among the assembly."
     }
   },
   {
@@ -6805,26 +6807,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أفرخت فروخاً وأزهرت زهراً وأنضجت لوزاً",
-        "أثمرت زيتوناً",
+        "أورقت عنباً",
         "تحولت إلى حية خضراء",
-        "أورقت عنباً"
+        "أثمرت زيتوناً",
+        "أفرخت فروخاً وأزهرت زهراً وأنضجت لوزاً"
       ],
       "en": [
-        "Sprouted buds, blossoms, and ripe almonds",
-        "أثمرت زيتوناً",
-        "تحولت إلى حية خضراء",
-        "أورقت عنباً"
+        "Sprouted grapes",
+        "Turned into a green serpent",
+        "Produced olives",
+        "Sprouted buds, blossoms, and ripe almonds"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "عدد 17: 8",
       "en": "Numbers 17: 8"
     },
     "verse": {
       "ar": "وَفِي الْغَدِ دَخَلَ مُوسَى إِلَى خَيْمَةِ الشَّهَادَةِ، وَإِذَا عَصَا هَارُونَ لِبَيْتِ لاَوِي قَدْ أَفْرَخَتْ. أَخْرَجَتْ فُرُوخًا وَأَزْهَرَتْ زَهْرًا وَأَنْضَجَتْ لَوْزًا.",
-      "en": "Scripture record from Numbers 17: 8: Verify the sacred testimony in the Holy Bible."
+      "en": "Now it came to pass on the next day that Moses went into the tabernacle of witness, and behold, the rod of Aaron, of the house of Levi, had sprouted and put forth buds, had produced blossoms and yielded ripe almonds."
     }
   },
   {
@@ -6832,30 +6834,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم الملك الذي ضُرب بالبرص في جبهته لأنه تجاسر ودخل هيكل الرب ليرفع بخوراً على مذبح البخور؟",
-      "en": "Scripture Examination (2 Chronicles 26: 19): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which king of Judah was struck with leprosy on his forehead for presuming to burn incense in the holy temple?"
     },
     "options": {
       "ar": [
-        "عزيا (عزريا) ملك يهوذا",
-        "منسى الملك",
         "آحاز الملك",
-        "آمون"
+        "آمون",
+        "عزيا (عزريا) ملك يهوذا",
+        "منسى الملك"
       ],
       "en": [
-        "King Uzziah (Azariah)",
-        "منسى الملك",
-        "آحاز الملك",
-        "آمون"
+        "King Ahaz",
+        "Amon",
+        "King Uzziah",
+        "King Manasseh"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 أخبار 26: 19",
       "en": "2 Chronicles 26: 19"
     },
     "verse": {
       "ar": "فَحَنِقَ عُزِّيَّا وَكَانَ فِي يَدِهِ مِجْمَرَةٌ لِلإِيقَادِ. وَعِنْدَ حَنَقِهِ عَلَى الْكَهَنَةِ خَرَجَ بَرَصٌ فِي جَبْهَتِهِ أَمَامَ الْكَهَنَةِ فِي بَيْتِ الرَّبِّ بِجَانِبِ مَذْبَحِ الْبَخُورِ.",
-      "en": "Scripture record from 2 Chronicles 26: 19: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Uzziah became furious; and he had a censer in his hand to burn incense. And while he was angry with the priests, leprosy broke out on his forehead, before the priests in the house of the LORD, beside the incense altar."
     }
   },
   {
@@ -6863,30 +6865,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم البرج في أورشليم الذي سقط وقتل ثمانية عشر شخصاً وذكره السيد المسيح داعياً للتوبة؟",
-      "en": "Scripture Examination (Luke 13: 4): What is the biblically verified answer concerning this sacred record?"
+      "en": "What tower in Jerusalem collapsed, killing eighteen people, which Jesus cited when warning all to repent?"
     },
     "options": {
       "ar": [
+        "برج حننئيل",
         "برج سلوان",
         "برج بابل",
-        "برج فنوئيل",
-        "برج حننئيل"
+        "برج فنوئيل"
       ],
       "en": [
+        "Tower of Hananel",
         "Tower of Siloam",
-        "برج بابل",
-        "برج فنوئيل",
-        "برج حننئيل"
+        "Tower of Babel",
+        "Tower of Penuel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "لوقا 13: 4",
       "en": "Luke 13: 4"
     },
     "verse": {
       "ar": "«أَوْ أُولئِكَ الثَّمَانِيَةَ عَشَرَ الَّذِينَ سَقَطَ عَلَيْهِمُ الْبُرْجُ فِي سِلْوَامَ وَقَتَلَهُمْ، أَتَظُنُّونَ أَنَّ هؤُلاَءِ كَانُوا مُذْنِبِينَ أَكْثَرَ مِنْ جَمِيعِ النَّاسِ؟»",
-      "en": "Scripture record from Luke 13: 4: Verify the sacred testimony in the Holy Bible."
+      "en": "'Or those eighteen on whom the tower in Siloam fell and killed them, do you think that they were worse sinners than all other men who dwelt in Jerusalem? I tell you, no; but unless you repent you will all likewise perish.'"
     }
   },
   {
@@ -6898,26 +6900,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أخيمالك بن أخيطوب",
+        "عالي",
         "أبياثار",
         "صادوق",
-        "عالي"
+        "أخيمالك بن أخيطوب"
       ],
       "en": [
-        "Ahimelech son of Ahitub",
-        "أبياثار",
-        "صادوق",
-        "عالي"
+        "Eli",
+        "Abiathar",
+        "Zadok",
+        "Ahimelech son of Ahitub"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "1 صموئيل 22: 18",
       "en": "1 Samuel 22: 18"
     },
     "verse": {
       "ar": "فَقَالَ الْمَلِكُ لِدُوَاغَ: «دُرْ أَنْتَ وَقَعْ بِالْكَهَنَةِ». فَدَارَ دُوَاغُ الأَدُومِيُّ وَوَقَعَ هُوَ بِالْكَهَنَةِ، وَقَتَلَ فِي ذلِكَ الْيَوْمِ خَمْسَةً وَثَمَانِينَ رَجُلاً لاَبِسِي أَفُودِ كَتَّانٍ.",
-      "en": "Scripture record from 1 Samuel 22: 18: Verify the sacred testimony in the Holy Bible."
+      "en": "So the king said to Doeg, 'You turn and kill the priests!' So Doeg the Edomite turned and struck the priests, and killed on that day eighty-five men who wore a linen ephod. Also Nob, the city of the priests, he struck with the edge of the sword"
     }
   },
   {
@@ -6925,20 +6927,20 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "من هو الابن الوحيد لأخيمالك الذي نجا من مذبحة دواغ وهرب وراء داود ومعه الأفود؟",
-      "en": "Scripture Examination (1 Samuel 22: 20): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the only son of Ahimelech who escaped the massacre of Nob and fled to David with the priestly ephod?"
     },
     "options": {
       "ar": [
         "أبياثار بن أخيمالك",
         "صادوق",
-        "أخيماص",
-        "يهوناتان"
+        "يهوناتان",
+        "أخيماص"
       ],
       "en": [
         "Abiathar son of Ahimelech",
-        "صادوق",
-        "أخيماص",
-        "يهوناتان"
+        "Zadok",
+        "Jehonathan",
+        "Ahimaaz"
       ]
     },
     "correctIndex": 0,
@@ -6948,7 +6950,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَنَجَا وَلَدٌ وَاحِدٌ لأَخِيمَالَكَ بْنِ أَخِيطُوبَ اسْمُهُ أَبِيَاثَارُ وَهَرَبَ وَرَاءَ دَاوُدَ.",
-      "en": "Scripture record from 1 Samuel 22: 20: Verify the sacred testimony in the Holy Bible."
+      "en": "Now one of the sons of Ahimelech the son of Ahitub, named Abiathar, escaped and fled after David. And Abiathar told David that Saul had killed the LORD’s priests."
     }
   },
   {
@@ -6956,30 +6958,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم الجبل الذي نزل عليه الوحي باللعنات وجبل البركات المذكورين في سفر التثنية؟",
-      "en": "Scripture Examination (Deuteronomy 11: 29): What is the biblically verified answer concerning this sacred record?"
+      "en": "Which two mountains in Deuteronomy were designated for the proclamation of blessings and curses?"
     },
     "options": {
       "ar": [
-        "جبل عيبال للَّعنة وجبل جرزيم للبركة",
         "جبل سيناء وجبل حوريب",
+        "جبل صهيون وجبل الزيتون",
         "جبل الكرمل وجبل تابور",
-        "جبل صهيون وجبل الزيتون"
+        "جبل عيبال للَّعنة وجبل جرزيم للبركة"
       ],
       "en": [
-        "Mount Ebal for curses and Mount Gerizim for blessings",
-        "جبل سيناء وجبل حوريب",
-        "جبل الكرمل وجبل تابور",
-        "جبل صهيون وجبل الزيتون"
+        "Mount Sinai and Mount Horeb",
+        "Mount Zion and Mount of Olives",
+        "Mount Carmel and Mount Tabor",
+        "Mount Ebal and Mount Gerizim"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تثنية 11: 29",
       "en": "Deuteronomy 11: 29"
     },
     "verse": {
       "ar": "«فَاجْعَلِ الْبَرَكَةَ عَلَى جَبَلِ جِرِزِّيمَ، وَاللَّعْنَةَ عَلَى جَبَلِ عِيبَالَ».",
-      "en": "Scripture record from Deuteronomy 11: 29: Verify the sacred testimony in the Holy Bible."
+      "en": "'Now it shall be, when the LORD your God has brought you into the land which you go to possess, that you shall put the blessing on Mount Gerizim and the curse on Mount Ebal.'"
     }
   },
   {
@@ -6999,7 +7001,7 @@ window.QUESTIONS_BANK = [
       "en": [
         "Ehud son of Gera",
         "Shamgar son of Anath",
-        "باراق بن أبينوعم",
+        "Barak son of Abinoam",
         "Gideon"
       ]
     },
@@ -7010,7 +7012,7 @@ window.QUESTIONS_BANK = [
     },
     "verse": {
       "ar": "فَأَقَامَ لَهُمُ الرَّبُّ مُخَلِّصًا إِهُودَ بْنَ جِيرَا الْبِنْيَامِينِيَّ، رَجُلاً أَعْسَرَ.",
-      "en": "Scripture record from Judges 3: 15: Verify the sacred testimony in the Holy Bible."
+      "en": "But when the children of Israel cried out to the LORD, the LORD raised up a deliverer for them: Ehud the son of Gera, the Benjamite, a left-handed man. By him the children of Israel sent tribute to Eglon king of Moab. Now Ehud made for himself a dagger (it was double-edged and a cubit in length)"
     }
   },
   {
@@ -7018,30 +7020,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "كم كان عدد الرجال الذين صعدوا مع إبراهيم لإنقاذ لوط من الملوك الأربعة وكانوا مدربين غلمان بيته؟",
-      "en": "Scripture Examination (Genesis 14: 14): What is the biblically verified answer concerning this sacred record?"
+      "en": "How many trained men born in Abraham's household went with him to rescue his nephew Lot from the four kings?"
     },
     "options": {
       "ar": [
-        "318 رجلاً",
-        "300 رجل",
         "500 رجل",
-        "100 رجل"
+        "300 رجل",
+        "100 رجل",
+        "318 رجلاً"
       ],
       "en": [
-        "318 men",
-        "300 men",
         "500 men",
-        "100 men"
+        "300 men",
+        "100 men",
+        "318 men"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 14: 14",
       "en": "Genesis 14: 14"
     },
     "verse": {
       "ar": "فَلَمَّا سَمِعَ أَبْرَامُ أَنَّ أَخَاهُ قَدْ سُبِيَ، جَرَّدَ غِلْمَانَهُ الْمُتَمَرِّنِينَ، وِلْدَانَ بَيْتِهِ، ثَلاَثَ مِئَةٍ وَثَمَانِيَةَ عَشَرَ، وَتَبِعَهُمْ إِلَى دَانَ.",
-      "en": "Scripture record from Genesis 14: 14: Verify the sacred testimony in the Holy Bible."
+      "en": "Now when Abram heard that his brother was taken captive, he armed his three hundred and eighteen trained servants who were born in his own house, and went in pursuit as far as Dan."
     }
   },
   {
@@ -7049,30 +7051,30 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم ملك شاليم كاهن الله العلي الذي أخرج خبزاً وخمراً وبارك إبراهيم ودفع له إبراهيم العُشر؟",
-      "en": "Scripture Examination (Genesis 14: 18): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was the king of Salem and priest of God Most High who brought out bread and wine and blessed Abraham?"
     },
     "options": {
       "ar": [
-        "ملكي صادق",
-        "أبيمالك",
         "عفرون",
-        "مامرا"
+        "أبيمالك",
+        "مامرا",
+        "ملكي صادق"
       ],
       "en": [
-        "Melchizedek",
-        "أبيمالك",
-        "عفرون",
-        "مامرا"
+        "Ephron",
+        "Abimelech",
+        "Mamre",
+        "Melchizedek"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 14: 18",
       "en": "Genesis 14: 18"
     },
     "verse": {
       "ar": "وَمَلْكِي صَادِقُ، مَلِكُ شَالِيمَ، أَخْرَجَ خُبْزًا وَخَمْرًا. وَكَانَ كَاهِنًا للهِ الْعَلِيِّ.",
-      "en": "Scripture record from Genesis 14: 18: Verify the sacred testimony in the Holy Bible."
+      "en": "Then Melchizedek king of Salem brought out bread and wine; he was the priest of God Most High. And he blessed him and said: 'Blessed be Abram of God Most High, Possessor of heaven and earth;'"
     }
   },
   {
@@ -7084,26 +7086,26 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "127 سنة",
         "120 سنة",
         "110 سنين",
-        "135 سنة"
+        "135 سنة",
+        "127 سنة"
       ],
       "en": [
-        "127 years",
         "120 years",
-        "110 سنين",
-        "135 years"
+        "110 years",
+        "135 years",
+        "127 years"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "تكوين 23: 1",
       "en": "Genesis 23: 1"
     },
     "verse": {
       "ar": "وَكَانَتْ حَيَاةُ سَارَةَ مِئَةً وَسَبْعًا وَعِشْرِينَ سَنَةً، سِنِي حَيَاةِ سَارَةَ.",
-      "en": "Scripture record from Genesis 23: 1: Verify the sacred testimony in the Holy Bible."
+      "en": "Sarah lived one hundred and twenty-seven years; these were the years of the life of Sarah. So Sarah died in Kirjath Arba (that is, Hebron) in the land of Canaan"
     }
   },
   {
@@ -7111,2200 +7113,2200 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ما اسم الخادم الوفي كبير بيت إبراهيم الذي حلف له وأرسله ليأتي بزوجة لإسحق من حاران؟",
-      "en": "Scripture Examination (Genesis 15: 2 / تكوين 24: 2): What is the biblically verified answer concerning this sacred record?"
+      "en": "Who was Abraham's chief servant and manager of his household, sent to Haran to find a wife for Isaac?"
     },
     "options": {
       "ar": [
         "أليعازر الدمشقي",
+        "أوري",
         "فوطيفار",
-        "جرشوم",
-        "أوري"
+        "جرشوم"
       ],
       "en": [
         "Eliezer of Damascus",
+        "Uri",
         "Potiphar",
-        "جرشوم",
-        "أوري"
+        "Gershom"
       ]
     },
     "correctIndex": 0,
     "reference": {
       "ar": "تكوين 15: 2 / تكوين 24: 2",
-      "en": "Genesis 15: 2 / تكوين 24: 2"
+      "en": "Genesis 15: 2 / Genesis 24: 2"
     },
     "verse": {
       "ar": "فَقَالَ أَبْرَامُ: «أَيُّهَا السَّيِّدُ الرَّبُّ... وَمَالِكُ بَيْتِي هُوَ أَلِيعَازَرُ الدِّمَشْقِيُّ».",
-      "en": "Scripture record from Genesis 15: 2 / تكوين 24: 2: Verify the sacred testimony in the Holy Bible."
+      "en": "But Abram said, 'Lord GOD, what will You give me, seeing I go childless, and the heir of my house is Eliezer of Damascus?'"
     }
   },
   {
     "id": 231,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #31: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم القاضي الذي حكم إسرائيل بعد يفتاح وكان من بيت لحم وكان له ثلاثون ابناً وثلاثون ابنة؟",
+      "en": "Which judge ruled Israel after Jephthah, was from Bethlehem, and had thirty sons and thirty daughters?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "إيلون",
+        "تولع",
+        "إبصان",
+        "عبدون"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Elon",
+        "Tola",
+        "Ibzan",
+        "Abdon"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 12: 8-9",
+      "en": "Judges 12:8-9"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَقَضَى بَعْدَهُ لإِسْرَائِيلَ إِبْصَانُ مِنْ بَيْتِ لَحْمٍ. وَكَانَ لَهُ ثَلاَثُونَ ابْنًا، وَثَلاَثُونَ ابْنَةً أَرْسَلَهُنَّ إِلَى الْخَارِجِ...",
+      "en": "After him, Ibzan of Bethlehem judged Israel. He had thirty sons, and he gave away thirty daughters in marriage, and brought in thirty daughters from elsewhere for his sons. He judged Israel seven years."
     }
   },
   {
     "id": 232,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #32: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم القاضي الزبولوني الذي حكم إسرائيل عشر سنين ودُفن في أيلون في أرض زبولون؟",
+      "en": "What was the name of the Zebulunite judge who judged Israel ten years and was buried in Aijalon in the land of Zebulun?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "شمجر",
+        "يائير",
+        "تولع",
+        "إيلون"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Shamgar",
+        "Jair",
+        "Tola",
+        "Elon"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 12: 11-12",
+      "en": "Judges 12:11-12"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَقَضَى بَعْدَهُ لإِسْرَائِيلَ إِيلُونُ الزَّبُولُونِيُّ. قَضَى عَلَى إِسْرَائِيلَ عَشَرَ سِنِينَ. وَمَاتَ إِيلُونُ الزَّبُولُونِيُّ وَدُفِنَ فِي أَيَّلُونَ فِي أَرْضِ زَبُولُونَ.",
+      "en": "After him, Elon the Zebulunite judged Israel. He judged Israel ten years. And Elon the Zebulunite died and was buried at Aijalon in the country of Zebulun."
     }
   },
   {
     "id": 233,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #33: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم القاضي الفرعتوني الذي كان له أربعون ابناً وثلاثون حفيداً يركبون على سبعين جحشاً؟",
+      "en": "Which Pirathonite judge had forty sons and thirty grandsons who rode on seventy donkeys?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "عبدون بن هلّيل",
+        "باراق",
+        "يائير الجلعادي",
+        "إبصان"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Abdon son of Hillel",
+        "Barak",
+        "Jair the Gileadite",
+        "Ibzan"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 12: 13-14",
+      "en": "Judges 12:13-14"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَقَضَى بَعْدَهُ لإِسْرَائِيلَ عَبْدُونُ بْنُ هِلِّيلَ الْفِرْعَتُونِيُّ. وَكَانَ لَهُ أَرْبَعُونَ ابْنًا وَثَلاَثُونَ حَفِيدًا يَرْكَبُونَ عَلَى سَبْعِينَ جَحْشًا.",
+      "en": "After him, Abdon the son of Hillel the Pirathonite judged Israel. He had forty sons and thirty grandsons, who rode on seventy young donkeys. He judged Israel eight years."
     }
   },
   {
     "id": 234,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #34: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم ملك إسرائيل الذي ملك سبعة أيام فقط في ترصة ثم أحرق قصر الملك عليه بالنار ومات؟",
+      "en": "Which king of Israel reigned for only seven days in Tirzah, and then burned the king's house down upon himself and died?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "تبني",
+        "إيلة",
+        "زمري",
+        "شلوم"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Tibni",
+        "Elah",
+        "Zimri",
+        "Shallum"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 16: 15-18",
+      "en": "1 Kings 16:15-18"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فِي السَّنَةِ السَّابِعَةِ وَالْعِشْرِينَ لآسَا مَلِكِ يَهُوذَا، مَلَكَ زِمْرِي سَبْعَةَ أَيَّامٍ فِي تِرْصَةَ... وَأَحْرَقَ عَلَى نَفْسِهِ قَصْرَ بَيْتِ الْمَلِكِ بِالنَّارِ، فَمَاتَ.",
+      "en": "In the twenty-seventh year of Asa king of Judah, Zimri had reigned seven days in Tirzah... and burned the king’s house down upon himself with fire, and died,"
     }
   },
   {
     "id": 235,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #35: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "من هو المنافس الذي انقسم شعب إسرائيل وراءه ليمّلكوه ضد عمري الملك قبل أن يموت ويملك عمري وحده؟",
+      "en": "Who was the rival whom half the people of Israel followed to make him king against Omri, until he died and Omri reigned alone?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "بعشا",
+        "تبني بن جينة",
+        "ناداب",
+        "زمري"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Baasha",
+        "Tibni son of Ginath",
+        "Nadab",
+        "Zimri"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 16: 21-22",
+      "en": "1 Kings 16:21-22"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "حِينَئِذٍ انْقَسَمَ شَعْبُ إِسْرَائِيلَ نِصْفَيْنِ: فَنِصْفُ الشَّعْبِ كَانَ وَرَاءَ تِبْنِي بْنِ جِينَةَ لِتَمْلِيكِهِ، وَنِصْفُهُ وَرَاءَ عُمْرِي. وَغَلَبَ الشَّعْبُ الَّذِي وَرَاءَ عُمْرِي... فَمَاتَ تِبْنِي وَمَلَكَ عُمْرِي.",
+      "en": "Then the people of Israel were divided into two parts: half of the people followed Tibni the son of Ginath, to make him king, and half followed Omri. But the people who followed Omri prevailed... So Tibni died and Omri reigned."
     }
   },
   {
     "id": 236,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #36: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم ملك إسرائيل الذي اغتيل في ترصة وهو يشرب ويسكر في بيت أPattern وكيل بيته؟",
+      "en": "Which king of Israel was assassinated in Tirzah while drinking himself drunk in the house of Arza, steward of his house?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "يورام",
+        "إيلة بن بعشا",
+        "أخزيا",
+        "ناداب بن يربعام"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Jehoram",
+        "Elah son of Baasha",
+        "Ahaziah",
+        "Nadab son of Jeroboam"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 16: 9-10",
+      "en": "1 Kings 16:9-10"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَفَتَنَ عَلَيْهِ عَبْدُهُ زِمْرِي رَئِيسُ نِصْفِ الْمَرْكَبَاتِ، وَهُوَ فِي تِرْصَةَ يَشْرَبُ وَيَسْكَرُ فِي بَيْتِ أَرْصَا وَكِيلِ الْبَيْتِ فِي تِرْصَةَ. فَدَخَلَ زِمْرِي وَضَرَبَهُ فَقَتَلَهُ.",
+      "en": "Now his servant Zimri, commander of half his chariots, conspired against him as he was in Tirzah drinking himself drunk in the house of Arza, steward of his house in Tirzah. And Zimri went in and struck him and killed him"
     }
   },
   {
     "id": 237,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #37: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم المدينة التي كان اسمها قريات سفر وافتتحها عثنيئيل بن قناز فأعطاه كالب بن يفنة عكسة ابنته زوجة؟",
+      "en": "What was the city formerly called Kirjath Sepher which Othniel captured, winning Caleb's daughter Achsah as his wife?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "حرمة",
+        "أنعام",
+        "دبير",
+        "حبرون"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Hormah",
+        "Anab",
+        "Debir",
+        "Hebron"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 15: 15-17",
+      "en": "Joshua 15:15-17"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَصَعِدَ مِنْ هُنَاكَ إِلَى سُكَّانِ دَبِيرَ، وَكَانَ اسْمُ دَبِيرَ قَبْلاً قَرْيَةَ سَفْرٍ. وَقَالَ كَالِبُ: «مَنْ يَضْرِبُ قَرْيَةَ سَفْرٍ وَيَأْخُذُهَا أُعْطِيهِ عَكْسَةَ ابْنَتِي امْرَأَةً». فَأَخَذَهَا عُثْنِيئِيلُ بْنُ قَنَازَ أَخُو كَالِبَ، فَأَعْطَاهُ عَكْسَةَ ابْنَتَهُ امْرَأَةً.",
+      "en": "Then he went up from there to the inhabitants of Debir (formerly the name of Debir was Kirjath Sepher). And Caleb said, 'He who strikes Kirjath Sepher and takes it, to him I will give Achsah my daughter as wife.' So Othniel the son of Kenaz, the brother of Caleb, took it; and he gave him Achsah his daughter as wife."
     }
   },
   {
     "id": 238,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #38: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ماذا طلبت عكسة ابنة كالب من أبيها عندما أعطاها أرض الجنوب الناشفة في الميراث؟",
+      "en": "What did Achsah daughter of Caleb ask from her father when he gave her arid southern land as an inheritance?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "حقلاً لزراعة الكروم",
+        "ألف شاة وعشرة جمال",
+        "بئر سبع وحصونها",
+        "ينابيع ماء عليا وسفلى"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "A field for planting vineyards",
+        "A thousand sheep and ten camels",
+        "Beersheba and its fortresses",
+        "Upper and lower springs of water"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 15: 19",
+      "en": "Joshua 15:19"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَقَالَتْ: «أَعْطِنِي بَرَكَةً. لأَنَّكَ أَعْطَيْتَنِي أَرْضَ الْجَنُوبِ فَأَعْطِنِي يَنَابِيعَ مَاءٍ». فَأَعْطَاهَا الْيَنَابِيعَ الْعُلْيَا وَالْيَنَابِيعَ السُّفْلَى.",
+      "en": "She answered, 'Give me a blessing; since you have given me land in the South, give me also springs of water.' So he gave her the upper springs and the lower springs."
     }
   },
   {
     "id": 239,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #39: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم أم الملك شلومو (سليمان) الحكيم التي دخلت إلى داود لتذكره بوعده لملكه؟",
+      "en": "What was the name of Solomon's mother who went in to King David to remind him of his oath regarding Solomon's succession?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "بثشبع",
+        "أبيجايل",
+        "أخينوعم",
+        "معكة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Bathsheba",
+        "Abigail",
+        "Ahinoam",
+        "Maachah"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 1: 15-17",
+      "en": "1 Kings 1:15-17"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَدَخَلَتْ بَثْشَبَعُ إِلَى الْمَلِكِ إِلَى الْمَخْدَعِ... فَقَالَتْ لَهُ: «أَنْتَ يَا سَيِّدِي حَلَفْتَ بِالرَّبِّ إِلهِكَ لأَمَتِكَ قَائِلاً: إِنَّ سُلَيْمَانَ ابْنَكِ يَمْلِكُ بَعْدِي وَهُوَ يَجْلِسُ عَلَى كُرْسِيِّي».",
+      "en": "So Bathsheba went into the chamber to the king... Then she said to him, 'My lord, you swore by the LORD your God to your maidservant, saying, \"Assuredly Solomon your son shall reign after me, and he shall sit on my throne.\"'"
     }
   },
   {
     "id": 240,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #40: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الفتاة الشونمية الجميلة التي اختيرت لتخدم داود الملك في شيخوخته وتدفئه؟",
+      "en": "What was the name of the beautiful Shunammite girl chosen to serve King David in his old age and keep him warm?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "رزفة",
+        "معكة",
+        "تسمار",
+        "أبيشج"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Rizpah",
+        "Maachah",
+        "Tamar",
+        "Abishag"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 1: 3-4",
+      "en": "1 Kings 1:3-4"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَفَتَّشُوا عَلَى فَتَاةٍ جَمِيلَةٍ فِي جَمِيعِ تُخُومِ إِسْرَائِيلَ، فَوَجَدُوا أَبِيشَجَ الشُّونَمِيَّةَ، فَجَاءُوا بِهَا إِلَى الْمَلِكِ. وَكَانَتِ الْفَتَاةُ جَمِيلَةً جِدًّا، فَكَانَتْ تُدَفِّئُ الْمَلِكَ وَتَخْدِمُهُ.",
+      "en": "So they sought for a lovely young woman throughout all the territory of Israel, and found Abishag the Shunammite, and brought her to the king. The young woman was very lovely; and she cared for the king, and served him; but the king did not know her."
     }
   },
   {
     "id": 241,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #41: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان عدد حكام الأقاليم الاثني عشر الذين أقامهم سليمان على جميع إسرائيل ليمونوا الملك وبيته شهراً في السنة لكل واحد؟",
+      "en": "How many governors did King Solomon appoint over all Israel who provided food for the king and his household, each for one month in a year?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "اثنا عشر وكيلاً",
+        "أربعة وعشرون وكيلاً",
+        "سبعون وكيلاً",
+        "عشرة وكلاء"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Twelve governors",
+        "Twenty-four governors",
+        "Seventy governors",
+        "Ten governors"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 4: 7",
+      "en": "1 Kings 4:7"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَكَانَ لِسُلَيْمَانَ اثْنَا عَشَرَ وَكِيلاً عَلَى جَمِيعِ إِسْرَائِيلَ يَمُونُونَ الْمَلِكَ وَبَيْتَهُ. كَانَ عَلَى الْوَاحِدِ أَنْ يَمُونَ شَهْرًا فِي السَّنَةِ.",
+      "en": "And Solomon had twelve governors over all Israel, who provided food for the king and his household; each one made provision for one month of the year."
     }
   },
   {
     "id": 242,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #42: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم ابن داود الذي ولد له في حبرون من معكة ابنة تلماي ملك جشور؟",
+      "en": "Which son was born to David in Hebron by Maacah daughter of Talmai king of Geshur?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "شفطيا",
+        "أدونيا",
+        "أبشالوم",
+        "أمنون"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Shephatiah",
+        "Adonijah",
+        "Absalom",
+        "Amnon"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "2 صموئيل 3: 3",
+      "en": "2 Samuel 3:3"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَثَانِيهِ كِيلآبَ مِنْ أَبِيجَايِلَ امْرَأَةِ نَابَالَ الْكَرْمَلِيِّ، وَالثَّالِثُ أَبْشَالُومَ ابْنَ مَعْكَةَ بِنْتِ تَلْمَايَ مَلِكِ جَشُورَ،",
+      "en": "his second, Chileab, by Abigail the widow of Nabal the Carmelite; the third, Absalom the son of Maacah, the daughter of Talmai, king of Geshur;"
     }
   },
   {
     "id": 243,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #43: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم زوجة شاول الملك وابنة أخيمعص المذكورة في سفر صموئيل الأول؟",
+      "en": "What was the name of King Saul's wife, daughter of Ahimaaz, recorded in 1 Samuel?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أخينوعم",
+        "ميرب",
+        "ميكال",
+        "رزفة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Ahinoam",
+        "Merab",
+        "Michal",
+        "Rizpah"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 صموئيل 14: 50",
+      "en": "1 Samuel 14:50"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَاسْمُ امْرَأَةِ شَاوُلَ أَخِينُوعَمُ بِنْتُ أَخِيمَعَصَ. وَاسْمُ رَئِيسِ جَيْشِهِ أَبْنِيرُ بْنُ نَيْرٍ عَمِّ شَاوُلَ.",
+      "en": "The name of Saul’s wife was Ahinoam the daughter of Ahimaaz. And the name of the commander of his army was Abner the son of Ner, Saul’s uncle."
     }
   },
   {
     "id": 244,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #44: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم سرية شاول ابنة أية التي حرسَت جثث بني شاول المعلقين على الخشب ومنعت طيور السماء وحيوان الحقل من الاقتراب؟",
+      "en": "What was the name of Saul's concubine daughter of Aiah who guarded the corpses of Saul's descendants, preventing birds and beasts from touching them?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "حجيث",
+        "أبيطال",
+        "أبيشج",
+        "رزفة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Haggith",
+        "Abital",
+        "Abishag",
+        "Rizpah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "2 صموئيل 21: 10",
+      "en": "2 Samuel 21:10"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَأَخَذَتْ رِصْفَةُ ابْنَةُ أَيَّةَ مِسْحًا وَفَرَشَتْهُ لِنَفْسِهَا عَلَى الصَّخْرِ مِنْ ابْتِدَاءِ الْحَصَادِ حَتَّى انْصَبَّ الْمَاءُ عَلَيْهِمْ مِنَ السَّمَاءِ، وَلَمْ تَدَعْ طُيُورَ السَّمَاءِ تَنْزِلُ عَلَيْهِمْ نَهَارًا، وَلاَ حَيَوَانَاتِ الْحَقْلِ لَيْلاً.",
+      "en": "Now Rizpah the daughter of Aiah took sackcloth and spread it for herself on the rock, from the beginning of harvest until the late rains poured on them from heaven. And she did not allow the birds of the air to rest on them by day nor the beasts of the field by night."
     }
   },
   {
     "id": 245,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #45: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان وزن درع جليات الفلسطيني النحاسي الحرشفية المذكورة في 1 صموئيل 17؟",
+      "en": "What was the weight of Goliath the Philistine's bronze coat of scale armor recorded in 1 Samuel 17?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "خمسة آلاف شاقل نحاس",
+        "ثلاثة آلاف شاقل",
+        "عشرة آلاف شاقل",
+        "ألف شاقل"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "5,000 shekels of bronze",
+        "3,000 shekels",
+        "10,000 shekels",
+        "1,000 shekels"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 صموئيل 17: 5",
+      "en": "1 Samuel 17:5"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَعَلَى رَأْسِهِ خُوذَةٌ مِنْ نُحَاسٍ، وَكَانَ لاَبِسًا دِرْعًا حَرْشَفِيًّا، وَوَزْنُ الدِّرْعِ خَمْسَةُ آلاَفِ شَاقِلِ نُحَاسٍ،",
+      "en": "He had a bronze helmet on his head, and he was armed with a coat of mail, and the weight of the coat was five thousand shekels of bronze."
     }
   },
   {
     "id": 246,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #46: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان وزن سنان رمح جليات الحديدي المذكور في 1 صموئيل 17؟",
+      "en": "What was the weight of the iron spearhead of Goliath's spear recorded in 1 Samuel 17?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "ألف شاقل",
+        "ستمئة شاقل حديد",
+        "ثلاثمئة شاقل",
+        "أربعمئة شاقل"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "1,000 shekels",
+        "600 shekels of iron",
+        "300 shekels",
+        "400 shekels"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 صموئيل 17: 7",
+      "en": "1 Samuel 17:7"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَقَنَاةُ رُمْحِهِ كَنَوْلِ النَّسَّاجِينَ، وَسِنَانُ رُمْحِهِ سِتُّ مِئَةِ شَاقِلِ حَدِيدٍ، وَحَامِلُ التُّرْسِ كَانَ يَمْشِي قُدَّامَهُ.",
+      "en": "Now the staff of his spear was like a weaver’s beam, and his iron spearhead weighed six hundred shekels; and a shield-bearer went before him."
     }
   },
   {
     "id": 247,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #47: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الأخ الأكبر لداود الذي وبخه بغضب في الوادي عندما رآه يسأل عن جليات؟",
+      "en": "What was the name of David's oldest brother who burned with anger and rebuked him at the battle line?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "نثنائيل",
+        "أبيناداب",
+        "شمة",
+        "أليآب"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Nethanel",
+        "Abinadab",
+        "Shammah",
+        "Eliab"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 صموئيل 17: 28",
+      "en": "1 Samuel 17:28"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَسَمِعَ أَلِيآبُ أَخُوهُ الأَكْبَرُ كَلاَمَهُ مَعَ الرِّجَالِ، فَحَمِيَ غَضَبُ أَلِيآبَ عَلَى دَاوُدَ وَقَالَ: «لِمَاذَا نَزَلْتَ؟ وَعَلَى مَنْ تَرَكْتَ تِلْكَ الْغُنَيْمَاتِ الْقَلِيلَةَ فِي الْبَرِّيَّةِ؟»",
+      "en": "Now Eliab his oldest brother heard when he spoke to the men; and Eliab’s anger was aroused against David, and he said, 'Why did you come down here? And with whom have you left those few sheep in the wilderness?'"
     }
   },
   {
     "id": 248,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #48: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم ابن داود الرابع الذي وُلد له في حبرون من حجيث وتآمر على الملك في شيخوخة أبيه؟",
+      "en": "Which fourth son was born to David in Hebron by Haggith, who conspired to be king in David's old age?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "كيلآب",
+        "أمنون",
+        "أدونيا",
+        "أبشالوم"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Chileab",
+        "Amnon",
+        "Adonijah",
+        "Absalom"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "2 صموئيل 3: 4",
+      "en": "2 Samuel 3:4"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَالرَّابِعُ أَدُونِيَّا ابْنُ حَجِّيثَ، وَالْخَامِسُ شَفَطْيَا ابْنُ أَبِيطَالَ،",
+      "en": "the fourth, Adonijah the son of Haggith; the fifth, Shephatiah the son of Abital;"
     }
   },
   {
     "id": 249,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #49: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الكاهن العظيم الذي ساند أدونيا في التآمر ضد سليمان فعزله سليمان عن الكهنوت تحقيقاً لنبوة بيت عالي؟",
+      "en": "Which high priest supported Adonijah's usurpation and was consequently dismissed by Solomon, fulfilling the prophecy against the house of Eli?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أبياثار",
+        "أخيطوب",
+        "أخيمالك",
+        "صادوق"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Abiathar",
+        "Ahitub",
+        "Ahimelech",
+        "Zadok"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 2: 27",
+      "en": "1 Kings 2:27"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَطَرَدَ سُلَيْمَانُ أَبِيَاثَارَ عَنْ أَنْ يَكُونَ كَاهِنًا لِلرَّبِّ، لإِتْمَامِ كَلاَمِ الرَّبِّ الَّذِي تَكَلَّمَ بِهِ عَلَى بَيْتِ عَالِي فِي شِيلُوهَ.",
+      "en": "So Solomon removed Abiathar from being priest to the LORD, that he might fulfill the word of the LORD which He spoke concerning the house of Eli at Shiloh."
     }
   },
   {
     "id": 250,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #50: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "أين هرب يوآب بن صروية وتمسك بقرون المذبح عندما سمع بمقتل أدونيا وعزل أبياثار؟",
+      "en": "Where did Joab son of Zeruiah flee and grab the horns of the altar when he heard of Adonijah's execution and Abiathar's removal?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "حبرون",
+        "خيمة الرب في جبعون",
+        "هيكل أورشليم",
+        "مذبح بيت إيل"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Hebron",
+        "The tabernacle of the LORD at Gibeon",
+        "The temple in Jerusalem",
+        "The altar at Bethel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 2: 28",
+      "en": "1 Kings 2:28"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَجَاءَ الْخَبَرُ إِلَى يُوآبَ... فَهَرَبَ يُوآبُ إِلَى خَيْمَةِ الرَّبِّ وَتَمَسَّكَ بِقُرُونِ الْمَذْبَحِ.",
+      "en": "Then news came to Joab... So Joab fled to the tabernacle of the LORD, and took hold of the horns of the altar."
     }
   },
   {
     "id": 251,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #51: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "من هو البطل الجبار قائد الحرس الملكي (الجلادين والسعاة) الذي أرسله سليمان ليضرب أدونيا ويوآب وشمعي بن جيرا؟",
+      "en": "Who was the valiant warrior, commander of the royal guard (Cherethites and Pelethites), sent by Solomon to execute Adonijah, Joab, and Shimei?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أبيشاي بن صروية",
+        "عماسا",
+        "بنايا بن يهوياداع",
+        "إيتاي الجتي"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Abishai son of Zeruiah",
+        "Amasa",
+        "Benaiah son of Jehoiada",
+        "Ittai the Gittite"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "1 ملوك 2: 34-35",
+      "en": "1 Kings 2:34-35"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَصَعِدَ بَنَايَاهُو بْنُ يَهُويَادَاعَ وَبَطَشَ بِهِ وَقَتَلَهُ... وَجَعَلَ الْمَلِكُ بَنَايَاهُوَ بْنَ يَهُويَادَاعَ مَكَانَهُ عَلَى الْجَيْشِ،",
+      "en": "So Benaiah the son of Jehoiada went up and struck and killed him... The king put Benaiah the son of Jehoiada in his place over the army,"
     }
   },
   {
     "id": 252,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #52: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم المكان الذي انحدر إليه بنايا بن يهوياداع وضرب فيه أسداً في وسط جب في يوم ثلج؟",
+      "en": "In what location did Benaiah son of Jehoiada go down and kill a lion in the midst of a pit on a snowy day?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "في وادي البكاء",
+        "في صحراء عين جدي",
+        "في وسط جب في يوم ثلج",
+        "في غابة أفرايم"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "In the Valley of Baca",
+        "In the wilderness of En Gedi",
+        "In a pit on a snowy day",
+        "In the forest of Ephraim"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "2 صموئيل 23: 20",
+      "en": "2 Samuel 23:20"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَبَنَايَاهُو بْنُ يَهُويَادَاعَ، ذُو بَأْسٍ كَثِيرُ الأَفْعَالِ، مِنْ قَبْصِئِيلَ... هَبَطَ وَضَرَبَ أَسَدًا فِي وَسَطِ جُبٍّ يَوْمَ ثَلْجٍ.",
+      "en": "Benaiah was the son of Jehoiada, the son of a valiant man from Kabzeel, who had done many deeds. He had killed two lion-like heroes of Moab. He also had gone down and killed a lion in the midst of a pit on a snowy day."
     }
   },
   {
     "id": 253,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #53: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هما المدينتان الكنعانيتان العظيمتان اللتان بناهما بنو إسرائيل مدن مخازن لفرعون تحت السخرة؟",
+      "en": "What were the two great treasure supply cities that the children of Israel built for Pharaoh under harsh bondage?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "صوعن وطيبة",
+        "أون ومنف",
+        "فيثوم ورعمسيس",
+        "مجدل وسوكوت"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Zoan and Thebes",
+        "On and Memphis",
+        "Pithom and Raamses",
+        "Migdol and Succoth"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 1: 11",
+      "en": "Exodus 1:11"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَجَعَلُوا عَلَيْهِمْ رُؤَسَاءَ تَسْخِيرٍ لِكَيْ يُذِلُّوهُمْ بِأَثْقَالِهِمْ، فَبَنَوْا لِفِرْعَوْنَ مَدِينَتَيْ مَخَازِنَ: فِيثُومَ، وَرَعَمْسِيسَ.",
+      "en": "Therefore they set taskmasters over them to afflict them with their burdens. And they built for Pharaoh supply cities, Pithom and Raamses."
     }
   },
   {
     "id": 254,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #54: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم شهراً خبأت يوكابد ابنها موسى في بيتها قبل أن تصنع له سفطاً من البردي وتضعه بين الحلفاء على حافة النهر؟",
+      "en": "For how many months did Jochebed hide her baby Moses in her house before placing him in an ark of bulrushes by the riverbank?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "ثلاثة أشهر",
+        "سنة واحدة",
+        "أربعين يوماً",
+        "ستة أشهر"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Three months",
+        "One year",
+        "Forty days",
+        "Six months"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 2: 2-3",
+      "en": "Exodus 2:2-3"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَحَبِلَتِ الْمَرْأَةُ وَوَلَدَتِ ابْنًا. وَلَمَّا رَأَتْهُ أَنَّهُ حَسَنٌ، خَبَّأَتْهُ ثَلاَثَةَ أَشْهُرٍ. وَلَمَّا لَمْ يُمْكِنْهَا أَنْ تُخَبِّئَهُ بَعْدُ، أَخَذَتْ لَهُ سَفَطًا مِنَ الْبَرْدِيِّ...",
+      "en": "So the woman conceived and bore a son. And when she saw that he was a beautiful child, she hid him three months. But when she could no longer hide him, she took an ark of bulrushes for him,"
     }
   },
   {
     "id": 255,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #55: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم شجرة العليقة التي ظهر فيها ملاك الرب لموسى في لهيب نار في برية حوريب ولم تكن تحترق؟",
+      "en": "What was the burning bush in which the Angel of the LORD appeared to Moses in flames of fire at Mount Horeb without being consumed?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "البلوطة",
+        "العليقة",
+        "الأرزة",
+        "الجميزة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "The oak",
+        "The bush",
+        "The cedar",
+        "The sycamore"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 3: 2",
+      "en": "Exodus 3:2"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَظَهَرَ لَهُ مَلاَكُ الرَّبِّ بِلَهِيبِ نَارٍ مِنْ وَسَطِ عُلَّيْقَةٍ. فَنَظَرَ وَإِذَا الْعُلَّيْقَةُ تَتَوَقَّدُ بِالنَّارِ، وَالْعُلَّيْقَةُ لَمْ تَكُنْ تَحْتَرِقُ.",
+      "en": "And the Angel of the LORD appeared to him in a flame of fire from the midst of a bush. So he looked, and behold, the bush was burning with fire, but the bush was not consumed."
     }
   },
   {
     "id": 256,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #56: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هي الضربة الثالثة من ضربات مصر العشر التي عجز عرافو وسحرة مصر عن تقليدها وقالوا: «هذَا إِصْبِعُ اللهِ»؟",
+      "en": "Which third plague of Egypt were the magicians unable to replicate, declaring to Pharaoh: 'This is the finger of God'?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "ضربة الضفادع",
+        "ضربة البعوض",
+        "ضربة الدمامل",
+        "ضربة الذبان"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "The plague of frogs",
+        "The plague of lice",
+        "The plague of boils",
+        "The plague of flies"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 8: 18-19",
+      "en": "Exodus 8:18-19"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَفَعَلَ كَذلِكَ الْعَرَّافُونَ بِسِحْرِهِمْ لِيُخْرِجُوا الْبَعُوضَ فَلَمْ يَسْتَطِيعُوا... فَقَالَ الْعَرَّافُونَ لِفِرْعَوْنَ: «هذَا إِصْبِعُ اللهِ».",
+      "en": "Now the magicians so worked with their enchantments to bring forth lice, but they could not... Then the magicians said to Pharaoh, 'This is the finger of God.'"
     }
   },
   {
     "id": 257,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #57: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "في أي شهر قمري من شهور العبرانيين أُمر بنو إسرائيل بحفظ خروف الفصح وذبحه بين العشاءين؟",
+      "en": "In which Hebrew lunar month were the Israelites commanded to keep the Passover lamb and kill it at twilight?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "شهر تشرين (إيثانيم)",
+        "شهر أبيب (نيسان)",
+        "شهر سيفان",
+        "شهر كيسلو"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "The month of Ethanim (Tishri)",
+        "The month of Abib (Nisan)",
+        "The month of Sivan",
+        "The month of Chislev"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 12: 2 / خروج 13: 4",
+      "en": "Exodus 12:2 / Exodus 13:4"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«هذَا الشَّهْرُ يَكُونُ لَكُمْ رَأْسَ الشُّهُورِ. هُوَ لَكُمْ أَوَّلُ شُهُورِ السَّنَةِ... الْيَوْمَ أَنْتُمْ خَارِجُونَ فِي شَهْرِ أَبِيبَ».",
+      "en": "'This month shall be your beginning of months; it shall be the first month of the year to you... On this day you are going out, in the month Abib.'"
     }
   },
   {
     "id": 258,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #58: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان عدد الرجال المشاة من بني إسرائيل الخارجين من رعمسيس إلى سكوت ما عدا الأولاد والنساء؟",
+      "en": "How many men on foot, besides women and children, journeyed from Rameses to Succoth in the Exodus?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "مئة وأربعون ألفاً",
+        "مليون رجل",
+        "نحو ستمئة ألف ماشٍ",
+        "ثلاثمئة ألف ماشٍ"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "140,000 men",
+        "One million men",
+        "About 600,000 men on foot",
+        "About 300,000 men"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 12: 37",
+      "en": "Exodus 12:37"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَارْتَحَلَ بَنُو إِسْرَائِيلَ مِنْ رَعَمْسِيسَ إِلَى سُكُّوتَ، نَحْوَ سِتِّ مِئَةِ أَلْفِ مَاشٍ مِنَ الرِّجَالِ عَدَا الأَوْلاَدِ.",
+      "en": "Then the children of Israel journeyed from Rameses to Succoth, about six hundred thousand men on foot, besides children."
     }
   },
   {
     "id": 259,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #59: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "عظام من من الآباء حملها موسى النبي معه عند خروج بني إسرائيل من مصر وفاءً لقسمه؟",
+      "en": "Whose bones did Moses take with him when the children of Israel departed from Egypt, fulfilling a solemn oath?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "عظام يوسف الصديق",
+        "عظام يعقوب",
+        "عظام إبراهيم",
+        "عظام يوحنا"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "The bones of Joseph",
+        "The bones of Jacob",
+        "The bones of Abraham",
+        "The bones of Judah"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 13: 19",
+      "en": "Exodus 13:19"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَأَخَذَ مُوسَى عِظَامَ يُوسُفَ مَعَهُ، لأَنَّهُ كَانَ قَدِ اسْتَحْلَفَ بَنِي إِسْرَائِيلَ حَلْفًا قَائِلاً: «إِنَّ اللهَ سَيَفْتَقِدُكُمْ فَتُصْعِدُونَ عِظَامِي مِنْ هُنَا مَعَكُمْ».",
+      "en": "And Moses took the bones of Joseph with him, for he had placed the children of Israel under solemn oath, saying, 'God will surely visit you, and you shall carry up my bones from here with you.'"
     }
   },
   {
     "id": 260,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #60: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هي الشجرة أو العود الذي ألقاه موسى في مياه مارة المرة فصارت المياه عذبة صالحة للشرب؟",
+      "en": "What tree did the LORD show Moses, which he cast into the bitter waters of Marah so that the waters became sweet?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "شجرة أراها له الرب",
+        "غصن كرمة ناضج",
+        "قضيب من السنط",
+        "عصا هارون المفرخة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "A tree shown by the LORD",
+        "A mature vine branch",
+        "An acacia rod",
+        "Aaron's blossomed rod"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 15: 25",
+      "en": "Exodus 15:25"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَصَرَخَ إِلَى الرَّبِّ. فَأَرَاهُ الرَّبُّ شَجَرَةً فَطَرَحَهَا فِي الْمَاءِ فَصَارَ الْمَاءُ عَذْبًا.",
+      "en": "So he cried out to the LORD, and the LORD showed him a tree. When he cast it into the waters, the waters were made sweet."
     }
   },
   {
     "id": 261,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #61: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان مكيال المن السماوي الذي أُمر كل رجل بجمعه يومياً لكل فرد في خيمته؟",
+      "en": "What was the daily measurement of manna commanded for each person in their tent?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "عُمراً واحداً للرأس",
+        "لُجّاً واحداً",
+        "صاعين",
+        "إيفة كاملة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "One omer per head",
+        "One log",
+        "Two seahs",
+        "One full ephah"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 16: 16",
+      "en": "Exodus 16:16"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«هذَا هُوَ الشَّيْءُ الَّذِي أَمَرَ بِهِ الرَّبُّ. اجْمَعُوا مِنْهُ كُلُّ وَاحِدٍ عَلَى حَسَبِ أُكْلِهِ. عُمْرًا لِلرَّأْسِ عَلَى عَدَدِ نُفُوسِكُمْ تَأْخُذُونَ، كُلُّ وَاحِدٍ لِلَّذِينَ فِي خَيْمَتِهِ».",
+      "en": "'This is the thing which the LORD has commanded: \"Let every man gather it according to each one’s need, one omer for each person, according to the number of persons; let every man take for those who are in his tent.\"'"
     }
   },
   {
     "id": 262,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #62: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هو الإناء الذهبي الذي وُضع فيه عُمر من المن ووُضع أمام الشهادة للذكرى للأجيال؟",
+      "en": "What was placed inside the Ark of the Covenant holding an omer of manna as a memorial for future generations?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "كوز من فخار",
+        "صحن فضي",
+        "قسط من ذهب",
+        "صندوق عاجي"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "A clay pitcher",
+        "A silver dish",
+        "A golden pot",
+        "An ivory box"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 16: 33 / عبرانيين 9: 4",
+      "en": "Exodus 16:33 / Hebrews 9:4"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَقَالَ مُوسَى لِهَارُونَ: «خُذْ قِسْطًا وَاحِدًا وَاجْعَلْ فِيهِ مِلْءَ الْعُمْرِ مَنًّا، وَضَعْهُ أَمَامَ الرَّبِّ لِلْحِفْظِ فِي أَجْيَالِكُمْ».",
+      "en": "And Moses said to Aaron, 'Take a pot and put an omer of manna in it, and lay it up before the LORD, to be kept for your generations.'"
     }
   },
   {
     "id": 263,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #63: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم حمي موسى كاهن مديان الذي زار موسى في البرية وأشار عليه بتعيين قضاة ورؤساء ألوف ومئات وخماسين وعشرات؟",
+      "en": "What was the name of Moses' father-in-law, priest of Midian, who advised him to appoint rulers of thousands, hundreds, fifties, and tens?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "يثرون (رعوئيل)",
+        "بلعام بن بعور",
+        "أبيمالك",
+        "حوباب"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Jethro (Reuel)",
+        "Balaam son of Beor",
+        "Abimelech",
+        "Hobab"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 18: 1-21",
+      "en": "Exodus 18:1-21"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَسَمِعَ يَثْرُونُ كَاهِنُ مِدْيَانَ، حَمُو مُوسَى، بِكُلِّ مَا صَنَعَ اللهُ إِلَى مُوسَى وَإِلَى إِسْرَائِيلَ شَعْبِهِ... «وَأَنْتَ تَنْظُرُ مِنْ جَمِيعِ الشَّعْبِ رِجَالاً ذَوِي قُدْرَةٍ خَائِفِينَ اللهَ... وَتُقِيمُهُمْ عَلَيْهِمْ رُؤَسَاءَ أُلُوفٍ وَرُؤَسَاءَ مِئَاتٍ وَرُؤَسَاءَ خَمَاسِينَ وَرُؤَسَاءَ عَشَرَاتٍ».",
+      "en": "And Jethro, the priest of Midian, Moses’ father-in-law, heard of all that God had done for Moses and for Israel His people... 'Moreover you shall select from all the people able men, such as fear God, men of truth, hating covetousness; and place such over them to be rulers of thousands, rulers of hundreds, rulers of fifties, and rulers of tens.'"
     }
   },
   {
     "id": 264,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #64: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "من أي خشب صُنع تابوت العهد ومذبح المحرقة ومائدة خبز الوجوه بحسب وصية الرب لموسى؟",
+      "en": "From what type of wood were the Ark of the Covenant, the Altar of Burnt Offering, and the Table of Showbread constructed?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "خشب الأرز",
+        "خشب الزيتون",
+        "خشب السرو",
+        "خشب السنط"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Cedar wood",
+        "Olive wood",
+        "Cypress wood",
+        "Acacia wood"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 25: 10 / خروج 27: 1",
+      "en": "Exodus 25:10 / Exodus 27:1"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«فَيَصْنَعُونَ تَابُوتًا مِنْ خَشَبِ السَّنْطِ، طُولُهُ ذِرَاعَانِ وَنِصْفٌ، وَعَرْضُهُ ذِرَاعٌ وَنِصْفٌ، وَارْتِفَاعُهُ ذِرَاعٌ وَنِصْفٌ».",
+      "en": "'And they shall make an ark of acacia wood; two and a half cubits shall be its length, a cubit and a half its width, and a cubit and a half its height.'"
     }
   },
   {
     "id": 265,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #65: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان عدد فروع المنارة الذهبية النقية ذات السرج السبعة المصنوعة من وزنة ذهب نقي في القدس؟",
+      "en": "How many branches extended from the sides of the pure golden lampstand with seven lamps in the Holy Place?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أربع شعب",
+        "ثماني شعب",
+        "ست شعب خارجة من جانبيها",
+        "اثنتا عشرة شعبة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Four branches",
+        "Eight branches",
+        "Six branches out of its sides",
+        "Twelve branches"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 25: 31-32",
+      "en": "Exodus 25:31-32"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَتَصْنَعُ مَنَارَةً مِنْ ذَهَبٍ نَقِيٍّ... وَسِتُّ شُعَبٍ خَارِجَةٌ مِنْ جَانِبَيْهَا. ثَلاَثُ شُعَبِ مَنَارَةٍ مِنْ جَانِبِهَا الْوَاحِدِ، وَثَلاَثُ شُعَبِ مَنَارَةٍ مِنْ جَانِبِهَا الثَّانِي».",
+      "en": "'You shall also make a lampstand of pure gold... And six branches shall come out of its sides: three branches of the lampstand out of one side, and three branches of the lampstand out of the other side.'"
     }
   },
   {
     "id": 266,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #66: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هما الشيئان الموضوعان في صدرة القضاء فوق قلب هارون عندما يدخل إلى القدس لمعرفة مشيئة الله؟",
+      "en": "What two sacred objects were placed in the breastplate of judgment over Aaron's heart to inquire of the LORD's will?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "المسح والرماد",
+        "اللوحان والمن",
+        "العصا والقسط",
+        "الأوريم والتميم"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Sackcloth and Ashes",
+        "The Tablets and Manna",
+        "The Rod and the Pot",
+        "The Urim and Thummim"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 28: 30",
+      "en": "Exodus 28:30"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَتَجْعَلُ فِي صُدْرَةِ الْقَضَاءِ الأُورِيمَ وَالتُّمِّيمَ لِتَكُونَ عَلَى قَلْبِ هَارُونَ عِنْدَ دُخُولِهِ أَمَامَ الرَّبِّ».",
+      "en": "'And you shall put in the breastplate of judgment the Urim and the Thummim, and they shall be over Aaron’s heart when he goes in before the LORD.'"
     }
   },
   {
     "id": 267,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #67: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما العبارة المنقوشة كالخاتم على الصفيحة الذهبية النقية الموضوعة على عمامة هارون في جبهته؟",
+      "en": "What phrase was engraved like an inscription of a signet on the pure gold plate upon Aaron's turban forehead?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "«قُدْسٌ لِلرَّبِّ»",
+        "«الرَّبُّ رَاعِيَّ»",
+        "«اللهُ مَعَنَا»",
+        "«الرَّبُّ يَرَى»"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "'HOLINESS TO THE LORD'",
+        "'THE LORD IS MY SHEPHERD'",
+        "'GOD IS WITH US'",
+        "'THE LORD SEES'"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 28: 36",
+      "en": "Exodus 28:36"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَتَصْنَعُ صَفِيحَةً مِنْ ذَهَبٍ نَقِيٍّ، وَتَنْقُشُ عَلَيْهَا نَقْشَ خَاتِمٍ: قُدْسٌ لِلرَّبِّ».",
+      "en": "'You shall also make a plate of pure gold and engrave on it, like the engraving of a signet: HOLINESS TO THE LORD.'"
     }
   },
   {
     "id": 268,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #68: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هما الاسمان اللذان أطلقهما موسى على موضع تجربة بني إسرائيل لما خاصموه وقالوا: «أَفِي وَسَطِنَا الرَّبُّ أَمْ لاَ؟»؟",
+      "en": "What two names did Moses give to the place where Israel tested the LORD, saying: 'Is the LORD among us or not?'"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "مسّة ومريبة",
+        "تبعيرا وقادش",
+        "إيليم ومارة",
+        "فنوئيل وسكوت"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Massah and Meribah",
+        "Taberah and Kadesh",
+        "Elim and Marah",
+        "Penuel and Succoth"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 17: 7",
+      "en": "Exodus 17:7"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَدَعَا اسْمَ الْمَوْضِعِ «مَسَّةَ وَمَرِيبَةَ» مِنْ أَجْلِ مُخَاصَمَةِ بَنِي إِسْرَائِيلَ، وَمِنْ أَجْلِ تَجْرِبَتِهِمْ لِلرَّبِّ قَائِلِينَ: «أَفِي وَسَطِنَا الرَّبُّ أَمْ لاَ؟».",
+      "en": "So he called the name of the place Massah and Meribah, because of the contention of the children of Israel, and because they tempted the LORD, saying, 'Is the LORD among us or not?'"
     }
   },
   {
     "id": 269,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #69: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم يوماً صام موسى النبي على جبل سيناء مرتين متتاليتين عندما استلم لوحي الشريعة الحجريين؟",
+      "en": "How many days and nights did Moses fast on Mount Sinai while receiving the stone tablets of the Law?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "سبعة أيام بلياليها",
+        "أربعين نهاراً وأربعين ليلة",
+        "ثلاثة أيام",
+        "عشرين يوماً"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Seven days and nights",
+        "Forty days and forty nights",
+        "Three days",
+        "Twenty days"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 24: 18 / خروج 34: 28",
+      "en": "Exodus 24:18 / Exodus 34:28"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَدَخَلَ مُوسَى فِي وَسَطِ السَّحَابِ وَصَعِدَ إِلَى الْجَبَلِ. وَكَانَ مُوسَى فِي الْجَبَلِ أَرْبَعِينَ نَهَارًا وَأَرْبَعِينَ لَيْلَةً.",
+      "en": "And Moses entered the midst of the cloud and went up into the mountain. And Moses was on the mountain forty days and forty nights."
     }
   },
   {
     "id": 270,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #70: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ماذا وضع موسى على وجهه عندما نزل من جبل سيناء لأن جلد وجهه كان يلمع ولم يقدر الشعب أن يقتربوا إليه؟",
+      "en": "What did Moses put over his face when descending Mount Sinai because the skin of his face shone so brilliantly?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "إكليلاً ذهبياً",
+        "عمامة بيضاء",
+        "برقعاً",
+        "وشاحاً من الصوف"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "A golden crown",
+        "A white turban",
+        "A veil",
+        "A woolen scarf"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "خروج 34: 33-35",
+      "en": "Exodus 34:33-35"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَلَمَّا فَرَغَ مُوسَى مِنَ الْكَلاَمِ مَعَهُمْ، جَعَلَ عَلَى وَجْهِهِ بُرْقُعًا... وَكَانَ بَنُو إِسْرَائِيلَ يَرَوْنَ وَجْهَ مُوسَى أَنَّ جِلْدَهُ يَلْمَعُ، فَكَانَ مُوسَى يَرُدُّ الْبُرْقُعَ عَلَى وَجْهِهِ...",
+      "en": "And when Moses had finished speaking with them, he put a veil on his face... And whenever the children of Israel saw the face of Moses, that the skin of Moses’ face shone, then Moses would put the veil on his face again"
     }
   },
   {
     "id": 271,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #71: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم مرة في السنة كان يدخل رئيس الكهنة وحده إلى قدس الأقداس بدم الذبيحة في يوم الكفارة العظيم؟",
+      "en": "How many times in a year did the High Priest alone enter the Most Holy Place with sacrificial blood on the Day of Atonement?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "في كل سبت",
+        "مرة واحدة فقط في السنة",
+        "سبع مرات في الشهر",
+        "ثلاث مرات في السنة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Every Sabbath",
+        "Once a year only",
+        "Seven times a month",
+        "Three times a year"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "لاويين 16: 34 / عبرانيين 9: 7",
+      "en": "Leviticus 16:34 / Hebrews 9:7"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَتَكُونُ هذِهِ لَكُمْ فَرِيضَةً دَهْرِيَّةً لِلتَّكْفِيرِ عَنْ بَنِي إِسْرَائِيلَ مِنْ جَمِيعِ خَطَايَاهُمْ مَرَّةً فِي السَّنَةِ».",
+      "en": "'This shall be an everlasting statute for you, to make atonement for the children of Israel, for all their sins, once a year.'"
     }
   },
   {
     "id": 272,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #72: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسما التيسين اللذين أُلقيت عليهما القرعة في يوم الكفارة العظيم: واحد للرب والآخر لمن؟",
+      "en": "In the Day of Atonement ritual, lots were cast for two goats: one for the LORD, and the other for whom?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "لكهنة أون",
+        "لبعل زبوب",
+        "للذبيحة المحرقة",
+        "لعزازيل إلى البرية"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "For the priests of On",
+        "For Baal-Zebub",
+        "For the burnt offering",
+        "For Azazel into the wilderness"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "لاويين 16: 8-10",
+      "en": "Leviticus 16:8-10"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَيُلْقِي هَارُونُ عَلَى التَّيْسَيْنِ قُرْعَتَيْنِ: قُرْعَةً لِلرَّبِّ وَقُرْعَةً لِعَزَازِيلَ... وَأَمَّا التَّيْسُ الَّذِي خَرَجَتْ عَلَيْهِ الْقُرْعَةُ لِعَزَازِيلَ فَيُوقَفُ حَيًّا أَمَامَ الرَّبِّ لِيُكَفَّرَ عَنْهُ لِيُرْسَلَ إِلَى عَزَازِيلَ إِلَى الْبَرِّيَّةِ».",
+      "en": "'Then Aaron shall cast lots for the two goats: one lot for the LORD and the other lot for the scapegoat (Azazel)... and the goat on which the lot fell to be the scapegoat shall be presented alive before the LORD, to make atonement upon it, and to let it go as the scapegoat into the wilderness.'"
     }
   },
   {
     "id": 273,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #73: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "في أي سنة يحل عام اليوبيل العظيم في شريعة موسى حيث يُنادى بالعتق في الأرض لجميع سكانها ويرجع كل إنسان إلى ملكه؟",
+      "en": "In which year did the Year of Jubilee occur in Mosaic law, proclaiming liberty throughout all the land to all its inhabitants?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "السنة الخمسون",
+        "السنة السابعة",
+        "السنة الأربعون",
+        "السنة السبعون"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "The fiftieth year",
+        "The seventh year",
+        "The fortieth year",
+        "The seventieth year"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "لاويين 25: 10-11",
+      "en": "Leviticus 25:10-11"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَتُقَدِّسُونَ السَّنَةَ الْخَمْسِينَ، وَتُنَادُونَ بِالْعِتْقِ فِي الأَرْضِ لِجَمِيعِ سُكَّانِهَا. تَكُونُ لَكُمْ يُوبِيلاً، وَتَرْجِعُونَ كُلٌّ إِلَى مُلْكِهِ... يُوبِيلاً تَكُونُ لَكُمُ السَّنَةُ الْخَمْسُونَ».",
+      "en": "'And you shall consecrate the fiftieth year, and proclaim liberty throughout all the land to all its inhabitants. It shall be a Jubilee for you; and each of you shall return to his possession... That fiftieth year shall be a Jubilee to you;'"
     }
   },
   {
     "id": 274,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #74: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الجاسوسين الصالحين اللذين أرسلهما موسى من قادش برنيع وشجعا الشعب قائلين: «إِنَّنَا نَقْدِرُ عَلَيْهَا»؟",
+      "en": "Who were the two faithful spies sent by Moses from Kadesh Barnea who encouraged Israel saying: 'Let us go up at once and take possession'?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "ألعازار وفينحاس",
+        "شموع وشافاط",
+        "يشوع بن نون وكالب بن يفنة",
+        "جرشوم وأليعازر"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Eleazar and Phinehas",
+        "Shammua and Shaphat",
+        "Joshua son of Nun and Caleb son of Jephunneh",
+        "Gershom and Eliezer"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 13: 30 / عدد 14: 6-7",
+      "en": "Numbers 13:30 / Numbers 14:6-7"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "لكِنْ كَالِبُ أَنْصَتَ الشَّعْبَ إِلَى مُوسَى وَقَالَ: «إِنَّنَا نَصْعَدُ وَنَمْلِكُهَا لأَنَّنَا قَادِرُونَ عَلَيْهَا»... وَيَشُوعُ بْنُ نُونَ وَكَالِبُ بْنُ يَفُنَّةَ، مِنَ الَّذِينَ تَجَسَّسُوا الأَرْضَ، مَزَّقَا ثِيَابَهُمَا...",
+      "en": "Then Caleb quieted the people before Moses, and said, 'Let us go up at once and take possession, for we are well able to overcome it.' But Joshua the son of Nun and Caleb the son of Jephunneh, who were among those who had spied out the land, tore their clothes;"
     }
   },
   {
     "id": 275,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #75: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان عدد شيوخ إسرائيل الذين جمعهم موسى ونزل الرب ومسحهم من الروح الذي عليه فتنبأوا في المحلة؟",
+      "en": "How many elders of Israel were gathered by Moses upon whom the LORD put the Spirit that was on Moses, causing them to prophesy?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أربعون رجلاً",
+        "مئة وعشرون رجلاً",
+        "سبعون رجلاً",
+        "اثنا عشر رجلاً"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Forty men",
+        "One hundred and twenty men",
+        "Seventy men",
+        "Twelve men"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 11: 16-25",
+      "en": "Numbers 11:16-25"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَقَالَ الرَّبُّ لِمُوسَى: «اجْمَعْ إِلَيَّ سَبْعِينَ رَجُلاً مِنْ شُيُوخِ إِسْرَائِيلَ... فَآخُذَ مِنَ الرُّوحِ الَّذِي عَلَيْكَ وَأَضَعَ عَلَيْهِمْ»... فَنَزَلَ الرَّبُّ فِي سَحَابَةٍ وَتَكَلَّمَ مَعَهُ، وَأَخَذَ مِنَ الرُّوحِ الَّذِي عَلَيْهِ وَجَعَلَهُ عَلَى السَّبْعِينَ رَجُلاً الشُّيُوخَ.",
+      "en": "So the LORD said to Moses: 'Gather to Me seventy men of the elders of Israel... and I will take of the Spirit that is upon you and will put the same upon them'... Then the LORD came down in the cloud, and spoke to him, and took of the Spirit that was upon him, and placed the same upon the seventy elders;"
     }
   },
   {
     "id": 276,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #76: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسما الرجلين اللذين بقيا في المحلة ولم يخرجا إلى الخيمة وحل عليهما الروح فتنبآ داخل المحلة؟",
+      "en": "What were the names of the two men who remained in the camp and prophesied when the Spirit rested upon them?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "حفني وفينحاس",
+        "ألداد وميداد",
+        "نداب وأبيهو",
+        "جرشوم وأليعازر"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Hophni and Phinehas",
+        "Eldad and Medad",
+        "Nadab and Abihu",
+        "Gershom and Eliezer"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 11: 26",
+      "en": "Numbers 11:26"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَبَقِيَ رَجُلاَنِ فِي الْمَحَلَّةِ، اسْمُ الْوَاحِدِ أَلْدَادُ، وَاسْمُ الآخَرِ مِيدَادُ، فَحَلَّ عَلَيْهِمَا الرُّوحُ... فَتَنَبَّآ فِي الْمَحَلَّةِ.",
+      "en": "But two men had remained in the camp: the name of one was Eldad, and the name of the other Medad. And the Spirit rested upon them... and they prophesied in the camp."
     }
   },
   {
     "id": 277,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #77: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "بماذا ضُربت مريم أخت موسى عندما تكلمت هي وهارون ضد موسى بسبب المرأة الكوشية التي اتخذها؟",
+      "en": "With what affliction was Miriam stricken when she and Aaron spoke against Moses because of the Ethiopian woman he had married?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "بالصمت الأبدي",
+        "بُعثت بالبرص كالثلج",
+        "بالعمى التام",
+        "بالحمى القاتلة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Muteness",
+        "Stricken with leprosy, white as snow",
+        "Total blindness",
+        "Fatal fever"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 12: 10",
+      "en": "Numbers 12:10"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَلَمَّا ارْتَفَعَتِ السَّحَابَةُ عَنِ الْخَيْمَةِ إِذَا مَرْيَمُ بَرْصَاءُ كَالثَّلْجِ. فَالْتَفَتَ هَارُونُ إِلَى مَرْيَمَ وَإِذَا هِيَ بَرْصَاءُ.",
+      "en": "And when the cloud departed from above the tabernacle, suddenly Miriam became leprous, as white as snow. Then Aaron turned toward Miriam, and there she was, a leper."
     }
   },
   {
     "id": 278,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #78: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ماذا صنع موسى بأمر الرب لشفاء كل من تلدغه الحيات المحرقة في البرية عندما ينظر إليها بإيمان؟",
+      "en": "What did Moses make at the command of the LORD so that anyone bitten by a fiery serpent would live when looking at it?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "مذبحاً حجرياً",
+        "حية من نحاس ووضعها على راية",
+        "صفيحة ذهبية نقية",
+        "عصا خشبية مورقة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "A stone altar",
+        "A bronze serpent set on a pole",
+        "A pure gold plate",
+        "A leafy wooden staff"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 21: 8-9",
+      "en": "Numbers 21:8-9"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَقَالَ الرَّبُّ لِمُوسَى: «اصْنَعْ لَكَ حَيَّةً مُحْرِقَةً وَضَعْهَا عَلَى رَايَةٍ، فَكُلُّ مَنْ لُدِغَ وَنَظَرَ إِلَيْهَا يَحْيَا». فَصَنَعَ مُوسَى حَيَّةً مِنْ نُحَاسٍ وَوَضَعَهَا عَلَى الرَّايَةِ...",
+      "en": "Then the LORD said to Moses, 'Make a fiery serpent, and set it on a pole; and it shall be that everyone who is bitten, when he looks at it, shall live.' So Moses made a bronze serpent, and put it on a pole; and so it was, if a serpent had bitten anyone, when he looked at the bronze serpent, he lived."
     }
   },
   {
     "id": 279,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #79: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الملك الموآبي الذي استأجر بلعام بن بعور ليلعن شعب إسرائيل؟",
+      "en": "What was the name of the king of Moab who hired Balaam son of Beor to curse the people of Israel?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "سيحون",
+        "ميشع",
+        "عجلون",
+        "بالاق بن صفور"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Sihon",
+        "Mesha",
+        "Eglon",
+        "Balak son of Zippor"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 22: 4-5",
+      "en": "Numbers 22:4-5"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَكَانَ بَالاَقُ بْنُ صِفُّورَ مَلِكًا لِمُوآبَ فِي ذلِكَ الزَّمَانِ. فَأَرْسَلَ رُسُلاً إِلَى بَلْعَامَ بْنِ بَعُورَ... لِيَدْعُوَهُ قَائِلاً: «هُوَذَا شَعْبٌ قَدْ خَرَجَ مِنْ مِصْرَ... فَتَعَالَ الآنَ وَالْعَنْ لِي هذَا الشَّعْبَ».",
+      "en": "And Balak the son of Zippor was king of the Moabites at that time. Then he sent messengers to Balaam the son of Beor... saying, 'Look, a people has come from Egypt... Therefore please come at once, curse this people for me'"
     }
   },
   {
     "id": 280,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #80: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ماذا فتح الرب لآتان بلعام لتتكلم به وتوبخ حماقة النبي لما ضربها ثلاث مرات بعصاه؟",
+      "en": "What miraculous ability did the LORD give Balaam's donkey when Balaam struck her three times with his staff?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "تحولت إلى فرس أبيض",
+        "فتح الرب فمها فتكلمت بصوت إنسان",
+        "طارت في الهواء بجناحين",
+        "اختفت من أمامه تماماً"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Turned into a white horse",
+        "The LORD opened her mouth to speak with a man's voice",
+        "Flew in the air with wings",
+        "Disappeared completely"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 22: 28 / 2 بطرس 2: 16",
+      "en": "Numbers 22:28 / 2 Peter 2:16"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَفَتَحَ الرَّبُّ فَمَ الأَتَانِ، فَقَالَتْ لِبَلْعَامَ: «مَاذَا صَنَعْتُ بِكَ حَتَّى ضَرَبْتَنِي الآنَ ثَلاَثَ دَفَعَاتٍ؟»",
+      "en": "Then the LORD opened the mouth of the donkey, and she said to Balaam, 'What have I done to you, that you have struck me these three times?'"
     }
   },
   {
     "id": 281,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #81: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الكاهن الغيور حفيد هارون الذي طعن الزمري وكزبي بحربة فكفّ الوباء عن بني إسرائيل؟",
+      "en": "What was the name of the zealous priest, grandson of Aaron, who pierced Zimri and Cozbi with a javelin, halting the plague?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "نداب",
+        "إيثامار",
+        "فينحاس بن أليعازار",
+        "أبيهو"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Nadab",
+        "Ithamar",
+        "Phinehas son of Eleazar",
+        "Abihu"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 25: 7-8",
+      "en": "Numbers 25:7-8"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَلَمَّا رَأَى ذلِكَ فِينْحَاسُ بْنُ أَلِيعَازَارَ بْنِ هَارُونَ الْكَاهِنِ، قَامَ مِنْ وَسَطِ الْجَمَاعَةِ وَأَخَذَ رُمْحًا بِيَدِهِ... فَامْتَنَعَ الْوَبَأُ عَنْ بَنِي إِسْرَائِيلَ.",
+      "en": "Now when Phinehas the son of Eleazar, the son of Aaron the priest, saw it, he rose from among the congregation and took a javelin in his hand... So the plague was stopped among the children of Israel."
     }
   },
   {
     "id": 282,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #82: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم مدينة جعلها بنو إسرائيل مدناً للملجأ ليهرب إليها القاتل سهواً بغير قصد؟",
+      "en": "How many cities of refuge did the Israelites designate for someone who killed a person accidentally without premeditation?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أربعون مدينة",
+        "ست مدن ملجأ",
+        "اثنتا عشرة مدينة",
+        "ثلاث مدن فقط"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Forty cities",
+        "Six cities of refuge",
+        "Twelve cities",
+        "Three cities only"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "عدد 35: 13 / يشوع 20: 7-8",
+      "en": "Numbers 35:13 / Joshua 20:7-8"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَالْمُدُنُ الَّتِي تُعْطُونَ تَكُونُ سِتَّ مُدُنِ مَلْجَأٍ لَكُمْ. ثَلاَثَ مِنَ الْمُدُنِ تُعْطُونَ فِي عَبْرِ الأُرْدُنِّ، وَثَلاَثَ مِنَ الْمُدُنِ تُعْطُونَ فِي أَرْضِ كَنْعَانَ».",
+      "en": "'And the cities which you give shall be six cities of refuge for you. You shall appoint three cities on this side of the Jordan, and three cities you shall appoint in the land of Canaan, which shall be cities of refuge.'"
     }
   },
   {
     "id": 283,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #83: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هي الكلمات الافتتاحية العظيمة للـ «شماع» (اسمع يا إسرائيل) في سفر التثنية 6؟",
+      "en": "What is the great opening proclamation of the 'Shema' in Deuteronomy 6:4?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "«اِسْمَعْ يَا إِسْرَائِيلُ: الرَّبُّ إِلهُنَا رَبٌّ وَاحِدٌ»",
+        "«الرَّبُّ نُورِي وَخَلاَصِي»",
+        "«الرَّبُّ رَاعِيَّ فَلاَ يُعْوِزُنِي شَيْءٌ»",
+        "«الرَّبُّ قُوَّتِي وَتَرْنِيمَتِي»"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "'Hear, O Israel: The LORD our God, the LORD is one!'",
+        "'The LORD is my light and salvation'",
+        "'The LORD is my shepherd; I shall not want'",
+        "'The LORD is my strength and song'"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "تثنية 6: 4",
+      "en": "Deuteronomy 6:4"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«اِسْمَعْ يَا إِسْرَائِيلُ: الرَّبُّ إِلهُنَا رَبٌّ وَاحِدٌ. فَتُحِبُّ الرَّبَّ إِلهَكَ مِنْ كُلِّ قَلْبِكَ وَمِنْ كُلِّ نَفْسِكَ وَمِنْ كُلِّ قُوَّتِكَ».",
+      "en": "'Hear, O Israel: The LORD our God, the LORD is one! You shall love the LORD your God with all your heart, with all your soul, and with all your strength.'"
     }
   },
   {
     "id": 284,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #84: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "من هو الرجل الذي خان عهد الله وأخذ من الحرام رداء شنعارياً ومئتي شاقل فضة ولسان ذهب فسبب هزيمة إسرائيل في عاي؟",
+      "en": "Who violated the covenant of the LORD by taking from the accursed things at Jericho a Babylonian garment, silver, and gold, causing the defeat at Ai?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "دواغ",
+        "عخان بن كرمي",
+        "زمري",
+        "كورح"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Doeg",
+        "Achan son of Carmi",
+        "Zimri",
+        "Korah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 7: 20-21",
+      "en": "Joshua 7:20-21"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَأَجَابَ عَخَانُ يَشُوعَ وَقَالَ: «حَقًّا إِنِّي أَخْطَأْتُ إِلَى الرَّبِّ إِلهِ إِسْرَائِيلَ... رَأَيْتُ فِي الْغَنِيمَةِ رِدَاءً شِنْعَارِيًّا نَفِيسًا، وَمِئَتَيْ شَاقِلِ فِضَّةٍ، وَلِسَانَ ذَهَبٍ وَزْنُهُ خَمْسُونَ شَاقِلاً، فَاشْتَهَيْتُهَا وَأَخَذْتُهَا».",
+      "en": "And Achan answered Joshua and said, 'Indeed I have sinned against the LORD God of Israel... When I saw among the spoils a beautiful Babylonian garment, two hundred shekels of silver, and a wedge of gold weighing fifty shekels, I coveted them and took them.'"
     }
   },
   {
     "id": 285,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #85: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الوادي الذي رُجم فيه عخان بن كرمي وأُحرق هو وبيته بالنار وسُمي الوادي باسم الكدر؟",
+      "en": "What was the name of the valley where Achan was stoned and burned, called the Valley of Trouble?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "وادي عخور",
+        "وادي قيدرون",
+        "وادي هنوم",
+        "وادي إيلا"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Valley of Achor",
+        "Valley of Kidron",
+        "Valley of Hinnom",
+        "Valley of Elah"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 7: 26",
+      "en": "Joshua 7:26"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَأَقَامُوا فَوْقَهُ رُجْمَةَ حِجَارَةٍ عَظِيمَةً إِلَى هذَا الْيَوْمِ. فَرَجَعَ الرَّبُّ عَنْ حُمُوِّ غَضَبِهِ. لِذلِكَ دُعِيَ اسْمُ ذلِكَ الْمَكَانِ «وَادِيَ عَخُورَ» إِلَى هذَا الْيَوْمِ.",
+      "en": "Then they raised over him a great heap of stones, still there to this day. So the LORD turned from the fierceness of His anger. Therefore the name of that place has been called the Valley of Achor to this day."
     }
   },
   {
     "id": 286,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #86: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما الحيلة التي لجأ إليها سكان جبعون ليخدعوا يشوع ورؤساء إسرائيل ويقطعوا معهم عهداً؟",
+      "en": "What deception did the Gibeonites use to trick Joshua and the leaders of Israel into making a covenant with them?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "تظاهروا أنهم مسافرون من أرض بعيدة بثياب بالية وخبز يابس متعفن",
+        "تنكروا في زي رعاة غنم من سبط يهوذا",
+        "أعلنوا إيمانهم وذبحوا ذبائح لله على جبل عيبال",
+        "أرسلوا نساءهم بسبايا وهدايا ثمينة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Pretended to be travelers from a far country with worn clothes and dry moldy bread",
+        "Disguised themselves as shepherds of Judah",
+        "Offered sacrifices on Mount Ebal",
+        "Sent women with captives and precious gifts"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 9: 4-5",
+      "en": "Joshua 9:4-5"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "عَمِلُوا هُمْ أَيْضًا بِحِيلَةٍ، فَمَضَوْا وَدَارُوا وَأَخَذُوا جُوَالِقَ بَالِيَةً لِحَمِيرِهِمْ، وَزِقَاقَ خَمْرٍ بَالِيَةً مُشَقَّقَةً وَمَرْبُوطَةً، وَأَحْذِيَةً بَالِيَةً وَمُرَقَّعَةً فِي أَرْجُلِهِمْ، وَثِيَابًا بَالِيَةً عَلَيْهِمْ، وَكُلُّ خُبْزِ زَادِهِمْ يَابِسٌ قَدْ صَارَ فُتَاتًا.",
+      "en": "they worked craftily, and went and pretended to be ambassadors. And they took old sacks on their donkeys, old wineskins torn and mended, old and patched sandals on their feet, and old garments on themselves; and all the bread of their provision was dry and moldy."
     }
   },
   {
     "id": 287,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #87: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما العمل الذي عينه يشوع لأهل جبعون عقاباً على حيلتهم ولأنهم صاروا في أمان بسبب قسم الرؤساء؟",
+      "en": "What perpetual role did Joshua assign to the Gibeonites because of the leaders' sworn oath?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "جنود في مقدمة الجيش",
+        "محتطبي حطب ومستقي ماء للجماعة ولمذبح الرب",
+        "بناء أسوار المدن",
+        "رعاة مواشي الكهنة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Frontline soldiers in battle",
+        "Woodcutters and water carriers for the congregation and the altar of the LORD",
+        "Builders of city walls",
+        "Shepherds of the priests' livestock"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 9: 27",
+      "en": "Joshua 9:27"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَجَعَلَهُمْ يَشُوعُ فِي ذلِكَ الْيَوْمِ مُحْتَطِبِي حَطَبٍ وَمُسْتَقِي مَاءٍ لِلْجَمَاعَةِ وَلِمَذْبَحِ الرَّبِّ إِلَى هذَا الْيَوْمِ، فِي الْمَكَانِ الَّذِي يَخْتَارُهُ.",
+      "en": "And that day Joshua made them woodcutters and water carriers for the congregation and for the altar of the LORD, in the place which He would choose, even to this day."
     }
   },
   {
     "id": 288,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #88: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم ملك أورشليم الكنعاني الذي قاد حلف الملوك الأموريين الخمسة ضد جبعون وهزمهم يشوع؟",
+      "en": "What was the name of the king of Jerusalem who led the confederacy of five Amorite kings against Gibeon, defeated by Joshua?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أدوني صادق",
+        "يافين",
+        "ملكي صادق",
+        "أدوني بازق"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Adoni-Zedek",
+        "Jabin",
+        "Melchizedek",
+        "Adoni-Bezek"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 10: 1-3",
+      "en": "Joshua 10:1-3"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَلَمَّا سَمِعَ أَدُونِي صَادِقَ مَلِكُ أُورُشَلِيمَ أَنَّ يَشُوعَ قَدْ أَخَذَ عَايَ وَحَرَّمَهَا... أَرْسَلَ أَدُونِي صَادِقَ مَلِكُ أُورُشَلِيمَ إِلَى هُوهَامَ مَلِكِ حَبْرُونَ...",
+      "en": "Now it came to pass when Adoni-Zedek king of Jerusalem heard how Joshua had taken Ai... that Adoni-Zedek king of Jerusalem sent to Hoham king of Hebron"
     }
   },
   {
     "id": 289,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #89: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "في أي مغارة اختبأ الملوك الأموريون الخمسة حتى أمر يشوع بسد فمها بحجارة كبيرة ثم قتلهم وعلقهم؟",
+      "en": "In which cave did the five Amorite kings hide until Joshua ordered large stones rolled against its mouth, later hanging them?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "مغارة عدلام",
+        "مغارة المكفيلة",
+        "مغارة عين جدي",
+        "مغارة مقيدة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "The cave of Adullam",
+        "The cave of Machpelah",
+        "The cave of En Gedi",
+        "The cave at Makkedah"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 10: 16-18",
+      "en": "Joshua 10:16-18"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَهَرَبَ أُولئِكَ الْخَمْسَةُ الْمُلُوكِ وَاخْتَبَأُوا فِي مَغَارَةٍ فِي مَقِّيدَةَ. فَأُخْبِرَ يَشُوعُ وَقِيلَ لَهُ: «قَدْ وُجِدَ الْمُلُوكُ الْخَمْسَةُ مُخْتَبِئِينَ فِي مَغَارَةٍ فِي مَقِّيدَةَ». فَقَالَ يَشُوعُ: «دَحْرِجُوا حِجَارَةً كَبِيرَةً عَلَى فَمِ الْمَغَارَةِ...».",
+      "en": "But these five kings had fled and hidden themselves in a cave at Makkedah. And it was told Joshua... So Joshua said, 'Roll large stones against the mouth of the cave, and set men by it to guard them.'"
     }
   },
   {
     "id": 290,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #90: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الملك الكنعاني الشمالي العظيم ملك حاصور الذي جمع ملوك الشمال بخيل ومركبات كثيرة كالبحر فهزمه يشوع وأحرق حاصور بالنار؟",
+      "en": "Who was the Canaanite king of Hazor who gathered northern kings with vast horses and chariots, defeated by Joshua who burned Hazor?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أدوني صادق",
+        "سيسرا",
+        "يابين ملك حاصور",
+        "هوهام"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Adoni-Zedek",
+        "Sisera",
+        "Jabin king of Hazor",
+        "Hoham"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 11: 1-11",
+      "en": "Joshua 11:1-11"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَلَمَّا سَمِعَ يَابِينُ مَلِكُ حَاصُورَ أَرْسَلَ إِلَى يُوبَابَ مَلِكِ مَادُونَ... فَخَرَجُوا هُمْ وَكُلُّ جُيُوشِهِمْ مَعَهُمْ... ثُمَّ رَجَعَ يَشُوعُ فِي ذلِكَ الْوَقْتِ وَأَخَذَ حَاصُورَ وَضَرَبَ مَلِكَهَا بِالسَّيْفِ... وَأَحْرَقَ حَاصُورَ بِالنَّارِ.",
+      "en": "And it came to pass, when Jabin king of Hazor heard these things, that he sent to Jobab king of Madon... So they went out, they and all their armies with them... Then Joshua turned back at that time and took Hazor, and struck its king with the sword... and he burned Hazor with fire."
     }
   },
   {
     "id": 291,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #91: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم كان عمر كالب بن يفنة لما طلب من يشوع جبل حبرون ميراثاً له ليطرد العناقيين العمالقة منه؟",
+      "en": "How old was Caleb son of Jephunneh when he asked Joshua for Mount Hebron as his inheritance to drive out the Anakim giants?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "سبعون سنة",
+        "أربعون سنة",
+        "خمس وثمانون سنة",
+        "مئة سنة"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Seventy years old",
+        "Forty years old",
+        "Eighty-five years old",
+        "One hundred years old"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "يشوع 14: 10",
+      "en": "Joshua 14:10"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "«وَالآنَ فَهَا قَدِ اسْتَحْيَانِيَ الرَّبُّ كَمَا تَكَلَّمَ هذِهِ الْخَمْسَ وَالأَرْبَعِينَ سَنَةً... وَالآنَ فَهَا أَنَا الْيَوْمَ ابْنُ خَمْسٍ وَثَمَانِينَ سَنَةً. فَلَمْ أَزَلِ الْيَوْمَ مُتَشَدِّدًا كَمَا فِي يَوْمِ أَرْسَلَنِي مُوسَى».",
+      "en": "'And now, behold, the LORD has kept me alive, as He said, these forty-five years... and now, here I am this day, eighty-five years old. As yet I am as strong this day as on the day that Moses sent me;'"
     }
   },
   {
     "id": 292,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #92: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الملك الكنعاني الذي قُطعت أباهم يديه ورجليه في بازق وقال: «سَبْعُونَ مَلِكًا مَقْطُوعَةٌ أَبَاهِمُ أَيْدِيهِمْ وَأَرْجُلِهِمْ كَانُوا يَلْتَقِطُونَ تَحْتَ مَائِدَتِي. كَمَا فَعَلْتُ كَذلِكَ جَازَانِيَ اللهُ»؟",
+      "en": "Which Canaanite king had his thumbs and big toes cut off, acknowledging: 'Seventy kings with their thumbs and big toes cut off used to gather scraps under my table; as I have done, so God has repaid me'?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "أدوني بازق",
+        "سيحون",
+        "أدوني صادق",
+        "عجلون"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Adoni-Bezek",
+        "Sihon",
+        "Adoni-Zedek",
+        "Eglon"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 1: 6-7",
+      "en": "Judges 1:6-7"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَهَرَبَ أَدُونِي بَازَقَ، فَسَعَوْا وَرَاءَهُ وَأَمْسَكُوهُ وَقَطَعُوا أَبَاهِمَ يَدَيْهِ وَرِجْلَيْهِ. فَقَالَ أَدُونِي بَازَقَ: «سَبْعُونَ مَلِكًا مَقْطُوعَةٌ أَبَاهِمُ أَيْدِيهِمْ وَأَرْجُلِهِمْ كَانُوا يَلْتَقِطُونَ تَحْتَ مَائِدَتِي. كَمَا فَعَلْتُ كَذلِكَ جَازَانِيَ اللهُ».",
+      "en": "Then Adoni-Bezek fled, and they pursued him and caught him and cut off his thumbs and big toes. And Adoni-Bezek said, 'Seventy kings with their thumbs and big toes cut off used to gather scraps under my table; as I have done, so God has repaid me.'"
     }
   },
   {
     "id": 293,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #93: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم الرجل الذي سرق ألفاً ومئة شاقل فضة من أمه ثم صنع بها تمثالاً مسبوكاً وأقام كاهناً لاوياً في بيته في جبل إفرايم؟",
+      "en": "Who stole 1,100 shekels of silver from his mother, then used it to make a carved image and hired a Levite priest in Ephraim?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "ميخا",
+        "بلعام",
+        "كورح",
+        "دواغ"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Micah",
+        "Balaam",
+        "Korah",
+        "Doeg"
       ]
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 17: 1-5",
+      "en": "Judges 17:1-5"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَكَانَ رَجُلٌ مِنْ جَبَلِ أَفْرَايِمَ اسْمُهُ مِيخَا. فَقَالَ لأُمِّهِ: «الأَلْفُ وَالْمِئَةُ شَاقِلِ الْفِضَّةِ الَّتِي أُخِذَتْ مِنْكِ... هُوَذَا الْفِضَّةُ مَعِي»... وَكَانَ لِلرَّجُلِ مِيخَا بَيْتٌ لِلآلِهَةِ، فَعَمِلَ أَفُودًا وَتَرَافِيمَ وَمَلأَ يَدَ وَاحِدٍ مِنْ بَنِيهِ فَصَارَ لَهُ كَاهِنًا.",
+      "en": "Now there was a man from the mountains of Ephraim, whose name was Micah. And he said to his mother, 'The eleven hundred shekels of silver that were taken from you... here, the silver is with me' ... The man Micah had a shrine, and made an ephod and household idols; and he consecrated one of his sons, who became his priest."
     }
   },
   {
     "id": 294,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #94: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم اللاوي الشاب من بيت لحم الذي صار كاهناً لبيت ميخا ثم أخذه الدانيون مع التمثال ليصير كاهناً لسبط دان؟",
+      "en": "What was the name of the young Levite from Bethlehem who became priest for Micah's shrine and was later taken by the Danites?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "إيثامار",
+        "فينحاس",
+        "ألعازار",
+        "يهوناثان بن جرشوم بن منسى (موسى)"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Ithamar",
+        "Phinehas",
+        "Eleazar",
+        "Jonathan son of Gershom son of Moses"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 18: 30",
+      "en": "Judges 18:30"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَأَقَامَ بَنُو دَانَ لأَنْفُسِهِمِ التِّمْثَالَ الْمَنْحُوتَ. وَكَانَ يَهُونَاثَانُ بْنُ جَرْشُومَ بْنِ مَنَسَّى هُوَ وَبَنُوهُ كَهَنَةً لِسِبْطِ الدَّانِيِّينَ إِلَى يَوْمِ سَبْيِ الأَرْضِ.",
+      "en": "Then the children of Dan set up for themselves the carved image; and Jonathan the son of Gershom, the son of Manasseh (Moses), and his sons were priests to the tribe of Dan until the day of the captivity of the land."
     }
   },
   {
     "id": 295,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #95: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما اسم مدينة سبط بنيامين التي ارتكب رجالها الأشرار الفاحشة البشعة مع سرية اللاوي فاندلعت حرب أهلية كادت تفني سبط بنيامين؟",
+      "en": "Which city of Benjamin committed the atrocity against the Levite's concubine, sparking a civil war that nearly destroyed the tribe?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "مصفاة",
+        "الرامة",
+        "جبعة بنيامين",
+        "أريحا"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Mizpah",
+        "Ramah",
+        "Gibeah of Benjamin",
+        "Jericho"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 19: 14-25 / قضاة 20: 4",
+      "en": "Judges 19:14-25 / Judges 20:4"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَعَبَرُوا وَمَضَوْا، وَغَابَتْ لَهُمُ الشَّمْسُ عِنْدَ جِبْعَةَ الَّتِي لِبَنْيَامِينَ... فَأَجَابَ الرَّجُلُ اللاَّوِيُّ بَعْلُ الْمَرْأَةِ الْمَقْتُولَةِ وَقَالَ: «دَخَلْتُ أَنَا وَسُرِّيَّتِي إِلَى جِبْعَةَ الَّتِي لِبَنْيَامِينَ لِنَبِيتَ. فَقَامَ عَلَيَّ أَصْحَابُ جِبْعَةَ...».",
+      "en": "So they passed on and went their way; and the sun went down on them near Gibeah, which belongs to Benjamin... So the Levite, the husband of the woman who was murdered, answered and said, 'My concubine and I went into Gibeah, which belongs to Benjamin, to spend the night. And the men of Gibeah rose against me'"
     }
   },
   {
     "id": 296,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #96: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "كم رجلاً من محاربي بنيامين بقوا على قيد الحياة وهربوا واعتصموا في صخرة ريمون أربعة أشهر؟",
+      "en": "How many Benjamite warriors survived the battle and fled to the Rock of Rimmon for four months?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "ثلاثمئة رجل",
+        "سبعون رجلاً",
+        "ستمئة رجل",
+        "ألف رجل"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Three hundred men",
+        "Seventy men",
+        "Six hundred men",
+        "One thousand men"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 20: 47",
+      "en": "Judges 20:47"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَدَارَ وَهَرَبَ إِلَى الْبَرِّيَّةِ إِلَى صَخْرَةِ رِمُّونَ سِتُّ مِئَةِ رَجُلٍ، وَأَقَامُوا فِي صَخْرَةِ رِمُّونَ أَرْبَعَةَ أَشْهُرٍ.",
+      "en": "But six hundred men turned and fled toward the wilderness to the rock of Rimmon, and they stayed at the rock of Rimmon for four months."
     }
   },
   {
     "id": 297,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #97: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "من أي مدينة من بني إسرائيل لم يصعد أهلها إلى الاجتماع العام في المصفاة فضُربت بالسيف وأُخذت منها عذارى زوجات لبني بنيامين؟",
+      "en": "From which city did no one come up to the assembly at Mizpah, leading to its destruction to provide virgin wives for Benjamin?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "شيلوه",
+        "راموت جلعاد",
+        "يابيش جلعاد",
+        "سكوت"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Shiloh",
+        "Ramoth Gilead",
+        "Jabesh Gilead",
+        "Succoth"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 21: 8-12",
+      "en": "Judges 21:8-12"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فَقَالُوا: «أَيُّ وَاحِدٍ مِنْ أَسْبَاطِ إِسْرَائِيلَ لَمْ يَصْعَدْ إِلَى الرَّبِّ إِلَى الْمِصْفَاةِ؟» وَهُوَذَا لَمْ يَأْتِ إِلَى الْمَحَلَّةِ رَجُلٌ مِنْ يَابِيشِ جِلْعَادَ... فَوَجَدُوا مِنْ سُكَّانِ يَابِيشِ جِلْعَادَ أَرْبَعَ مِئَةِ فَتَاةٍ عَذَارَى...",
+      "en": "And they said, 'What one is there from the tribes of Israel who did not come up to Mizpah to the LORD?' And in fact, no one had come to the camp from Jabesh Gilead to the assembly... And they found among the inhabitants of Jabesh Gilead four hundred young virgins"
     }
   },
   {
     "id": 298,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #98: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "في أي عيد سنوي في شيلوه خَطف رجال بنيامين الباقون عذارى شيلوه الراقصات في الكروم ليصيروا لهم نساء؟",
+      "en": "At what annual feast in Shiloh did the remaining Benjamites seize virgin dancers from the vineyards as wives?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "عيد الحصاد في الجلجال",
+        "عيد الرب السنوي في شيلوه",
+        "عيد المظال في حبرون",
+        "عيد الفصح في أورشليم"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Harvest feast in Gilgal",
+        "The annual feast of the LORD in Shiloh",
+        "Tabernacles in Hebron",
+        "Passover in Jerusalem"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 21: 19-21",
+      "en": "Judges 21:19-21"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَقَالُوا: «هُوَذَا عِيدُ الرَّبِّ مِنْ سَنَةٍ إِلَى سَنَةٍ فِي شِيلُوهَ... انْظُرُوا إِذَا خَرَجَتْ بَنَاتُ شِيلُوهَ لِيَدُرْنَ فِي الرَّقْصِ، فَاخْرُجُوا أَنْتُمْ مِنَ الْكُرُومِ وَاخْطَفُوا لأَنْفُسِكُمْ كُلُّ وَاحِدٍ امْرَأَتَهُ مِنْ بَنَاتِ شِيلُوهَ...».",
+      "en": "Then they said, 'In fact, there is a yearly feast of the LORD in Shiloh... watch; and just when the daughters of Shiloh come out to perform their dances, then come out from the vineyards, and every man catch a wife for himself from the daughters of Shiloh'"
     }
   },
   {
     "id": 299,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #99: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هي الآية الختامية الشهيرة التي يختم بها كاتب سفر القضاة سفره واصفاً الفوضى الروحية في ذلك الزمان؟",
+      "en": "What famous concluding verse closes the Book of Judges, describing the spiritual chaos of that era?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "«وَصَرَخَ بَنُو إِسْرَائِيلَ إِلَى الرَّبِّ»",
+        "«وَاسْتَرَاحَتِ الأَرْضُ أَرْبَعِينَ سَنَةً»",
+        "«فِي تِلْكَ الأَيَّامِ لَمْ يَكُنْ مَلِكٌ فِي إِسْرَائِيلَ. كُلُّ وَاحِدٍ عَمِلَ مَا حَسُنَ فِي عَيْنَيْهِ»",
+        "«وَسَمِعَ الرَّبُّ صَوْتَ صَلاَتِهِمْ»"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "'And the children of Israel cried out to the LORD.'",
+        "'And the land had rest for forty years.'",
+        "'In those days there was no king in Israel; everyone did what was right in his own eyes.'",
+        "'And the LORD heard the voice of their prayer.'"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "قضاة 21: 25",
+      "en": "Judges 21:25"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "فِي تِلْكَ الأَيَّامِ لَمْ يَكُنْ مَلِكٌ فِي إِسْرَائِيلَ. كُلُّ وَاحِدٍ عَمِلَ مَا حَسُنَ فِي عَيْنَيْهِ.",
+      "en": "In those days there was no king in Israel; everyone did what was right in his own eyes."
     }
   },
   {
     "id": 300,
     "level": 3,
     "question": {
-      "ar": "سؤال خدام متقدم دقيق #100: من هو الشخص المذكور في سفر التكوين الذي سار مع الله ولم يوجد لأن الله أخذه؟",
-      "en": "Scripture Examination (Genesis 5: 24): What is the biblically verified answer concerning this sacred record?"
+      "ar": "ما هو اسم الجندي الأموري الجبار أو الملك الذي ضربه داود ورجاله في وادي الرفائيين وذُكر في سفر صموئيل الثاني؟",
+      "en": "What was the name of the descendant of the giant whose spear weighed three hundred shekels of bronze, who tried to kill David but was slain by Abishai?"
     },
     "options": {
       "ar": [
-        "أخنوخ",
-        "متوشالح",
-        "نوح",
-        "سام"
+        "جليات",
+        "لحمي",
+        "يشبي بنوب",
+        "سف"
       ],
       "en": [
-        "Enoch",
-        "Methuselah",
-        "Noah",
-        "Shem"
+        "Goliath",
+        "Lahmi",
+        "Ishbi-Benob",
+        "Saph"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
-      "ar": "تكوين 5: 24",
-      "en": "Genesis 5: 24"
+      "ar": "2 صموئيل 21: 16-17",
+      "en": "2 Samuel 21:16-17"
     },
     "verse": {
-      "ar": "وَسَارَ أَخْنُوخُ مَعَ اللهِ، وَلَمْ يُوجَدْ لأَنَّ اللهَ أَخَذَهُ.",
-      "en": "Scripture record from Genesis 5: 24: Verify the sacred testimony in the Holy Bible."
+      "ar": "وَيِشْبِي بْنُ نُوبٍ الَّذِي مِنْ أَوْلاَدِ رَافَا، وَوَزْنُ رُمْحِهِ ثَلاَثُ مِئَةِ شَاقِلِ نُحَاسٍ وَقَدْ تَقَلَّدَ جَدِيدًا، فَكَّرَ أَنْ يَقْتُلَ دَاوُدَ. فَأَنْجَدَهُ أَبِيشَايُ ابْنُ صَرُويَةَ، فَضَرَبَ الْفِلِسْطِينِيَّ وَقَتَلَهُ.",
+      "en": "Then Ishbi-Benob, who was one of the sons of the giant, the weight of whose bronze spear was three hundred shekels, who was bearing a new sword, thought he could kill David. But Abishai the son of Zeruiah came to his aid, and struck the Philistine and killed him."
     }
   }
 ];

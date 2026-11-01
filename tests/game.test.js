@@ -113,12 +113,47 @@ describe('3. Bilingual QUESTIONS_BANK Integrity Tests (300 Questions: Van Dyck &
       assert.ok(q.verse.ar && q.verse.ar.trim().length > 0, `Question ${q.id} missing Arabic Van Dyck verse`);
       assert.ok(q.verse.en && q.verse.en.trim().length > 0, `Question ${q.id} missing English NKJV verse`);
 
+      // Strict validation: ZERO Arabic characters in any English field
+      assert.ok(!/[\u0600-\u06FF]/.test(q.question.en), `Question ${q.id} has Arabic in question.en`);
+      assert.ok(!/[\u0600-\u06FF]/.test(q.reference.en), `Question ${q.id} has Arabic in reference.en`);
+      assert.ok(!/[\u0600-\u06FF]/.test(q.verse.en), `Question ${q.id} has Arabic in verse.en`);
+      q.options.en.forEach((opt, idx) => {
+        assert.ok(!/[\u0600-\u06FF]/.test(opt), `Question ${q.id} has Arabic in option.en[${idx}]: ${opt}`);
+      });
+
+      // No generic fallback or placeholder text
+      assert.ok(!q.question.en.includes('Scripture Examination'), `Question ${q.id} has generic fallback English question`);
+      assert.ok(!q.question.ar.includes('سؤال خدام متقدم دقيق'), `Question ${q.id} has placeholder Arabic question`);
+
       levelCounts[q.level]++;
     });
 
     assert.strictEqual(levelCounts[1], 100, 'Level 1 must have exactly 100 questions');
     assert.strictEqual(levelCounts[2], 100, 'Level 2 must have exactly 100 questions');
     assert.strictEqual(levelCounts[3], 100, 'Level 3 must have exactly 100 questions');
+  });
+
+  test('Correct answer index is randomized across all 4 choices (0, 1, 2, 3) across the bank', () => {
+    const indexDistribution = { 0: 0, 1: 0, 2: 0, 3: 0 };
+    window.QUESTIONS_BANK.forEach(q => {
+      indexDistribution[q.correctIndex]++;
+    });
+
+    // Every position (A, B, C, D) should have at least 50 questions
+    assert.ok(indexDistribution[0] >= 50, `Index 0 only has ${indexDistribution[0]} occurrences`);
+    assert.ok(indexDistribution[1] >= 50, `Index 1 only has ${indexDistribution[1]} occurrences`);
+    assert.ok(indexDistribution[2] >= 50, `Index 2 only has ${indexDistribution[2]} occurrences`);
+    assert.ok(indexDistribution[3] >= 50, `Index 3 only has ${indexDistribution[3]} occurrences`);
+  });
+
+  test('Audited Question 108 (Huldah the prophetess) is 100% verified', () => {
+    const q108 = window.QUESTIONS_BANK.find(q => q.id === 108);
+    assert.ok(q108, 'Question 108 must exist');
+    assert.ok(q108.question.en.includes('Huldah') || q108.question.en.includes('prophetess'), 'Question 108 en must match Huldah context');
+    assert.ok(q108.options.en.includes('Hannah'), 'Hannah must be translated in English');
+    assert.ok(!q108.options.en.includes('حنة'), 'حنة must not appear in English options');
+    assert.strictEqual(q108.options.ar[q108.correctIndex], 'خلدة');
+    assert.strictEqual(q108.options.en[q108.correctIndex], 'Huldah');
   });
 });
 
