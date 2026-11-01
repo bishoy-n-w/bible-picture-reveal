@@ -180,12 +180,12 @@ describe('3. Bilingual QUESTIONS_BANK Integrity Tests (300 Questions: Van Dyck &
     assert.ok(q2.verse.ar.includes('الْمُرِيَّا'));
   });
 
-  test('Audited Question 3 (Five smooth stones) correctly points to five smooth stones', () => {
+  test('Audited Question 3 (Five stones) correctly points to five stones', () => {
     const q3 = window.QUESTIONS_BANK.find(q => q.id === 3);
     assert.ok(q3, 'Question 3 must exist');
-    assert.strictEqual(q3.options.ar[q3.correctIndex], 'خمسة حجارة ملس');
-    assert.strictEqual(q3.options.en[q3.correctIndex], 'Five smooth stones');
-    assert.ok(q3.verse.ar.includes('خَمْسَةَ حِجَارَةٍ مِلْسٍ'));
+    assert.strictEqual(q3.options.ar[q3.correctIndex], 'خمسة حجارة');
+    assert.strictEqual(q3.options.en[q3.correctIndex], 'Five stones');
+    assert.ok(q3.verse.ar.includes('خَمْسَةَ حِجَارَةٍ'));
   });
 
   test('Audited Question 26 (Uzzah) correctly points to Uzzah not Ahio', () => {

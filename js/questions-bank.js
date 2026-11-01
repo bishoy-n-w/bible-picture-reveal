@@ -80,13 +80,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "خمسة حجارة ملس",
+        "خمسة حجارة",
         "حجر واحد",
         "ثلاثة حجارة",
         "سبعة حجارة"
       ],
       "en": [
-        "Five smooth stones",
+        "Five stones",
         "One stone",
         "Three stones",
         "Seven stones"
@@ -204,13 +204,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "فيلبس المبشر",
+        "فيلبس",
         "إستفانوس",
         "برخورس",
         "نيكانور"
       ],
       "en": [
-        "Philip the Evangelist",
+        "Philip",
         "Stephen",
         "Prochorus",
         "Nicanor"
@@ -386,7 +386,7 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما اسم الشاب الذي باعه إخوته بـ 20 من الفضة لإسماعيليين متجهين إلى مصر؟",
-      "en": "For how many pieces of silver did Joseph's brothers sell him to Ishmaelites going to Egypt?"
+      "en": "What was the name of the young man whom his brothers sold for twenty pieces of silver to Ishmaelites going to Egypt?"
     },
     "options": {
       "ar": [
@@ -479,7 +479,7 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "ما هي المعجزة التي صنعها أليشع النبي لجيش إسرائيل وإدام حين كادوا يموتون عطشاً؟",
-      "en": "What miracle did Elisha perform for the armies of Israel and Edom when they were perishing of thirst in the valley?"
+      "en": "What miracle did Elisha perform for the armies of Israel and Edom when they were perishing of thirst during their campaign?"
     },
     "options": {
       "ar": [
@@ -546,13 +546,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "300 وزنة",
-        "120 وزنة ذهب",
+        "120 وزنة",
         "60 وزنة",
         "666 وزنة"
       ],
       "en": [
         "300 talents",
-        "120 talents of gold",
+        "120 talents",
         "60 talents",
         "666 talents"
       ]
@@ -1036,21 +1036,21 @@ window.QUESTIONS_BANK = [
     "id": 34,
     "level": 1,
     "question": {
-      "ar": "من هو الرجل الذي التقى بيسوع في البستان وظنته مريم المجدلية أنه البستاني؟",
-      "en": "Who met Mary Magdalene in the garden outside the empty tomb, whom she initially supposed to be the gardener?"
+      "ar": "من هو الشخص القائم الذي ظهر لمريم المجدلية في البستان عند القبر فظنته البستاني؟",
+      "en": "Who was the risen Person who appeared to Mary Magdalene in the garden outside the tomb, whom she supposed to be the gardener?"
     },
     "options": {
       "ar": [
         "ملاك الرب",
         "حارس البستان",
-        "يوحنا",
-        "يسوع القائم نفسه"
+        "يوحنا التلميذ",
+        "الرب يسوع نفسه"
       ],
       "en": [
-        "The Angel of the LORD",
-        "The gardener",
-        "John",
-        "The Risen Jesus Himself"
+        "An angel of the LORD",
+        "The garden keeper",
+        "John the disciple",
+        "The Lord Jesus Himself"
       ]
     },
     "correctIndex": 3,
@@ -1625,21 +1625,21 @@ window.QUESTIONS_BANK = [
     "id": 53,
     "level": 1,
     "question": {
-      "ar": "من هو الرجل الذي كان نحاساً في أفسس وقاوم أقوال بولس الرسول بشدة؟",
-      "en": "Who was the coppersmith in Ephesus who did the Apostle Paul much harm and strongly resisted his words?"
+      "ar": "من هو الرجل في أفسس الذي قال عنه بولس الرسول إنه أظهر له شروراً كثيرة وقاوم أقواله بشدة؟",
+      "en": "Who in Ephesus did the Apostle Paul warn had done him much harm and strongly resisted their words?"
     },
     "options": {
       "ar": [
         "فيليتس",
         "إسكندر النحاس",
         "هيميناوس",
-        "ديمتريوس الصائغ"
+        "ديمتريوس"
       ],
       "en": [
         "Philetus",
         "Alexander the coppersmith",
         "Hymenaeus",
-        "Demetrius the silversmith"
+        "Demetrius"
       ]
     },
     "correctIndex": 1,
@@ -1719,18 +1719,18 @@ window.QUESTIONS_BANK = [
     "level": 1,
     "question": {
       "ar": "كم كان عدد المجالس العشارية (الخبز) التي أشبع بها المسيح 4000 رجل وكم سلة رفعت من الكسر؟",
-      "en": "How many loaves did Jesus multiply to feed the four thousand, and how many large baskets of leftover fragments were taken up?"
+      "en": "How many loaves did Jesus multiply to feed the four thousand, and how many baskets of leftover fragments were taken up?"
     },
     "options": {
       "ar": [
         "عشر خبزات وعشر سلال",
-        "سبعة خبزات وسبع سلال كسر",
+        "سبعة خبزات وسبع سلال",
         "خمس خبزات و12 قفة",
         "ثلاث خبزات وثلاث سلال"
       ],
       "en": [
         "Ten loaves and ten baskets",
-        "Seven loaves and seven large baskets",
+        "Seven loaves and seven baskets",
         "Five loaves and 12 baskets",
         "Three loaves and three baskets"
       ]
@@ -1780,8 +1780,8 @@ window.QUESTIONS_BANK = [
     "id": 58,
     "level": 1,
     "question": {
-      "ar": "ما اسم البئر التي حفرها رعاة إسحق وتشاجروا عليها فسماها «عِسق» لأنهم نازعوه؟",
-      "en": "What was the name of the well that Isaac's herdsmen dug in Gerar over which the local herdsmen quarreled, naming it Esek?"
+      "ar": "ما اسم البئر التي حفرها رعاة إسحق فخاصمهم عليها رعاة جرار قائلين لنا الماء؟",
+      "en": "What was the name of the well Isaac's herdsmen dug, over which the herdsmen of Gerar quarreled saying, 'The water is ours'?"
     },
     "options": {
       "ar": [
@@ -2338,21 +2338,21 @@ window.QUESTIONS_BANK = [
     "id": 76,
     "level": 1,
     "question": {
-      "ar": "ما اسم قائد الجيش السوري الذي غضب لما طلب منه أليشع الاغتسال في الأردن وقال: «أَلَيْسَ أَبَانَةُ وَفَرْفَرُ نَهْرَا دِمَشْقَ أَحْسَنَ مِنْ جَمِيعِ مِيَاهِ إِسْرَائِيلَ؟»؟",
-      "en": "What Syrian army commander was furious when told to wash in the Jordan, claiming Abanah and Pharpar were better than all waters of Israel?"
+      "ar": "ما اسم قائد جيش آرام الذي غضب لما طلب منه أليشع الاغتسال في الأردن وقال: «أَلَيْسَ أَبَانَةُ وَفَرْفَرُ نَهْرَا دِمَشْقَ أَحْسَنَ مِنْ جَمِيعِ مِيَاهِ إِسْرَائِيلَ؟»؟",
+      "en": "Which military commander was furious when told to wash in the Jordan, claiming Abanah and Pharpar were better than all waters of Israel?"
     },
     "options": {
       "ar": [
         "بنهدد",
         "حزائيل",
         "طوبال",
-        "نعمان السرياني"
+        "نعمان"
       ],
       "en": [
         "Ben-Hadad",
         "Hazael",
         "Tubal",
-        "Naaman the Syrian"
+        "Naaman"
       ]
     },
     "correctIndex": 3,
@@ -2400,21 +2400,21 @@ window.QUESTIONS_BANK = [
     "id": 78,
     "level": 1,
     "question": {
-      "ar": "ما اسم الأداة الحديدية التي وقعت في نهر الأردن واستقرت في القاع فطفت بأمر أليشع لما ألقى عوداً خشبياً؟",
-      "en": "What iron tool fell into the Jordan and sank, which miraculously floated when Elisha threw in a stick of wood?"
+      "ar": "ما هي الأداة التي استعارها أحد بني الأنبياء فوقعت في مياه الأردن فطفت بمعجزة أليشع؟",
+      "en": "What borrowed tool fell into the Jordan and was made to float miraculously by Elisha?"
     },
     "options": {
       "ar": [
         "مرساة السفينة",
         "سكين الكاتب",
-        "فأس الحديد",
-        "رمح نحاسي"
+        "رأس الفأس",
+        "سنان الرمح"
       ],
       "en": [
-        "The ship's anchor",
-        "The scribe's knife",
-        "The iron axe head",
-        "A bronze spear"
+        "A ship's anchor",
+        "A scribe's knife",
+        "An axe head",
+        "A spearhead"
       ]
     },
     "correctIndex": 2,
@@ -4137,7 +4137,7 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما اسم الصخرة التي أقامها صموئيل النبي وقال: «إِلَى هُنَا أَعَانَنَا الرَّبُّ»؟",
-      "en": "What stone did Samuel set up between Mizpah and Shen, naming it 'Ebenezer' saying: 'Thus far the LORD has helped us'?"
+      "en": "What stone did Samuel set up between Mizpah and Shen saying: 'Thus far the LORD has helped us'?"
     },
     "options": {
       "ar": [
@@ -4297,13 +4297,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "توما ومتى",
-        "كليوباس وتلميذ آخر",
+        "كليوباس ورفيقه",
         "يعقوب وفيلبس",
         "بطرس ويوحنا"
       ],
       "en": [
         "Thomas and Matthew",
-        "Cleopas and another disciple",
+        "Cleopas and his companion",
         "James and Philip",
         "Peter and John"
       ]
@@ -4360,7 +4360,7 @@ window.QUESTIONS_BANK = [
       "ar": [
         "كنيسة أثينا",
         "كنيسة كورنثوس",
-        "كنيسة أهل بيرية",
+        "كنيسة بيرية",
         "كنيسة فيلبي"
       ],
       "en": [
@@ -5470,7 +5470,7 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "ما هو الوعد العهدي العظيم الذي قطعه الله لداود على فم ناثان النبي بشأن مملكته وعرشه؟",
-      "en": "What was the covenant promise made by God to David through Nathan regarding his kingdom and throne?"
+      "en": "What was the covenant promise made by God to David through Nathan regarding his dynasty and throne?"
     },
     "options": {
       "ar": [
@@ -5780,7 +5780,7 @@ window.QUESTIONS_BANK = [
     "level": 2,
     "question": {
       "ar": "عند أي نبع ماء بالقرب من أورشليم مُسح سليمان ملكاً على إسرائيل بأمر داود؟",
-      "en": "At which spring near Jerusalem was Solomon anointed king of Israel by Zadok the priest and Nathan the prophet?"
+      "en": "At which water source near Jerusalem was Solomon anointed king of Israel by Zadok the priest and Nathan the prophet?"
     },
     "options": {
       "ar": [
@@ -5880,13 +5880,13 @@ window.QUESTIONS_BANK = [
         "أخيش",
         "تلماي",
         "حانون",
-        "حيرام ملك صور"
+        "حيرام"
       ],
       "en": [
         "Achish",
         "Talmai",
         "Hanun",
-        "Hiram king of Tyre"
+        "Hiram"
       ]
     },
     "correctIndex": 3,
@@ -6032,16 +6032,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "أخيا الشيلوني",
-        "ميخا بن يملة",
+        "أخيا",
+        "ميخا",
         "عازور",
-        "شمعيا رجل الله"
+        "شمعيا"
       ],
       "en": [
-        "Ahijah the Shilonite",
-        "Micaiah son of Imlah",
+        "Ahijah",
+        "Micaiah",
         "Azzur",
-        "Shemaiah man of God"
+        "Shemaiah"
       ]
     },
     "correctIndex": 3,
@@ -6280,14 +6280,14 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "عجلون ملك موآب",
-        "بالاق بن صفور",
+        "عجلون",
+        "بالاق",
         "ميشع",
         "سيحون"
       ],
       "en": [
-        "Eglon king of Moab",
-        "Balak son of Zippor",
+        "Eglon",
+        "Balak",
         "Mesha",
         "Sihon"
       ]
@@ -6531,13 +6531,13 @@ window.QUESTIONS_BANK = [
         "خمسون شاقلاً",
         "مئتا شاقل",
         "ثلاثمئة شاقل",
-        "أربعمئة شاقل فضة"
+        "أربعمئة شاقل"
       ],
       "en": [
         "50 shekels",
         "200 shekels",
         "300 shekels",
-        "400 shekels of silver"
+        "400 shekels"
       ]
     },
     "correctIndex": 3,
@@ -6965,7 +6965,7 @@ window.QUESTIONS_BANK = [
         "جبل سيناء وجبل حوريب",
         "جبل صهيون وجبل الزيتون",
         "جبل الكرمل وجبل تابور",
-        "جبل عيبال للَّعنة وجبل جرزيم للبركة"
+        "جبل عيبال وجبل جرزيم"
       ],
       "en": [
         "Mount Sinai and Mount Horeb",
@@ -7050,8 +7050,8 @@ window.QUESTIONS_BANK = [
     "id": 228,
     "level": 3,
     "question": {
-      "ar": "ما اسم ملك شاليم كاهن الله العلي الذي أخرج خبزاً وخمراً وبارك إبراهيم ودفع له إبراهيم العُشر؟",
-      "en": "Who was the king of Salem and priest of God Most High who brought out bread and wine and blessed Abraham?"
+      "ar": "من هو كاهن الله العلي الذي أخرج خبزاً وخمراً في شاليم وبارك إبراهيم ودفع له إبراهيم العُشر؟",
+      "en": "Who was the priest of God Most High in Salem who brought out bread and wine and blessed Abraham?"
     },
     "options": {
       "ar": [
@@ -7174,8 +7174,8 @@ window.QUESTIONS_BANK = [
     "id": 232,
     "level": 3,
     "question": {
-      "ar": "ما اسم القاضي الزبولوني الذي حكم إسرائيل عشر سنين ودُفن في أيلون في أرض زبولون؟",
-      "en": "What was the name of the Zebulunite judge who judged Israel ten years and was buried in Aijalon in the land of Zebulun?"
+      "ar": "ما اسم القاضي الذي حكم إسرائيل عشر سنين بعد إبصان وهو من سبط زبولون؟",
+      "en": "Which judge of the tribe of Zebulun judged Israel for ten years after Ibzan?"
     },
     "options": {
       "ar": [
@@ -7582,13 +7582,13 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "خمسة آلاف شاقل نحاس",
+        "خمسة آلاف شاقل",
         "ثلاثة آلاف شاقل",
         "عشرة آلاف شاقل",
         "ألف شاقل"
       ],
       "en": [
-        "5,000 shekels of bronze",
+        "5,000 shekels",
         "3,000 shekels",
         "10,000 shekels",
         "1,000 shekels"
@@ -7614,13 +7614,13 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "ألف شاقل",
-        "ستمئة شاقل حديد",
+        "ستمئة شاقل",
         "ثلاثمئة شاقل",
         "أربعمئة شاقل"
       ],
       "en": [
         "1,000 shekels",
-        "600 shekels of iron",
+        "600 shekels",
         "300 shekels",
         "400 shekels"
       ]
@@ -7794,8 +7794,8 @@ window.QUESTIONS_BANK = [
     "id": 252,
     "level": 3,
     "question": {
-      "ar": "ما اسم المكان الذي انحدر إليه بنايا بن يهوياداع وضرب فيه أسداً في وسط جب في يوم ثلج؟",
-      "en": "In what location did Benaiah son of Jehoiada go down and kill a lion in the midst of a pit on a snowy day?"
+      "ar": "أين انحدر بنايا بن يهوياداع وقتل أسداً مفترساً في ظروف جوية قاسية شتاءً؟",
+      "en": "Where did Benaiah son of Jehoiada go down and kill a fierce lion under harsh winter weather?"
     },
     "options": {
       "ar": [
@@ -7888,7 +7888,7 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "في أي نبات أو شجرة ظهر ملاك الرب لموسى بلهيب نار في برية حوريب دون أن يحترق؟",
-      "en": "In what bush or tree did the Angel of the LORD appear to Moses in a flame of fire at Mount Horeb without being consumed?"
+      "en": "In what plant did the Angel of the LORD appear to Moses in a flame of fire at Mount Horeb without being consumed?"
     },
     "options": {
       "ar": [
@@ -7981,7 +7981,7 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "كم كان عدد الرجال المشاة من بني إسرائيل الخارجين من رعمسيس إلى سكوت ما عدا الأولاد والنساء؟",
-      "en": "How many men on foot, besides women and children, journeyed from Rameses to Succoth in the Exodus?"
+      "en": "How many men, besides women and children, journeyed from Rameses to Succoth in the Exodus?"
     },
     "options": {
       "ar": [
@@ -7993,7 +7993,7 @@ window.QUESTIONS_BANK = [
       "en": [
         "140,000 men",
         "One million men",
-        "About 600,000 men on foot",
+        "About 600,000 men",
         "About 300,000 men"
       ]
     },
@@ -8042,8 +8042,8 @@ window.QUESTIONS_BANK = [
     "id": 260,
     "level": 3,
     "question": {
-      "ar": "ما هي الشجرة أو العود الذي ألقاه موسى في مياه مارة المرة فصارت المياه عذبة صالحة للشرب؟",
-      "en": "What tree did the LORD show Moses, which he cast into the bitter waters of Marah so that the waters became sweet?"
+      "ar": "ماذا ألقى موسى في مياه مارة المرة بأمر الرب فصارت المياه عذبة صالحة للشرب؟",
+      "en": "What did Moses cast into the bitter waters of Marah so that the waters became sweet?"
     },
     "options": {
       "ar": [
@@ -8104,14 +8104,14 @@ window.QUESTIONS_BANK = [
     "id": 262,
     "level": 3,
     "question": {
-      "ar": "ما هو الإناء الذهبي الذي وُضع فيه عُمر من المن ووُضع أمام الشهادة للذكرى للأجيال؟",
-      "en": "What was placed inside the Ark of the Covenant holding an omer of manna as a memorial for future generations?"
+      "ar": "ما هو الوعاء الذي حُفظ فيه مكيال من المن ووُضع أمام الشهادة للذكرى للأجيال؟",
+      "en": "In what container was an omer of manna kept before the Testimony as a memorial for future generations?"
     },
     "options": {
       "ar": [
         "كوز من فخار",
         "صحن فضي",
-        "قسط من ذهب",
+        "قسط ذهبي",
         "صندوق عاجي"
       ],
       "en": [
@@ -8204,13 +8204,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "أربع شعب",
         "ثماني شعب",
-        "ست شعب خارجة من جانبيها",
+        "ست شعب",
         "اثنتا عشرة شعبة"
       ],
       "en": [
         "Four branches",
         "Eight branches",
-        "Six branches out of its sides",
+        "Six branches",
         "Twelve branches"
       ]
     },
@@ -8388,16 +8388,16 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "في كل سبت",
-        "مرة واحدة فقط في السنة",
-        "سبع مرات في الشهر",
-        "ثلاث مرات في السنة"
+        "أربع مرات في السنة",
+        "مرة واحدة في السنة",
+        "سبع مرات في السنة",
+        "اثنتا عشرة مرة في السنة"
       ],
       "en": [
-        "Every Sabbath",
-        "Once a year only",
-        "Seven times a month",
-        "Three times a year"
+        "Four times a year",
+        "Once a year",
+        "Seven times a year",
+        "Twelve times a year"
       ]
     },
     "correctIndex": 1,
@@ -8574,14 +8574,14 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "بالصمت الأبدي",
-        "بُعثت بالبرص كالثلج",
-        "بالعمى التام",
+        "بالصمت التام",
+        "بالبرص كالثلج",
+        "بالعمى الكلي",
         "بالحمى القاتلة"
       ],
       "en": [
-        "Muteness",
-        "Stricken with leprosy, white as snow",
+        "Total muteness",
+        "Leprosy, white as snow",
         "Total blindness",
         "Fatal fever"
       ]
@@ -8601,7 +8601,7 @@ window.QUESTIONS_BANK = [
     "level": 3,
     "question": {
       "ar": "ماذا صنع موسى بأمر الرب لشفاء كل من تلدغه الحيات المحرقة في البرية عندما ينظر إليها بإيمان؟",
-      "en": "What did Moses make at the command of the LORD so that anyone bitten by a fiery serpent would live when looking at it?"
+      "en": "What did Moses make at the command of the LORD so that anyone bitten by fiery vipers would live when looking at it?"
     },
     "options": {
       "ar": [
@@ -8662,19 +8662,19 @@ window.QUESTIONS_BANK = [
     "id": 280,
     "level": 3,
     "question": {
-      "ar": "ماذا فتح الرب لآتان بلعام لتتكلم به وتوبخ حماقة النبي لما ضربها ثلاث مرات بعصاه؟",
-      "en": "What miraculous ability did the LORD give Balaam's donkey when Balaam struck her three times with his staff?"
+      "ar": "ما هي المعجزة الفريدة التي أجراها الرب لدابة بلعام لتوبخ حماقة النبي لما ضربها ثلاث مرات بعصاه؟",
+      "en": "What unique miracle did the LORD cause with Balaam's riding beast to rebuke the prophet's madness when he struck her?"
     },
     "options": {
       "ar": [
         "تحولت إلى فرس أبيض",
-        "فتح الرب فمها فتكلمت بصوت إنسان",
+        "تكلمت الآتان بصوت إنسان",
         "طارت في الهواء بجناحين",
         "اختفت من أمامه تماماً"
       ],
       "en": [
         "Turned into a white horse",
-        "The LORD opened her mouth to speak with a man's voice",
+        "The donkey spoke with a human voice",
         "Flew in the air with wings",
         "Disappeared completely"
       ]
@@ -8730,15 +8730,15 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "أربعون مدينة",
-        "ست مدن ملجأ",
+        "ست مدن",
         "اثنتا عشرة مدينة",
-        "ثلاث مدن فقط"
+        "ثلاث مدن"
       ],
       "en": [
         "Forty cities",
-        "Six cities of refuge",
+        "Six cities",
         "Twelve cities",
-        "Three cities only"
+        "Three cities"
       ]
     },
     "correctIndex": 1,
