@@ -61,7 +61,7 @@ window.QUESTIONS_BANK = [
         "Mount Horeb"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 22: 2",
       "en": "Genesis 22: 2"
@@ -92,7 +92,7 @@ window.QUESTIONS_BANK = [
         "Seven stones"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "1 صموئيل 17: 40",
       "en": "1 Samuel 17: 40"
@@ -154,7 +154,7 @@ window.QUESTIONS_BANK = [
         "An olive branch"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 1,
     "reference": {
       "ar": "يشوع 2: 18",
       "en": "Joshua 2: 18"
@@ -185,7 +185,7 @@ window.QUESTIONS_BANK = [
         "Joanna"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 12: 13",
       "en": "Acts 12: 13"
@@ -216,7 +216,7 @@ window.QUESTIONS_BANK = [
         "Nicanor"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 8: 38",
       "en": "Acts 8: 38"
@@ -247,7 +247,7 @@ window.QUESTIONS_BANK = [
         "Tola son of Puah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "قضاة 3: 31",
       "en": "Judges 3: 31"
@@ -278,7 +278,7 @@ window.QUESTIONS_BANK = [
         "Jericho"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "لوقا 7: 11-12",
       "en": "Luke 7: 11-12"
@@ -340,7 +340,7 @@ window.QUESTIONS_BANK = [
         "120 years"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 25: 7",
       "en": "Genesis 25: 7"
@@ -371,7 +371,7 @@ window.QUESTIONS_BANK = [
         "Josiah"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 ملوك 20: 5-6",
       "en": "2 Kings 20: 5-6"
@@ -402,7 +402,7 @@ window.QUESTIONS_BANK = [
         "Judah"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
       "ar": "تكوين 37: 28",
       "en": "Genesis 37: 28"
@@ -433,7 +433,7 @@ window.QUESTIONS_BANK = [
         "Nile River"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 ملوك 5: 10",
       "en": "2 Kings 5: 10"
@@ -495,7 +495,7 @@ window.QUESTIONS_BANK = [
         "Turned salt water sweet"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
       "ar": "2 ملوك 3: 16-17",
       "en": "2 Kings 3: 16-17"
@@ -557,7 +557,7 @@ window.QUESTIONS_BANK = [
         "666 talents"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
       "ar": "1 ملوك 10: 10",
       "en": "1 Kings 10: 10"
@@ -576,19 +576,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "آخاب الملك",
+        "آخاب",
         "آحاز",
         "يربعام",
         "منسى"
       ],
       "en": [
-        "King Ahab",
+        "Ahab",
         "Ahaz",
         "Jeroboam",
         "Manasseh"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
       "ar": "1 ملوك 21: 4",
       "en": "1 Kings 21: 4"
@@ -619,7 +619,7 @@ window.QUESTIONS_BANK = [
         "Bethel"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 23: 19",
       "en": "Genesis 23: 19"
@@ -638,19 +638,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "جدعون بن يوآش",
+        "جدعون",
         "شمشون",
-        "يفتاح الجلعادي",
+        "يفتاح",
         "باراق"
       ],
       "en": [
-        "Gideon son of Joash",
+        "Gideon",
         "Samson",
-        "Jephthah the Gileadite",
+        "Jephthah",
         "Barak"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 0,
     "reference": {
       "ar": "قضاة 6: 37",
       "en": "Judges 6: 37"
@@ -702,17 +702,17 @@ window.QUESTIONS_BANK = [
       "ar": [
         "مريم",
         "أبيجايل",
-        "ياعيل زوجة حابر القيني",
+        "ياعيل",
         "دبورة"
       ],
       "en": [
         "Miriam",
         "Abigail",
-        "Jael wife of Heber the Kenite",
+        "Jael",
         "Deborah"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 2,
     "reference": {
       "ar": "قضاة 4: 21",
       "en": "Judges 4: 21"
@@ -743,7 +743,7 @@ window.QUESTIONS_BANK = [
         "Succoth"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "تكوين 28: 19",
       "en": "Genesis 28: 19"
@@ -774,7 +774,7 @@ window.QUESTIONS_BANK = [
         "300 days"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "تكوين 7: 24",
       "en": "Genesis 7: 24"
@@ -805,7 +805,7 @@ window.QUESTIONS_BANK = [
         "Eleazar"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
       "ar": "2 صموئيل 6: 6-7",
       "en": "2 Samuel 6: 6-7"
@@ -867,7 +867,7 @@ window.QUESTIONS_BANK = [
         "Gaza"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "قضاة 16: 3",
       "en": "Judges 16: 3"
@@ -898,7 +898,7 @@ window.QUESTIONS_BANK = [
         "Yarmouk River"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
       "ar": "2 ملوك 2: 8",
       "en": "2 Kings 2: 8"
@@ -929,7 +929,7 @@ window.QUESTIONS_BANK = [
         "Claudius Caesar"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "لوقا 2: 1",
       "en": "Luke 2: 1"
@@ -951,16 +951,16 @@ window.QUESTIONS_BANK = [
         "هوشع",
         "إشعياء",
         "زكريا",
-        "ميخا النبي"
+        "ميخا"
       ],
       "en": [
         "Hosea",
         "Isaiah",
         "Zechariah",
-        "Micah the prophet"
+        "Micah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 3,
     "reference": {
       "ar": "ميخا 5: 2",
       "en": "Micah 5: 2"
@@ -1022,7 +1022,7 @@ window.QUESTIONS_BANK = [
         "120 fish"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 2,
     "reference": {
       "ar": "يوحنا 21: 11",
       "en": "John 21: 11"
@@ -1115,7 +1115,7 @@ window.QUESTIONS_BANK = [
         "Pisidian Antioch"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 14: 12",
       "en": "Acts 14: 12"
@@ -1134,19 +1134,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "عليم الساحر",
+        "عليم",
         "باريشوع",
-        "سيمون الساحر",
+        "سيمون",
         "سكيفا"
       ],
       "en": [
-        "Elymas the sorcerer",
+        "Elymas",
         "Bar-Jesus",
-        "Simon the sorcerer",
+        "Simon",
         "Sceva"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 8: 18-19",
       "en": "Acts 8: 18-19"
@@ -1208,7 +1208,7 @@ window.QUESTIONS_BANK = [
         "Lucius"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 0,
     "reference": {
       "ar": "أعمال 10: 1-2",
       "en": "Acts 10: 1-2"
@@ -1239,7 +1239,7 @@ window.QUESTIONS_BANK = [
         "Antioch"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "أعمال 11: 26",
       "en": "Acts 11: 26"
@@ -1385,16 +1385,16 @@ window.QUESTIONS_BANK = [
         "فستوس",
         "بيلاطس",
         "غاليو",
-        "فيلكس الوالي"
+        "فيلكس"
       ],
       "en": [
         "Festus",
         "Pilate",
         "Gallio",
-        "Felix the governor"
+        "Felix"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 3,
     "reference": {
       "ar": "أعمال 24: 25",
       "en": "Acts 24: 25"
@@ -1414,18 +1414,18 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "أرخيلاوس",
-        "الملك أغريباس",
+        "أغريباس",
         "هيرودس أنتيباس",
         "هيرودس الكبير"
       ],
       "en": [
         "Archelaus",
-        "King Agrippa",
+        "Agrippa",
         "Herod Antipas",
         "Herod the Great"
       ]
     },
-    "correctIndex": 2,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 26: 28",
       "en": "Acts 26: 28"
@@ -1487,7 +1487,7 @@ window.QUESTIONS_BANK = [
         "Rhodes"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 28: 1",
       "en": "Acts 28: 1"
@@ -1518,7 +1518,7 @@ window.QUESTIONS_BANK = [
         "Three years"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "أعمال 28: 30",
       "en": "Acts 28: 30"
@@ -1601,17 +1601,17 @@ window.QUESTIONS_BANK = [
       "ar": [
         "دانيال",
         "إشعياء",
-        "حزقيال بن بوزي",
+        "حزقيال",
         "إرميا"
       ],
       "en": [
         "Daniel",
         "Isaiah",
-        "Ezekiel son of Buzi",
+        "Ezekiel",
         "Jeremiah"
       ]
     },
-    "correctIndex": 1,
+    "correctIndex": 2,
     "reference": {
       "ar": "حزقيال 37: 1-4",
       "en": "Ezekiel 37: 1-4"
@@ -4775,12 +4775,12 @@ window.QUESTIONS_BANK = [
     },
     "correctIndex": 0,
     "reference": {
-      "ar": "قضاة 9: 5",
-      "en": "Judges 9:5"
+      "ar": "قضاة 9: 1، 5",
+      "en": "Judges 9:1, 5"
     },
     "verse": {
-      "ar": "ثُمَّ جَاءَ إِلَى بَيْتِ أَبِيهِ فِي عَفْرَةَ وَقَتَلَ إِخْوَتَهُ بَنِي يَرُبَّعْلَ، سَبْعِينَ رَجُلاً، عَلَى حَجَرٍ وَاحِدٍ. وَبَقِيَ يُوثَامُ بْنُ يَرُبَّعْلَ الأَصْغَرُ لأَنَّهُ اخْتَبَأَ.",
-      "en": "Then he went to his father’s house at Ophrah and killed his brothers, the seventy sons of Jerubbaal, on one stone. But Jotham the youngest son of Jerubbaal was left, for he hid himself."
+      "ar": "وَذَهَبَ أَبِيمَالِكُ بْنُ يَرُبَّعْلَ إِلَى شَكِيمَ... وَجَاءَ إِلَى بَيْتِ أَبِيهِ فِي عَفْرَةَ وَقَتَلَ إِخْوَتَهُ بَنِي يَرُبَّعْلَ، سَبْعِينَ رَجُلاً، عَلَى حَجَرٍ وَاحِدٍ.",
+      "en": "Then Abimelech the son of Jerubbaal went to Shechem... and he went to his father’s house at Ophrah and killed his brothers, the seventy sons of Jerubbaal, on one stone."
     }
   },
   {

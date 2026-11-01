@@ -155,6 +155,54 @@ describe('3. Bilingual QUESTIONS_BANK Integrity Tests (300 Questions: Van Dyck &
     assert.strictEqual(q108.options.ar[q108.correctIndex], 'خلدة');
     assert.strictEqual(q108.options.en[q108.correctIndex], 'Huldah');
   });
+
+  test('Audited Question 46 (King Agrippa) correctly points to Agrippa not Herod Antipas', () => {
+    const q46 = window.QUESTIONS_BANK.find(q => q.id === 46);
+    assert.ok(q46, 'Question 46 must exist');
+    assert.strictEqual(q46.options.ar[q46.correctIndex], 'أغريباس');
+    assert.strictEqual(q46.options.en[q46.correctIndex], 'Agrippa');
+    assert.ok(q46.verse.ar.includes('أَغْرِيبَاسُ'));
+  });
+
+  test('Audited Question 45 (Felix the governor) correctly points to Felix not Festus', () => {
+    const q45 = window.QUESTIONS_BANK.find(q => q.id === 45);
+    assert.ok(q45, 'Question 45 must exist');
+    assert.strictEqual(q45.options.ar[q45.correctIndex], 'فيلكس');
+    assert.strictEqual(q45.options.en[q45.correctIndex], 'Felix');
+    assert.ok(q45.verse.ar.includes('فِيلِكْسُ'));
+  });
+
+  test('Audited Question 2 (Mount Moriah) correctly points to Mount Moriah not Horeb', () => {
+    const q2 = window.QUESTIONS_BANK.find(q => q.id === 2);
+    assert.ok(q2, 'Question 2 must exist');
+    assert.strictEqual(q2.options.ar[q2.correctIndex], 'جبل المريا');
+    assert.strictEqual(q2.options.en[q2.correctIndex], 'Mount Moriah');
+    assert.ok(q2.verse.ar.includes('الْمُرِيَّا'));
+  });
+
+  test('Audited Question 3 (Five smooth stones) correctly points to five smooth stones', () => {
+    const q3 = window.QUESTIONS_BANK.find(q => q.id === 3);
+    assert.ok(q3, 'Question 3 must exist');
+    assert.strictEqual(q3.options.ar[q3.correctIndex], 'خمسة حجارة ملس');
+    assert.strictEqual(q3.options.en[q3.correctIndex], 'Five smooth stones');
+    assert.ok(q3.verse.ar.includes('خَمْسَةَ حِجَارَةٍ مِلْسٍ'));
+  });
+
+  test('Audited Question 26 (Uzzah) correctly points to Uzzah not Ahio', () => {
+    const q26 = window.QUESTIONS_BANK.find(q => q.id === 26);
+    assert.ok(q26, 'Question 26 must exist');
+    assert.strictEqual(q26.options.ar[q26.correctIndex], 'عُزَّة');
+    assert.strictEqual(q26.options.en[q26.correctIndex], 'Uzzah');
+    assert.ok(q26.verse.ar.includes('عُزَّةُ'));
+  });
+
+  test('Audited Question 178 (David chief mighty man Josheb-Basshebeth) correctly points to Josheb-Basshebeth', () => {
+    const q178 = window.QUESTIONS_BANK.find(q => q.id === 178);
+    assert.ok(q178, 'Question 178 must exist');
+    assert.strictEqual(q178.options.ar[q178.correctIndex], 'يوشيب بشبث');
+    assert.strictEqual(q178.options.en[q178.correctIndex], 'Josheb-Basshebeth');
+    assert.ok(q178.verse.ar.includes('يُوشَيْبَ بَشَّبَثُ'));
+  });
 });
 
 describe('4. 3x3 Grid Strategic Difficulty Mapping Tests (3-3-3 Layout)', () => {
