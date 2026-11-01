@@ -330,3 +330,17 @@ describe('7. Fullscreen Win Theater & Independent Versioning Tests', () => {
     assert.strictEqual(restoreBtnActive, false);
   });
 });
+
+describe('8. Carnival Attractor Mode & Ambient Audio Tests', () => {
+  test('Attractor visual and audio modules exist and declare required lifecycles', () => {
+    eval(fs.readFileSync('js/audio.js', 'utf8'));
+    assert.strictEqual(typeof window.soundEngine.startWelcomeAmbience, 'function');
+    assert.strictEqual(typeof window.soundEngine.stopWelcomeAmbience, 'function');
+    assert.strictEqual(typeof window.soundEngine.playCelestialChimeRipples, 'function');
+
+    const attractorContent = fs.readFileSync('js/attractor.js', 'utf8');
+    assert.ok(attractorContent.includes('class AttractorEngine'), 'AttractorEngine class must exist');
+    assert.ok(attractorContent.includes('drawGodRays'), 'Must have volumetric god rays renderer');
+    assert.ok(attractorContent.includes('drawParticles'), 'Must have stardust particle renderer');
+  });
+});

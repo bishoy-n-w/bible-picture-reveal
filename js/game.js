@@ -68,6 +68,27 @@ class PictureRevealGame {
 
     this.updateAudioButtonState();
     this.updateAllLocalizedUI();
+
+    // Start attractor visual engine if welcome screen is active
+    if (this.dom.welcomeScreen && this.dom.welcomeScreen.classList.contains('active')) {
+      if (window.attractorEngine) window.attractorEngine.start();
+    }
+
+    // Auto-unlock audio on first user gesture
+    const unlockAudio = () => {
+      if (window.soundEngine) {
+        window.soundEngine.init();
+        if (!this.isGameActive && this.dom.welcomeScreen && this.dom.welcomeScreen.classList.contains('active')) {
+          window.soundEngine.startWelcomeAmbience();
+        }
+      }
+      window.removeEventListener('click', unlockAudio);
+      window.removeEventListener('touchstart', unlockAudio);
+      window.removeEventListener('keydown', unlockAudio);
+    };
+    window.addEventListener('click', unlockAudio);
+    window.addEventListener('touchstart', unlockAudio);
+    window.addEventListener('keydown', unlockAudio);
   }
 
   cacheDom() {
@@ -303,7 +324,13 @@ class PictureRevealGame {
      WELCOME SCREEN & GAME ROUTING
      ========================================================================== */
   startGame() {
-    if (window.soundEngine) window.soundEngine.playClick();
+    if (window.soundEngine) {
+      window.soundEngine.playClick();
+      window.soundEngine.stopWelcomeAmbience();
+    }
+    if (window.attractorEngine) {
+      window.attractorEngine.stop();
+    }
     this.isGameActive = true;
     this.dom.welcomeScreen.classList.remove('active');
 
@@ -313,13 +340,20 @@ class PictureRevealGame {
   }
 
   showWelcomeScreen() {
-    if (window.soundEngine) window.soundEngine.playClick();
+    if (window.soundEngine) {
+      window.soundEngine.playClick();
+      window.soundEngine.startWelcomeAmbience();
+    }
+    if (window.attractorEngine) {
+      window.attractorEngine.start();
+    }
     this.stopTimer();
     if (window.confettiEngine) window.confettiEngine.clear();
 
     this.isGameActive = false;
     this.dom.winOverlay.classList.remove('active');
     this.dom.questionScreen.classList.remove('active');
+    if (this.dom.btnRestoreWinCard) this.dom.btnRestoreWinCard.classList.remove('active');
     this.dom.welcomeScreen.classList.add('active');
   }
 

@@ -16,6 +16,7 @@ const jsFiles = [
   'js/questions-bank.js',
   'js/audio.js',
   'js/confetti.js',
+  'js/attractor.js',
   'js/game.js'
 ];
 

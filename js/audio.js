@@ -12,6 +12,9 @@ class SoundEngine {
   constructor() {
     this.ctx = null;
     this.muted = localStorage.getItem('picture_reveal_muted') === 'true';
+    this.ambientNodes = null;
+    this.ambientGain = null;
+    this.chimeInterval = null;
   }
 
   init() {
@@ -29,11 +32,112 @@ class SoundEngine {
   toggleMute() {
     this.muted = !this.muted;
     localStorage.setItem('picture_reveal_muted', this.muted);
+    if (this.ambientNodes && this.ambientGain && this.ctx) {
+      this.ambientGain.gain.setValueAtTime(this.muted ? 0 : 0.08, this.ctx.currentTime);
+    }
     return this.muted;
   }
 
   isMuted() {
     return this.muted;
+  }
+
+  // Ethereal Cathedral Ambient Pad & Chimes for Welcome / Attractor Mode
+  startWelcomeAmbience() {
+    this.init();
+    if (!this.ctx) return;
+    if (this.ambientNodes) return; // Already active
+
+    try {
+      const t = this.ctx.currentTime;
+      this.ambientGain = this.ctx.createGain();
+      this.ambientGain.gain.setValueAtTime(0.001, t);
+      this.ambientGain.gain.linearRampToValueAtTime(this.muted ? 0 : 0.08, t + 1.2);
+      this.ambientGain.connect(this.ctx.destination);
+
+      // Low-pass filter for warm atmospheric sound
+      const filter = this.ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(500, t);
+      filter.Q.setValueAtTime(1.5, t);
+      filter.connect(this.ambientGain);
+
+      // LFO for breathing filter modulation
+      const lfo = this.ctx.createOscillator();
+      const lfoGain = this.ctx.createGain();
+      lfo.frequency.setValueAtTime(0.12, t); // Slow 8-second cycle
+      lfoGain.gain.setValueAtTime(180, t);
+      lfo.connect(lfoGain);
+      lfoGain.connect(filter.frequency);
+      lfo.start(t);
+
+      // Ambient Chord: C3, G3, C4, E4
+      const freqs = [130.81, 196.00, 261.63, 329.63];
+      const oscs = freqs.map((f, i) => {
+        const osc = this.ctx.createOscillator();
+        osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+        osc.frequency.setValueAtTime(f, t);
+        osc.detune.setValueAtTime((i - 1.5) * 4, t);
+        osc.connect(filter);
+        osc.start(t);
+        return osc;
+      });
+
+      // Periodic gentle celestial harp chime interval
+      this.chimeInterval = setInterval(() => {
+        if (!this.ambientNodes || this.muted) return;
+        this.playCelestialChimeRipples();
+      }, 7000);
+
+      this.ambientNodes = { oscs, lfo, lfoGain, filter, gain: this.ambientGain };
+    } catch (e) {
+      console.warn('Welcome ambience init error:', e);
+    }
+  }
+
+  playCelestialChimeRipples() {
+    if (!this.ctx || this.muted) return;
+    const t = this.ctx.currentTime;
+    const chimeNotes = [659.25, 783.99, 987.77, 1174.66, 1318.51];
+    const note = chimeNotes[Math.floor(Math.random() * chimeNotes.length)];
+
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(note, t);
+
+    gain.gain.setValueAtTime(0.001, t);
+    gain.gain.linearRampToValueAtTime(0.035, t + 0.1);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 3.0);
+
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+
+    osc.start(t);
+    osc.stop(t + 3.0);
+  }
+
+  stopWelcomeAmbience() {
+    if (this.chimeInterval) {
+      clearInterval(this.chimeInterval);
+      this.chimeInterval = null;
+    }
+    if (this.ambientNodes && this.ctx) {
+      try {
+        const t = this.ctx.currentTime;
+        this.ambientNodes.gain.gain.linearRampToValueAtTime(0.0001, t + 0.8);
+        setTimeout(() => {
+          if (this.ambientNodes) {
+            this.ambientNodes.oscs.forEach(o => { try { o.stop(); o.disconnect(); } catch (e) {} });
+            try { this.ambientNodes.lfo.stop(); this.ambientNodes.lfo.disconnect(); } catch (e) {}
+            this.ambientNodes = null;
+          }
+        }, 850);
+      } catch (e) {
+        this.ambientNodes = null;
+      }
+    }
   }
 
   // Quick subtle UI click

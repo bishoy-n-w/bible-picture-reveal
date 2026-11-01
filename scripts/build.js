@@ -17,6 +17,7 @@ const requiredFiles = [
   'js/questions-bank.js',
   'js/audio.js',
   'js/confetti.js',
+  'js/attractor.js',
   'js/game.js',
   'pics.json',
   'README.md'
