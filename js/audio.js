@@ -1,7 +1,7 @@
 /**
- * Temple Codex Cinematic Audio Synthesizer
- * Uses Web Audio API and Audio Element to create authentic Hollywood-grade sound effects:
- *  - Background Soundtrack Support (assets/Jumanji - The Video Game.mp3) with pure chime fallback
+ * Temple Codex Cinematic Audio Engine
+ * Uses Web Audio API for tactical game sound effects and dedicated HTML5 Audio for the background track:
+ *  - Exclusive Background Soundtrack: 'assets/Jumanji - The Video Game.mp3'
  *  - Stone Slab Slam (Deep bass impact with textural stone grind)
  *  - Angelic Harp Chime (Triumphant multi-harmonic chord for correct answers)
  *  - War Drum Thunder Impact (Sub-bass rumble and dissonant crash for wrong answers)
@@ -13,9 +13,9 @@ class SoundEngine {
   constructor() {
     this.ctx = null;
     this.muted = localStorage.getItem('picture_reveal_muted') === 'true';
-    this.chimeTimer = null;
     this.isAmbienceActive = false;
     this.bgAudio = null;
+    this.trackUrl = 'assets/Jumanji - The Video Game.mp3';
   }
 
   init() {
@@ -53,8 +53,7 @@ class SoundEngine {
     return this.muted;
   }
 
-  // Welcome Screen Soundtrack & Pure Chimes
-  // Plays MP3 soundtrack from assets if present, with zero-buzz fallback
+  // Exclusive Background Soundtrack for Welcome Screen (assets/Jumanji - The Video Game.mp3)
   startWelcomeAmbience() {
     this.init();
     if (this.muted) return;
@@ -62,12 +61,10 @@ class SoundEngine {
 
     this.isAmbienceActive = true;
 
-    // Try playing MP3 soundtrack from assets if available
     if (!this.bgAudio) {
       try {
-        this.bgAudio = new Audio('assets/Jumanji - The Video Game.mp3');
+        this.bgAudio = new Audio(encodeURI(this.trackUrl));
         this.bgAudio.loop = true;
-        this.bgAudio.volume = this.muted ? 0 : 0.25;
       } catch (e) {
         this.bgAudio = null;
       }
@@ -78,76 +75,36 @@ class SoundEngine {
       this.bgAudio.volume = this.muted ? 0 : 0.25;
       const playPromise = this.bgAudio.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // If browser policy blocks HTMLAudio until gesture or file missing, use pure chimes
-          this.playCelestialChimeRipples();
+        playPromise.catch((e) => {
+          // Autoplay policy waiting for user interaction
+          console.warn('Soundtrack waiting for user gesture:', e.message);
         });
       }
-    } else {
-      this.playCelestialChimeRipples();
     }
-
-    // Gentle backup periodic chime scheduler if no MP3 playing
-    const scheduleNext = () => {
-      if (!this.isAmbienceActive || this.muted) return;
-      this.chimeTimer = setTimeout(() => {
-        if (!this.isAmbienceActive || this.muted) return;
-        if (!this.bgAudio || this.bgAudio.paused) {
-          this.playCelestialChimeRipples();
-        }
-        scheduleNext();
-      }, 5000);
-    };
-
-    scheduleNext();
-  }
-
-  playCelestialChimeRipples() {
-    if (!this.ctx || this.muted) return;
-    if (this.ctx.state === 'suspended') {
-      this.ctx.resume();
-    }
-
-    const t = this.ctx.currentTime;
-    const chords = [
-      [659.25, 830.61, 987.77, 1318.51], // E Major
-      [587.33, 739.99, 880.00, 1174.66], // D Major
-      [659.25, 783.99, 1046.50, 1318.51] // C Major 7
-    ];
-
-    const chord = chords[Math.floor(Math.random() * chords.length)];
-
-    chord.forEach((freq, idx) => {
-      const noteTime = t + idx * 0.12;
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, noteTime);
-
-      gain.gain.setValueAtTime(0.0001, noteTime);
-      gain.gain.linearRampToValueAtTime(0.035, noteTime + 0.04);
-      gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 2.8);
-
-      osc.connect(gain);
-      gain.connect(this.ctx.destination);
-
-      osc.start(noteTime);
-      osc.stop(noteTime + 2.85);
-    });
   }
 
   stopWelcomeAmbience() {
     this.isAmbienceActive = false;
-    if (this.chimeTimer) {
-      clearTimeout(this.chimeTimer);
-      this.chimeTimer = null;
-    }
     if (this.bgAudio) {
       try {
-        this.bgAudio.pause();
-        this.bgAudio.currentTime = 0;
-      } catch (e) {}
+        const audio = this.bgAudio;
+        // Smooth quick fade out over 300ms before pausing
+        const fadeStep = 0.05;
+        const fadeInterval = setInterval(() => {
+          if (audio.volume > fadeStep) {
+            audio.volume = Math.max(0, audio.volume - fadeStep);
+          } else {
+            clearInterval(fadeInterval);
+            audio.pause();
+            audio.currentTime = 0;
+            audio.volume = this.muted ? 0 : 0.25;
+          }
+        }, 50);
+      } catch (e) {
+        try {
+          this.bgAudio.pause();
+        } catch (err) {}
+      }
     }
   }
 

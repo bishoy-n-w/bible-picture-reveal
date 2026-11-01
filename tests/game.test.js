@@ -336,7 +336,8 @@ describe('8. Carnival Attractor Mode & Ambient Audio Tests', () => {
     eval(fs.readFileSync('js/audio.js', 'utf8'));
     assert.strictEqual(typeof window.soundEngine.startWelcomeAmbience, 'function');
     assert.strictEqual(typeof window.soundEngine.stopWelcomeAmbience, 'function');
-    assert.strictEqual(typeof window.soundEngine.playCelestialChimeRipples, 'function');
+    assert.strictEqual(typeof window.soundEngine.toggleMute, 'function');
+    assert.strictEqual(window.soundEngine.trackUrl, 'assets/Jumanji - The Video Game.mp3');
 
     const attractorContent = fs.readFileSync('js/attractor.js', 'utf8');
     assert.ok(attractorContent.includes('class AttractorEngine'), 'AttractorEngine class must exist');
