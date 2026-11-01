@@ -95,10 +95,12 @@
 
       <!-- Scene Progress Badge -->
       <div class="scene-badge">
-        <span class="scene-label" data-i18n="sceneLabel">المشهد الحالي:</span>
-        <strong id="round-counter" class="scene-num">1</strong>
-        <span class="scene-sep" data-i18n="ofLabel">من</span>
-        <span id="remaining-counter" class="scene-total">20</span>
+        <span class="scene-label" id="scene-badge-label" data-i18n="sceneBadgeLabel">المشهد:</span>
+        <div class="scene-counter-display">
+          <strong id="round-counter" class="scene-num">1</strong>
+          <span class="scene-sep">/</span>
+          <span id="remaining-counter" class="scene-total">20</span>
+        </div>
       </div>
 
       <!-- Header Navigation & Language Switcher Controls -->
@@ -202,19 +204,25 @@
           </div>
 
           <div class="revelation-body">
-            <div class="revelation-answer-row">
-              <span class="revelation-answer-label" data-i18n="correctAnswerLabel">الإجابة الصحيحة:</span>
+            <!-- Dedicated Callout Card for Answer -->
+            <div class="revelation-answer-card">
+              <span class="revelation-answer-label" id="revelation-answer-label" data-i18n="correctAnswerCaption">الإجابة الصحيحة:</span>
               <div id="revelation-correct-answer" class="revelation-answer-text">--</div>
             </div>
 
-            <div id="revelation-verse" class="revelation-verse-text">«نص الآية المباركة كاملاً...»</div>
-            <div id="revelation-reference" class="revelation-reference-text">(الشاهد: ...)</div>
+            <!-- Scripture Verse Card -->
+            <div class="revelation-verse-card">
+              <div id="revelation-verse" class="revelation-verse-text">نص الآية المباركة كاملاً...</div>
+            </div>
+
+            <!-- Scripture Reference Badge -->
+            <div id="revelation-reference" class="revelation-reference-badge">الشاهد: ...</div>
           </div>
 
           <!-- Manual Return Button to Image Screen -->
           <div class="revelation-actions">
             <button id="btn-return-board" class="btn-return-board">
-              <span data-i18n="continueToBoard">متابعة إلى لوحة الصورة</span>
+              <span data-i18n="continueToBoard">متابعة إلى لوحة الصورة ➔</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
           </div>

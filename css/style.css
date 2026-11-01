@@ -338,35 +338,61 @@ body.english-only-mode {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .brand-subtitle {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #9aa6bc;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 /* Scene Badge */
 .scene-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(18, 24, 38, 0.85);
-  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  gap: 10px;
+  background: rgba(18, 24, 38, 0.92);
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
   border-radius: 50px;
   padding: 6px 18px;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(212, 175, 55, 0.15);
+  flex-shrink: 0;
 }
-.scene-label { color: #9aa6bc; }
-.scene-num { color: #ffffff; font-size: 1.15rem; font-weight: 900; }
-.scene-sep { color: var(--gold-primary); }
-.scene-total { color: var(--gold-bright); font-weight: 800; }
+.scene-label {
+  color: #9aa6bc;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.scene-counter-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  direction: ltr; /* Keeps numbers always left-to-right 1 / 20 cleanly */
+}
+.scene-num {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.scene-sep {
+  color: var(--gold-primary);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.scene-total {
+  color: var(--gold-bright);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
 
 .header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -689,10 +715,11 @@ body.english-only-mode {
 }
 
 .revelation-status-badge {
-  padding: 6px 22px;
+  padding: 8px 24px;
   border-radius: 50px;
   font-weight: 900;
   font-size: 1.15rem;
+  text-align: center;
 }
 
 .revelation-status-badge.correct {
@@ -713,64 +740,154 @@ body.english-only-mode {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   width: 100%;
-  text-align: center;
 }
 
-.revelation-answer-row {
+/* Dedicated Answer Callout Box */
+.revelation-answer-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  font-size: 1.25rem;
+  gap: 6px;
+  width: 100%;
+  padding: 12px 18px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 12px;
 }
 
 .revelation-answer-label {
-  color: var(--gold-bright);
+  font-size: 0.95rem;
   font-weight: 800;
+  color: var(--gold-bright);
+  letter-spacing: 0.4px;
 }
 
 .revelation-answer-text {
   color: #ffffff;
   font-weight: 900;
-  font-size: 1.35rem;
-  text-shadow: 0 0 10px var(--gold-glow);
+  font-size: 1.45rem;
+  text-align: center;
+  text-shadow: 0 0 12px var(--gold-glow);
+  width: 100%;
+}
+
+.revelation-answer-text .bilingual-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.revelation-answer-text .text-ar {
+  font-family: var(--font-arabic-display);
+  font-size: 1.45rem;
+  color: #ffd700;
+}
+
+.revelation-answer-text .text-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: #f1f5f9;
+}
+
+/* Scripture Verse Container */
+.revelation-verse-card {
+  width: 100%;
+  background: rgba(4, 7, 12, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 22px;
 }
 
 .revelation-verse-text {
-  font-family: var(--font-arabic-calligraphy);
-  font-size: 1.45rem;
-  line-height: 1.8;
-  color: #f1f5f9;
-  background: rgba(0, 0, 0, 0.45);
-  border-right: 4px solid var(--gold-bright);
-  padding: 14px 20px;
-  border-radius: 8px;
   width: 100%;
-  text-align: justify;
 }
 
-.revelation-reference-text {
+.bilingual-verse-display {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.verse-text-ar {
+  font-family: var(--font-arabic-calligraphy);
+  font-size: 1.45rem;
+  line-height: 1.85;
+  color: #ffd700;
+  text-align: justify;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.verse-text-en {
+  font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  text-align: justify;
+  opacity: 0.95;
+}
+
+/* Scripture Reference Badge */
+.revelation-reference-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  border-radius: 50px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1.5px solid var(--gold-bright);
+  color: var(--gold-bright);
   font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+.bilingual-reference-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ref-item-sep {
+  color: #9aa6bc;
+}
+
+.ref-label-tag {
+  color: #9aa6bc;
+}
+
+.ref-value-tag {
   color: var(--gold-bright);
 }
 
+/* Win Overlay verse styling adjustments */
+.win-verse-quote .bilingual-verse-display {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Manual Return Button */
 .btn-return-board {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   padding: 14px 40px;
   border-radius: 50px;
   background: var(--gold-foil);
-  border: 2px solid var(--gold-bright);
   color: #1a1200;
   font-family: var(--font-arabic-display);
-  font-size: 1.25rem;
   font-weight: 900;
+  font-size: 1.15rem;
+  border: 2px solid var(--gold-bright);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 18px var(--gold-glow);
   cursor: pointer;
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
   transition: all var(--transition-fast);
+  white-space: nowrap;
   margin-top: 6px;
 }
 

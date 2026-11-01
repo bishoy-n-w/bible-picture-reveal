@@ -749,13 +749,16 @@ class PictureRevealGame {
         : correctOpt.ar;
     }
     if (this.dom.revelationVerse) {
-      const verseHtml = window.i18n ? window.i18n.formatField(this.activeQuestion.verse) : this.activeQuestion.verse.ar;
-      this.dom.revelationVerse.innerHTML = `«${verseHtml}»`;
+      this.dom.revelationVerse.innerHTML = window.i18n
+        ? window.i18n.formatVerse(this.activeQuestion.verse)
+        : `«${this.activeQuestion.verse.ar || this.activeQuestion.verse}»`;
     }
     if (this.dom.revelationReference) {
       const refLabel = window.i18n ? window.i18n.t('referenceLabel') : 'الشاهد:';
-      const refHtml = window.i18n ? window.i18n.formatField(this.activeQuestion.reference) : this.activeQuestion.reference.ar;
-      this.dom.revelationReference.innerHTML = `(${refLabel} ${refHtml})`;
+      const refFormatted = window.i18n
+        ? window.i18n.formatReference(this.activeQuestion.reference)
+        : (this.activeQuestion.reference.ar || this.activeQuestion.reference);
+      this.dom.revelationReference.innerHTML = `<span class="ref-label-tag">${refLabel}</span> <span class="ref-value-tag">${refFormatted}</span>`;
     }
   }
 

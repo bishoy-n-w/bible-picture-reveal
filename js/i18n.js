@@ -3,7 +3,8 @@
  * Supports:
  *  - Independent activation of Arabic and English (Arabic-only, English-only, or Bilingual)
  *  - Automatic direction switching (RTL for Arabic, LTR for English, Balanced for Bilingual)
- *  - Extensible architecture ready to register new languages in the future (e.g. French, Coptic, Spanish)
+ *  - Clean typography and bulletproof bidirectional rendering without broken brackets or quotes
+ *  - Extensible architecture ready to register new languages in the future
  */
 
 class I18nEngine {
@@ -11,9 +12,6 @@ class I18nEngine {
     this.supportedLanguages = {
       ar: { id: 'ar', name: 'العربية', nativeName: 'العربية', dir: 'rtl', default: true },
       en: { id: 'en', name: 'English', nativeName: 'English', dir: 'ltr', default: false }
-      // Space to add future languages:
-      // fr: { id: 'fr', name: 'French', nativeName: 'Français', dir: 'ltr' },
-      // cop: { id: 'cop', name: 'Coptic', nativeName: 'ϯⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ', dir: 'ltr' },
     };
 
     // Load active languages from storage, default to Arabic
@@ -43,8 +41,7 @@ class I18nEngine {
         step3Title: "3. خمّن الصورة",
         step3Desc: "استنتج الحدث الكتابي من الأجزاء المكشوفة واحتفل بالنصر بالآية المرجعية الكاملة!",
         startChallenge: "ابدأ التحدي الآن",
-        sceneLabel: "المشهد الحالي:",
-        ofLabel: "من",
+        sceneBadgeLabel: "المشهد:",
         home: "الرئيسية",
         mute: "كتم الصوت",
         unmute: "تشغيل الصوت",
@@ -63,9 +60,9 @@ class I18nEngine {
         tileLabel: "المربع رقم",
         correctStatus: "✦ إجابة صحيحة! أحسنت ✦",
         incorrectStatus: "✕ إجابة غير صحيحة! ✕",
-        correctAnswerLabel: "الإجابة الصحيحة:",
+        correctAnswerCaption: "الإجابة الصحيحة:",
         referenceLabel: "الشاهد:",
-        continueToBoard: "متابعة إلى لوحة الصورة",
+        continueToBoard: "متابعة إلى لوحة الصورة ➔",
         winEmblem: "✦ تم كشف المشهد بنجاح ✦",
         returnHome: "العودة للرئيسية 🏠",
         lockedLabel: "مغلق",
@@ -89,8 +86,7 @@ class I18nEngine {
         step3Title: "3. Guess the Picture",
         step3Desc: "Deduce the biblical event from the revealed fragments and celebrate with the full passage citation!",
         startChallenge: "Start the Challenge",
-        sceneLabel: "Current Scene:",
-        ofLabel: "of",
+        sceneBadgeLabel: "Scene:",
         home: "Home",
         mute: "Mute Audio",
         unmute: "Unmute Audio",
@@ -109,9 +105,9 @@ class I18nEngine {
         tileLabel: "Tile #",
         correctStatus: "✦ Correct Answer! Well Done ✦",
         incorrectStatus: "✕ Incorrect Answer! ✕",
-        correctAnswerLabel: "Correct Answer:",
+        correctAnswerCaption: "Correct Answer:",
         referenceLabel: "Reference:",
-        continueToBoard: "Continue to Picture Board",
+        continueToBoard: "Continue to Picture Board ➔",
         winEmblem: "✦ Biblical Scene Successfully Revealed ✦",
         returnHome: "Return Home 🏠",
         lockedLabel: "Locked",
@@ -142,7 +138,6 @@ class I18nEngine {
     if (!this.supportedLanguages[lang]) return;
 
     if (this.activeLanguages.includes(lang)) {
-      // Cannot disable if it is the only active language
       if (this.activeLanguages.length > 1) {
         this.activeLanguages = this.activeLanguages.filter(l => l !== lang);
       }
@@ -178,12 +173,26 @@ class I18nEngine {
     }
   }
 
-  // Get string for a key based on active configuration
+  // Get localized string for a UI key
   t(key) {
     if (this.isBilingual()) {
+      // In bilingual mode, provide structured or clean labels
       const arStr = (this.strings.ar && this.strings.ar[key]) || key;
       const enStr = (this.strings.en && this.strings.en[key]) || key;
       if (arStr === enStr) return arStr;
+
+      // For specific short badges, use clean combined form
+      if (key === 'sceneBadgeLabel') return 'المشهد / Scene:';
+      if (key === 'correctAnswerCaption') return 'الإجابة الصحيحة • Correct Answer:';
+      if (key === 'referenceLabel') return 'الشاهد • Reference:';
+      if (key === 'brandTitle') return 'كشف الصورة الكتابية';
+      if (key === 'brandSubtitle') return 'Bible Picture Reveal • مسابقة الخدام';
+      if (key === 'home') return 'الرئيسية • Home';
+      if (key === 'revealFull') return 'كشف الصورة • Reveal';
+      if (key === 'nextScene') return 'صورة جديدة • Next';
+      if (key === 'resetGrid') return 'إعادة المربعات • Reset';
+      if (key === 'continueToBoard') return 'متابعة إلى لوحة الصورة • Continue ➔';
+
       return `${arStr} • ${enStr}`;
     }
 
@@ -191,7 +200,7 @@ class I18nEngine {
     return (this.strings[primary] && this.strings[primary][key]) || (this.strings.ar && this.strings.ar[key]) || key;
   }
 
-  // Helper to format localized question/verse fields
+  // Format general bilingual text field (Question, Options, etc.)
   formatField(fieldObj) {
     if (!fieldObj) return '';
     if (typeof fieldObj === 'string') return fieldObj;
@@ -208,21 +217,66 @@ class I18nEngine {
       `;
     }
 
-    if (this.activeLanguages.includes('en') && !this.activeLanguages.includes('ar')) {
+    if (this.activeLanguages.length === 1 && this.activeLanguages[0] === 'en') {
       return fieldObj.en || fieldObj.ar || '';
     }
 
     return fieldObj.ar || fieldObj.en || '';
   }
 
-  // Plain text extraction without HTML tags
+  // Format scripture verse with clean, isolated quotes per language (NO broken quotes!)
+  formatVerse(verseObj) {
+    if (!verseObj) return '';
+    const textAr = typeof verseObj === 'object' ? verseObj.ar : verseObj;
+    const textEn = typeof verseObj === 'object' ? verseObj.en : '';
+
+    if (this.isBilingual() && textAr && textEn) {
+      return `
+        <div class="bilingual-verse-display">
+          <div class="verse-text-ar" dir="rtl">«${textAr}»</div>
+          <div class="verse-text-en" dir="ltr">“${textEn}”</div>
+        </div>
+      `;
+    }
+
+    if (this.activeLanguages.length === 1 && this.activeLanguages[0] === 'en' && textEn) {
+      return `<div class="verse-text-en" dir="ltr">“${textEn}”</div>`;
+    }
+
+    return `<div class="verse-text-ar" dir="rtl">«${textAr || textEn}»</div>`;
+  }
+
+  // Format scripture reference badge cleanly (NO stray parenthesis wrapping!)
+  formatReference(refObj) {
+    if (!refObj) return '';
+    const refAr = typeof refObj === 'object' ? refObj.ar : refObj;
+    const refEn = typeof refObj === 'object' ? refObj.en : '';
+
+    if (this.isBilingual() && refAr && refEn) {
+      return `
+        <div class="bilingual-reference-display">
+          <span class="ref-item-ar" dir="rtl">${refAr}</span>
+          <span class="ref-item-sep">•</span>
+          <span class="ref-item-en" dir="ltr">${refEn}</span>
+        </div>
+      `;
+    }
+
+    if (this.activeLanguages.length === 1 && this.activeLanguages[0] === 'en' && refEn) {
+      return `<span class="ref-item-en" dir="ltr">${refEn}</span>`;
+    }
+
+    return `<span class="ref-item-ar" dir="rtl">${refAr || refEn}</span>`;
+  }
+
+  // Extract clean plain text for tooltips / canvas
   getPlainText(fieldObj) {
     if (!fieldObj) return '';
     if (typeof fieldObj === 'string') return fieldObj;
     if (this.isBilingual()) {
       return `${fieldObj.ar || ''} | ${fieldObj.en || ''}`.trim();
     }
-    if (this.activeLanguages.includes('en') && !this.activeLanguages.includes('ar')) {
+    if (this.activeLanguages.length === 1 && this.activeLanguages[0] === 'en') {
       return fieldObj.en || fieldObj.ar || '';
     }
     return fieldObj.ar || fieldObj.en || '';
