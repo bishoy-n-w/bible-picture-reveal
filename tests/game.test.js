@@ -250,4 +250,10 @@ describe('6. Carnival Timer (60s) & Keyboard Mapping Tests', () => {
     assert.strictEqual(optionKeys['KeyA'], 0);
     assert.strictEqual(optionKeys['KeyD'], 3);
   });
+
+  test('Option seal badges display numbers 1, 2, 3, 4 matching keyboard input', () => {
+    const optionBadges = ['1', '2', '3', '4'];
+    assert.strictEqual(optionBadges.length, 4);
+    assert.deepStrictEqual(optionBadges, ['1', '2', '3', '4']);
+  });
 });

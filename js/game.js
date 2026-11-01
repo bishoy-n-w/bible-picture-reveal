@@ -341,8 +341,13 @@ class PictureRevealGame {
     if (!this.dom.timerText || !this.dom.altarTimerBadge) return;
 
     if (this.timerRemaining > 0) {
-      const suffix = window.i18n ? window.i18n.t('secondsSuffix') : 'ثانية';
-      this.dom.timerText.textContent = `${this.timerRemaining} ${suffix}`;
+      if (window.i18n && window.i18n.isBilingual()) {
+        this.dom.timerText.textContent = `${this.timerRemaining} ثانية / sec`;
+      } else if (window.i18n && window.i18n.activeLanguages.length === 1 && window.i18n.activeLanguages[0] === 'en') {
+        this.dom.timerText.textContent = `${this.timerRemaining}s`;
+      } else {
+        this.dom.timerText.textContent = `${this.timerRemaining} ثانية`;
+      }
       if (this.timerRemaining <= 5) {
         this.dom.altarTimerBadge.className = 'altar-timer-badge urgent';
       } else {
@@ -661,10 +666,7 @@ class PictureRevealGame {
       ? window.i18n.formatField(this.activeQuestion.question)
       : this.activeQuestion.question.ar;
 
-    const letters = ['A', 'B', 'C', 'D'];
-    const lettersAr = ['أ', 'ب', 'ج', 'د'];
-    const isEn = window.i18n && window.i18n.activeLanguages.length === 1 && window.i18n.activeLanguages[0] === 'en';
-    const letterLabels = isEn ? letters : lettersAr;
+    const optionBadges = ['1', '2', '3', '4'];
 
     this.dom.optionsGrid.innerHTML = '';
 
@@ -677,7 +679,7 @@ class PictureRevealGame {
         const localizedOption = window.i18n ? window.i18n.formatField({ ar: opt.ar, en: opt.en }) : opt.ar;
         btn.innerHTML = `
           <div class="option-text-wrapper">${localizedOption}</div>
-          <span class="altar-seal-badge">${letterLabels[idx]}</span>
+          <span class="altar-seal-badge">${optionBadges[idx]}</span>
         `;
 
         if (this.pendingOutcome) {

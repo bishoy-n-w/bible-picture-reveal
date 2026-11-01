@@ -944,6 +944,7 @@ body.english-only-mode {
   color: var(--gold-bright);
   font-weight: 800;
   font-size: 0.92rem;
+  direction: ltr;
   transition: all 0.3s ease;
 }
 
@@ -1067,7 +1068,10 @@ body.english-only-mode {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  font-size: 1.15rem;
   font-weight: 900;
   color: var(--gold-bright);
   flex-shrink: 0;
