@@ -1320,19 +1320,19 @@ window.QUESTIONS_BANK = [
     },
     "options": {
       "ar": [
-        "سيمون الساحر",
+        "سيمون",
         "باريشوع",
-        "ديمتريوس",
+        "سكيفا",
         "ألكسندر"
       ],
       "en": [
-        "Simon the sorcerer",
+        "Simon",
         "Bar-Jesus",
-        "Demetrius",
+        "Sceva",
         "Alexander"
       ]
     },
-    "correctIndex": 0,
+    "correctIndex": 1,
     "reference": {
       "ar": "أعمال 13: 8",
       "en": "Acts 13: 8"
@@ -1935,24 +1935,24 @@ window.QUESTIONS_BANK = [
     "id": 63,
     "level": 1,
     "question": {
-      "ar": "ما اسم المرأة العظيمة الغنية في الشونم التي استضافت أليشع وبنت له علية صغيرة بسرير وخوان وكرسي ومنارة؟",
-      "en": "What was the wealthy, noble woman in Shunem who prepared a small upper room with a bed, table, chair, and lampstand for Elisha?"
+      "ar": "ما اسم المرأة العظيمة التي استضافت أليشع النبي وبنت له علية على الحائط بسرير وخوان وكرسي ومنارة؟",
+      "en": "Which noble woman hosted the prophet Elisha and built a small upper room on the wall with a bed, table, chair, and lampstand?"
     },
     "options": {
       "ar": [
-        "دبورة",
-        "أبيجايل",
-        "حنة",
-        "المرأة الشونمية"
+        "أبيجايل الكرملية",
+        "أرملة صرفة صيدون",
+        "المرأة الشونمية",
+        "المرأة التكوعية"
       ],
       "en": [
-        "Deborah",
-        "Abigail",
-        "Hannah",
-        "The Shunammite woman"
+        "Abigail the Carmelite",
+        "The widow of Zarephath",
+        "The Shunammite woman",
+        "The wise woman of Tekoa"
       ]
     },
-    "correctIndex": 3,
+    "correctIndex": 2,
     "reference": {
       "ar": "2 ملوك 4: 10",
       "en": "2 Kings 4: 10"
@@ -2896,20 +2896,20 @@ window.QUESTIONS_BANK = [
     "id": 94,
     "level": 1,
     "question": {
-      "ar": "ما اسم رئيس جيش داود الملك الذي قاد الجيوش في أغلب حروبه وهو ابن صروية أخت داود؟",
-      "en": "What was the name of King David's supreme commander who led his armies in war, the son of David's sister Zeruiah?"
+      "ar": "ما اسم رئيس جيش داود الملك الذي قاد الجيوش في أغلب حروبه ومارس نفوذاً عسكرياً كبيراً؟",
+      "en": "What was the name of King David's supreme military commander who led the armies in most of his wars?"
     },
     "options": {
       "ar": [
-        "أبنير بن نير",
-        "بنايا بن يهوياداع",
-        "يوآب بن صروية",
+        "أبنير",
+        "بنايا",
+        "يوآب",
         "عماسا"
       ],
       "en": [
-        "Abner son of Ner",
-        "Benaiah son of Jehoiada",
-        "Joab son of Zeruiah",
+        "Abner",
+        "Benaiah",
+        "Joab",
         "Amasa"
       ]
     },
@@ -3361,21 +3361,21 @@ window.QUESTIONS_BANK = [
     "id": 109,
     "level": 2,
     "question": {
-      "ar": "كم كان عدد حراس الأسوار الذين وزعهم نحميا على السور وكان نصفهم يمسكون الرماح والتروس؟",
+      "ar": "كيف نظّم نحميا رجاله لمواجهة تهديدات الأعداء أثناء بناء سور أورشليم؟",
       "en": "How did Nehemiah divide his servants during the rebuilding of the wall when enemies threatened to attack?"
     },
     "options": {
       "ar": [
-        "حراس الليل فقط",
-        "عشرة حراس لكل باب",
-        "نصف الغلمان يعملون ونصفهم يمسكون الرماح",
-        "كل الرجال مسلحون بلا بناء"
+        "حراسة مسلحة في الليل فقط",
+        "عشرة حراس مسلحين عند كل باب",
+        "نصفهم يبنون ونصفهم يمسكون السلاح",
+        "جميعهم تفرغوا للحراسة وتركوا البناء"
       ],
       "en": [
-        "Night watchmen only",
-        "Ten guards for each gate",
-        "Half the servants worked while half held spears",
-        "All men armed without building"
+        "Armed watchmen during the night only",
+        "Ten armed guards at each gate",
+        "Half of them built while half held weapons",
+        "All ceased building to stand guard"
       ]
     },
     "correctIndex": 2,
@@ -3392,21 +3392,21 @@ window.QUESTIONS_BANK = [
     "id": 110,
     "level": 2,
     "question": {
-      "ar": "ما اسم الرجل الشرير الحوروني الذي قاوم نحميا وسخر من بناء سور أورشليم؟",
-      "en": "What was the name of the Horonite governor who maliciously mocked and opposed Nehemiah in rebuilding the walls?"
+      "ar": "ما اسم والي السامرة الذي استهزأ بنحميا وقاوم بشدة بناء سور أورشليم؟",
+      "en": "Who was the governor who mocked Nehemiah and fiercely opposed the rebuilding of Jerusalem's walls?"
     },
     "options": {
       "ar": [
-        "هامان الأجاجي",
-        "سنبلط الحوروني",
-        "طوبيا العموني",
-        "جشم العربي"
+        "هامان",
+        "سنبلط",
+        "طوبيا",
+        "جشم"
       ],
       "en": [
-        "Haman the Agagite",
-        "Sanballat the Horonite",
-        "Tobiah the Ammonite",
-        "Geshem the Arab"
+        "Haman",
+        "Sanballat",
+        "Tobiah",
+        "Geshem"
       ]
     },
     "correctIndex": 1,
@@ -4483,15 +4483,15 @@ window.QUESTIONS_BANK = [
     "options": {
       "ar": [
         "ألكسندر",
-        "إسكندر النحاس",
+        "إراستس",
         "سكيوا",
-        "ديمتريوس الصائغ"
+        "ديمتريوس"
       ],
       "en": [
         "Alexander",
-        "Alexander the coppersmith",
+        "Erastus",
         "Sceva",
-        "Demetrius the silversmith"
+        "Demetrius"
       ]
     },
     "correctIndex": 3,
@@ -5500,31 +5500,31 @@ window.QUESTIONS_BANK = [
     "id": 178,
     "level": 2,
     "question": {
-      "ar": "من هو الجندي الحثي البطل زوج بثشبع الذي أمر داود بوضعه في أشد المعارك غدراً ليموت؟",
-      "en": "Who was the Hittite warrior, husband of Bathsheba, whom David treacherously ordered to be placed in the forefront of the hottest battle?"
+      "ar": "ما اسم البطل الأول من أبطال داود الثلاثة الكبار الذي هزّ رمحه على ثمانمئة قتيل دفعة واحدة؟",
+      "en": "What was the name of the chief of David's three mighty men who lifted his spear against eight hundred men slain at one time?"
     },
     "options": {
       "ar": [
-        "أخيتوفل",
-        "أوريا الحثي",
-        "شمعي",
-        "إيتام"
+        "شمة الهراري",
+        "يوشيب بشبث",
+        "ألعازار بن دودو",
+        "بنايا بن يهوياداع"
       ],
       "en": [
-        "Ahithophel",
-        "Uriah the Hittite",
-        "Shimei",
-        "Ittai"
+        "Shammah the Hararite",
+        "Josheb-Basshebeth",
+        "Eleazar son of Dodo",
+        "Benaiah son of Jehoiada"
       ]
     },
     "correctIndex": 1,
     "reference": {
-      "ar": "2 صموئيل 11: 15",
-      "en": "2 Samuel 11:15"
+      "ar": "2 صموئيل 23: 8",
+      "en": "2 Samuel 23:8"
     },
     "verse": {
-      "ar": "وَكَتَبَ فِي الرِّسَالَةِ يَقُولُ: «اجْعَلُوا أُورِيَّا فِي وَجْهِ الْحَرْبِ الشَّدِيدَةِ، وَارْجِعُوا مِنْ وَرَائِهِ فَيُضْرَبَ وَيَمُوتَ».",
-      "en": "And he wrote in the letter, saying, 'Set Uriah in the forefront of the hottest battle, and retire from him, that he may be struck down and die.'"
+      "ar": "هذِهِ أَسْمَاءُ الأَبْطَالِ الَّذِينَ لِدَاوُدَ: يُوشَيْبَ بَشَّبَثُ التَّحْكَمُونِيُّ رَئِيسُ الثَّلاَثَةِ. هُوَ هَزَّ رُمْحَهُ عَلَى ثَمَانِ مِئَةٍ قَتَلَهُمْ دَفْعَةً وَاحِدَةً.",
+      "en": "These are the names of the mighty men whom David had: Josheb-Basshebeth the Tachmonite, chief among the captains. He was called Adino the Eznite, because he had killed eight hundred men at one time."
     }
   },
   {
@@ -5841,21 +5841,21 @@ window.QUESTIONS_BANK = [
     "id": 189,
     "level": 2,
     "question": {
-      "ar": "ما هو الحكم الحكيم الذي أصدره سليمان لكشف الأم الحقيقية للطفل الحي بين المرأتين الزانيتين؟",
-      "en": "What wise judgment did Solomon make to discover the true mother of the living infant brought before him?"
+      "ar": "ما هو الحكم الحكيم الذي أصدره سليمان لكشف الأم الحقيقية للطفل المتنازع عليه بين المرأتين؟",
+      "en": "What wise judgment did Solomon make to discover the true mother of the disputed infant between the two women?"
     },
     "options": {
       "ar": [
-        "اطرحوا القرعة بينهما أمام المذبح",
-        "دعوا الطفل يزحف نحو أمه الحقيقية",
-        "أعطوا الولد لكهنة الهيكل حتى يكبر",
-        "اقسموا الولد الحي نصفين وأعطوا كلاً منهما نصفاً"
+        "إلقاء القرعة بينهما أمام المذبح",
+        "ترك الطفل ليزحف نحو أمه الحقيقية",
+        "تسليم الطفل لكهنة الهيكل حتى يكبر",
+        "شطر الولد نصفين وإعطاء كل واحدة نصفاً"
       ],
       "en": [
         "Cast lots between them before the altar",
         "Let the child crawl toward the true mother",
         "Give the child to the temple priests until grown",
-        "Divide the living child in two and give half to one and half to the other"
+        "Divide the child in two and give half to each"
       ]
     },
     "correctIndex": 3,
@@ -5996,21 +5996,21 @@ window.QUESTIONS_BANK = [
     "id": 194,
     "level": 2,
     "question": {
-      "ar": "ما اسم النبي الشيلوني الذي مزق رداءه الجديد إلى اثنتي عشرة قطعة وأعطى عشر قطع ليربعام؟",
-      "en": "Which prophet from Shiloh tore his new garment into twelve pieces and gave ten to Jeroboam?"
+      "ar": "ما اسم النبي الذي مزق رداءه الجديد إلى اثنتي عشرة قطعة وأعطى عشر قطع ليربعام؟",
+      "en": "Which prophet tore his new garment into twelve pieces and gave ten to Jeroboam?"
     },
     "options": {
       "ar": [
-        "شمعيا رجل الله",
-        "إيدو الرائي",
+        "شمعيا",
+        "إيدو",
         "حنانيا",
-        "أخيا الشيلوني"
+        "أخيا"
       ],
       "en": [
-        "Shemaiah man of God",
-        "Iddo the seer",
+        "Shemaiah",
+        "Iddo",
         "Hananiah",
-        "Ahijah the Shilonite"
+        "Ahijah"
       ]
     },
     "correctIndex": 3,
@@ -6771,21 +6771,21 @@ window.QUESTIONS_BANK = [
     "id": 219,
     "level": 3,
     "question": {
-      "ar": "ما اسم المكان الذي انشقت فيه الأرض وابتلعت قورح وداثان وأبيرام وبيوتهم وكل أموالهم؟",
-      "en": "Whose rebellion caused the earth to open its mouth and swallow them alive with their households and goods?"
+      "ar": "عند أي موضع أو عصيان فتحت الأرض فاها وابتلعت المتمردين وعائلاتهم ونزلوا أحياء إلى الهاوية؟",
+      "en": "In which rebellion did the earth open its mouth and swallow the rebels with their households alive into the pit?"
     },
     "options": {
       "ar": [
         "محلة تبعيرا",
-        "محلة قورح",
+        "خيام قورح",
         "محلة حضيروت",
-        "محلة قادش"
+        "مخيم مريبة"
       ],
       "en": [
         "Camp of Taberah",
-        "Camp of Korah",
+        "Tents of Korah",
         "Camp of Hazeroth",
-        "Camp of Kadesh"
+        "Camp of Meribah"
       ]
     },
     "correctIndex": 1,
@@ -7887,8 +7887,8 @@ window.QUESTIONS_BANK = [
     "id": 255,
     "level": 3,
     "question": {
-      "ar": "ما اسم شجرة العليقة التي ظهر فيها ملاك الرب لموسى في لهيب نار في برية حوريب ولم تكن تحترق؟",
-      "en": "What was the burning bush in which the Angel of the LORD appeared to Moses in flames of fire at Mount Horeb without being consumed?"
+      "ar": "في أي نبات أو شجرة ظهر ملاك الرب لموسى بلهيب نار في برية حوريب دون أن يحترق؟",
+      "en": "In what bush or tree did the Angel of the LORD appear to Moses in a flame of fire at Mount Horeb without being consumed?"
     },
     "options": {
       "ar": [
@@ -8979,13 +8979,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "أدوني صادق",
         "سيسرا",
-        "يابين ملك حاصور",
+        "يابين",
         "هوهام"
       ],
       "en": [
         "Adoni-Zedek",
         "Sisera",
-        "Jabin king of Hazor",
+        "Jabin",
         "Hoham"
       ]
     },
@@ -9034,7 +9034,7 @@ window.QUESTIONS_BANK = [
     "id": 292,
     "level": 3,
     "question": {
-      "ar": "ما اسم الملك الكنعاني الذي قُطعت أباهم يديه ورجليه في بازق وقال: «سَبْعُونَ مَلِكًا مَقْطُوعَةٌ أَبَاهِمُ أَيْدِيهِمْ وَأَرْجُلِهِمْ كَانُوا يَلْتَقِطُونَ تَحْتَ مَائِدَتِي. كَمَا فَعَلْتُ كَذلِكَ جَازَانِيَ اللهُ»؟",
+      "ar": "ما اسم الملك الكنعاني الذي قُطعت أباهم يديه ورجليه وقال: «سَبْعُونَ مَلِكًا مَقْطُوعَةٌ أَبَاهِمُ أَيْدِيهِمْ وَأَرْجُلِهِمْ كَانُوا يَلْتَقِطُونَ تَحْتَ مَائِدَتِي. كَمَا فَعَلْتُ كَذلِكَ جَازَانِيَ اللهُ»؟",
       "en": "Which Canaanite king had his thumbs and big toes cut off, acknowledging: 'Seventy kings with their thumbs and big toes cut off used to gather scraps under my table; as I have done, so God has repaid me'?"
     },
     "options": {
@@ -9134,13 +9134,13 @@ window.QUESTIONS_BANK = [
       "ar": [
         "مصفاة",
         "الرامة",
-        "جبعة بنيامين",
+        "جبعة",
         "أريحا"
       ],
       "en": [
         "Mizpah",
         "Ramah",
-        "Gibeah of Benjamin",
+        "Gibeah",
         "Jericho"
       ]
     },
@@ -9220,19 +9220,19 @@ window.QUESTIONS_BANK = [
     "id": 298,
     "level": 3,
     "question": {
-      "ar": "في أي عيد سنوي في شيلوه خَطف رجال بنيامين الباقون عذارى شيلوه الراقصات في الكروم ليصيروا لهم نساء؟",
-      "en": "At what annual feast in Shiloh did the remaining Benjamites seize virgin dancers from the vineyards as wives?"
+      "ar": "خلال أي مناسبة خَطف رجال بنيامين الباقون عذارى يرقصن في الكروم ليتخذوهن نساء؟",
+      "en": "During which sacred occasion did the remaining Benjamite men catch virgin dancers in the vineyards to be their wives?"
     },
     "options": {
       "ar": [
         "عيد الحصاد في الجلجال",
-        "عيد الرب السنوي في شيلوه",
+        "عيد الرب في شيلوه",
         "عيد المظال في حبرون",
         "عيد الفصح في أورشليم"
       ],
       "en": [
         "Harvest feast in Gilgal",
-        "The annual feast of the LORD in Shiloh",
+        "Feast of the LORD in Shiloh",
         "Tabernacles in Hebron",
         "Passover in Jerusalem"
       ]
