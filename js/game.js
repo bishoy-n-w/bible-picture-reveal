@@ -110,6 +110,12 @@ class PictureRevealGame {
     this.dom.winRef = document.getElementById('win-ref');
     this.dom.winVerse = document.getElementById('win-verse');
     this.dom.winNextBtn = document.getElementById('win-next-btn');
+    this.dom.winImagePreview = document.getElementById('win-image-preview');
+    this.dom.winFallbackCanvas = document.getElementById('win-fallback-canvas');
+    this.dom.winCloseBtn = document.getElementById('win-close-btn');
+    this.dom.winViewBoardBtn = document.getElementById('win-view-board-btn');
+    this.dom.btnRestoreWinCard = document.getElementById('btn-restore-win-card');
+    this.dom.appVersionBadge = document.getElementById('app-version-badge');
 
     // Moderator Controls
     this.dom.btnReveal = document.getElementById('btn-reveal-full');
@@ -199,6 +205,17 @@ class PictureRevealGame {
       this.dom.btnReturnBoard.addEventListener('click', () => this.applyOutcomeAndReturnToBoard());
     }
 
+    // Win Overlay Close & View Board Minimization
+    if (this.dom.winCloseBtn) {
+      this.dom.winCloseBtn.addEventListener('click', () => this.minimizeWinCardToBoard());
+    }
+    if (this.dom.winViewBoardBtn) {
+      this.dom.winViewBoardBtn.addEventListener('click', () => this.minimizeWinCardToBoard());
+    }
+    if (this.dom.btnRestoreWinCard) {
+      this.dom.btnRestoreWinCard.addEventListener('click', () => this.restoreWinCard());
+    }
+
     // Scene Selector Jump (Number Only)
     if (this.dom.selectScene) {
       this.dom.selectScene.addEventListener('change', (e) => {
@@ -272,6 +289,13 @@ class PictureRevealGame {
     // 7. If Win Overlay is active, re-render
     if (this.dom.winOverlay && this.dom.winOverlay.classList.contains('active') && this.currentImage) {
       this.renderWinContent();
+    }
+
+    // 8. Update version display across all badges
+    if (window.APP_VERSION) {
+      document.querySelectorAll('#app-version-badge, #welcome-version-badge, #floating-version-badge').forEach(el => {
+        el.textContent = window.APP_VERSION;
+      });
     }
   }
 
@@ -419,6 +443,7 @@ class PictureRevealGame {
   setupRoundUI() {
     this.dom.winOverlay.classList.remove('active');
     this.dom.questionScreen.classList.remove('active');
+    if (this.dom.btnRestoreWinCard) this.dom.btnRestoreWinCard.classList.remove('active');
 
     if (this.dom.roundDisplay) {
       this.dom.roundDisplay.textContent = this.currentImage.id;
@@ -450,6 +475,7 @@ class PictureRevealGame {
     this.tileStates = Array(9).fill('covered');
     this.dom.winOverlay.classList.remove('active');
     this.dom.questionScreen.classList.remove('active');
+    if (this.dom.btnRestoreWinCard) this.dom.btnRestoreWinCard.classList.remove('active');
     this.renderGrid();
   }
 
@@ -827,18 +853,54 @@ class PictureRevealGame {
   }
 
   renderWinContent() {
+    if (!this.currentImage) return;
+
     if (this.dom.winTitle) {
       this.dom.winTitle.innerHTML = window.i18n ? window.i18n.formatField(this.currentImage.correct_answer) : this.currentImage.correct_answer.ar;
     }
     if (this.dom.winRef) {
-      const refLabel = window.i18n ? window.i18n.t('referenceLabel') : 'المرجع:';
-      const refHtml = window.i18n ? window.i18n.formatField(this.currentImage.reference) : this.currentImage.reference.ar;
-      this.dom.winRef.innerHTML = `(${refLabel} ${refHtml})`;
+      this.dom.winRef.innerHTML = window.i18n ? window.i18n.formatReference(this.currentImage.reference) : this.currentImage.reference.ar;
     }
     if (this.dom.winVerse) {
-      const verseHtml = window.i18n ? window.i18n.formatField(this.currentImage.verse_text) : this.currentImage.verse_text.ar;
-      this.dom.winVerse.innerHTML = `«${verseHtml}»`;
+      this.dom.winVerse.innerHTML = window.i18n ? window.i18n.formatVerse(this.currentImage.verse_text) : `«${this.currentImage.verse_text.ar}»`;
     }
+
+    // Synchronize image preview with the revealed board image or canvas
+    if (this.dom.winImagePreview) {
+      const bgImg = this.dom.bgImage;
+      const canvas = this.dom.fallbackCanvas;
+
+      if (bgImg && bgImg.style.display !== 'none' && bgImg.src) {
+        this.dom.winImagePreview.src = bgImg.src;
+        this.dom.winImagePreview.style.display = 'block';
+        if (this.dom.winFallbackCanvas) this.dom.winFallbackCanvas.style.display = 'none';
+      } else if (canvas && canvas.style.display !== 'none') {
+        if (this.dom.winFallbackCanvas) {
+          const wCtx = this.dom.winFallbackCanvas.getContext('2d');
+          this.dom.winFallbackCanvas.width = canvas.width;
+          this.dom.winFallbackCanvas.height = canvas.height;
+          wCtx.drawImage(canvas, 0, 0);
+          this.dom.winFallbackCanvas.style.display = 'block';
+        }
+        this.dom.winImagePreview.style.display = 'none';
+      } else {
+        this.dom.winImagePreview.src = this.currentImage.image_url;
+        this.dom.winImagePreview.style.display = 'block';
+        if (this.dom.winFallbackCanvas) this.dom.winFallbackCanvas.style.display = 'none';
+      }
+    }
+  }
+
+  minimizeWinCardToBoard() {
+    if (window.soundEngine) window.soundEngine.playClick();
+    if (this.dom.winOverlay) this.dom.winOverlay.classList.remove('active');
+    if (this.dom.btnRestoreWinCard) this.dom.btnRestoreWinCard.classList.add('active');
+  }
+
+  restoreWinCard() {
+    if (window.soundEngine) window.soundEngine.playClick();
+    if (this.dom.btnRestoreWinCard) this.dom.btnRestoreWinCard.classList.remove('active');
+    if (this.dom.winOverlay) this.dom.winOverlay.classList.add('active');
   }
 
   /* ==========================================================================
@@ -881,11 +943,16 @@ class PictureRevealGame {
 
     // If Win Overlay is active:
     if (this.dom.winOverlay.classList.contains('active')) {
-      if (e.key === 'Enter' || e.key === ' ' || e.key === 'n' || e.key === 'N') {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'n' || e.key === 'N' || e.key === 'ى') {
         e.preventDefault();
         this.loadNextImage();
+        return;
       }
-      return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        this.minimizeWinCardToBoard();
+        return;
+      }
     }
 
     // 1-9: Select Tile 1 to 9 directly

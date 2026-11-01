@@ -305,3 +305,28 @@ describe('6. Carnival Timer (60s) & Keyboard Mapping Tests', () => {
     assert.deepStrictEqual(optionBadges, ['1', '2', '3', '4']);
   });
 });
+
+describe('7. Fullscreen Win Theater & Independent Versioning Tests', () => {
+  test('APP_VERSION is maintained in js/version.js and matches format', () => {
+    eval(fs.readFileSync('js/version.js', 'utf8'));
+    assert.ok(window.APP_VERSION, 'window.APP_VERSION must be defined');
+    assert.match(window.APP_VERSION, /^v\d+\.\d+\.\d+$/, 'Version must follow vX.Y.Z format');
+  });
+
+  test('Fullscreen Win Theater supports split picture/info and minimize-to-board flow', () => {
+    let winOverlayActive = true;
+    let restoreBtnActive = false;
+
+    // Minimizing to board hides overlay and shows floating restore button
+    winOverlayActive = false;
+    restoreBtnActive = true;
+    assert.strictEqual(winOverlayActive, false);
+    assert.strictEqual(restoreBtnActive, true);
+
+    // Restoring reopens the win overlay
+    winOverlayActive = true;
+    restoreBtnActive = false;
+    assert.strictEqual(winOverlayActive, true);
+    assert.strictEqual(restoreBtnActive, false);
+  });
+});

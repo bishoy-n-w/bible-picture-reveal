@@ -10,6 +10,7 @@ console.log('🔍 Running project linter and sanity check...');
 
 // 1. Validate JS syntax with node -c
 const jsFiles = [
+  'js/version.js',
   'js/i18n.js',
   'js/images-bank.js',
   'js/questions-bank.js',

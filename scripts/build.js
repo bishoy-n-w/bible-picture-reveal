@@ -11,6 +11,7 @@ const distDir = path.join(__dirname, '..');
 const requiredFiles = [
   'index.html',
   'css/style.css',
+  'js/version.js',
   'js/i18n.js',
   'js/images-bank.js',
   'js/questions-bank.js',

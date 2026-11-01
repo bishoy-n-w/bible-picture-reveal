@@ -35,6 +35,7 @@
           <button class="lang-toggle-btn" data-lang="ar">العربية</button>
           <button class="lang-toggle-btn" data-lang="en">English</button>
         </div>
+        <span class="welcome-version-pill" id="welcome-version-badge">v4.8.0</span>
       </div>
 
       <div class="welcome-crest">
@@ -123,6 +124,9 @@
         <button id="btn-fullscreen" class="mod-btn-icon" title="ملء الشاشة">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
         </button>
+
+        <!-- Version Pill on Header Side -->
+        <span class="app-version-pill" id="app-version-badge">v4.8.0</span>
       </div>
     </header>
 
@@ -145,27 +149,13 @@
         <div id="grid-layer" class="grid-layer">
           <!-- 9 Tiles dynamically rendered by game.js -->
         </div>
-
-        <!-- Grand Win Overlay -->
-        <div id="win-overlay" class="win-overlay">
-          <div class="win-card">
-            <div class="win-emblem" data-i18n="winEmblem">✦ تم كشف المشهد بنجاح ✦</div>
-            <h2 id="win-title" class="win-event-title">عنوان المشهد</h2>
-            <span id="win-ref" class="win-reference-badge">(الشاهد الكتابي)</span>
-            <div id="win-verse" class="win-verse-quote">«نص الآية المباركة»</div>
-
-            <div class="win-action-row">
-              <button id="win-next-btn" class="mod-btn btn-reveal">
-                <span data-i18n="nextScene">المشهد التالي (مفتاح N)</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-              <button id="win-home-btn" class="mod-btn btn-subtle">
-                <span data-i18n="returnHome">العودة للرئيسية 🏠</span>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <!-- Floating Button to Reopen Win Scripture Card if minimized to board -->
+      <button id="btn-restore-win-card" class="btn-restore-win-card" title="إظهار بطاقة الشاهد والآية">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span data-i18n="restoreWinCard">إظهار بطاقة الآية والشاهد 📜</span>
+      </button>
     </main>
 
     <!-- Fullscreen Servant Question Screen (No Auto-Dismiss, Full Verse Display) -->
@@ -277,7 +267,62 @@
     </footer>
   </section>
 
+  <!-- ==========================================================================
+       GRAND FULLSCREEN WIN THEATER (SPLIT-SCREEN PICTURE & SCRIPTURE REVEAL)
+       ========================================================================== -->
+  <div id="win-overlay" class="win-overlay">
+    <div class="win-theater-stage">
+      <div class="win-card win-split-card">
+        <!-- Close / Minimize to Board Button -->
+        <button id="win-close-btn" class="win-close-btn" title="معاينة اللوحة منفردة (Escape)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <!-- Column 1: Full Revealed High-Resolution Picture View -->
+        <div class="win-image-column">
+          <div class="win-image-frame">
+            <img id="win-image-preview" class="win-image-preview" src="" alt="المشهد الكتابي المكتمل">
+            <canvas id="win-fallback-canvas" class="win-fallback-canvas"></canvas>
+            <div class="win-image-badge" data-i18n="winImageBadge">✦ المشهد المكتمل ✦</div>
+          </div>
+        </div>
+
+        <!-- Column 2: Sacred Scripture & Answer Revelation Details -->
+        <div class="win-info-column">
+          <div class="win-emblem" data-i18n="winEmblem">✦ تم كشف المشهد بنجاح ✦</div>
+          
+          <div class="win-answer-box">
+            <h2 id="win-title" class="win-event-title">عنوان المشهد</h2>
+          </div>
+
+          <div id="win-ref" class="win-reference-badge">الشاهد الكتابي</div>
+          
+          <div class="win-verse-container">
+            <div id="win-verse" class="win-verse-quote">نص الآية المباركة</div>
+          </div>
+
+          <div class="win-action-row">
+            <button id="win-next-btn" class="mod-btn btn-reveal">
+              <span data-i18n="nextScene">صورة جديدة (مفتاح N)</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <button id="win-view-board-btn" class="mod-btn btn-subtle" title="معاينة اللوحة كاملة">
+              <span data-i18n="viewBoard">عرض اللوحة 👁️</span>
+            </button>
+            <button id="win-home-btn" class="mod-btn btn-subtle">
+              <span data-i18n="returnHome">العودة للرئيسية 🏠</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Version Tag on Bottom-Left Corner -->
+  <div class="floating-version-badge" id="floating-version-badge">v4.8.0</div>
+
   <!-- Script Modules in Order -->
+  <script src="js/version.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/images-bank.js"></script>
   <script src="js/questions-bank.js"></script>
