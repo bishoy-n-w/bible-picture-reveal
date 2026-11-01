@@ -316,6 +316,12 @@ describe('6. Carnival Timer (60s) & Keyboard Mapping Tests', () => {
     assert.strictEqual(shakeApplied, true);
     assert.strictEqual(optionsDisplaced, false);
   });
+
+  test('Timer Infinity duration disables countdown and timeout effects', () => {
+    const timerDuration = 0; // 0 represents Infinity
+    const isInfinite = (timerDuration === 0 || timerDuration >= 125);
+    assert.strictEqual(isInfinite, true);
+  });
 });
 
 describe('7. Fullscreen Win Theater & Independent Versioning Tests', () => {

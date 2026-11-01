@@ -885,23 +885,33 @@ body.english-only-mode {
 
 .header-mini-popover {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 6px);
   left: 50%;
-  transform: translateX(-50%) translateY(-6px);
+  transform: translateX(-50%) translateY(-4px);
   background: rgba(14, 20, 32, 0.98);
   border: 1.5px solid var(--gold-bright);
   border-radius: var(--radius-md);
-  padding: 10px 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--gold-glow);
+  padding: 12px 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.95), 0 0 25px var(--gold-glow);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  min-width: 175px;
-  z-index: 100;
-  backdrop-filter: blur(12px);
+  gap: 10px;
+  min-width: 210px;
+  z-index: 350;
+  backdrop-filter: blur(14px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Invisible hit bridge so mouse can travel smoothly across the gap without losing hover */
+.header-mini-popover::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 
 .header-popover-wrapper:hover .header-mini-popover,
@@ -919,7 +929,7 @@ body.english-only-mode {
 }
 
 .popover-label-text {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: #cbd5e1;
   white-space: nowrap;
@@ -935,6 +945,55 @@ body.english-only-mode {
   border-radius: 12px;
   border: 1px solid rgba(212, 175, 55, 0.35);
   white-space: nowrap;
+}
+
+.popover-close-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.popover-close-btn:hover {
+  color: var(--gold-bright);
+}
+
+.popover-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.popover-pill-btn {
+  flex: 1;
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: #182234;
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+.popover-pill-btn:hover, .popover-pill-btn.active {
+  background: var(--gold-foil);
+  color: #1a1200;
+  border-color: var(--gold-bright);
+}
+
+.altar-timer-badge.infinity {
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 12px var(--gold-glow);
 }
 
 /* Custom Mini Range Slider */

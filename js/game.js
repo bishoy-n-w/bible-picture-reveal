@@ -144,6 +144,17 @@ class PictureRevealGame {
     this.dom.inputVolumeSlider = document.getElementById('input-volume-slider');
     this.dom.volumeSliderVal = document.getElementById('volume-slider-val');
     this.dom.btnTimerSettings = document.getElementById('btn-timer-settings');
+    this.dom.btnVolumeSettings = document.getElementById('btn-volume-settings');
+    this.dom.volumeSettingsWrapper = document.getElementById('volume-settings-wrapper');
+    this.dom.timerSettingsWrapper = document.getElementById('timer-settings-wrapper');
+    this.dom.btnCloseVolumePopover = document.getElementById('btn-close-volume-popover');
+    this.dom.btnCloseTimerPopover = document.getElementById('btn-close-timer-popover');
+    this.dom.btnTimerInfinity = document.getElementById('btn-timer-infinity');
+    this.dom.btnTimer60s = document.getElementById('btn-timer-60s');
+    this.dom.btnTimer30s = document.getElementById('btn-timer-30s');
+    this.dom.btnVolPreset20 = document.getElementById('btn-vol-preset-20');
+    this.dom.btnVolPreset50 = document.getElementById('btn-vol-preset-50');
+    this.dom.btnVolPreset80 = document.getElementById('btn-vol-preset-80');
 
     // Moderator Controls
     this.dom.btnReveal = document.getElementById('btn-reveal-full');
@@ -226,59 +237,138 @@ class PictureRevealGame {
       this.dom.btnFullscreen.addEventListener('click', () => this.toggleFullscreen());
     }
 
-    // Question Timer Duration Slider
-    if (this.dom.inputTimerSlider) {
-      this.dom.inputTimerSlider.value = this.timerDuration;
-      const suffix = window.i18n ? window.i18n.t('secondsSuffix') : 'ثانية';
-      if (this.dom.timerSliderVal) this.dom.timerSliderVal.textContent = `${this.timerDuration} ${suffix}`;
-
-      this.dom.inputTimerSlider.addEventListener('input', (e) => {
-        this.timerDuration = parseInt(e.target.value, 10);
-        localStorage.setItem('picture_reveal_timer_duration', this.timerDuration);
-        if (this.dom.timerSliderVal) {
-          const sfx = window.i18n ? window.i18n.t('secondsSuffix') : 'ثانية';
-          this.dom.timerSliderVal.textContent = `${this.timerDuration} ${sfx}`;
-        }
+    // Toggle Volume Settings Popover (Click / Touch)
+    if (this.dom.btnVolumeSettings && this.dom.volumeSettingsWrapper) {
+      this.dom.btnVolumeSettings.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.dom.timerSettingsWrapper) this.dom.timerSettingsWrapper.classList.remove('active');
+        this.dom.volumeSettingsWrapper.classList.toggle('active');
       });
     }
 
-    // Music Volume Slider
-    if (this.dom.inputVolumeSlider && window.soundEngine) {
-      const initialVol = Math.round(window.soundEngine.getGameVolume() * 100);
-      this.dom.inputVolumeSlider.value = initialVol;
-      if (this.dom.volumeSliderVal) this.dom.volumeSliderVal.textContent = `${initialVol}%`;
-
-      this.dom.inputVolumeSlider.addEventListener('input', (e) => {
-        const pct = parseInt(e.target.value, 10);
-        const vol = pct / 100;
-        window.soundEngine.setGameVolume(vol);
-        if (this.dom.volumeSliderVal) this.dom.volumeSliderVal.textContent = `${pct}%`;
+    // Toggle Timer Settings Popover (Click / Touch)
+    if (this.dom.btnTimerSettings && this.dom.timerSettingsWrapper) {
+      this.dom.btnTimerSettings.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.dom.volumeSettingsWrapper) this.dom.volumeSettingsWrapper.classList.remove('active');
+        this.dom.timerSettingsWrapper.classList.toggle('active');
       });
     }
 
-    // Quick Settings Popovers (Click / Touch Toggle)
-    const popoverWrappers = [
-      { id: 'timer-settings-wrapper', btn: '#btn-timer-settings' },
-      { id: 'audio-settings-wrapper', btn: '#btn-toggle-audio' }
-    ];
-    popoverWrappers.forEach(({ id, btn }) => {
-      const wrapper = document.getElementById(id);
-      if (wrapper) {
-        const buttonEl = wrapper.querySelector(btn);
-        if (buttonEl && btn === '#btn-timer-settings') {
-          buttonEl.addEventListener('click', (e) => {
-            e.stopPropagation();
-            wrapper.classList.toggle('active');
-          });
-        }
-      }
+    // Close buttons on popovers
+    if (this.dom.btnCloseVolumePopover && this.dom.volumeSettingsWrapper) {
+      this.dom.btnCloseVolumePopover.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.dom.volumeSettingsWrapper.classList.remove('active');
+      });
+    }
+    if (this.dom.btnCloseTimerPopover && this.dom.timerSettingsWrapper) {
+      this.dom.btnCloseTimerPopover.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.dom.timerSettingsWrapper.classList.remove('active');
+      });
+    }
+
+    // Prevent clicks inside popovers from bubbling to document and closing
+    document.querySelectorAll('.header-mini-popover').forEach(el => {
+      el.addEventListener('click', (e) => e.stopPropagation());
     });
 
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.header-popover-wrapper')) {
-        document.querySelectorAll('.header-popover-wrapper').forEach(w => w.classList.remove('active'));
+        if (this.dom.volumeSettingsWrapper) this.dom.volumeSettingsWrapper.classList.remove('active');
+        if (this.dom.timerSettingsWrapper) this.dom.timerSettingsWrapper.classList.remove('active');
       }
     });
+
+    // Helper to update timer duration and text (Supports Infinity at 0 or >= 125)
+    const updateTimerDuration = (val) => {
+      if (val >= 125 || val === 0) {
+        this.timerDuration = 0; // 0 represents Infinity
+        if (this.dom.inputTimerSlider) this.dom.inputTimerSlider.value = 125;
+        if (this.dom.timerSliderVal) {
+          this.dom.timerSliderVal.textContent = window.i18n ? window.i18n.t('timerInfinite') : 'بدون وقت (∞)';
+        }
+      } else {
+        this.timerDuration = val;
+        if (this.dom.inputTimerSlider) this.dom.inputTimerSlider.value = val;
+        if (this.dom.timerSliderVal) {
+          const sfx = window.i18n ? window.i18n.t('secondsSuffix') : 'ثانية';
+          this.dom.timerSliderVal.textContent = `${val} ${sfx}`;
+        }
+      }
+      localStorage.setItem('picture_reveal_timer_duration', this.timerDuration);
+      if (this.dom.questionScreen && this.dom.questionScreen.classList.contains('active')) {
+        this.updateTimerDisplay();
+      }
+    };
+
+    // Initialize Timer Slider
+    if (this.dom.inputTimerSlider) {
+      updateTimerDuration(this.timerDuration);
+      this.dom.inputTimerSlider.addEventListener('input', (e) => {
+        updateTimerDuration(parseInt(e.target.value, 10));
+      });
+    }
+
+    // Timer Preset Buttons
+    if (this.dom.btnTimerInfinity) {
+      this.dom.btnTimerInfinity.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateTimerDuration(0);
+      });
+    }
+    if (this.dom.btnTimer60s) {
+      this.dom.btnTimer60s.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateTimerDuration(60);
+      });
+    }
+    if (this.dom.btnTimer30s) {
+      this.dom.btnTimer30s.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateTimerDuration(30);
+      });
+    }
+
+    // Helper to update volume
+    const updateVolume = (pct) => {
+      const vol = pct / 100;
+      if (window.soundEngine) {
+        window.soundEngine.setGameVolume(vol);
+      }
+      if (this.dom.inputVolumeSlider) this.dom.inputVolumeSlider.value = pct;
+      if (this.dom.volumeSliderVal) this.dom.volumeSliderVal.textContent = `${pct}%`;
+    };
+
+    // Initialize Volume Slider
+    if (this.dom.inputVolumeSlider && window.soundEngine) {
+      const initialVol = Math.round(window.soundEngine.getGameVolume() * 100);
+      updateVolume(initialVol);
+      this.dom.inputVolumeSlider.addEventListener('input', (e) => {
+        updateVolume(parseInt(e.target.value, 10));
+      });
+    }
+
+    // Volume Preset Buttons
+    if (this.dom.btnVolPreset20) {
+      this.dom.btnVolPreset20.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateVolume(20);
+      });
+    }
+    if (this.dom.btnVolPreset50) {
+      this.dom.btnVolPreset50.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateVolume(50);
+      });
+    }
+    if (this.dom.btnVolPreset80) {
+      this.dom.btnVolPreset80.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateVolume(80);
+      });
+    }
 
     // Question Screen Cancel/Close
     if (this.dom.modalCloseBtn) {
@@ -426,6 +516,17 @@ class PictureRevealGame {
      ========================================================================== */
   startQuestionTimer() {
     this.stopTimer();
+
+    // Check for Infinity / No Timeout (0 or >= 125)
+    if (this.timerDuration === 0 || this.timerDuration >= 125) {
+      this.timerRemaining = Infinity;
+      if (this.dom.altarTimerBadge) {
+        this.dom.altarTimerBadge.className = 'altar-timer-badge infinity';
+        this.dom.timerText.textContent = window.i18n ? window.i18n.t('timerInfinite') : 'بدون وقت (∞)';
+      }
+      return;
+    }
+
     this.timerRemaining = this.timerDuration;
     this.updateTimerDisplay();
 
@@ -468,7 +569,13 @@ class PictureRevealGame {
   updateTimerDisplay() {
     if (!this.dom.timerText || !this.dom.altarTimerBadge) return;
 
-    if (this.timerRemaining > 0) {
+    if (this.timerDuration === 0 || this.timerDuration >= 125) {
+      this.dom.altarTimerBadge.className = 'altar-timer-badge infinity';
+      this.dom.timerText.textContent = window.i18n ? window.i18n.t('timerInfinite') : 'بدون وقت (∞)';
+      return;
+    }
+
+    if (this.timerRemaining > 0 && this.timerRemaining !== Infinity) {
       if (window.i18n && window.i18n.isBilingual()) {
         this.dom.timerText.textContent = `${this.timerRemaining} ثانية / sec`;
       } else if (window.i18n && window.i18n.activeLanguages.length === 1 && window.i18n.activeLanguages[0] === 'en') {

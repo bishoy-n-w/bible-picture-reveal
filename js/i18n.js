@@ -73,11 +73,12 @@ class I18nEngine {
         langSelectorTitle: "اللغة / Language",
         volumeLabel: "مستوى الصوت:",
         timerSettingLabel: "وقت السؤال:",
+        timerInfinite: "بدون وقت (∞)",
         arabicLang: "العربية",
         englishLang: "English",
         bothLang: "كلاهما (Bilingual)"
-        },
-        en: {
+      },
+      en: {
         brandTitle: "Bible Picture Reveal",
         brandSubtitle: "Servants Scripture Challenge",
         welcomeTitle: "Bible Picture Reveal",
@@ -95,6 +96,7 @@ class I18nEngine {
         unmute: "Unmute",
         volumeLabel: "Volume:",
         timerSettingLabel: "Question Timer:",
+        timerInfinite: "Unlimited (∞)",
         fullscreen: "Fullscreen",
         revealFull: "Reveal Picture",
         nextScene: "Next Scene",
