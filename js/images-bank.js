@@ -292,7 +292,7 @@ window.PICS_DATA = [
       ar: "فَجَمَعَ بُولُسُ كَثِيرًا مِنَ الْقُضْبَانِ وَوَضَعَهَا عَلَى النَّارِ، فَخَرَجَتْ مِنَ الْحَرَارَةِ أَفْعَى وَنَشَبَتْ فِي يَدِهِ.",
       en: "But when Paul had gathered a bundle of sticks and laid them on the fire, a viper came out because of the heat, and fastened on his hand."
     },
-    prompt: "Extreme close up on a pile of wooden sticks being gathered near a burning campfire on a sandy beach, a venomous viper snake is suddenly emerging from the heat and biting the wrist of a man's hand, blurred ancient shipwreck in the background, dark stormy weather --ar 16:9"
+    prompt: "Extreme close up on a pile of wooden sticks being gathered near a burning campfire on a sandy beach, a venomous viper snake head is suddenly emerging from the heat, the wrist of a man's hand putting a stick into the fire, blurred ancient shipwreck in the background, dark stormy weather --ar 16:9"
   },
   {
     id: 18,
