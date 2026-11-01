@@ -20,7 +20,11 @@ global.document = {
       },
       contains(cls) { return this.classes.has(cls); }
     }
-  }
+  },
+  addEventListener() {},
+  removeEventListener() {},
+  getElementById() { return null; },
+  querySelectorAll() { return []; }
 };
 global.localStorage = {
   store: {},
@@ -32,6 +36,7 @@ global.localStorage = {
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'i18n.js'), 'utf8'));
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'images-bank.js'), 'utf8'));
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'questions-bank.js'), 'utf8'));
+eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'game.js'), 'utf8') + '; global.PictureRevealGame = PictureRevealGame;');
 
 describe('1. Multilingual i18n Engine Tests', () => {
   test('i18n initializes with Arabic by default and supports English & Bilingual', () => {
@@ -205,30 +210,29 @@ describe('3. Bilingual QUESTIONS_BANK Integrity Tests (300 Questions: Van Dyck &
   });
 });
 
-describe('4. 3x3 Grid Strategic Difficulty Mapping Tests (3-3-3 Layout)', () => {
-  const difficultyMap = {
-    0: 1, 1: 2, 2: 1,
-    3: 3, 4: 3, 5: 3,
-    6: 1, 7: 2, 8: 2
-  };
-
-  test('Exactly 3 Easy questions on 3 corners (Indices 0, 2, 6)', () => {
-    const easyTiles = Object.entries(difficultyMap).filter(([_, lvl]) => lvl === 1).map(([i]) => Number(i));
-    assert.strictEqual(easyTiles.length, 3);
-    assert.deepStrictEqual(easyTiles, [0, 2, 6]);
+describe('4. 3x3 Grid Dynamic Randomized Difficulty Allocation Tests', () => {
+  test('Dynamically allocates exactly 3 Level 1, 3 Level 2, and 3 Level 3 tiles (3-3-3 fair balance)', () => {
+    const game = new global.PictureRevealGame();
+    const map = game.generateRandomDifficultyMap();
+    const counts = { 1: 0, 2: 0, 3: 0 };
+    for (let i = 0; i < 9; i++) {
+      assert.ok([1, 2, 3].includes(map[i]), `Tile ${i} must have valid level 1, 2, or 3`);
+      counts[map[i]]++;
+    }
+    assert.strictEqual(counts[1], 3, 'Must have exactly 3 Level 1 tiles');
+    assert.strictEqual(counts[2], 3, 'Must have exactly 3 Level 2 tiles');
+    assert.strictEqual(counts[3], 3, 'Must have exactly 3 Level 3 tiles');
   });
 
-  test('Exactly 3 Medium questions on 1 edge and 2 sides (Indices 1, 7, 8)', () => {
-    const mediumTiles = Object.entries(difficultyMap).filter(([_, lvl]) => lvl === 2).map(([i]) => Number(i));
-    assert.strictEqual(mediumTiles.length, 3);
-    assert.deepStrictEqual(mediumTiles, [1, 7, 8]);
-  });
-
-  test('Exactly 3 Hard questions: 1 in center (Index 4) and 2 in sides (Indices 3, 5)', () => {
-    const hardTiles = Object.entries(difficultyMap).filter(([_, lvl]) => lvl === 3).map(([i]) => Number(i));
-    assert.strictEqual(hardTiles.length, 3);
-    assert.deepStrictEqual(hardTiles, [3, 4, 5]);
-    assert.strictEqual(difficultyMap[4], 3, 'Center tile must be Hard');
+  test('Allocation of levels to tiles is randomized across multiple rounds', () => {
+    const game = new global.PictureRevealGame();
+    const allocations = new Set();
+    for (let round = 0; round < 20; round++) {
+      const map = game.generateRandomDifficultyMap();
+      const key = Object.values(map).join('-');
+      allocations.add(key);
+    }
+    assert.ok(allocations.size > 1, 'Tile difficulty allocation must be randomized across rounds');
   });
 });
 

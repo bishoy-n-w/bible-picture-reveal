@@ -35,21 +35,9 @@ class PictureRevealGame {
     this.timerRemaining = this.timerDuration;
     this.timerInterval = null;
 
-    // 3x3 Difficulty Map (3-3-3 Layout):
-    // 3 Easy on 3 corners (0, 2, 6)
-    // 3 Medium: 1 on an edge (1) and 2 in sides (7, 8)
-    // 3 Hard: 1 in center (4) and 2 in sides (3, 5)
-    this.difficultyMap = {
-      0: 1, // Corner: Advanced (Hard)
-      1: 2, // Edge: Deep (Very Hard)
-      2: 1, // Corner: Advanced (Hard)
-      3: 3, // Side: Mastery (Extremely Hard)
-      4: 3, // Center: Mastery (Extremely Hard)
-      5: 3, // Side: Mastery (Extremely Hard)
-      6: 1, // Corner: Advanced (Hard)
-      7: 2, // Side: Deep (Very Hard)
-      8: 2  // Side: Deep (Very Hard)
-    };
+    // Dynamic 3x3 Difficulty Map (Randomized Fair 3-3-3 Allocation):
+    // Shuffles exactly 3 Level 1 (Advanced), 3 Level 2 (Deep), and 3 Level 3 (Mastery) tiles across the 9 positions
+    this.difficultyMap = this.generateRandomDifficultyMap();
 
     this.dom = {};
   }
@@ -594,6 +582,17 @@ class PictureRevealGame {
   /* ==========================================================================
      POOL MANAGEMENT & RANDOM SHUFFLING
      ========================================================================== */
+  generateRandomDifficultyMap() {
+    // Fair 3-3-3 distribution: 3 Level 1 (Advanced ✦), 3 Level 2 (Deep ✦✦), 3 Level 3 (Mastery ✦✦✦)
+    const baseLevels = [1, 1, 1, 2, 2, 2, 3, 3, 3];
+    const shuffled = this.shuffleArray(baseLevels);
+    const map = {};
+    for (let i = 0; i < 9; i++) {
+      map[i] = shuffled[i];
+    }
+    return map;
+  }
+
   shuffleArray(arr) {
     const copy = [...arr];
     for (let i = copy.length - 1; i > 0; i--) {
@@ -673,6 +672,9 @@ class PictureRevealGame {
       this.dom.selectScene.value = this.currentImage.id;
     }
 
+    // Dynamic fair 3-3-3 difficulty randomization for each new round
+    this.difficultyMap = this.generateRandomDifficultyMap();
+
     this.renderGrid();
     this.displayCurrentImage();
   }
@@ -687,6 +689,9 @@ class PictureRevealGame {
     this.dom.winOverlay.classList.remove('active');
     this.dom.questionScreen.classList.remove('active');
     if (this.dom.btnRestoreWinCard) this.dom.btnRestoreWinCard.classList.remove('active');
+
+    // Fresh randomized allocation on reset
+    this.difficultyMap = this.generateRandomDifficultyMap();
     this.renderGrid();
   }
 
