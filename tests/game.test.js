@@ -430,9 +430,9 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.10.0', () => {
+  test('Application version is updated to v5.11.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.10.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.11.0');
   });
 });
 
@@ -878,11 +878,48 @@ describe('17. Question Screen Revelation & Landscape Safety Tests', () => {
     i18n.setMode('both');
     const cap = i18n.t('correctAnswerCaption');
     assert.ok(cap.includes('dir="ltr"'), 'English caption must have dir="ltr"');
-    assert.ok(cap.includes('Correct Answer:'), 'Colon must be inside LTR container');
+    assert.ok(cap.includes('Correct Answer'), 'English caption must contain Correct Answer');
   });
 
   test('Landscape mode rules are preserved and altar-options-grid remains 2-column in landscape', () => {
     const css = fs.readFileSync('css/style.css', 'utf8');
     assert.ok(/altar-options-grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*1fr\)\s*!important;/.test(css), 'Mobile landscape must keep 2-column options');
+  });
+});
+
+describe('18. Scripture Citation BiDi Isolation & Revelation Cleanliness Tests', () => {
+  test('formatReferenceItem isolates chapter and verse in LTR and connects book prefix', () => {
+    const i18n = window.i18n;
+    const formatted = i18n.formatReferenceItem('2 صموئيل 12: 7', true);
+    assert.ok(formatted.includes('<bdi class="ref-cv" dir="ltr">12:7</bdi>'), 'Chapter:verse must be isolated in LTR');
+    assert.ok(formatted.includes('2\u00A0صموئيل'), 'Book number must connect with non-breaking space');
+  });
+
+  test('formatVerse strips redundant pre-existing outer quotes', () => {
+    const i18n = window.i18n;
+    i18n.setMode('both');
+    const input = {
+      ar: '«فَقَالَ نَاثَانُ لِدَاوُدَ: «أَنْتَ هُوَ الرَّجُلُ!...».»',
+      en: '“Then Nathan said to David: “You are the man!””'
+    };
+    const rendered = i18n.formatVerse(input);
+    assert.ok(!rendered.includes('««'), 'Must not produce double opening guillemets');
+    assert.ok(!rendered.includes('»»'), 'Must not produce double closing guillemets');
+  });
+
+  test('correctStatus and incorrectStatus do not produce trailing orphaned symbols', () => {
+    const i18n = window.i18n;
+    i18n.setMode('both');
+    const correct = i18n.t('correctStatus');
+    const incorrect = i18n.t('incorrectStatus');
+    assert.ok(!correct.includes('أحسنت ✦'), 'Must not have trailing star after text');
+    assert.ok(!incorrect.includes('صحيحة! ✕'), 'Must not have trailing X after text');
+  });
+
+  test('continueToBoard does not contain literal arrow character', () => {
+    const i18n = window.i18n;
+    i18n.setMode('both');
+    const btnText = i18n.t('continueToBoard');
+    assert.ok(!btnText.includes('➔'), 'Text must not contain literal arrow to avoid duplication with SVG');
   });
 });

@@ -1,8 +1,8 @@
 # أسرار ألواح الهيكل | مسابقة كشف الصورة الكتابية
-### Temple Codex Edition — Bilingual Servants Bible Picture Reveal (v5.10.0)
+### Temple Codex Edition — Bilingual Servants Bible Picture Reveal (v5.11.0)
 
-[![Tests](https://img.shields.io/badge/tests-70%20passed-success)](tests/game.test.js)
-[![Version](https://img.shields.io/badge/version-v5.10.0-gold)](js/version.js)
+[![Tests](https://img.shields.io/badge/tests-74%20passed-success)](tests/game.test.js)
+[![Version](https://img.shields.io/badge/version-v5.11.0-gold)](js/version.js)
 [![Architecture](https://img.shields.io/badge/architecture-offline--first-blue)](ARCHITECTURE.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](package.json)
 
@@ -98,7 +98,7 @@ flowchart TD
 
 ## 🧪 ضمان الجودة والاختبارات الآلية (Quality Assurance)
 
-المشروع مزود بجناح اختبارات متكامل وموثق يضم **70 اختباراً آلياً** موزعة عبر 17 جناحاً:
+المشروع مزود بجناح اختبارات متكامل وموثق يضم **74 اختباراً آلياً** موزعة عبر 18 جناحاً:
 
 ```bash
 # تشغيل جناح الاختبارات الآلية الشاملة

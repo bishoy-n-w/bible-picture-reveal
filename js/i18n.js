@@ -213,12 +213,12 @@ class I18nEngine {
       if (key === 'startChallenge') return 'ابدأ التحدي الآن • Start Challenge';
       if (key === 'sceneBadgeLabel') return 'المشهد / Scene:';
       if (key === 'correctStatus') {
-        return '<div class="rev-status-ar" dir="rtl">✦ إجابة صحيحة! أحسنت ✦</div><div class="rev-status-en" dir="ltr">✦ Correct Answer! Well Done ✦</div>';
+        return '<div class="rev-status-ar" dir="rtl">✦ إجابة صحيحة! أحسنت</div><div class="rev-status-en" dir="ltr">✦ Correct Answer! Well Done</div>';
       }
       if (key === 'incorrectStatus') {
-        return '<div class="rev-status-ar" dir="rtl">✕ إجابة غير صحيحة! ✕</div><div class="rev-status-en" dir="ltr">✕ Incorrect Answer! ✕</div>';
+        return '<div class="rev-status-ar" dir="rtl">✕ إجابة غير صحيحة!</div><div class="rev-status-en" dir="ltr">✕ Incorrect Answer!</div>';
       }
-      if (key === 'correctAnswerCaption') return '<span class="cap-ar" dir="rtl">الإجابة الصحيحة:</span> • <span class="cap-en" dir="ltr">Correct Answer:</span>';
+      if (key === 'correctAnswerCaption') return '<span class="cap-ar" dir="rtl">الإجابة الصحيحة</span> • <span class="cap-en" dir="ltr">Correct Answer</span>';
       if (key === 'referenceLabel') return '<span class="ref-ar" dir="rtl">الشاهد:</span> • <span class="ref-en" dir="ltr">Reference:</span>';
       if (key === 'brandTitle') return 'كشف الصورة الكتابية';
       if (key === 'brandSubtitle') return 'Bible Picture Reveal • مسابقة الخدام';
@@ -226,7 +226,7 @@ class I18nEngine {
       if (key === 'revealFull') return 'كشف الصورة • Reveal';
       if (key === 'nextScene') return 'صورة جديدة • Next';
       if (key === 'resetGrid') return 'إعادة المربعات • Reset';
-      if (key === 'continueToBoard') return 'متابعة إلى لوحة الصورة • Continue ➔';
+      if (key === 'continueToBoard') return 'متابعة إلى لوحة الصورة • Continue';
 
       const arStr = (this.strings.ar && this.strings.ar[key]) || key;
       const enStr = (this.strings.en && this.strings.en[key]) || key;
@@ -265,8 +265,12 @@ class I18nEngine {
   // Format scripture verse with clean, isolated quotes per language (NO broken quotes!)
   formatVerse(verseObj) {
     if (!verseObj) return '';
-    const textAr = typeof verseObj === 'object' ? verseObj.ar : verseObj;
-    const textEn = typeof verseObj === 'object' ? verseObj.en : '';
+    let textAr = typeof verseObj === 'object' ? (verseObj.ar || '') : String(verseObj);
+    let textEn = typeof verseObj === 'object' ? (verseObj.en || '') : '';
+
+    // Strip pre-existing surrounding quotation marks to prevent ««...»» or ““...”” duplication
+    textAr = textAr.trim().replace(/^[«"'\s]+/, '').replace(/[»"'\s\.]*»+[\s\.]*$/, '').trim();
+    textEn = textEn.trim().replace(/^[“"'\s]+/, '').replace(/[”"'\s\.]*”+[\s\.]*$/, '').trim();
 
     if (this.isBilingual() && textAr && textEn) {
       return `
@@ -284,6 +288,17 @@ class I18nEngine {
     return `<div class="verse-text-ar" dir="rtl">«${textAr || textEn}»</div>`;
   }
 
+  // Format individual reference string with non-breaking book prefixes and isolated numbers
+  formatReferenceItem(refStr, isAr) {
+    if (!refStr) return '';
+    let str = String(refStr).trim();
+    // Connect leading book numbers with non-breaking space (e.g., "2 صموئيل" -> "2\u00A0صموئيل", "1 Samuel" -> "1\u00A0Samuel")
+    str = str.replace(/^([1-3])\s+([^\d]+)/, '$1\u00A0$2');
+    // Isolate chapter and verse cleanly in LTR (e.g., "12: 7" or "14: 21-22")
+    str = str.replace(/(\d+)\s*:\s*(\d+[\d\s\-\u2013]*)/g, '<bdi class="ref-cv" dir="ltr">$1:$2</bdi>');
+    return str;
+  }
+
   // Format scripture reference badge cleanly (NO stray parenthesis wrapping!)
   formatReference(refObj) {
     if (!refObj) return '';
@@ -293,18 +308,18 @@ class I18nEngine {
     if (this.isBilingual() && refAr && refEn) {
       return `
         <div class="bilingual-reference-display">
-          <span class="ref-item-ar" dir="rtl">${refAr}</span>
+          <span class="ref-item-ar" dir="rtl">${this.formatReferenceItem(refAr, true)}</span>
           <span class="ref-item-sep">•</span>
-          <span class="ref-item-en" dir="ltr">${refEn}</span>
+          <span class="ref-item-en" dir="ltr">${this.formatReferenceItem(refEn, false)}</span>
         </div>
       `;
     }
 
     if (this.activeLanguages.length === 1 && this.activeLanguages[0] === 'en' && refEn) {
-      return `<span class="ref-item-en" dir="ltr">${refEn}</span>`;
+      return `<span class="ref-item-en" dir="ltr">${this.formatReferenceItem(refEn, false)}</span>`;
     }
 
-    return `<span class="ref-item-ar" dir="rtl">${refAr || refEn}</span>`;
+    return `<span class="ref-item-ar" dir="rtl">${this.formatReferenceItem(refAr || refEn, true)}</span>`;
   }
 
   // Extract clean plain text for tooltips / canvas
