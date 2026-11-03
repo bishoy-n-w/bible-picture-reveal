@@ -83,7 +83,10 @@ class AttractorEngine {
       this.animationFrame = null;
     }
     if (this.ctx && this.canvas) {
-      this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      this.ctx.save();
+      this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.restore();
     }
   }
 

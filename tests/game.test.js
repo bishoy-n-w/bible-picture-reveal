@@ -402,8 +402,52 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.4.0', () => {
+  test('Application version is updated to v5.5.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.4.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.5.0');
+  });
+});
+
+describe('10. Phase 2 Deep Code Review & Bug Hardening Tests', () => {
+  test('Asynchronous image loading sequence tracking prevents race conditions', () => {
+    const gameJsContent = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJsContent.includes('this.imageLoadSequence = 0;'), 'Must initialize imageLoadSequence');
+    assert.ok(gameJsContent.includes('const currentSequence = ++this.imageLoadSequence;'), 'Must increment sequence on displayCurrentImage');
+    assert.ok(gameJsContent.includes('if (currentSequence !== this.imageLoadSequence) return;'), 'Must guard in-flight image callbacks');
+  });
+
+  test('Keyboard handler protects active input, select, and textarea elements', () => {
+    const gameJsContent = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJsContent.includes('activeEl.tagName'), 'Must inspect activeElement tag');
+    assert.ok(gameJsContent.includes("tag === 'input' || tag === 'select' || tag === 'textarea'"), 'Must guard input, select, and textarea');
+  });
+
+  test('Closing question screen commits pending outcomes to prevent bypassing penalties', () => {
+    const gameJsContent = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJsContent.includes('if (this.pendingOutcome) {'), 'Must check pendingOutcome in closeQuestionAltar');
+    assert.ok(gameJsContent.includes('this.applyOutcomeAndReturnToBoard();'), 'Must commit outcome on altar close if answered');
+  });
+
+  test('Countdown timer uses wall-clock timestamp delta calculation to prevent throttle drift', () => {
+    const gameJsContent = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJsContent.includes('this.timerEndTime = Date.now()'), 'Must record timerEndTime');
+    assert.ok(gameJsContent.includes('const remainingMs = this.timerEndTime - Date.now();'), 'Must compute delta from timestamp');
+    assert.ok(gameJsContent.includes('Math.ceil(remainingMs / 1000)'), 'Must convert remaining ms to whole seconds');
+  });
+
+  test('Pool extractors provide defensive fallbacks on empty or exhausted data sets', () => {
+    const gameJsContent = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJsContent.includes('getNextQuestionFromPool(level)'), 'getNextQuestionFromPool method exists');
+    assert.ok(gameJsContent.includes('id: 999'), 'Must contain defensive fallback question');
+  });
+
+  test('Audio engine manages fade intervals and cancels prior fades on stop', () => {
+    const audioJsContent = fs.readFileSync('js/audio.js', 'utf8');
+    assert.ok(audioJsContent.includes('clearInterval(this.fadeInterval);'), 'Must clear pending fade interval');
+  });
+
+  test('Attractor visual engine resets context transform before clearing backing canvas', () => {
+    const attractorJsContent = fs.readFileSync('js/attractor.js', 'utf8');
+    assert.ok(attractorJsContent.includes('this.ctx.setTransform(1, 0, 0, 1, 0, 0);'), 'Must reset transform matrix on stop');
   });
 });

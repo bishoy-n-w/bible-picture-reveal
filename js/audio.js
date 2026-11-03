@@ -172,13 +172,18 @@ class SoundEngine {
     this.isAmbienceActive = false;
     if (this.bgAudio) {
       try {
+        if (this.fadeInterval) {
+          clearInterval(this.fadeInterval);
+          this.fadeInterval = null;
+        }
         const audio = this.bgAudio;
         const fadeStep = 0.05;
-        const fadeInterval = setInterval(() => {
+        this.fadeInterval = setInterval(() => {
           if (audio.volume > fadeStep) {
             audio.volume = Math.max(0, audio.volume - fadeStep);
           } else {
-            clearInterval(fadeInterval);
+            clearInterval(this.fadeInterval);
+            this.fadeInterval = null;
             audio.pause();
             audio.currentTime = 0;
             audio.volume = this.muted ? 0 : this.welcomeVolume;

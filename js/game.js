@@ -34,6 +34,10 @@ class PictureRevealGame {
     this.timerDuration = parseInt(localStorage.getItem('picture_reveal_timer_duration'), 10) || 60;
     this.timerRemaining = this.timerDuration;
     this.timerInterval = null;
+    this.timerEndTime = null;
+
+    // Asynchronous image loading guard
+    this.imageLoadSequence = 0;
 
     // Dynamic 3x3 Difficulty Map (Randomized Fair 3-3-3 Allocation):
     // Shuffles exactly 3 Level 1 (Advanced), 3 Level 2 (Deep), and 3 Level 3 (Mastery) tiles across the 9 positions
@@ -516,17 +520,25 @@ class PictureRevealGame {
     }
 
     this.timerRemaining = this.timerDuration;
+    this.timerEndTime = Date.now() + (this.timerDuration * 1000);
     this.updateTimerDisplay();
 
     this.timerInterval = setInterval(() => {
-      this.timerRemaining--;
-      this.updateTimerDisplay();
+      const remainingMs = this.timerEndTime - Date.now();
+      const newRemaining = Math.max(0, Math.ceil(remainingMs / 1000));
 
-      // Audio ticks
-      if (this.timerRemaining > 0) {
-        const isUrgent = this.timerRemaining <= 5;
-        if (window.soundEngine) window.soundEngine.playTick(isUrgent);
-      } else {
+      if (newRemaining !== this.timerRemaining) {
+        this.timerRemaining = newRemaining;
+        this.updateTimerDisplay();
+
+        // Audio ticks
+        if (this.timerRemaining > 0) {
+          const isUrgent = this.timerRemaining <= 5;
+          if (window.soundEngine) window.soundEngine.playTick(isUrgent);
+        }
+      }
+
+      if (this.timerRemaining <= 0) {
         // Timed out: show alert, play timeout gong, but DO NOT dismiss the question!
         this.stopTimer();
         if (window.soundEngine) window.soundEngine.playTimeout();
@@ -544,7 +556,7 @@ class PictureRevealGame {
           this.dom.qscreenContainer.classList.add('timed-out-shake');
         }
       }
-    }, 1000);
+    }, 250);
   }
 
   stopTimer() {
@@ -552,6 +564,7 @@ class PictureRevealGame {
       clearInterval(this.timerInterval);
       this.timerInterval = null;
     }
+    this.timerEndTime = null;
   }
 
   updateTimerDisplay() {
@@ -604,7 +617,7 @@ class PictureRevealGame {
 
   getNextImageFromPool() {
     if (this.imagePool.length === 0) {
-      this.imagePool = this.shuffleArray(this.picsBank);
+      this.imagePool = this.shuffleArray(this.picsBank.length > 0 ? this.picsBank : [{ id: 1, image_url: 'assets/img1.jpg', correct_answer: { ar: 'مشهد كتابي', en: 'Biblical Scene' }, reference: { ar: '', en: '' }, verse_text: { ar: '', en: '' } }]);
     }
     return this.imagePool.pop();
   }
@@ -612,9 +625,21 @@ class PictureRevealGame {
   getNextQuestionFromPool(level) {
     if (!this.questionPools[level] || this.questionPools[level].length === 0) {
       const tierQuestions = this.questionsBank.filter(q => q.level === level);
-      this.questionPools[level] = this.shuffleArray(tierQuestions);
+      this.questionPools[level] = this.shuffleArray(tierQuestions.length > 0 ? tierQuestions : this.questionsBank);
     }
-    return this.questionPools[level].pop();
+    const picked = this.questionPools[level].pop();
+    if (!picked) {
+      return this.questionsBank[0] || {
+        id: 999,
+        level: level || 1,
+        question: { ar: 'سؤال كتابي', en: 'Biblical Question' },
+        options: { ar: ['أ', 'ب', 'ج', 'د'], en: ['A', 'B', 'C', 'D'] },
+        correctIndex: 0,
+        reference: { ar: '', en: '' },
+        verse: { ar: '', en: '' }
+      };
+    }
+    return picked;
   }
 
   /* ==========================================================================
@@ -698,7 +723,9 @@ class PictureRevealGame {
   displayCurrentImage() {
     const img = this.dom.bgImage;
     const canvas = this.dom.fallbackCanvas;
+    if (!img || !canvas || !this.currentImage) return;
 
+    const currentSequence = ++this.imageLoadSequence;
     img.style.display = 'block';
     canvas.style.display = 'none';
 
@@ -707,8 +734,15 @@ class PictureRevealGame {
     const originalUrl = this.currentImage.image_url;
 
     if (originalUrl.startsWith('blob:') || originalUrl.startsWith('data:')) {
-      img.onerror = () => this.renderFallbackScene(this.currentImage);
-      img.onload = () => { img.style.display = 'block'; canvas.style.display = 'none'; };
+      img.onerror = () => {
+        if (currentSequence === this.imageLoadSequence) this.renderFallbackScene(this.currentImage);
+      };
+      img.onload = () => {
+        if (currentSequence === this.imageLoadSequence) {
+          img.style.display = 'block';
+          canvas.style.display = 'none';
+        }
+      };
       img.src = originalUrl;
       return;
     }
@@ -716,6 +750,7 @@ class PictureRevealGame {
     const basePath = originalUrl.substring(0, originalUrl.lastIndexOf('.')) || `assets/img${this.currentImage.id}`;
 
     const tryNext = () => {
+      if (currentSequence !== this.imageLoadSequence) return;
       if (extIndex < extensions.length) {
         const nextUrl = basePath + extensions[extIndex++];
         img.src = nextUrl;
@@ -726,8 +761,10 @@ class PictureRevealGame {
 
     img.onerror = () => tryNext();
     img.onload = () => {
-      img.style.display = 'block';
-      canvas.style.display = 'none';
+      if (currentSequence === this.imageLoadSequence) {
+        img.style.display = 'block';
+        canvas.style.display = 'none';
+      }
     };
 
     tryNext();
@@ -1046,7 +1083,10 @@ class PictureRevealGame {
 
   closeQuestionAltar() {
     this.stopTimer();
-    this.pendingOutcome = null;
+    if (this.pendingOutcome) {
+      this.applyOutcomeAndReturnToBoard();
+      return;
+    }
     if (this.dom.questionScreen) this.dom.questionScreen.classList.remove('active');
     if (this.dom.answerRevelationCard) this.dom.answerRevelationCard.classList.remove('active');
   }
@@ -1133,8 +1173,18 @@ class PictureRevealGame {
      KEYBOARD NAVIGATION
      ========================================================================== */
   handleKeyboard(e) {
+    // Ignore global shortcuts when user is interacting with form controls or sliders
+    const activeEl = document.activeElement;
+    if (activeEl) {
+      const tag = activeEl.tagName ? activeEl.tagName.toLowerCase() : '';
+      if (tag === 'input' || tag === 'select' || tag === 'textarea') {
+        if (e.key === 'Escape') activeEl.blur();
+        return;
+      }
+    }
+
     // If Welcome Screen is active, Space or Enter starts game
-    if (this.dom.welcomeScreen.classList.contains('active')) {
+    if (this.dom.welcomeScreen && this.dom.welcomeScreen.classList.contains('active')) {
       if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space') {
         e.preventDefault();
         this.startGame();
