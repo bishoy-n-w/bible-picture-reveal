@@ -34,8 +34,8 @@ class I18nEngine {
         brandSubtitle: "مسابقة الخدام الكنسية",
         welcomeTitle: "كشف الصورة الكتابية",
         welcomeSubtitle: "تحدي المعرفة الكتابية للخدام • هل يمكنك تخمين المشهد المخفي؟",
-        step1Title: "1. اختر مربعاً",
-        step1Desc: "9 مربعات صعبة موزعة بعناية، شريط المنتصف يحوي أصعب الأسئلة ويكشف قلب الصورة!",
+        step1Title: "1. اختر لوحاً",
+        step1Desc: "9 ألواح حجرية بصعوبات متوازنة (متقدم، عميق، فائق) تكشف المشهد بدقة!",
         step2Title: "2. أجب عن السؤال",
         step2Desc: "أجب بدقة لكشف اللوح، الإجابة الخاطئة تغلق اللوح للأبد مع إبراز الشاهد والآية الكاملة!",
         step3Title: "3. خمّن الصورة",
@@ -70,7 +70,7 @@ class I18nEngine {
         diffEasy: "متقدم",
         diffMedium: "عميق",
         diffHard: "فائق",
-        langSelectorTitle: "اللغة / Language",
+        langSelectorTitle: "اللغة:",
         volumeLabel: "مستوى الصوت:",
         timerSettingLabel: "وقت السؤال:",
         timerInfinite: "بدون وقت (∞)",
@@ -84,10 +84,10 @@ class I18nEngine {
         welcomeTitle: "Bible Picture Reveal",
         welcomeSubtitle: "Scripture Challenge for Church Servants • Can you deduce the hidden biblical scene?",
         step1Title: "1. Select a Tile",
-        step1Desc: "9 demanding tiles carefully mapped; the center row holds the hardest questions and reveals the core picture!",
-        step2Title: "2. Answer the Question",
+        step1Desc: "9 balanced slabs across 3 difficulty tiers to unveil the sacred image!",
+        step2Title: "2. Answer Question",
         step2Desc: "Answer correctly to reveal the slab; incorrect answers lock the tile permanently while disclosing the scripture!",
-        step3Title: "3. Guess the Picture",
+        step3Title: "3. Guess Picture",
         step3Desc: "Deduce the biblical event from the revealed fragments and celebrate with the full passage citation!",
         startChallenge: "Start the Challenge",
         sceneBadgeLabel: "Scene:",
@@ -122,7 +122,7 @@ class I18nEngine {
         diffEasy: "Advanced",
         diffMedium: "Deep",
         diffHard: "Mastery",
-        langSelectorTitle: "Language / اللغة",
+        langSelectorTitle: "Language:",
         arabicLang: "Arabic (العربية)",
         englishLang: "English",
         bothLang: "Bilingual (كلاهما)"
@@ -184,12 +184,33 @@ class I18nEngine {
   // Get localized string for a UI key
   t(key) {
     if (this.isBilingual()) {
-      // In bilingual mode, provide structured or clean labels
-      const arStr = (this.strings.ar && this.strings.ar[key]) || key;
-      const enStr = (this.strings.en && this.strings.en[key]) || key;
-      if (arStr === enStr) return arStr;
-
-      // For specific short badges, use clean combined form
+      // Clean, structured overrides for bilingual mode
+      if (key === 'langSelectorTitle') return 'اللغة • Language:';
+      if (key === 'welcomeSubtitle') {
+        return `
+          <div class="welcome-sub-ar" dir="rtl">تحدي المعرفة الكتابية للخدام • هل يمكنك تخمين المشهد المخفي؟</div>
+          <div class="welcome-sub-en" dir="ltr">Scripture Challenge for Servants • Can you deduce the hidden biblical scene?</div>
+        `;
+      }
+      if (key === 'step1Title') {
+        return `<div class="step-title-ar" dir="rtl">1. اختر لوحاً</div><div class="step-title-en" dir="ltr">1. Select a Tile</div>`;
+      }
+      if (key === 'step1Desc') {
+        return `<div class="step-desc-ar" dir="rtl">9 ألواح حجرية بصعوبات متوازنة تكشف المشهد بدقة!</div><div class="step-desc-en" dir="ltr">9 balanced slabs across 3 tiers unveil the sacred scene!</div>`;
+      }
+      if (key === 'step2Title') {
+        return `<div class="step-title-ar" dir="rtl">2. أجب عن السؤال</div><div class="step-title-en" dir="ltr">2. Answer Question</div>`;
+      }
+      if (key === 'step2Desc') {
+        return `<div class="step-desc-ar" dir="rtl">أجب بدقة لكشف اللوح، الإجابة الخاطئة تغلقه وتكشف الآية!</div><div class="step-desc-en" dir="ltr">Answer correctly to reveal; wrong answers lock it with scriptures!</div>`;
+      }
+      if (key === 'step3Title') {
+        return `<div class="step-title-ar" dir="rtl">3. خمّن الصورة</div><div class="step-title-en" dir="ltr">3. Guess the Picture</div>`;
+      }
+      if (key === 'step3Desc') {
+        return `<div class="step-desc-ar" dir="rtl">خمّن الحدث الكتابي واحتفل بالنصر والشاهد الكامل!</div><div class="step-desc-en" dir="ltr">Deduce the biblical scene and celebrate with full scriptures!</div>`;
+      }
+      if (key === 'startChallenge') return 'ابدأ التحدي الآن • Start Challenge';
       if (key === 'sceneBadgeLabel') return 'المشهد / Scene:';
       if (key === 'correctAnswerCaption') return 'الإجابة الصحيحة • Correct Answer:';
       if (key === 'referenceLabel') return 'الشاهد • Reference:';
@@ -201,6 +222,9 @@ class I18nEngine {
       if (key === 'resetGrid') return 'إعادة المربعات • Reset';
       if (key === 'continueToBoard') return 'متابعة إلى لوحة الصورة • Continue ➔';
 
+      const arStr = (this.strings.ar && this.strings.ar[key]) || key;
+      const enStr = (this.strings.en && this.strings.en[key]) || key;
+      if (arStr === enStr) return arStr;
       return `${arStr} • ${enStr}`;
     }
 

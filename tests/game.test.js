@@ -430,9 +430,9 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.6.0', () => {
+  test('Application version is updated to v5.7.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.6.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.7.0');
   });
 });
 
@@ -778,5 +778,37 @@ describe('13. Phase 3 E2E Simulation Suite: Complete Lifecycles & Boundary Stres
 
     game.handleTileClick(7);
     assert.strictEqual(altarOpened, false, 'Clicking failed tile must be a no-op');
+  });
+});
+
+describe('14. Welcome Screen Bilingual BiDi & UI Polish Tests', () => {
+  test('langSelectorTitle does not repeat language names in bilingual mode', () => {
+    const i18n = window.i18n;
+    i18n.setMode('both');
+    const label = i18n.t('langSelectorTitle');
+    assert.strictEqual(label, 'اللغة • Language:');
+    assert.ok(!label.includes('اللغة / Language • Language / اللغة'), 'Must not duplicate language label');
+  });
+
+  test('welcomeSubtitle renders isolated direction-wrapped bilingual containers', () => {
+    const i18n = window.i18n;
+    i18n.setMode('both');
+    const sub = i18n.t('welcomeSubtitle');
+    assert.ok(sub.includes('dir="rtl"'), 'Arabic subtitle must have dir="rtl"');
+    assert.ok(sub.includes('dir="ltr"'), 'English subtitle must have dir="ltr"');
+    assert.ok(sub.includes('welcome-sub-en'), 'English subtitle must have dedicated class');
+  });
+
+  test('Step descriptions are updated to 3-3-3 difficulty balance and do not claim center row is hardest', () => {
+    const i18n = window.i18n;
+    i18n.setMode('both');
+    const desc = i18n.t('step1Desc');
+    assert.ok(!desc.includes('شريط المنتصف يحوي أصعب الأسئلة'), 'Must not claim center row is hardest');
+    assert.ok(desc.includes('صعوبات متوازنة') || desc.includes('balanced slabs'), 'Must describe balanced tiers');
+  });
+
+  test('css/style.css does not truncate step-desc with line-clamp in landscape mode', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(!css.includes('-webkit-line-clamp: 2'), 'Must not clamp step-desc to 2 lines');
   });
 });

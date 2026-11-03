@@ -1,6 +1,6 @@
 # 🏛️ System Architecture & Engineering Specifications
 ## أسرار ألواح الهيكل | مسابقة كشف الصورة الكتابية (Temple Codex Edition)
-**Version:** 5.6.0  
+**Version:** 5.7.0  
 **Classification:** Offline-First Zero-Dependency Web Application (Single-Page Architecture)
 
 ---

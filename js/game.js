@@ -421,7 +421,7 @@ class PictureRevealGame {
     // 1. Update all static [data-i18n] elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;
-      el.textContent = window.i18n.t(key);
+      el.innerHTML = window.i18n.t(key);
     });
 
     // 2. Update active states on language buttons
