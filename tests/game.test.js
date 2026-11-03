@@ -21,6 +21,33 @@ global.document = {
       contains(cls) { return this.classes.has(cls); }
     }
   },
+  createElement(tag) {
+    const classes = new Set();
+    return {
+      tagName: (tag || 'div').toUpperCase(),
+      classList: {
+        add: (...c) => c.forEach(cls => classes.add(cls)),
+        remove: (...c) => c.forEach(cls => classes.delete(cls)),
+        toggle: (cls, v) => {
+          if (v === undefined) {
+            if (classes.has(cls)) { classes.delete(cls); return false; }
+            classes.add(cls); return true;
+          }
+          if (v) classes.add(cls); else classes.delete(cls);
+          return classes.has(cls);
+        },
+        contains: (cls) => classes.has(cls)
+      },
+      dataset: {},
+      style: {},
+      innerHTML: '',
+      textContent: '',
+      appendChild(child) { return child; },
+      addEventListener() {},
+      removeEventListener() {},
+      click() {}
+    };
+  },
   addEventListener() {},
   removeEventListener() {},
   getElementById() { return null; },
@@ -36,6 +63,7 @@ global.localStorage = {
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'i18n.js'), 'utf8'));
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'images-bank.js'), 'utf8'));
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'questions-bank.js'), 'utf8'));
+eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'audio.js'), 'utf8') + '; global.SoundEngine = SoundEngine;');
 eval(fs.readFileSync(path.join(__dirname, '..', 'js', 'game.js'), 'utf8') + '; global.PictureRevealGame = PictureRevealGame;');
 
 describe('1. Multilingual i18n Engine Tests', () => {
@@ -402,9 +430,9 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.5.0', () => {
+  test('Application version is updated to v5.6.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.5.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.6.0');
   });
 });
 
@@ -449,5 +477,306 @@ describe('10. Phase 2 Deep Code Review & Bug Hardening Tests', () => {
   test('Attractor visual engine resets context transform before clearing backing canvas', () => {
     const attractorJsContent = fs.readFileSync('js/attractor.js', 'utf8');
     assert.ok(attractorJsContent.includes('this.ctx.setTransform(1, 0, 0, 1, 0, 0);'), 'Must reset transform matrix on stop');
+  });
+});
+
+describe('11. Phase 3 Unit Suite: Mathematical Invariance, Volume Clamping & i18n Robustness', () => {
+  test('shuffleArray preserves length, elements, and does not mutate source array', () => {
+    const game = new global.PictureRevealGame();
+    const original = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    const shuffled = game.shuffleArray(original);
+    assert.strictEqual(shuffled.length, original.length);
+    assert.deepStrictEqual([...shuffled].sort(), [...original].sort());
+    assert.strictEqual(original[0], 10, 'Original array must remain unmutated');
+  });
+
+  test('SoundEngine clamps volume safely between 0.0 and 1.0', () => {
+    eval(fs.readFileSync('js/audio.js', 'utf8'));
+    const engine = window.soundEngine;
+    engine.setGameVolume(-0.5);
+    assert.strictEqual(engine.getGameVolume(), 0.0);
+    engine.setGameVolume(1.8);
+    assert.strictEqual(engine.getGameVolume(), 1.0);
+    engine.setGameVolume(0.42);
+    assert.strictEqual(engine.getGameVolume(), 0.42);
+  });
+
+  test('SoundEngine toggleMute operates idempotently and persists state', () => {
+    eval(fs.readFileSync('js/audio.js', 'utf8'));
+    const engine = window.soundEngine;
+    const initialMute = engine.isMuted();
+    const toggled = engine.toggleMute();
+    assert.strictEqual(toggled, !initialMute);
+    assert.strictEqual(engine.isMuted(), !initialMute);
+    // Toggle back
+    engine.toggleMute();
+    assert.strictEqual(engine.isMuted(), initialMute);
+  });
+
+  test('i18n formatField handles null, undefined, raw strings, and partial objects gracefully', () => {
+    const i18n = window.i18n;
+    assert.strictEqual(i18n.formatField(null), '');
+    assert.strictEqual(i18n.formatField(undefined), '');
+    assert.strictEqual(i18n.formatField('نص بسيط'), 'نص بسيط');
+    assert.strictEqual(i18n.formatField({ ar: 'عربي فقط' }), 'عربي فقط');
+    assert.strictEqual(i18n.formatField({ en: 'English only' }), 'English only');
+  });
+
+  test('i18n getPlainText extracts clean unformatted text without HTML tags', () => {
+    const i18n = window.i18n;
+    const text = i18n.getPlainText({ ar: 'تكوين 1: 1', en: 'Genesis 1:1' });
+    assert.ok(typeof text === 'string');
+    assert.ok(!text.includes('<span'));
+  });
+
+  test('Monte Carlo simulation verifies fair 3-3-3 distribution over 100 consecutive generations', () => {
+    const game = new global.PictureRevealGame();
+    for (let i = 0; i < 100; i++) {
+      const map = game.generateRandomDifficultyMap();
+      const counts = { 1: 0, 2: 0, 3: 0 };
+      for (let pos = 0; pos < 9; pos++) {
+        counts[map[pos]]++;
+      }
+      assert.strictEqual(counts[1], 3, `Iteration ${i}: Must have exactly 3 Level 1 tiles`);
+      assert.strictEqual(counts[2], 3, `Iteration ${i}: Must have exactly 3 Level 2 tiles`);
+      assert.strictEqual(counts[3], 3, `Iteration ${i}: Must have exactly 3 Level 3 tiles`);
+    }
+  });
+});
+
+describe('12. Phase 3 Integration Suite: State Machine, Scene Navigation & Outcome Resolution', () => {
+  function makeMockGameInstance() {
+    const game = new global.PictureRevealGame();
+    const dom = {
+      welcomeScreen: { classList: { contains: () => false, add: () => {}, remove: () => {} } },
+      gameScreen: { classList: { contains: () => true, add: () => {}, remove: () => {} } },
+      questionScreen: { classList: { contains: () => false, add: () => {}, remove: () => {} } },
+      answerRevelationCard: { classList: { contains: () => false, add: () => {}, remove: () => {} }, scrollIntoView: () => {} },
+      gridLayer: { innerHTML: '', querySelector: () => ({ classList: { add: () => {}, remove: () => {} } }), appendChild: () => {}, querySelectorAll: () => [] },
+      optionsGrid: { innerHTML: '', querySelectorAll: () => [], appendChild: () => {} },
+      winOverlay: { classList: { contains: () => false, add: () => {}, remove: () => {} } },
+      roundDisplay: { textContent: '' },
+      remainingDisplay: { textContent: '' },
+      selectScene: { value: '', innerHTML: '', appendChild: () => {} },
+      peekAnswer: { innerHTML: '' },
+      peekRef: { innerHTML: '' },
+      bgImage: { style: {} },
+      fallbackCanvas: { style: {}, getContext: () => ({ createRadialGradient: () => ({ addColorStop: () => {} }), fillRect: () => {}, beginPath: () => {}, moveTo: () => {}, lineTo: () => {}, bezierCurveTo: () => {}, closePath: () => {}, fill: () => {}, save: () => {}, restore: () => {}, strokeRect: () => {}, fillText: () => {} }) },
+      modalDiffTag: { textContent: '', className: '' },
+      modalTileIndicator: { textContent: '' },
+      questionText: { innerHTML: '', classList: { add: () => {}, remove: () => {} } },
+      revelationStatus: { className: '', textContent: '' },
+      revelationCorrectAnswer: { innerHTML: '' },
+      revelationVerse: { innerHTML: '' },
+      revelationReference: { innerHTML: '' },
+      btnRestoreWinCard: { classList: { add: () => {}, remove: () => {} } }
+    };
+    game.dom = dom;
+    return game;
+  }
+
+  test('jumpToScene accurately targets scene ID and filters it from remaining pool', () => {
+    const game = makeMockGameInstance();
+    game.imagePool = [...game.picsBank];
+    game.jumpToScene(7);
+
+    assert.strictEqual(game.currentImage.id, 7);
+    assert.strictEqual(game.tileStates.length, 9);
+    assert.ok(game.tileStates.every(st => st === 'covered'));
+    assert.ok(!game.imagePool.some(p => p.id === 7), 'Targeted scene must be removed from pool');
+  });
+
+  test('resetCurrentGrid preserves active scene and resets all 9 tiles to covered', () => {
+    const game = makeMockGameInstance();
+    game.currentImage = game.picsBank[0];
+    game.tileStates[0] = 'revealed';
+    game.tileStates[4] = 'failed';
+    game.isFullRevealed = true;
+
+    game.resetCurrentGrid();
+
+    assert.strictEqual(game.currentImage.id, game.picsBank[0].id);
+    assert.strictEqual(game.isFullRevealed, false);
+    assert.ok(game.tileStates.every(st => st === 'covered'), 'All tiles must be reset to covered');
+  });
+
+  test('handleOptionSelection records pendingOutcome and locks option buttons', () => {
+    const game = makeMockGameInstance();
+    game.activeTileIndex = 2;
+    game.activeQuestion = game.questionsBank[0];
+
+    const mockBtn = {
+      classList: { add: (cls) => mockBtn.classes.push(cls) },
+      classes: [],
+      style: {},
+      dataset: { isCorrect: 'true' }
+    };
+    game.dom.optionsGrid.querySelectorAll = () => [mockBtn];
+
+    game.handleOptionSelection(mockBtn, true);
+
+    assert.deepStrictEqual(game.pendingOutcome, { isCorrect: true, tileIndex: 2 });
+    assert.strictEqual(mockBtn.style.pointerEvents, 'none');
+    assert.ok(mockBtn.classes.includes('selected-correct'));
+  });
+
+  test('applyOutcomeAndReturnToBoard transitions tile to revealed on success', () => {
+    const game = makeMockGameInstance();
+    game.pendingOutcome = { isCorrect: true, tileIndex: 5 };
+    const tileClasses = new Set(['covered']);
+    game.dom.gridLayer.querySelector = () => ({
+      classList: {
+        remove: (c) => tileClasses.delete(c),
+        add: (c) => tileClasses.add(c)
+      }
+    });
+
+    game.applyOutcomeAndReturnToBoard();
+
+    assert.strictEqual(game.tileStates[5], 'revealed');
+    assert.ok(!tileClasses.has('covered'));
+    assert.ok(tileClasses.has('revealed'));
+    assert.strictEqual(game.pendingOutcome, null);
+  });
+
+  test('applyOutcomeAndReturnToBoard transitions tile to failed on incorrect answer', () => {
+    const game = makeMockGameInstance();
+    game.pendingOutcome = { isCorrect: false, tileIndex: 8 };
+    const tileClasses = new Set(['covered']);
+    game.dom.gridLayer.querySelector = () => ({
+      classList: {
+        remove: (c) => tileClasses.delete(c),
+        add: (c) => tileClasses.add(c)
+      }
+    });
+
+    game.applyOutcomeAndReturnToBoard();
+
+    assert.strictEqual(game.tileStates[8], 'failed');
+    assert.ok(!tileClasses.has('covered'));
+    assert.ok(tileClasses.has('failed'));
+    assert.strictEqual(game.pendingOutcome, null);
+  });
+
+  test('closeQuestionAltar safely auto-commits pending outcome if answered', () => {
+    const game = makeMockGameInstance();
+    game.pendingOutcome = { isCorrect: false, tileIndex: 3 };
+    let committed = false;
+    game.applyOutcomeAndReturnToBoard = () => { committed = true; };
+
+    game.closeQuestionAltar();
+    assert.strictEqual(committed, true, 'Must auto-commit pending outcome when closing altar');
+  });
+
+  test('revealFullImage transitions all 9 tiles to revealed and marks isFullRevealed', () => {
+    const game = makeMockGameInstance();
+    game.currentImage = game.picsBank[0];
+    game.tileStates[0] = 'failed';
+    const tilesList = Array(9).fill(0).map(() => ({
+      classList: {
+        classes: new Set(['covered']),
+        remove(...items) { items.forEach(i => this.classes.delete(i)); },
+        add(...items) { items.forEach(i => this.classes.add(i)); }
+      }
+    }));
+    game.dom.gridLayer.querySelectorAll = () => tilesList;
+
+    game.revealFullImage();
+
+    assert.strictEqual(game.isFullRevealed, true);
+    assert.ok(game.tileStates.every(st => st === 'revealed'));
+    tilesList.forEach(t => {
+      assert.ok(t.classList.classes.has('revealed'));
+      assert.ok(!t.classList.classes.has('covered'));
+      assert.ok(!t.classList.classes.has('failed'));
+    });
+  });
+});
+
+describe('13. Phase 3 E2E Simulation Suite: Complete Lifecycles & Boundary Stress Testing', () => {
+  function makeMockGameInstance() {
+    const game = new global.PictureRevealGame();
+    const dom = {
+      welcomeScreen: { classList: { contains: () => false, add: () => {}, remove: () => {} } },
+      gameScreen: { classList: { contains: () => true, add: () => {}, remove: () => {} } },
+      questionScreen: { classList: { contains: () => false, add: () => {}, remove: () => {} } },
+      answerRevelationCard: { classList: { contains: () => false, add: () => {}, remove: () => {} }, scrollIntoView: () => {} },
+      gridLayer: { innerHTML: '', querySelector: () => ({ classList: { add: () => {}, remove: () => {} } }), appendChild: () => {}, querySelectorAll: () => [] },
+      optionsGrid: { innerHTML: '', querySelectorAll: () => [], appendChild: () => {} },
+      winOverlay: { classList: { contains: () => false, add: () => {}, remove: () => {} } },
+      roundDisplay: { textContent: '' },
+      remainingDisplay: { textContent: '' },
+      selectScene: { value: '', innerHTML: '', appendChild: () => {} },
+      peekAnswer: { innerHTML: '' },
+      peekRef: { innerHTML: '' },
+      bgImage: { style: {} },
+      fallbackCanvas: { style: {}, getContext: () => ({ createRadialGradient: () => ({ addColorStop: () => {} }), fillRect: () => {}, beginPath: () => {}, moveTo: () => {}, lineTo: () => {}, bezierCurveTo: () => {}, closePath: () => {}, fill: () => {}, save: () => {}, restore: () => {}, strokeRect: () => {}, fillText: () => {} }) },
+      modalDiffTag: { textContent: '', className: '' },
+      modalTileIndicator: { textContent: '' },
+      questionText: { innerHTML: '', classList: { add: () => {}, remove: () => {} } },
+      revelationStatus: { className: '', textContent: '' },
+      revelationCorrectAnswer: { innerHTML: '' },
+      revelationVerse: { innerHTML: '' },
+      revelationReference: { innerHTML: '' },
+      btnRestoreWinCard: { classList: { add: () => {}, remove: () => {} } }
+    };
+    game.dom = dom;
+    return game;
+  }
+
+  test('Continuous 25-round image pool exhaustion cycle replenishes transparently', () => {
+    const game = makeMockGameInstance();
+    const sampledIds = [];
+    for (let round = 0; round < 25; round++) {
+      const img = game.getNextImageFromPool();
+      assert.ok(img, `Round ${round + 1} must return a valid image object`);
+      assert.ok(typeof img.id === 'number');
+      sampledIds.push(img.id);
+    }
+    assert.strictEqual(sampledIds.length, 25);
+    // All 20 scenes must have appeared in the first 20 picks
+    const firstTwenty = new Set(sampledIds.slice(0, 20));
+    assert.strictEqual(firstTwenty.size, 20, 'All 20 scenes must be yielded before reshuffling');
+  });
+
+  test('Continuous 150-question extraction across all levels replenishes transparently', () => {
+    const game = makeMockGameInstance();
+    [1, 2, 3].forEach(level => {
+      const sampledQIds = [];
+      for (let i = 0; i < 110; i++) {
+        const q = game.getNextQuestionFromPool(level);
+        assert.ok(q, `Level ${level} Question ${i + 1} must not be undefined`);
+        assert.strictEqual(q.level, level);
+        sampledQIds.push(q.id);
+      }
+      assert.strictEqual(sampledQIds.length, 110);
+    });
+  });
+
+  test('Corrupted localStorage values recover gracefully to defaults', () => {
+    global.localStorage.setItem('picture_reveal_timer_duration', 'NOT_A_NUMBER');
+    global.localStorage.setItem('picture_reveal_game_volume', 'INVALID');
+
+    const freshGame = new global.PictureRevealGame();
+    assert.strictEqual(freshGame.timerDuration, 60, 'Must fallback to default 60 seconds on NaN');
+
+    eval(fs.readFileSync('js/audio.js', 'utf8'));
+    const freshAudio = new SoundEngine();
+    assert.strictEqual(freshAudio.getGameVolume(), 0.20, 'Must fallback to default 0.20 on invalid float');
+  });
+
+  test('Rapid clicking on an already revealed or failed tile is completely ignored', () => {
+    const game = makeMockGameInstance();
+    game.tileStates[3] = 'revealed';
+    game.tileStates[7] = 'failed';
+
+    let altarOpened = false;
+    game.showQuestionAltar = () => { altarOpened = true; };
+
+    game.handleTileClick(3);
+    assert.strictEqual(altarOpened, false, 'Clicking revealed tile must be a no-op');
+
+    game.handleTileClick(7);
+    assert.strictEqual(altarOpened, false, 'Clicking failed tile must be a no-op');
   });
 });
