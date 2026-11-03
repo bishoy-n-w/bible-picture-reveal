@@ -430,9 +430,9 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.7.0', () => {
+  test('Application version is updated to v5.8.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.7.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.8.0');
   });
 });
 
@@ -810,5 +810,32 @@ describe('14. Welcome Screen Bilingual BiDi & UI Polish Tests', () => {
   test('css/style.css does not truncate step-desc with line-clamp in landscape mode', () => {
     const css = fs.readFileSync('css/style.css', 'utf8');
     assert.ok(!css.includes('-webkit-line-clamp: 2'), 'Must not clamp step-desc to 2 lines');
+  });
+});
+
+describe('15. Seamless Zero-Gap Tile Grid & Mobile Portrait Architecture Tests', () => {
+  test('css/style.css enforces zero gap and zero padding on grid-layer across orientations', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(css.includes('gap: 0;'), 'Base grid-layer must specify gap: 0');
+    assert.ok(css.includes('padding: 0;'), 'Base grid-layer must specify padding: 0');
+    assert.ok(css.includes('gap: 0 !important;'), 'Responsive overrides must enforce gap: 0 !important');
+  });
+
+  test('css/style.css eliminates tile border radius and external margin for seamless abutting', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(css.includes('border-radius: 0;'), 'Tiles must have 0 border-radius');
+    assert.ok(css.includes('margin: 0;'), 'Tiles must have 0 margin');
+  });
+
+  test('Portrait mobile media query applies square 1:1 aspect ratio to cinematic-frame', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(css.includes('aspect-ratio: 1 / 1;'), 'Must specify aspect-ratio: 1 / 1 in portrait');
+  });
+
+  test('Scene badge is direction-isolated with dir="ltr" to prevent 20/11 number reversal', () => {
+    const html = fs.readFileSync('index.html', 'utf8');
+    assert.ok(html.includes('class="scene-badge" dir="ltr"'), 'index.html must have dir="ltr" on scene-badge');
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(css.includes('direction: ltr; /* Keeps label then numbers strictly left-to-right to prevent BiDi inversion */'), 'CSS must specify direction: ltr on scene-badge');
   });
 });
