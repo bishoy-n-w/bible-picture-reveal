@@ -30,6 +30,12 @@
   --radius-lg: 22px;
   --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Safe Area Insets for iOS & Android Notches / Dynamic Island / Navigation Bars */
+  --sat: env(safe-area-inset-top, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
 }
 
 * {
@@ -39,9 +45,20 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* WCAG 2.1 AA Focus Indicators for Keyboard & Assistive Devices */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+.tile:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
 html, body {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   background-color: var(--bg-deep);
   color: #ffffff;
@@ -54,6 +71,7 @@ body.carnival-theme {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
   background: radial-gradient(circle at 50% 20%, #151d2d 0%, #0a0d14 60%, #040508 100%);
   position: relative;
 }
@@ -90,6 +108,7 @@ body.carnival-theme {
   inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   pointer-events: none;
   z-index: 1;
 }
@@ -99,10 +118,11 @@ body.carnival-theme {
   inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 200;
   display: none;
   background: radial-gradient(circle at 50% 25%, #182236 0%, #0b0f17 65%, #030507 100%);
-  padding: 16px;
+  padding: max(16px, var(--sat)) max(16px, var(--sar)) max(16px, var(--sab)) max(16px, var(--sal));
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
@@ -449,15 +469,6 @@ body.english-only-mode {
     height: 20px;
   }
 }
-  transition: all var(--transition-fast);
-}
-
-.btn-start-challenge:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.75);
-}
-
-.btn-start-challenge:active { transform: translateY(0); }
 
 /* ==========================================================================
    2. MAIN GAME SCREEN & HEADER
@@ -467,6 +478,7 @@ body.english-only-mode {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
 }
 
@@ -476,7 +488,7 @@ body.english-only-mode {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 14px 20px 6px;
+  padding: max(14px, var(--sat)) max(20px, var(--sar)) 6px max(20px, var(--sal));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -677,13 +689,15 @@ body.english-only-mode {
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-normal);
 }
 
-/* Interactive Hover State */
-.tile.covered:hover {
-  transform: translateY(-3px) scale(0.985);
-  border-color: var(--gold-bright);
-  box-shadow: 
-    inset 0 0 20px var(--gold-glow),
-    0 0 25px rgba(212, 175, 55, 0.45);
+/* Interactive Hover State (Desktop Mouse Only) */
+@media (hover: hover) and (pointer: fine) {
+  .tile.covered:hover {
+    transform: translateY(-3px) scale(0.985);
+    border-color: var(--gold-bright);
+    box-shadow: 
+      inset 0 0 20px var(--gold-glow),
+      0 0 25px rgba(212, 175, 55, 0.45);
+  }
 }
 .tile.covered:active { transform: scale(0.96); }
 
@@ -802,13 +816,15 @@ body.english-only-mode {
   inset: 0;
   width: 100%;
   height: 100%;
+  height: 100dvh;
   z-index: 150;
   display: none;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: radial-gradient(circle at 50% 30%, #151e30 0%, #0a0e17 65%, #040609 100%);
-  padding: 20px;
+  padding: max(20px, var(--sat)) max(20px, var(--sar)) max(20px, var(--sab)) max(20px, var(--sal));
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .question-screen.active {
@@ -897,6 +913,7 @@ body.english-only-mode {
   flex-direction: column;
   gap: 10px;
   min-width: 210px;
+  max-width: min(280px, 92vw);
   z-index: 350;
   backdrop-filter: blur(14px);
   opacity: 0;
@@ -914,7 +931,14 @@ body.english-only-mode {
   height: 12px;
 }
 
-.header-popover-wrapper:hover .header-mini-popover,
+@media (hover: hover) and (pointer: fine) {
+  .header-popover-wrapper:hover .header-mini-popover {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 .header-popover-wrapper.active .header-mini-popover {
   opacity: 1;
   pointer-events: auto;
@@ -951,9 +975,14 @@ body.english-only-mode {
   background: none;
   border: none;
   color: #94a3b8;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  padding: 0 4px;
+  padding: 4px 8px;
+  min-width: 36px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
   transition: color 0.2s;
 }
@@ -1478,14 +1507,17 @@ body.english-only-mode {
   inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: radial-gradient(circle at 50% 30%, rgba(20, 28, 44, 0.96) 0%, rgba(8, 12, 18, 0.98) 70%, #030508 100%);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: 300;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 24px;
+  padding: max(20px, var(--sat)) max(20px, var(--sar)) max(20px, var(--sab)) max(20px, var(--sal));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-normal);
@@ -1499,8 +1531,10 @@ body.english-only-mode {
 .win-theater-stage {
   width: 100%;
   max-width: 1440px;
-  height: 88vh;
+  height: auto;
+  min-height: min-content;
   max-height: 850px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1791,7 +1825,7 @@ body.english-only-mode {
   width: 100%;
   max-width: 1040px;
   margin: 0 auto;
-  padding: 8px 16px 14px;
+  padding: 8px max(16px, var(--sar)) max(14px, var(--sab)) max(16px, var(--sal));
 }
 
 .mod-inner {
@@ -1904,6 +1938,7 @@ body.english-only-mode {
   bottom: calc(100% + 14px);
   right: 0;
   width: 340px;
+  max-width: min(340px, 90vw);
   background: rgba(10, 14, 22, 0.98);
   border: 1.5px solid var(--gold-bright);
   border-radius: 12px;
@@ -1914,7 +1949,11 @@ body.english-only-mode {
   text-align: right;
   backdrop-filter: blur(12px);
 }
-.mod-peek-wrapper:hover .mod-peek-popover,
+@media (hover: hover) and (pointer: fine) {
+  .mod-peek-wrapper:hover .mod-peek-popover {
+    display: block;
+  }
+}
 .mod-peek-wrapper.active .mod-peek-popover {
   display: block;
 }
@@ -1948,17 +1987,75 @@ body.english-only-mode {
   }
 }
 
+/* Touch Device Target Sizing (Coarse Pointers / Mobile) */
+@media (pointer: coarse) {
+  .mod-btn-icon,
+  .btn-icon-subtle,
+  .btn-peek {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .popover-close-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-lang-group .lang-toggle-btn {
+    min-height: 38px;
+    padding: 6px 12px;
+  }
+}
+
+/* Tactile Feedback on Active Press */
+.tile:active,
+.mod-btn:active,
+.altar-option-btn:active,
+.btn-start-challenge:active,
+.btn-return-board:active,
+.win-close-btn:active,
+.altar-close-btn:active {
+  transform: scale(0.97) !important;
+}
+
 /* Tablets and Mobile Portrait (width <= 860px and orientation portrait) */
 @media (max-width: 860px) and (orientation: portrait) {
-  .welcome-title { font-size: 2.2rem; }
+  .app-header {
+    flex-wrap: wrap;
+    padding: max(10px, var(--sat)) max(12px, var(--sar)) 6px max(12px, var(--sal));
+    gap: 8px;
+  }
+  .brand-title {
+    font-size: 1.15rem;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .scene-badge {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+  }
+  .welcome-title { font-size: 2.0rem; }
   .welcome-steps { grid-template-columns: 1fr; }
   .altar-options-grid { grid-template-columns: 1fr; gap: 8px; }
-  .tile-number { font-size: 2.4rem; }
-  .tile[data-difficulty="3"] .tile-number { font-size: 2.7rem; }
+  .tile-number { font-size: clamp(1.4rem, 5.5vw, 2.2rem) !important; }
+  .tile[data-difficulty="3"] .tile-number { font-size: clamp(1.6rem, 6.5vw, 2.4rem) !important; }
+  .tile-diff-label { font-size: 0.65rem; }
   .moderator-toolbar .mod-inner {
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
+  }
+  .mod-left-group, .mod-right-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .qscreen-container {
+    padding: 16px 14px;
+  }
+  .qscreen-question-text {
+    font-size: 1.25rem;
   }
 }
 

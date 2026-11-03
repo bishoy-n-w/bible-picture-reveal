@@ -973,6 +973,13 @@ class PictureRevealGame {
     // Display Revelation Card (NO AUTOMATIC DISMISSAL!)
     if (this.dom.answerRevelationCard) {
       this.dom.answerRevelationCard.classList.add('active');
+      try {
+        if (typeof this.dom.answerRevelationCard.scrollIntoView === 'function') {
+          this.dom.answerRevelationCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      } catch (e) {
+        // Safe fallback for mock environments
+      }
     }
   }
 

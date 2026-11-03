@@ -371,3 +371,39 @@ describe('8. Carnival Attractor Mode & Ambient Audio Tests', () => {
     assert.ok(attractorContent.includes('drawParticles'), 'Must have stardust particle renderer');
   });
 });
+
+describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
+  test('index.html specifies viewport-fit=cover for iOS notch / safe areas', () => {
+    const htmlContent = fs.readFileSync('index.html', 'utf8');
+    assert.ok(htmlContent.includes('viewport-fit=cover'), 'index.html must specify viewport-fit=cover');
+  });
+
+  test('css/style.css defines safe-area variables and dynamic viewport heights (dvh)', () => {
+    const cssContent = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(cssContent.includes('--sat: env(safe-area-inset-top'), 'CSS must define --sat');
+    assert.ok(cssContent.includes('--sab: env(safe-area-inset-bottom'), 'CSS must define --sab');
+    assert.ok(cssContent.includes('--sal: env(safe-area-inset-left'), 'CSS must define --sal');
+    assert.ok(cssContent.includes('--sar: env(safe-area-inset-right'), 'CSS must define --sar');
+    assert.ok(cssContent.includes('100dvh'), 'CSS must utilize 100dvh for dynamic mobile viewport');
+  });
+
+  test('css/style.css enforces WCAG focus-visible indicators and touch target standards', () => {
+    const cssContent = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(cssContent.includes(':focus-visible'), 'CSS must define :focus-visible rules for accessibility');
+    assert.ok(cssContent.includes('(pointer: coarse)'), 'CSS must provide dedicated sizing for touch/coarse pointers');
+    assert.ok(cssContent.includes('(hover: hover) and (pointer: fine)'), 'CSS must guard hover effects against sticky mobile touch');
+  });
+
+  test('Question modal and Win overlay prevent flexbox scroll clipping and support smooth scrolling', () => {
+    const cssContent = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(cssContent.includes('.question-screen'), 'CSS must style .question-screen');
+    assert.ok(cssContent.includes('-webkit-overflow-scrolling: touch'), 'Must support momentum scrolling on touch');
+    const gameJsContent = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
+  });
+
+  test('Application version is updated to v5.4.0', () => {
+    eval(fs.readFileSync('js/version.js', 'utf8'));
+    assert.strictEqual(window.APP_VERSION, 'v5.4.0');
+  });
+});
