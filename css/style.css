@@ -959,6 +959,16 @@ body.english-only-mode {
   box-shadow: 0 0 35px var(--crimson-glow), 0 20px 60px rgba(0, 0, 0, 0.95) !important;
 }
 
+.qscreen-container.correct-glow {
+  border-color: var(--emerald-divine) !important;
+  box-shadow: 0 0 35px var(--emerald-glow), 0 20px 60px rgba(0, 0, 0, 0.95) !important;
+}
+
+.qscreen-container.incorrect-glow {
+  border-color: var(--crimson-molten) !important;
+  box-shadow: 0 0 35px var(--crimson-glow), 0 20px 60px rgba(0, 0, 0, 0.95) !important;
+}
+
 /* Quick Settings Popover Wrappers (Header) */
 .header-popover-wrapper {
   position: relative;
@@ -1168,11 +1178,32 @@ body.english-only-mode {
 }
 
 .revelation-status-badge {
-  padding: 8px 24px;
-  border-radius: 50px;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
   font-weight: 900;
-  font-size: 1.15rem;
   text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  max-width: 95%;
+  box-sizing: border-box;
+}
+
+.revelation-status-badge .rev-status-ar {
+  font-family: var(--font-arabic-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.revelation-status-badge .rev-status-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+  opacity: 0.95;
 }
 
 .revelation-status-badge.correct {
@@ -2246,6 +2277,26 @@ body.english-only-mode {
   .qscreen-question-text {
     font-size: 1.25rem;
   }
+
+  /* When revelation card is active in portrait mobile, compress options to save 120px */
+  .qscreen-container.has-revelation .altar-options-grid {
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+  .qscreen-container.has-revelation .altar-option-btn {
+    padding: 7px 12px;
+    font-size: 0.95rem;
+  }
+  .qscreen-container.has-revelation .altar-seal-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+  }
+  .revelation-verse-card {
+    max-height: 28vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* ==========================================================================
@@ -2481,7 +2532,15 @@ body.english-only-mode {
   }
   .revelation-status-badge {
     padding: 3px 12px;
+    border-radius: 8px;
+  }
+  .revelation-status-badge .rev-status-ar {
     font-size: 0.82rem;
+    line-height: 1.15;
+  }
+  .revelation-status-badge .rev-status-en {
+    font-size: 0.72rem;
+    line-height: 1.15;
   }
   .revelation-answer-title {
     font-size: 1.05rem;

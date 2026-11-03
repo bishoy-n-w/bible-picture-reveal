@@ -937,7 +937,9 @@ class PictureRevealGame {
     };
 
     if (this.dom.questionText) this.dom.questionText.classList.remove('timed-out');
-    if (this.dom.qscreenContainer) this.dom.qscreenContainer.classList.remove('timed-out-shake');
+    if (this.dom.qscreenContainer) {
+      this.dom.qscreenContainer.classList.remove('timed-out-shake', 'correct-glow', 'incorrect-glow', 'has-revelation');
+    }
     if (this.dom.answerRevelationCard && !this.pendingOutcome) {
       this.dom.answerRevelationCard.classList.remove('active');
     }
@@ -989,6 +991,16 @@ class PictureRevealGame {
   handleOptionSelection(selectedBtn, isCorrect) {
     this.stopTimer();
 
+    // Clear timeout alert and apply divine correct/incorrect glow
+    if (this.dom.qscreenContainer) {
+      this.dom.qscreenContainer.classList.remove('timed-out-shake', 'correct-glow', 'incorrect-glow');
+      this.dom.qscreenContainer.classList.add(isCorrect ? 'correct-glow' : 'incorrect-glow');
+      this.dom.qscreenContainer.classList.add('has-revelation');
+    }
+    if (this.dom.questionText) {
+      this.dom.questionText.classList.remove('timed-out');
+    }
+
     const allButtons = this.dom.optionsGrid.querySelectorAll('.altar-option-btn');
     allButtons.forEach(btn => btn.style.pointerEvents = 'none');
 
@@ -1016,8 +1028,10 @@ class PictureRevealGame {
     if (this.dom.answerRevelationCard) {
       this.dom.answerRevelationCard.classList.add('active');
       try {
-        if (typeof this.dom.answerRevelationCard.scrollIntoView === 'function') {
-          this.dom.answerRevelationCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const isPortraitMobile = (window.innerWidth && window.innerHeight && window.innerWidth <= 860 && window.innerHeight > window.innerWidth);
+        const targetEl = (isPortraitMobile && this.dom.btnReturnBoard) ? this.dom.btnReturnBoard : this.dom.answerRevelationCard;
+        if (targetEl && typeof targetEl.scrollIntoView === 'function') {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       } catch (e) {
         // Safe fallback for mock environments
@@ -1028,7 +1042,7 @@ class PictureRevealGame {
   renderRevelationContent(isCorrect) {
     if (this.dom.revelationStatus) {
       this.dom.revelationStatus.className = `revelation-status-badge ${isCorrect ? 'correct' : 'incorrect'}`;
-      this.dom.revelationStatus.textContent = isCorrect
+      this.dom.revelationStatus.innerHTML = isCorrect
         ? (window.i18n ? window.i18n.t('correctStatus') : '✦ إجابة صحيحة! أحسنت ✦')
         : (window.i18n ? window.i18n.t('incorrectStatus') : '✕ إجابة غير صحيحة! ✕');
     }

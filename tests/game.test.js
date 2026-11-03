@@ -430,9 +430,9 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.9.0', () => {
+  test('Application version is updated to v5.10.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.9.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.10.0');
   });
 });
 
@@ -856,5 +856,33 @@ describe('16. Welcome Screen Fullscreen Toggle Button Tests', () => {
     const gameJs = fs.readFileSync('js/game.js', 'utf8');
     assert.ok(gameJs.includes('this.dom.welcomeFullscreenToggle'), 'js/game.js must cache welcomeFullscreenToggle');
     assert.ok(gameJs.includes('updateFullscreenUI()'), 'js/game.js must declare updateFullscreenUI');
+  });
+});
+
+describe('17. Question Screen Revelation & Landscape Safety Tests', () => {
+  test('handleOptionSelection clears timed-out-shake and adds correct-glow on correct answers', () => {
+    const gameJs = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJs.includes("this.dom.qscreenContainer.classList.remove('timed-out-shake', 'correct-glow', 'incorrect-glow');"), 'Must clear timeout and glow classes');
+    assert.ok(gameJs.includes("this.dom.qscreenContainer.classList.add(isCorrect ? 'correct-glow' : 'incorrect-glow');"), 'Must apply correct or incorrect glow');
+  });
+
+  test('revelation-status-badge uses rectangular border radius and stacked direction-isolated typography', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(css.includes('border-radius: var(--radius-sm);'), 'revelation-status-badge must use rectangular border-radius');
+    assert.ok(css.includes('.rev-status-ar'), 'Must define .rev-status-ar typography');
+    assert.ok(css.includes('.rev-status-en'), 'Must define .rev-status-en typography');
+  });
+
+  test('correctAnswerCaption isolates direction to prevent colon flipping', () => {
+    const i18n = window.i18n;
+    i18n.setMode('both');
+    const cap = i18n.t('correctAnswerCaption');
+    assert.ok(cap.includes('dir="ltr"'), 'English caption must have dir="ltr"');
+    assert.ok(cap.includes('Correct Answer:'), 'Colon must be inside LTR container');
+  });
+
+  test('Landscape mode rules are preserved and altar-options-grid remains 2-column in landscape', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(/altar-options-grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*1fr\)\s*!important;/.test(css), 'Mobile landscape must keep 2-column options');
   });
 });

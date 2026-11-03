@@ -212,8 +212,14 @@ class I18nEngine {
       }
       if (key === 'startChallenge') return 'ابدأ التحدي الآن • Start Challenge';
       if (key === 'sceneBadgeLabel') return 'المشهد / Scene:';
-      if (key === 'correctAnswerCaption') return 'الإجابة الصحيحة • Correct Answer:';
-      if (key === 'referenceLabel') return 'الشاهد • Reference:';
+      if (key === 'correctStatus') {
+        return '<div class="rev-status-ar" dir="rtl">✦ إجابة صحيحة! أحسنت ✦</div><div class="rev-status-en" dir="ltr">✦ Correct Answer! Well Done ✦</div>';
+      }
+      if (key === 'incorrectStatus') {
+        return '<div class="rev-status-ar" dir="rtl">✕ إجابة غير صحيحة! ✕</div><div class="rev-status-en" dir="ltr">✕ Incorrect Answer! ✕</div>';
+      }
+      if (key === 'correctAnswerCaption') return '<span class="cap-ar" dir="rtl">الإجابة الصحيحة:</span> • <span class="cap-en" dir="ltr">Correct Answer:</span>';
+      if (key === 'referenceLabel') return '<span class="ref-ar" dir="rtl">الشاهد:</span> • <span class="ref-en" dir="ltr">Reference:</span>';
       if (key === 'brandTitle') return 'كشف الصورة الكتابية';
       if (key === 'brandSubtitle') return 'Bible Picture Reveal • مسابقة الخدام';
       if (key === 'home') return 'الرئيسية • Home';
