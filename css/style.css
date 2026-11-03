@@ -199,7 +199,8 @@ body.carnival-theme {
   box-shadow: 0 0 14px var(--gold-glow);
 }
 
-.welcome-audio-toggle {
+.welcome-audio-toggle,
+.welcome-fullscreen-toggle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -212,7 +213,8 @@ body.carnival-theme {
   cursor: pointer;
   transition: all var(--transition-fast);
 }
-.welcome-audio-toggle:hover {
+.welcome-audio-toggle:hover,
+.welcome-fullscreen-toggle:hover {
   background: var(--gold-bright);
   color: #1a1200;
   transform: scale(1.08);

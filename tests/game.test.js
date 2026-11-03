@@ -430,9 +430,9 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.8.0', () => {
+  test('Application version is updated to v5.9.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.8.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.9.0');
   });
 });
 
@@ -837,5 +837,24 @@ describe('15. Seamless Zero-Gap Tile Grid & Mobile Portrait Architecture Tests',
     assert.ok(html.includes('class="scene-badge" dir="ltr"'), 'index.html must have dir="ltr" on scene-badge');
     const css = fs.readFileSync('css/style.css', 'utf8');
     assert.ok(css.includes('direction: ltr; /* Keeps label then numbers strictly left-to-right to prevent BiDi inversion */'), 'CSS must specify direction: ltr on scene-badge');
+  });
+});
+
+describe('16. Welcome Screen Fullscreen Toggle Button Tests', () => {
+  test('index.html contains welcome-fullscreen-toggle button', () => {
+    const html = fs.readFileSync('index.html', 'utf8');
+    assert.ok(html.includes('id="welcome-fullscreen-toggle"'), 'index.html must include welcome-fullscreen-toggle');
+    assert.ok(html.includes('class="welcome-fullscreen-toggle"'), 'Must have welcome-fullscreen-toggle class');
+  });
+
+  test('css/style.css includes styling for welcome-fullscreen-toggle', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(css.includes('.welcome-fullscreen-toggle'), 'css/style.css must style .welcome-fullscreen-toggle');
+  });
+
+  test('js/game.js caches welcomeFullscreenToggle and supports fullscreen toggling', () => {
+    const gameJs = fs.readFileSync('js/game.js', 'utf8');
+    assert.ok(gameJs.includes('this.dom.welcomeFullscreenToggle'), 'js/game.js must cache welcomeFullscreenToggle');
+    assert.ok(gameJs.includes('updateFullscreenUI()'), 'js/game.js must declare updateFullscreenUI');
   });
 });

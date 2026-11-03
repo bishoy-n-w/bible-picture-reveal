@@ -130,6 +130,7 @@ class PictureRevealGame {
     this.dom.btnRestoreWinCard = document.getElementById('btn-restore-win-card');
     this.dom.appVersionBadge = document.getElementById('app-version-badge');
     this.dom.welcomeAudioToggle = document.getElementById('welcome-audio-toggle');
+    this.dom.welcomeFullscreenToggle = document.getElementById('welcome-fullscreen-toggle');
     this.dom.qscreenContainer = this.dom.questionScreen ? this.dom.questionScreen.querySelector('.qscreen-container') : null;
     this.dom.inputTimerSlider = document.getElementById('input-timer-slider');
     this.dom.timerSliderVal = document.getElementById('timer-slider-val');
@@ -228,6 +229,10 @@ class PictureRevealGame {
     if (this.dom.btnFullscreen) {
       this.dom.btnFullscreen.addEventListener('click', () => this.toggleFullscreen());
     }
+    if (this.dom.welcomeFullscreenToggle) {
+      this.dom.welcomeFullscreenToggle.addEventListener('click', () => this.toggleFullscreen());
+    }
+    document.addEventListener('fullscreenchange', () => this.updateFullscreenUI());
 
     // Toggle Volume Settings Popover (Click / Touch)
     if (this.dom.btnVolumeSettings && this.dom.volumeSettingsWrapper) {
@@ -1288,12 +1293,33 @@ class PictureRevealGame {
   }
 
   toggleFullscreen() {
+    if (window.soundEngine) window.soundEngine.playClick();
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(() => {});
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().then(() => this.updateFullscreenUI()).catch(() => {});
+      }
     } else {
       if (document.exitFullscreen) {
-        document.exitFullscreen().catch(() => {});
+        document.exitFullscreen().then(() => this.updateFullscreenUI()).catch(() => {});
       }
+    }
+  }
+
+  updateFullscreenUI() {
+    const isFullscreen = !!document.fullscreenElement;
+    const expandIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>';
+    const compressIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>';
+    const titleText = isFullscreen
+      ? (window.i18n ? (window.i18n.isLanguageActive('ar') ? 'إنهاء ملء الشاشة' : 'Exit Fullscreen') : 'إنهاء ملء الشاشة')
+      : (window.i18n ? window.i18n.t('fullscreen') : 'ملء الشاشة');
+
+    if (this.dom.btnFullscreen) {
+      this.dom.btnFullscreen.innerHTML = isFullscreen ? compressIcon : expandIcon;
+      this.dom.btnFullscreen.title = titleText;
+    }
+    if (this.dom.welcomeFullscreenToggle) {
+      this.dom.welcomeFullscreenToggle.innerHTML = isFullscreen ? compressIcon : expandIcon;
+      this.dom.welcomeFullscreenToggle.title = titleText;
     }
   }
 }
