@@ -20,7 +20,9 @@ const requiredFiles = [
   'js/attractor.js',
   'js/game.js',
   'pics.json',
-  'README.md'
+  'README.md',
+  'ARCHITECTURE.md',
+  'REQUIREMENTS.md'
 ];
 
 let missing = 0;
