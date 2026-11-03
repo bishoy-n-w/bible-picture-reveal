@@ -103,6 +103,7 @@ class PictureRevealGame {
     this.dom.questionAltar = this.dom.questionScreen; // for backward compatibility
     this.dom.modalDiffTag = document.getElementById('modal-diff-tag');
     this.dom.modalTileIndicator = document.getElementById('modal-tile-indicator');
+    this.dom.modalDiffStars = document.getElementById('modal-diff-stars');
     this.dom.altarTimerBadge = document.getElementById('altar-timer-badge');
     this.dom.timerText = document.getElementById('timer-text');
     this.dom.questionText = document.getElementById('question-text');
@@ -945,9 +946,17 @@ class PictureRevealGame {
     }
 
     const tileTxt = window.i18n ? window.i18n.t('tileLabel') : 'المربع رقم';
+    const curDiff = this.activeDifficulty || 1;
+    const diffStars = { 1: '✦', 2: '✦✦', 3: '✦✦✦' };
+
+    if (this.dom.modalDiffStars) {
+      this.dom.modalDiffStars.textContent = diffStars[curDiff] || '✦';
+      this.dom.modalDiffStars.className = `altar-diff-stars level-${curDiff}`;
+    }
+
     if (this.dom.modalDiffTag) {
-      this.dom.modalDiffTag.textContent = diffNames[this.activeDifficulty || 1];
-      this.dom.modalDiffTag.className = `altar-diff-tag level-${this.activeDifficulty || 1}`;
+      this.dom.modalDiffTag.textContent = diffNames[curDiff];
+      this.dom.modalDiffTag.className = `altar-diff-tag level-${curDiff}`;
     }
     this.dom.modalTileIndicator.textContent = `${tileTxt} (${(this.activeTileIndex || 0) + 1})`;
 

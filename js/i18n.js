@@ -226,6 +226,7 @@ class I18nEngine {
       if (key === 'revealFull') return 'كشف الصورة • Reveal';
       if (key === 'nextScene') return 'صورة جديدة • Next';
       if (key === 'resetGrid') return 'إعادة المربعات • Reset';
+      if (key === 'tileLabel') return 'المربع • Tile';
       if (key === 'continueToBoard') return 'متابعة إلى لوحة الصورة • Continue';
 
       const arStr = (this.strings.ar && this.strings.ar[key]) || key;

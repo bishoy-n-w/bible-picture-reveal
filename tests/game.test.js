@@ -430,9 +430,9 @@ describe('9. Phase 1 UI/UX & Cross-Platform Accessibility Tests', () => {
     assert.ok(gameJsContent.includes('scrollIntoView'), 'js/game.js must scroll revelation card into view on reveal');
   });
 
-  test('Application version is updated to v5.11.0', () => {
+  test('Application version is updated to v5.12.0', () => {
     eval(fs.readFileSync('js/version.js', 'utf8'));
-    assert.strictEqual(window.APP_VERSION, 'v5.11.0');
+    assert.strictEqual(window.APP_VERSION, 'v5.12.0');
   });
 });
 
@@ -564,6 +564,7 @@ describe('12. Phase 3 Integration Suite: State Machine, Scene Navigation & Outco
       fallbackCanvas: { style: {}, getContext: () => ({ createRadialGradient: () => ({ addColorStop: () => {} }), fillRect: () => {}, beginPath: () => {}, moveTo: () => {}, lineTo: () => {}, bezierCurveTo: () => {}, closePath: () => {}, fill: () => {}, save: () => {}, restore: () => {}, strokeRect: () => {}, fillText: () => {} }) },
       modalDiffTag: { textContent: '', className: '' },
       modalTileIndicator: { textContent: '' },
+      modalDiffStars: { textContent: '', className: '' },
       questionText: { innerHTML: '', classList: { add: () => {}, remove: () => {} } },
       revelationStatus: { className: '', textContent: '' },
       revelationCorrectAnswer: { innerHTML: '' },
@@ -713,6 +714,7 @@ describe('13. Phase 3 E2E Simulation Suite: Complete Lifecycles & Boundary Stres
       fallbackCanvas: { style: {}, getContext: () => ({ createRadialGradient: () => ({ addColorStop: () => {} }), fillRect: () => {}, beginPath: () => {}, moveTo: () => {}, lineTo: () => {}, bezierCurveTo: () => {}, closePath: () => {}, fill: () => {}, save: () => {}, restore: () => {}, strokeRect: () => {}, fillText: () => {} }) },
       modalDiffTag: { textContent: '', className: '' },
       modalTileIndicator: { textContent: '' },
+      modalDiffStars: { textContent: '', className: '' },
       questionText: { innerHTML: '', classList: { add: () => {}, remove: () => {} } },
       revelationStatus: { className: '', textContent: '' },
       revelationCorrectAnswer: { innerHTML: '' },
@@ -921,5 +923,61 @@ describe('18. Scripture Citation BiDi Isolation & Revelation Cleanliness Tests',
     i18n.setMode('both');
     const btnText = i18n.t('continueToBoard');
     assert.ok(!btnText.includes('➔'), 'Text must not contain literal arrow to avoid duplication with SVG');
+  });
+});
+
+describe('19. Question Header Difficulty Stars & Single-Row Layout Tests', () => {
+  test('index.html contains modal-diff-stars span inside qscreen-meta', () => {
+    const html = fs.readFileSync('index.html', 'utf8');
+    assert.ok(html.includes('id="modal-diff-stars"'), 'index.html must contain modal-diff-stars element');
+    assert.ok(html.includes('class="altar-diff-stars"'), 'Must have altar-diff-stars class');
+  });
+
+  test('reRenderActiveQuestionScreen sets difficulty stars matching activeDifficulty', () => {
+    const game = new global.PictureRevealGame();
+    game.dom = {
+      modalTileIndicator: { textContent: '' },
+      modalDiffStars: { textContent: '', className: '' },
+      modalDiffTag: null,
+      questionText: { innerHTML: '', classList: { add: () => {}, remove: () => {} } },
+      optionsGrid: { innerHTML: '' }
+    };
+    game.activeQuestion = window.QUESTIONS_BANK[0];
+    game.activeTileIndex = 0;
+    game.activeDifficulty = 1;
+    game.reRenderActiveQuestionScreen();
+    assert.strictEqual(game.dom.modalDiffStars.textContent, '✦');
+    assert.strictEqual(game.dom.modalDiffStars.className, 'altar-diff-stars level-1');
+
+    game.activeDifficulty = 2;
+    game.reRenderActiveQuestionScreen();
+    assert.strictEqual(game.dom.modalDiffStars.textContent, '✦✦');
+    assert.strictEqual(game.dom.modalDiffStars.className, 'altar-diff-stars level-2');
+
+    game.activeDifficulty = 3;
+    game.reRenderActiveQuestionScreen();
+    assert.strictEqual(game.dom.modalDiffStars.textContent, '✦✦✦');
+    assert.strictEqual(game.dom.modalDiffStars.className, 'altar-diff-stars level-3');
+  });
+
+  test('css/style.css enforces white-space nowrap on altar-diff-stars, altar-tile-tag, and altar-timer-badge', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(/\.altar-diff-stars\s*\{[\s\S]*?white-space:\s*nowrap;/.test(css), 'altar-diff-stars must have white-space: nowrap');
+    assert.ok(/\.altar-tile-tag\s*\{[\s\S]*?white-space:\s*nowrap;/.test(css), 'altar-tile-tag must have white-space: nowrap');
+    assert.ok(/\.altar-timer-badge\s*\{[\s\S]*?white-space:\s*nowrap;/.test(css), 'altar-timer-badge must have white-space: nowrap');
+  });
+
+  test('Both mobile portrait and landscape media queries configure altar-diff-stars', () => {
+    const css = fs.readFileSync('css/style.css', 'utf8');
+    assert.ok(css.includes('.altar-diff-stars {'), 'CSS must define base altar-diff-stars');
+    const portraitMatch = css.indexOf('@media (max-width: 860px) and (orientation: portrait)');
+    assert.ok(portraitMatch !== -1, 'Must have portrait media query');
+    const portraitSub = css.substring(portraitMatch);
+    assert.ok(portraitSub.includes('.altar-diff-stars'), 'Portrait section must size .altar-diff-stars');
+
+    const landscapeMatch = css.indexOf('@media (max-height: 520px) and (orientation: landscape)');
+    assert.ok(landscapeMatch !== -1, 'Must have landscape media query');
+    const landscapeSub = css.substring(landscapeMatch);
+    assert.ok(landscapeSub.includes('.altar-diff-stars'), 'Landscape section must size .altar-diff-stars');
   });
 });
